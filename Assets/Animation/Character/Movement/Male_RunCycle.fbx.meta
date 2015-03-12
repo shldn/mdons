@@ -1,0 +1,1522 @@
+fileFormatVersion: 2
+guid: ddafc44059cae1a428a3d5ab86a13968
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: FixedChar_Male_Mesh_RiggedAllMesh:Belt
+    100002: FixedChar_Male_Mesh_RiggedAllMesh:Belt 1
+    100004: FixedChar_Male_Mesh_RiggedAllMesh:Bind_Joints
+    100006: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Base1
+    100008: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Eyes1
+    100010: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket
+    100012: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket2_grp
+    100014: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket3_grp
+    100016: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket4_grp
+    100018: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Pants1_grp
+    100020: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Pants2_grp
+    100022: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Shirt1_grp
+    100024: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Skin2_grp
+    100026: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Skin3_grp
+    100028: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Skin4_grp
+    100030: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Tie_Fat_grp
+    100032: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Tie_Skinny_grp
+    100034: FixedChar_Male_Mesh_RiggedAllMesh:Chest_CON
+    100036: FixedChar_Male_Mesh_RiggedAllMesh:Chest_grp
+    100038: FixedChar_Male_Mesh_RiggedAllMesh:Chest_Nulll
+    100040: FixedChar_Male_Mesh_RiggedAllMesh:Controls
+    100042: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows
+    100044: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows 1
+    100046: FixedChar_Male_Mesh_RiggedAllMesh:Eyes
+    100048: FixedChar_Male_Mesh_RiggedAllMesh:Eyes 1
+    100050: FixedChar_Male_Mesh_RiggedAllMesh:Eyes 2
+    100052: FixedChar_Male_Mesh_RiggedAllMesh:Geometry
+    100054: FixedChar_Male_Mesh_RiggedAllMesh:Group1
+    100056: FixedChar_Male_Mesh_RiggedAllMesh:Hair
+    100058: FixedChar_Male_Mesh_RiggedAllMesh:Hair5_2
+    100060: FixedChar_Male_Mesh_RiggedAllMesh:Head
+    100062: FixedChar_Male_Mesh_RiggedAllMesh:Head_BlendNull
+    100064: FixedChar_Male_Mesh_RiggedAllMesh:Head_CON
+    100066: FixedChar_Male_Mesh_RiggedAllMesh:Head_grp
+    100068: FixedChar_Male_Mesh_RiggedAllMesh:Head_OriGlobal
+    100070: FixedChar_Male_Mesh_RiggedAllMesh:Head_OriLocal
+    100072: FixedChar_Male_Mesh_RiggedAllMesh:hip_CON
+    100074: FixedChar_Male_Mesh_RiggedAllMesh:hip_grp
+    100076: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_CON_L
+    100078: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_CON_R
+    100080: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_L_grp
+    100082: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_R_grp
+    100084: FixedChar_Male_Mesh_RiggedAllMesh:Jacket
+    100086: FixedChar_Male_Mesh_RiggedAllMesh:Jacket 1
+    100088: FixedChar_Male_Mesh_RiggedAllMesh:Jacket 2
+    100090: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2
+    100092: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2 1
+    100094: FixedChar_Male_Mesh_RiggedAllMesh:L_Ankle_IK
+    100096: FixedChar_Male_Mesh_RiggedAllMesh:L_Ankle_Null
+    100098: FixedChar_Male_Mesh_RiggedAllMesh:L_AnkleStablize_LOC
+    100100: FixedChar_Male_Mesh_RiggedAllMesh:L_Ball_LOC
+    100102: FixedChar_Male_Mesh_RiggedAllMesh:L_Balltablize_LOC
+    100104: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Arm_CON
+    100106: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Arm_grp
+    100108: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Elbow_CON
+    100110: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Elbow_grp
+    100112: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Wrist_CON
+    100114: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Wrist_grp
+    100116: FixedChar_Male_Mesh_RiggedAllMesh:L_Foot_CON
+    100118: FixedChar_Male_Mesh_RiggedAllMesh:L_Foot_grp
+    100120: FixedChar_Male_Mesh_RiggedAllMesh:L_FootRoll_CON
+    100122: FixedChar_Male_Mesh_RiggedAllMesh:L_FootRoll_grp
+    100124: FixedChar_Male_Mesh_RiggedAllMesh:L_Hand_grp
+    100126: FixedChar_Male_Mesh_RiggedAllMesh:L_Toe_CON
+    100128: FixedChar_Male_Mesh_RiggedAllMesh:L_Toe_grp
+    100130: FixedChar_Male_Mesh_RiggedAllMesh:L_Toe_LOC
+    100132: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_L
+    100134: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_R
+    100136: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_L
+    100138: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_R
+    100140: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_L
+    100142: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_R
+    100144: FixedChar_Male_Mesh_RiggedAllMesh:man_Chest
+    100146: FixedChar_Male_Mesh_RiggedAllMesh:man_chn
+    100148: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_L
+    100150: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_R
+    100152: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_L
+    100154: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_R
+    100156: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_L
+    100158: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_R
+    100160: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_L
+    100162: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_R
+    100164: FixedChar_Male_Mesh_RiggedAllMesh:man_Head
+    100166: FixedChar_Male_Mesh_RiggedAllMesh:man_Hip
+    100168: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_L
+    100170: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_R
+    100172: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_L
+    100174: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_R
+    100176: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_L
+    100178: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_R
+    100180: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_L
+    100182: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_R
+    100184: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_L
+    100186: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_R
+    100188: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_L
+    100190: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_R
+    100192: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_L
+    100194: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_R
+    100196: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_L
+    100198: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_R
+    100200: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_L
+    100202: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_R
+    100204: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_L
+    100206: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_R
+    100208: FixedChar_Male_Mesh_RiggedAllMesh:man_Neck
+    100210: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine1
+    100212: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine2
+    100214: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_L
+    100216: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_R
+    100218: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_L
+    100220: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_R
+    100222: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_L
+    100224: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_R
+    100226: FixedChar_Male_Mesh_RiggedAllMesh:man_Waist
+    100228: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_L
+    100230: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_R
+    100232: FixedChar_Male_Mesh_RiggedAllMesh:misc
+    100234: FixedChar_Male_Mesh_RiggedAllMesh:Neck_CON
+    100236: FixedChar_Male_Mesh_RiggedAllMesh:Neck_grp
+    100238: FixedChar_Male_Mesh_RiggedAllMesh:Pants
+    100240: FixedChar_Male_Mesh_RiggedAllMesh:Pants 1
+    100242: FixedChar_Male_Mesh_RiggedAllMesh:Pants 2
+    100244: FixedChar_Male_Mesh_RiggedAllMesh:Pants2
+    100246: FixedChar_Male_Mesh_RiggedAllMesh:R_Ankle_IK
+    100248: FixedChar_Male_Mesh_RiggedAllMesh:R_Ankle_Null
+    100250: FixedChar_Male_Mesh_RiggedAllMesh:R_AnkleStablize_LOC
+    100252: FixedChar_Male_Mesh_RiggedAllMesh:R_Ball_LOC
+    100254: FixedChar_Male_Mesh_RiggedAllMesh:R_Balltablize_LOC
+    100256: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Arm_CON
+    100258: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Arm_grp
+    100260: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Elbow_CON
+    100262: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Elbow_grp
+    100264: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Wrist_CON
+    100266: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Wrist_grp
+    100268: FixedChar_Male_Mesh_RiggedAllMesh:R_Foot_CON
+    100270: FixedChar_Male_Mesh_RiggedAllMesh:R_Foot_grp
+    100272: FixedChar_Male_Mesh_RiggedAllMesh:R_FootRoll_CON
+    100274: FixedChar_Male_Mesh_RiggedAllMesh:R_FootRoll_grp
+    100276: FixedChar_Male_Mesh_RiggedAllMesh:R_Hand_grp
+    100278: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_L_CON
+    100280: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_L_grp
+    100282: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_R_IK_CON
+    100284: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_R_IK_grp
+    100286: FixedChar_Male_Mesh_RiggedAllMesh:R_Toe_CON
+    100288: FixedChar_Male_Mesh_RiggedAllMesh:R_Toe_grp
+    100290: FixedChar_Male_Mesh_RiggedAllMesh:R_Toe_LOC
+    100292: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ankle_L
+    100294: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ankle_R
+    100296: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L
+    100298: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L_FK
+    100300: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L_IK
+    100302: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L_IK 1
+    100304: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R
+    100306: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R_FK
+    100308: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R_IK
+    100310: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R_IK 1
+    100312: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ball_L
+    100314: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ball_R
+    100316: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Chest
+    100318: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L
+    100320: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L 1
+    100322: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L 2
+    100324: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PosHMN
+    100326: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PosNull
+    100328: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PvHMN
+    100330: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PvNull
+    100332: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R
+    100334: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_FK
+    100336: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK
+    100338: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PosHMN
+    100340: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PosNull
+    100342: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PvHMN
+    100344: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PvNull
+    100346: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_L
+    100348: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_L_CON
+    100350: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_L_grp
+    100352: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_R
+    100354: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_R_CON
+    100356: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_R_grp
+    100358: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_L
+    100360: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_L_CON
+    100362: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_L_grp
+    100364: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_R
+    100366: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_R_CON
+    100368: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_R_grp
+    100370: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_L
+    100372: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_L_CON
+    100374: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_L_grp
+    100376: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_R
+    100378: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_R_CON
+    100380: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_R_grp
+    100382: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Head
+    100384: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Hip
+    100386: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_L
+    100388: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_L_CON
+    100390: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_L_grp
+    100392: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_R
+    100394: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_R_CON
+    100396: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_R_grp
+    100398: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_L
+    100400: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_L_CON
+    100402: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_L_grp
+    100404: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_R
+    100406: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_R_CON
+    100408: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_R_grp
+    100410: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_L
+    100412: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_L_CON
+    100414: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_L_grp
+    100416: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_R
+    100418: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_R_CON
+    100420: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_R_grp
+    100422: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Joints
+    100424: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_L
+    100426: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_L_CON
+    100428: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_L_grp
+    100430: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_R
+    100432: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_R_CON
+    100434: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_R_grp
+    100436: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_L
+    100438: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_L_CON
+    100440: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_L_grp
+    100442: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_R
+    100444: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_R_CON
+    100446: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_R_grp
+    100448: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_L
+    100450: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_L_CON
+    100452: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_L_grp
+    100454: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_R
+    100456: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_R_CON
+    100458: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_R_grp
+    100460: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_L
+    100462: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_L_CON
+    100464: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_L_grp
+    100466: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_R
+    100468: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_R_CON
+    100470: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_R_grp
+    100472: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_L
+    100474: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_L_CON
+    100476: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_L_grp
+    100478: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_R
+    100480: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_R_CON
+    100482: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_R_grp
+    100484: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_L
+    100486: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_L_CON
+    100488: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_L_grp
+    100490: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_R
+    100492: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_R_CON
+    100494: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_R_grp
+    100496: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_L
+    100498: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_L_CON
+    100500: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_L_grp
+    100502: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_R
+    100504: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_R_CON
+    100506: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_R_grp
+    100508: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Neck
+    100510: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Spine1
+    100512: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Spine2
+    100514: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L
+    100516: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PosHMN
+    100518: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PosNull
+    100520: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PvHMN
+    100522: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PvNull
+    100524: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R
+    100526: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PosHMN
+    100528: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PosNull
+    100530: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PvHMN
+    100532: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PvNull
+    100534: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_L
+    100536: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_L_CON
+    100538: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_L_grp
+    100540: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_R
+    100542: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_R_CON
+    100544: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_R_grp
+    100546: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_L
+    100548: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_L_CON
+    100550: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_L_grp
+    100552: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_R
+    100554: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_R_CON
+    100556: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_R_grp
+    100558: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Waist
+    100560: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L
+    100562: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L 1
+    100564: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L 2
+    100566: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L_IK_CON
+    100568: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L_IK_grp
+    100570: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R
+    100572: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_FK
+    100574: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_IK
+    100576: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_IK_CON
+    100578: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_IK_grp
+    100580: FixedChar_Male_Mesh_RiggedAllMesh:Shirt
+    100582: FixedChar_Male_Mesh_RiggedAllMesh:Shirt002
+    100584: FixedChar_Male_Mesh_RiggedAllMesh:Shirt1
+    100586: FixedChar_Male_Mesh_RiggedAllMesh:Shoes
+    100588: FixedChar_Male_Mesh_RiggedAllMesh:Shoes 1
+    100590: FixedChar_Male_Mesh_RiggedAllMesh:Skeleton
+    100592: FixedChar_Male_Mesh_RiggedAllMesh:Skin2_mesh
+    100594: FixedChar_Male_Mesh_RiggedAllMesh:Skin3_mesh
+    100596: FixedChar_Male_Mesh_RiggedAllMesh:Skin4_mesh
+    100598: FixedChar_Male_Mesh_RiggedAllMesh:Spine1_CON
+    100600: FixedChar_Male_Mesh_RiggedAllMesh:Spine1_grp
+    100602: FixedChar_Male_Mesh_RiggedAllMesh:Spine1_Nulll
+    100604: FixedChar_Male_Mesh_RiggedAllMesh:Spine2_CON
+    100606: FixedChar_Male_Mesh_RiggedAllMesh:Spine2_grp
+    100608: FixedChar_Male_Mesh_RiggedAllMesh:Spine2_Nulll
+    100610: FixedChar_Male_Mesh_RiggedAllMesh:Tie
+    100612: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat
+    100614: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat 1
+    100616: FixedChar_Male_Mesh_RiggedAllMesh:Tie_Skinny
+    100618: FixedChar_Male_Mesh_RiggedAllMesh:Vest
+    100620: FixedChar_Male_Mesh_RiggedAllMesh:Vest 1
+    100622: FixedChar_Male_Mesh_RiggedAllMesh:Waist_CON
+    100624: FixedChar_Male_Mesh_RiggedAllMesh:Waist_grp
+    100626: FixedChar_Male_Mesh_RiggedAllMesh:World_CON
+    100628: FixedChar_Male_Mesh_RiggedAllMesh:World_grp
+    100630: left
+    100632: //RootNode
+    100634: pPlane1
+    400000: FixedChar_Male_Mesh_RiggedAllMesh:Belt
+    400002: FixedChar_Male_Mesh_RiggedAllMesh:Belt 1
+    400004: FixedChar_Male_Mesh_RiggedAllMesh:Bind_Joints
+    400006: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Base1
+    400008: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Eyes1
+    400010: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket
+    400012: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket2_grp
+    400014: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket3_grp
+    400016: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Jacket4_grp
+    400018: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Pants1_grp
+    400020: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Pants2_grp
+    400022: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Shirt1_grp
+    400024: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Skin2_grp
+    400026: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Skin3_grp
+    400028: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Skin4_grp
+    400030: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Tie_Fat_grp
+    400032: FixedChar_Male_Mesh_RiggedAllMesh:Char_Male_Mesh_Tie_Skinny_grp
+    400034: FixedChar_Male_Mesh_RiggedAllMesh:Chest_CON
+    400036: FixedChar_Male_Mesh_RiggedAllMesh:Chest_grp
+    400038: FixedChar_Male_Mesh_RiggedAllMesh:Chest_Nulll
+    400040: FixedChar_Male_Mesh_RiggedAllMesh:Controls
+    400042: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows
+    400044: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows 1
+    400046: FixedChar_Male_Mesh_RiggedAllMesh:Eyes
+    400048: FixedChar_Male_Mesh_RiggedAllMesh:Eyes 1
+    400050: FixedChar_Male_Mesh_RiggedAllMesh:Eyes 2
+    400052: FixedChar_Male_Mesh_RiggedAllMesh:Geometry
+    400054: FixedChar_Male_Mesh_RiggedAllMesh:Group1
+    400056: FixedChar_Male_Mesh_RiggedAllMesh:Hair
+    400058: FixedChar_Male_Mesh_RiggedAllMesh:Hair5_2
+    400060: FixedChar_Male_Mesh_RiggedAllMesh:Head
+    400062: FixedChar_Male_Mesh_RiggedAllMesh:Head_BlendNull
+    400064: FixedChar_Male_Mesh_RiggedAllMesh:Head_CON
+    400066: FixedChar_Male_Mesh_RiggedAllMesh:Head_grp
+    400068: FixedChar_Male_Mesh_RiggedAllMesh:Head_OriGlobal
+    400070: FixedChar_Male_Mesh_RiggedAllMesh:Head_OriLocal
+    400072: FixedChar_Male_Mesh_RiggedAllMesh:hip_CON
+    400074: FixedChar_Male_Mesh_RiggedAllMesh:hip_grp
+    400076: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_CON_L
+    400078: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_CON_R
+    400080: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_L_grp
+    400082: FixedChar_Male_Mesh_RiggedAllMesh:IKFK_Blend_R_grp
+    400084: FixedChar_Male_Mesh_RiggedAllMesh:Jacket
+    400086: FixedChar_Male_Mesh_RiggedAllMesh:Jacket 1
+    400088: FixedChar_Male_Mesh_RiggedAllMesh:Jacket 2
+    400090: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2
+    400092: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2 1
+    400094: FixedChar_Male_Mesh_RiggedAllMesh:L_Ankle_IK
+    400096: FixedChar_Male_Mesh_RiggedAllMesh:L_Ankle_Null
+    400098: FixedChar_Male_Mesh_RiggedAllMesh:L_AnkleStablize_LOC
+    400100: FixedChar_Male_Mesh_RiggedAllMesh:L_Ball_LOC
+    400102: FixedChar_Male_Mesh_RiggedAllMesh:L_Balltablize_LOC
+    400104: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Arm_CON
+    400106: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Arm_grp
+    400108: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Elbow_CON
+    400110: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Elbow_grp
+    400112: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Wrist_CON
+    400114: FixedChar_Male_Mesh_RiggedAllMesh:L_FK_Rig_Wrist_grp
+    400116: FixedChar_Male_Mesh_RiggedAllMesh:L_Foot_CON
+    400118: FixedChar_Male_Mesh_RiggedAllMesh:L_Foot_grp
+    400120: FixedChar_Male_Mesh_RiggedAllMesh:L_FootRoll_CON
+    400122: FixedChar_Male_Mesh_RiggedAllMesh:L_FootRoll_grp
+    400124: FixedChar_Male_Mesh_RiggedAllMesh:L_Hand_grp
+    400126: FixedChar_Male_Mesh_RiggedAllMesh:L_Toe_CON
+    400128: FixedChar_Male_Mesh_RiggedAllMesh:L_Toe_grp
+    400130: FixedChar_Male_Mesh_RiggedAllMesh:L_Toe_LOC
+    400132: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_L
+    400134: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_R
+    400136: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_L
+    400138: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_R
+    400140: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_L
+    400142: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_R
+    400144: FixedChar_Male_Mesh_RiggedAllMesh:man_Chest
+    400146: FixedChar_Male_Mesh_RiggedAllMesh:man_chn
+    400148: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_L
+    400150: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_R
+    400152: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_L
+    400154: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_R
+    400156: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_L
+    400158: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_R
+    400160: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_L
+    400162: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_R
+    400164: FixedChar_Male_Mesh_RiggedAllMesh:man_Head
+    400166: FixedChar_Male_Mesh_RiggedAllMesh:man_Hip
+    400168: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_L
+    400170: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_R
+    400172: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_L
+    400174: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_R
+    400176: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_L
+    400178: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_R
+    400180: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_L
+    400182: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_R
+    400184: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_L
+    400186: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_R
+    400188: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_L
+    400190: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_R
+    400192: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_L
+    400194: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_R
+    400196: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_L
+    400198: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_R
+    400200: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_L
+    400202: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_R
+    400204: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_L
+    400206: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_R
+    400208: FixedChar_Male_Mesh_RiggedAllMesh:man_Neck
+    400210: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine1
+    400212: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine2
+    400214: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_L
+    400216: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_R
+    400218: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_L
+    400220: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_R
+    400222: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_L
+    400224: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_R
+    400226: FixedChar_Male_Mesh_RiggedAllMesh:man_Waist
+    400228: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_L
+    400230: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_R
+    400232: FixedChar_Male_Mesh_RiggedAllMesh:misc
+    400234: FixedChar_Male_Mesh_RiggedAllMesh:Neck_CON
+    400236: FixedChar_Male_Mesh_RiggedAllMesh:Neck_grp
+    400238: FixedChar_Male_Mesh_RiggedAllMesh:Pants
+    400240: FixedChar_Male_Mesh_RiggedAllMesh:Pants 1
+    400242: FixedChar_Male_Mesh_RiggedAllMesh:Pants 2
+    400244: FixedChar_Male_Mesh_RiggedAllMesh:Pants2
+    400246: FixedChar_Male_Mesh_RiggedAllMesh:R_Ankle_IK
+    400248: FixedChar_Male_Mesh_RiggedAllMesh:R_Ankle_Null
+    400250: FixedChar_Male_Mesh_RiggedAllMesh:R_AnkleStablize_LOC
+    400252: FixedChar_Male_Mesh_RiggedAllMesh:R_Ball_LOC
+    400254: FixedChar_Male_Mesh_RiggedAllMesh:R_Balltablize_LOC
+    400256: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Arm_CON
+    400258: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Arm_grp
+    400260: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Elbow_CON
+    400262: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Elbow_grp
+    400264: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Wrist_CON
+    400266: FixedChar_Male_Mesh_RiggedAllMesh:R_FK_Rig_Wrist_grp
+    400268: FixedChar_Male_Mesh_RiggedAllMesh:R_Foot_CON
+    400270: FixedChar_Male_Mesh_RiggedAllMesh:R_Foot_grp
+    400272: FixedChar_Male_Mesh_RiggedAllMesh:R_FootRoll_CON
+    400274: FixedChar_Male_Mesh_RiggedAllMesh:R_FootRoll_grp
+    400276: FixedChar_Male_Mesh_RiggedAllMesh:R_Hand_grp
+    400278: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_L_CON
+    400280: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_L_grp
+    400282: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_R_IK_CON
+    400284: FixedChar_Male_Mesh_RiggedAllMesh:R_IKig_Elbow_R_IK_grp
+    400286: FixedChar_Male_Mesh_RiggedAllMesh:R_Toe_CON
+    400288: FixedChar_Male_Mesh_RiggedAllMesh:R_Toe_grp
+    400290: FixedChar_Male_Mesh_RiggedAllMesh:R_Toe_LOC
+    400292: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ankle_L
+    400294: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ankle_R
+    400296: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L
+    400298: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L_FK
+    400300: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L_IK
+    400302: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_L_IK 1
+    400304: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R
+    400306: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R_FK
+    400308: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R_IK
+    400310: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Arm_R_IK 1
+    400312: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ball_L
+    400314: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Ball_R
+    400316: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Chest
+    400318: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L
+    400320: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L 1
+    400322: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L 2
+    400324: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PosHMN
+    400326: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PosNull
+    400328: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PvHMN
+    400330: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_L_IK_PvNull
+    400332: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R
+    400334: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_FK
+    400336: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK
+    400338: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PosHMN
+    400340: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PosNull
+    400342: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PvHMN
+    400344: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Elbow_R_IK_PvNull
+    400346: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_L
+    400348: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_L_CON
+    400350: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_L_grp
+    400352: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_R
+    400354: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_R_CON
+    400356: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore1_R_grp
+    400358: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_L
+    400360: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_L_CON
+    400362: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_L_grp
+    400364: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_R
+    400366: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_R_CON
+    400368: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore2_R_grp
+    400370: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_L
+    400372: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_L_CON
+    400374: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_L_grp
+    400376: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_R
+    400378: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_R_CON
+    400380: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Fore_R_grp
+    400382: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Head
+    400384: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Hip
+    400386: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_L
+    400388: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_L_CON
+    400390: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_L_grp
+    400392: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_R
+    400394: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_R_CON
+    400396: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index1_R_grp
+    400398: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_L
+    400400: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_L_CON
+    400402: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_L_grp
+    400404: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_R
+    400406: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_R_CON
+    400408: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index2_R_grp
+    400410: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_L
+    400412: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_L_CON
+    400414: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_L_grp
+    400416: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_R
+    400418: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_R_CON
+    400420: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Index_R_grp
+    400422: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Joints
+    400424: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_L
+    400426: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_L_CON
+    400428: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_L_grp
+    400430: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_R
+    400432: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_R_CON
+    400434: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Knee_R_grp
+    400436: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_L
+    400438: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_L_CON
+    400440: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_L_grp
+    400442: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_R
+    400444: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_R_CON
+    400446: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little1_R_grp
+    400448: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_L
+    400450: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_L_CON
+    400452: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_L_grp
+    400454: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_R
+    400456: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_R_CON
+    400458: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little2_R_grp
+    400460: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_L
+    400462: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_L_CON
+    400464: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_L_grp
+    400466: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_R
+    400468: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_R_CON
+    400470: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Little_R_grp
+    400472: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_L
+    400474: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_L_CON
+    400476: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_L_grp
+    400478: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_R
+    400480: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_R_CON
+    400482: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle1_R_grp
+    400484: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_L
+    400486: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_L_CON
+    400488: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_L_grp
+    400490: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_R
+    400492: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_R_CON
+    400494: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle2_R_grp
+    400496: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_L
+    400498: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_L_CON
+    400500: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_L_grp
+    400502: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_R
+    400504: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_R_CON
+    400506: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Middle_R_grp
+    400508: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Neck
+    400510: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Spine1
+    400512: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Spine2
+    400514: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L
+    400516: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PosHMN
+    400518: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PosNull
+    400520: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PvHMN
+    400522: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_L_PvNull
+    400524: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R
+    400526: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PosHMN
+    400528: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PosNull
+    400530: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PvHMN
+    400532: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thigh_R_PvNull
+    400534: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_L
+    400536: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_L_CON
+    400538: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_L_grp
+    400540: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_R
+    400542: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_R_CON
+    400544: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb1_R_grp
+    400546: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_L
+    400548: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_L_CON
+    400550: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_L_grp
+    400552: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_R
+    400554: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_R_CON
+    400556: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Thumb_R_grp
+    400558: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Waist
+    400560: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L
+    400562: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L 1
+    400564: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L 2
+    400566: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L_IK_CON
+    400568: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_L_IK_grp
+    400570: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R
+    400572: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_FK
+    400574: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_IK
+    400576: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_IK_CON
+    400578: FixedChar_Male_Mesh_RiggedAllMesh:Rig_Wrist_R_IK_grp
+    400580: FixedChar_Male_Mesh_RiggedAllMesh:Shirt
+    400582: FixedChar_Male_Mesh_RiggedAllMesh:Shirt002
+    400584: FixedChar_Male_Mesh_RiggedAllMesh:Shirt1
+    400586: FixedChar_Male_Mesh_RiggedAllMesh:Shoes
+    400588: FixedChar_Male_Mesh_RiggedAllMesh:Shoes 1
+    400590: FixedChar_Male_Mesh_RiggedAllMesh:Skeleton
+    400592: FixedChar_Male_Mesh_RiggedAllMesh:Skin2_mesh
+    400594: FixedChar_Male_Mesh_RiggedAllMesh:Skin3_mesh
+    400596: FixedChar_Male_Mesh_RiggedAllMesh:Skin4_mesh
+    400598: FixedChar_Male_Mesh_RiggedAllMesh:Spine1_CON
+    400600: FixedChar_Male_Mesh_RiggedAllMesh:Spine1_grp
+    400602: FixedChar_Male_Mesh_RiggedAllMesh:Spine1_Nulll
+    400604: FixedChar_Male_Mesh_RiggedAllMesh:Spine2_CON
+    400606: FixedChar_Male_Mesh_RiggedAllMesh:Spine2_grp
+    400608: FixedChar_Male_Mesh_RiggedAllMesh:Spine2_Nulll
+    400610: FixedChar_Male_Mesh_RiggedAllMesh:Tie
+    400612: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat
+    400614: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat 1
+    400616: FixedChar_Male_Mesh_RiggedAllMesh:Tie_Skinny
+    400618: FixedChar_Male_Mesh_RiggedAllMesh:Vest
+    400620: FixedChar_Male_Mesh_RiggedAllMesh:Vest 1
+    400622: FixedChar_Male_Mesh_RiggedAllMesh:Waist_CON
+    400624: FixedChar_Male_Mesh_RiggedAllMesh:Waist_grp
+    400626: FixedChar_Male_Mesh_RiggedAllMesh:World_CON
+    400628: FixedChar_Male_Mesh_RiggedAllMesh:World_grp
+    400630: left
+    400632: //RootNode
+    400634: pPlane1
+    2300000: pPlane1
+    3300000: pPlane1
+    4300000: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows
+    4300002: FixedChar_Male_Mesh_RiggedAllMesh:Tie
+    4300004: FixedChar_Male_Mesh_RiggedAllMesh:Pants
+    4300006: FixedChar_Male_Mesh_RiggedAllMesh:Shoes
+    4300008: FixedChar_Male_Mesh_RiggedAllMesh:Belt
+    4300010: FixedChar_Male_Mesh_RiggedAllMesh:Shirt
+    4300012: FixedChar_Male_Mesh_RiggedAllMesh:Jacket
+    4300014: FixedChar_Male_Mesh_RiggedAllMesh:Hair
+    4300016: FixedChar_Male_Mesh_RiggedAllMesh:Eyes
+    4300018: FixedChar_Male_Mesh_RiggedAllMesh:Group1
+    4300020: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows
+    4300022: FixedChar_Male_Mesh_RiggedAllMesh:Pants
+    4300024: FixedChar_Male_Mesh_RiggedAllMesh:Shoes
+    4300026: FixedChar_Male_Mesh_RiggedAllMesh:Belt
+    4300028: FixedChar_Male_Mesh_RiggedAllMesh:Jacket
+    4300030: FixedChar_Male_Mesh_RiggedAllMesh:Eyes
+    4300032: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat
+    4300034: FixedChar_Male_Mesh_RiggedAllMesh:Hair5_2
+    4300036: FixedChar_Male_Mesh_RiggedAllMesh:Head
+    4300038: FixedChar_Male_Mesh_RiggedAllMesh:Shirt002
+    4300040: FixedChar_Male_Mesh_RiggedAllMesh:Eyes
+    4300042: FixedChar_Male_Mesh_RiggedAllMesh:Jacket
+    4300044: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2
+    4300046: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2
+    4300048: FixedChar_Male_Mesh_RiggedAllMesh:Vest
+    4300050: FixedChar_Male_Mesh_RiggedAllMesh:Vest
+    4300052: FixedChar_Male_Mesh_RiggedAllMesh:Pants
+    4300054: FixedChar_Male_Mesh_RiggedAllMesh:Pants2
+    4300056: FixedChar_Male_Mesh_RiggedAllMesh:Shirt1
+    4300058: FixedChar_Male_Mesh_RiggedAllMesh:Skin2_mesh
+    4300060: FixedChar_Male_Mesh_RiggedAllMesh:Skin3_mesh
+    4300062: FixedChar_Male_Mesh_RiggedAllMesh:Skin4_mesh
+    4300064: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat
+    4300066: FixedChar_Male_Mesh_RiggedAllMesh:Tie_Skinny
+    4300068: pPlane1
+    7400000: Char_Male_Run2
+    9500000: //RootNode
+    13700000: FixedChar_Male_Mesh_RiggedAllMesh:Belt
+    13700002: FixedChar_Male_Mesh_RiggedAllMesh:Belt 1
+    13700004: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows
+    13700006: FixedChar_Male_Mesh_RiggedAllMesh:eyebrows 1
+    13700008: FixedChar_Male_Mesh_RiggedAllMesh:Eyes
+    13700010: FixedChar_Male_Mesh_RiggedAllMesh:Eyes 1
+    13700012: FixedChar_Male_Mesh_RiggedAllMesh:Eyes 2
+    13700014: FixedChar_Male_Mesh_RiggedAllMesh:Group1
+    13700016: FixedChar_Male_Mesh_RiggedAllMesh:Hair
+    13700018: FixedChar_Male_Mesh_RiggedAllMesh:Hair5_2
+    13700020: FixedChar_Male_Mesh_RiggedAllMesh:Head
+    13700022: FixedChar_Male_Mesh_RiggedAllMesh:Jacket
+    13700024: FixedChar_Male_Mesh_RiggedAllMesh:Jacket 1
+    13700026: FixedChar_Male_Mesh_RiggedAllMesh:Jacket 2
+    13700028: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2
+    13700030: FixedChar_Male_Mesh_RiggedAllMesh:Jacket2 1
+    13700032: FixedChar_Male_Mesh_RiggedAllMesh:Pants
+    13700034: FixedChar_Male_Mesh_RiggedAllMesh:Pants 1
+    13700036: FixedChar_Male_Mesh_RiggedAllMesh:Pants 2
+    13700038: FixedChar_Male_Mesh_RiggedAllMesh:Pants2
+    13700040: FixedChar_Male_Mesh_RiggedAllMesh:Shirt
+    13700042: FixedChar_Male_Mesh_RiggedAllMesh:Shirt002
+    13700044: FixedChar_Male_Mesh_RiggedAllMesh:Shirt1
+    13700046: FixedChar_Male_Mesh_RiggedAllMesh:Shoes
+    13700048: FixedChar_Male_Mesh_RiggedAllMesh:Shoes 1
+    13700050: FixedChar_Male_Mesh_RiggedAllMesh:Skin2_mesh
+    13700052: FixedChar_Male_Mesh_RiggedAllMesh:Skin3_mesh
+    13700054: FixedChar_Male_Mesh_RiggedAllMesh:Skin4_mesh
+    13700056: FixedChar_Male_Mesh_RiggedAllMesh:Tie
+    13700058: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat
+    13700060: FixedChar_Male_Mesh_RiggedAllMesh:Tie_fat 1
+    13700062: FixedChar_Male_Mesh_RiggedAllMesh:Tie_Skinny
+    13700064: FixedChar_Male_Mesh_RiggedAllMesh:Vest
+    13700066: FixedChar_Male_Mesh_RiggedAllMesh:Vest 1
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: Char_Male_Run2
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 14
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Waist
+      humanName: Hips
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .200534239, y: 0, z: .10026712}
+        preQ: {x: -.529460847, y: -.43748343, z: .625374436, w: .3703866}
+        postQ: {x: -.541669786, y: -.352062255, z: .679675996, w: .347399682}
+        length: .25066787
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: -60.0000038, y: -60.0000038, z: -90}
+        max: {x: 60.0000038, y: 60.0000038, z: 50}
+        value: {x: .51511991, y: 0, z: .257559955}
+        preQ: {x: -.618376493, y: .344320774, z: -.606263399, w: .362626821}
+        postQ: {x: -8.94069814e-08, y: -.707106769, z: -.707106769, w: 5.96046519e-08}
+        length: .643900156
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: -60.0000038, y: -60.0000038, z: -90}
+        max: {x: 60.0000038, y: 60.0000038, z: 50}
+        value: {x: .515118062, y: 0, z: .257559031}
+        preQ: {x: .61607784, y: -.345690131, z: .608599901, w: -.361320376}
+        postQ: {x: .707106709, y: 8.94069672e-08, z: -1.78813934e-07, w: -.707106769}
+        length: .643897831
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .512494564, y: 0, z: .256247282}
+        preQ: {x: -.479926288, y: -.521103442, z: -.517478645, w: .479935169}
+        postQ: {x: -1.78813949e-07, y: .99980849, z: .0195673555, w: 1.49011612e-07}
+        length: .640618503
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .512494743, y: 0, z: .256247371}
+        preQ: {x: -.521102667, y: .479927629, z: .479936123, w: .517477334}
+        postQ: {x: .99980849, y: -8.94069672e-08, z: 5.66244125e-07, w: -.0195672661}
+        length: .640618742
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: -30.0000019, z: -50}
+        max: {x: 0, y: 30.0000019, z: 50}
+        value: {x: .22194241, y: 0, z: .110971205}
+        preQ: {x: -.047967203, y: .998655438, z: .019635113, w: -.000943184015}
+        postQ: {x: .00113695115, y: .000594377518, z: -.886205494, w: .463290423}
+        length: .277428091
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: -30.0000019, z: -50}
+        max: {x: 0, y: 30.0000019, z: 50}
+        value: {x: .221941799, y: 0, z: .110970899}
+        preQ: {x: .998655379, y: .0479681231, z: -.000943169056, w: -.0196350962}
+        postQ: {x: -.000594496669, y: .00113704789, z: -.463290781, w: -.886205316}
+        length: .277427316
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine1
+      humanName: Spine
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .265792042, y: 0, z: .132896021}
+        preQ: {x: -.528177261, y: -.423273772, z: .560088038, w: .477670968}
+        postQ: {x: 2.98023224e-08, y: 5.96046448e-08, z: .99999994, w: -1.78813934e-07}
+        length: .332240194
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine2
+      humanName: Chest
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .399971932, y: 0, z: .199985966}
+        preQ: {x: .00848777592, y: -9.03606415e-05, z: -.997197568, w: .074329108}
+        postQ: {x: .00844761636, y: -.000829756202, z: -.999881208, w: -.0128652304}
+        length: .499965042
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Neck
+      humanName: Neck
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .126055598, y: 0, z: .0630277991}
+        preQ: {x: .00474783732, y: .00105361629, z: -.976244211, w: -.216618687}
+        postQ: {x: 1.41113987e-05, y: .99999994, z: 1.04308121e-07, w: 2.38418565e-07}
+        length: .157569572
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Head
+      humanName: Head
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .126055598, y: 0, z: .0630277991}
+        preQ: {x: -.216635033, y: -.976252615, z: -2.98023224e-08, w: 8.94069743e-08}
+        postQ: {x: -.5, y: -.499999911, z: .49999997, w: .50000006}
+        length: .157569572
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60.0000038}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: .33778128, y: 0, z: .16889064}
+        preQ: {x: .755474925, y: .387605399, z: .157522559, w: -.504188716}
+        postQ: {x: -2.10478947e-06, y: .71021378, z: .703986049, w: 2.19289836e-06}
+        length: .422226727
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60.0000038}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: .337783545, y: 0, z: .168891773}
+        preQ: {x: -.507934928, y: .150166437, z: .382683486, w: .75697124}
+        postQ: {x: .703986168, y: 2.44787861e-06, z: -2.09361315e-06, w: .710213661}
+        length: .422229558
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .372425646, y: 0, z: .186212823}
+        preQ: {x: .671874642, y: .739849508, z: .0158562604, w: .0309132356}
+        postQ: {x: -5.40167129e-08, y: .999983191, z: -.00579017401, w: -2.23238021e-06}
+        length: .465532184
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .372423977, y: 0, z: .186211988}
+        preQ: {x: -.0158512834, y: .0309088547, z: .671874285, w: -.739850104}
+        postQ: {x: .0057913363, y: -5.05521894e-06, z: 1.28801912e-06, w: -.999983191}
+        length: .465530127
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: .186212823, y: 0, z: .0931064114}
+        preQ: {x: 1.5429689e-06, y: .710968077, z: .703224242, w: -1.60980267e-06}
+        postQ: {x: -.0150281945, y: .71080941, z: .703067064, w: .0148551092}
+        length: .232766092
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: .186211988, y: 0, z: .0931059942}
+        preQ: {x: .703223348, y: 2.66061465e-06, z: -4.48618084e-06, w: .710968912}
+        postQ: {x: .703065991, y: -.0148714734, z: .0150430687, w: .710809827}
+        length: .232765064
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: .162243664, y: 0, z: .0811218321}
+        preQ: {x: -.000383615552, y: -.00122423493, z: .954237759, w: .299046129}
+        postQ: {x: -2.98023259e-08, y: -3.16649711e-08, z: .999526501, w: .0307686888}
+        length: .202804655
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: .162243739, y: 0, z: .0811218694}
+        preQ: {x: .00122435391, y: -.000383675128, z: -.299045742, w: .954237878}
+        postQ: {x: -8.33533704e-07, y: -0, z: -.0307689589, w: .999526381}
+        length: .202804744
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: .0560105965, y: 0, z: .0280052982}
+        preQ: {x: .470297068, y: .876051188, z: -.0493169315, w: -.0944599733}
+        postQ: {x: -2.83122034e-07, y: .99621886, z: -.0868785903, w: -1.28000966e-05}
+        length: .0700132623
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: .0420079455, y: 0, z: .0210039727}
+        preQ: {x: -.195374787, y: .976858139, z: -.0853592679, w: -.0170508474}
+        postQ: {x: -.00754760159, y: .992451549, z: -.0865499899, w: -.0865568146}
+        length: .0525099486
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .0560520254, y: 0, z: .0280260127}
+        preQ: {x: .18500194, y: .702218175, z: .676835597, w: -.12065357}
+        postQ: {x: 3.56929399e-06, y: .0214942843, z: .999768913, w: -2.42179794e-06}
+        length: .0700650513
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0470777191, y: 0, z: .0235388596}
+        preQ: {x: .0059399982, y: .0211196821, z: .936265409, w: -.350607604}
+        postQ: {x: -4.05829587e-06, y: .0216061845, z: .999766529, w: 1.53611545e-05}
+        length: .0588471666
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0353082865, y: 0, z: .0176541433}
+        preQ: {x: .00676703919, y: .020869663, z: .94940418, w: -.313289523}
+        postQ: {x: .00153709867, y: .0215514395, z: .997218847, w: .0713282898}
+        length: .0441353768
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .0665281191, y: 0, z: .0332640596}
+        preQ: {x: .154717073, y: .696890831, z: .679540038, w: -.169207156}
+        postQ: {x: -3.19094397e-07, y: .033631105, z: .999434292, w: -8.09550693e-06}
+        length: .0831601843
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0470771454, y: 0, z: .0235385727}
+        preQ: {x: .00932701863, y: .0193132609, z: .936160386, w: -.350918323}
+        postQ: {x: 8.93123797e-08, y: .0322387815, z: .999480128, w: -6.1986168e-07}
+        length: .0588464476
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0353078544, y: 0, z: .0176539272}
+        preQ: {x: .010095953, y: .0189226661, z: .949511945, w: -.312996835}
+        postQ: {x: .00166135188, y: .0321959443, z: .998152316, w: .0515025333}
+        length: .0441348366
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .0577544607, y: 0, z: .0288772304}
+        preQ: {x: .0852580741, y: .691450298, z: .681498408, w: -.22402519}
+        postQ: {x: -5.74742444e-07, y: .033955045, z: .999423325, w: 2.8419272e-06}
+        length: .0721930936
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0426966734, y: 0, z: .0213483367}
+        preQ: {x: .0103830453, y: .0118945651, z: .936598003, w: -.350049734}
+        postQ: {x: 2.07163998e-06, y: .0321912058, z: .999481678, w: 8.20216087e-07}
+        length: .0533708595
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0320225023, y: 0, z: .0160112511}
+        preQ: {x: .0100727426, y: .0122827776, z: .949725628, w: -.312679917}
+        postQ: {x: .00116937503, y: .0321699679, z: .998824298, w: .0362439975}
+        length: .0400281437
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .045153752, y: 0, z: .022576876}
+        preQ: {x: .0430979915, y: .689435482, z: .683956027, w: -.234574586}
+        postQ: {x: 6.39818609e-07, y: .0332676955, z: .999446452, w: -2.9478324e-06}
+        length: .0564422086
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_L
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0336332843, y: 0, z: .0168166421}
+        preQ: {x: .010057535, y: .0120204454, z: .937047482, w: -.348849982}
+        postQ: {x: -1.43714715e-06, y: .0316723064, z: .999498248, w: -1.41785931e-05}
+        length: .0420416221
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_L
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0252249651, y: 0, z: .0126124825}
+        preQ: {x: .009908434, y: .0123887844, z: .949708343, w: -.312733889}
+        postQ: {x: -.000167468548, y: .0315486677, z: .999353349, w: -.017245343}
+        length: .0315312147
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: .0560113303, y: 0, z: .0280056652}
+        preQ: {x: .0493058115, y: -.0944453776, z: .47030136, w: -.876051128}
+        postQ: {x: -.0868649483, y: -1.05798244e-05, z: -2.20835209e-05, w: .996220052}
+        length: .0700141788
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: .0420084931, y: 0, z: .0210042465}
+        preQ: {x: .0853524134, y: -.0170251783, z: -.195353135, w: -.976863503}
+        postQ: {x: -.0865384266, y: .0865336135, z: .00752413226, w: .992454767}
+        length: .0525106341
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .0560547821, y: 0, z: .0280273911}
+        preQ: {x: -.676838756, y: -.120648734, z: .184991091, w: -.70221895}
+        postQ: {x: -.999768853, y: 8.81035612e-06, z: -1.96311157e-06, w: -.0214970168}
+        length: .0700684935
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0470749363, y: 0, z: .0235374682}
+        preQ: {x: .936270833, y: .350592762, z: -.00594191579, w: .0211224426}
+        postQ: {x: -.999766469, y: -1.72071395e-05, z: 3.09513439e-06, w: -.0216085017}
+        length: .0588436872
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0353061967, y: 0, z: .0176530983}
+        preQ: {x: .949393988, y: .313320458, z: -.00677454704, w: .0208701193}
+        postQ: {x: -.997221053, y: .07129585, z: .0015444617, w: -.0215532519}
+        length: .0441327654
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .066530481, y: 0, z: .0332652405}
+        preQ: {x: -.679540992, y: -.169199929, z: .154711381, w: -.696892917}
+        postQ: {x: -.999434173, y: 1.09770644e-06, z: -2.81608663e-07, w: -.0336342454}
+        length: .0831631348
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0470784791, y: 0, z: .0235392395}
+        preQ: {x: .936164141, y: .350908369, z: -.00932749826, w: .0193158574}
+        postQ: {x: -.999480009, y: -2.20376514e-05, z: -9.64806532e-07, w: -.0322419144}
+        length: .0588481165
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0353088565, y: 0, z: .0176544283}
+        preQ: {x: .94950521, y: .31301713, z: -.0100961868, w: .0189254377}
+        postQ: {x: -.998153329, y: .051481232, z: .001660496, w: -.0321991779}
+        length: .0441360883
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .0577557832, y: 0, z: .0288778916}
+        preQ: {x: -.681485236, y: -.224066287, z: .0852977559, w: -.691445053}
+        postQ: {x: -.999423325, y: -5.58887041e-05, z: -1.63645007e-06, w: -.0339546166}
+        length: .0721947476
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0426943675, y: 0, z: .0213471837}
+        preQ: {x: .93657428, y: .350113273, z: -.0103816995, w: .0118906321}
+        postQ: {x: -.999481678, y: 8.02555733e-05, z: -8.78237188e-07, w: -.0321902297}
+        length: .0533679761
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0320207737, y: 0, z: .0160103869}
+        preQ: {x: .949750543, y: .312604427, z: -.0100681754, w: .0122793335}
+        postQ: {x: -.998821437, y: .0363234542, z: .00116637431, w: -.0321690775}
+        length: .040025983
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .0451553129, y: 0, z: .0225776564}
+        preQ: {x: -.683945477, y: -.234602407, z: .0431190766, w: -.689435124}
+        postQ: {x: -.999446392, y: -3.85857784e-05, z: -4.42401506e-06, w: -.0332685634}
+        length: .0564441569
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_R
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0336365178, y: 0, z: .0168182589}
+        preQ: {x: .937032461, y: .348890156, z: -.0100542195, w: .0120178843}
+        postQ: {x: -.999498248, y: .000112334776, z: -4.20608558e-06, w: -.0316730365}
+        length: .042045664
+        modified: 1
+    - boneName: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_R
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0252273902, y: 0, z: .0126136951}
+        preQ: {x: .94974792, y: .312613547, z: -.00990378577, w: .0123862671}
+        postQ: {x: -.999355495, y: -.0171187837, z: -.000170201747, w: -.031549409}
+        length: .0315342471
+        modified: 1
+    skeleton:
+    - name: Male_RunCycle
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_chn
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:Skeleton
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:Bind_Joints
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Waist
+      position: {x: .0409366935, y: 1.6548326, z: -.0593166016}
+      rotation: {x: .093868956, y: -.0426978618, z: .0160803888, w: .994538546}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Hip
+      position: {x: -.0483099334, y: -.112580255, z: -.0609445758}
+      rotation: {x: -.0944514871, y: .0413932949, z: -.0298572369, w: .994220316}
+      scale: {x: 1.00000012, y: .999999583, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_L
+      position: {x: -.158582374, y: 9.68887335e-08, z: 3.2132494e-08}
+      rotation: {x: .695884764, y: .718153358, z: -1.79367827e-08, w: -1.96503702e-08}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_L
+      position: {x: -.643900037, y: -1.97720382e-08, z: 1.83614972e-07}
+      rotation: {x: -.692207694, y: -.0345610045, z: .0332221314, w: -.720104337}
+      scale: {x: .99999994, y: 1.00000012, z: .999999762}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_L
+      position: {x: -.640618563, y: -2.25692915e-07, z: -4.30508855e-08}
+      rotation: {x: .862803936, y: .50515455, z: .00942482054, w: -.0172986444}
+      scale: {x: .99999994, y: 1.00000012, z: .999999702}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_L
+      position: {x: -.405609429, y: 1.48973186e-07, z: -7.70922171e-09}
+      rotation: {x: .00121183717, y: -.000421065837, z: -.269543886, w: .962987185}
+      scale: {x: .999999762, y: .999999762, z: .999999762}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Thigh_R
+      position: {x: .158339232, y: .00878094882, z: 3.27271408e-07}
+      rotation: {x: -6.8333884e-07, y: -6.97266728e-07, z: -.698597908, w: .715514362}
+      scale: {x: 1.00000024, y: .999999642, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Knee_R
+      position: {x: .643897653, y: 3.15292056e-07, z: -3.74254761e-08}
+      rotation: {x: -.692207694, y: -.0345624462, z: .0332235098, w: -.720104218}
+      scale: {x: 1.00000036, y: .999999762, z: .99999994}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Ankle_R
+      position: {x: .640618265, y: -1.19029863e-07, z: 6.25018743e-07}
+      rotation: {x: -.86280328, y: -.505155683, z: -.00942492485, w: .0172985028}
+      scale: {x: 1.00000036, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Ball_R
+      position: {x: .405609012, y: -2.64498851e-07, z: -1.34381878e-07}
+      rotation: {x: .00121276302, y: -.000421391334, z: -.26954326, w: .962987363}
+      scale: {x: .999999642, y: .999998987, z: .999999523}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine1
+      position: {x: -.0430683866, y: .213980481, z: -.123255223}
+      rotation: {x: .423273861, y: -.528177202, z: -.477670968, w: .56008786}
+      scale: {x: 1.00000167, y: 1.00000167, z: .999999166}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Spine2
+      position: {x: -.332239777, y: -1.08917263e-07, z: 1.52087285e-08}
+      rotation: {x: -2.11747579e-08, y: -1.21491572e-08, z: .0871557817, w: .996194661}
+      scale: {x: 1.00000048, y: .999997973, z: .999999046}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Chest
+      position: {x: -.330920935, y: 5.30123216e-08, z: 3.34434347e-08}
+      rotation: {x: 5.08317832e-08, y: -1.72179746e-08, z: -.0871557519, w: .996194661}
+      scale: {x: 1.00000024, y: 1.00000143, z: .999999821}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_L
+      position: {x: .0287577789, y: -.0100022387, z: .322612286}
+      rotation: {x: .00572379446, y: .726806343, z: -.00064990652, w: .686818182}
+      scale: {x: 1.0000006, y: .999999642, z: .999999344}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_L
+      position: {x: -.422225744, y: 4.38784582e-08, z: -2.49804884e-06}
+      rotation: {x: .00226366986, y: -.0379180349, z: -.0388022065, w: .998524606}
+      scale: {x: .999999404, y: .999999225, z: 1.00000024}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_L
+      position: {x: -.46553129, y: -4.25783711e-08, z: 2.08953747e-06}
+      rotation: {x: 9.96094585e-08, y: .0211319309, z: -.00023806114, w: .999776602}
+      scale: {x: 1.00000048, y: 1.00000024, z: .999999404}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_L
+      position: {x: -.142663822, y: -.040799696, z: -.0331678987}
+      rotation: {x: -.684240758, y: -.0951533094, z: -.00218364829, w: .723018348}
+      scale: {x: 1.00000072, y: .999999344, z: .999999762}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_L
+      position: {x: -.0721928328, y: 3.3629712e-07, z: -9.82841257e-08}
+      rotation: {x: .000486847479, y: .00100732199, z: .0395880118, w: .999215424}
+      scale: {x: .999999464, y: 1.00000072, z: 1.00000012}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_L
+      position: {x: -.0533707328, y: 3.67447406e-08, z: 2.22527305e-07}
+      rotation: {x: 6.60495969e-09, y: 1.12855689e-08, z: .036261972, w: .999342263}
+      scale: {x: 1.00000012, y: .999999523, z: 1.00000012}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_L
+      position: {x: -.150754273, y: .0490644202, z: -.0297206305}
+      rotation: {x: -.692603707, y: -.0752631202, z: -.0255405735, w: .716926217}
+      scale: {x: 1.00000048, y: .999999106, z: 1.00000012}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_L
+      position: {x: -.0700648129, y: -2.57727976e-07, z: 5.06027163e-07}
+      rotation: {x: 6.67315661e-08, y: 4.2025531e-06, z: .0395651422, w: .999216974}
+      scale: {x: .999999702, y: 1.00000048, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_L
+      position: {x: -.0588469617, y: 1.84960038e-06, z: -5.15726128e-07}
+      rotation: {x: -7.46787354e-10, y: 1.46039705e-08, z: .071329616, w: .997452736}
+      scale: {x: 1.00000024, y: 1.00000036, z: 1.00000048}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_L
+      position: {x: -.140929073, y: -.0819035992, z: -.0148190996}
+      rotation: {x: -.683290362, y: -.111040473, z: -.0184247866, w: .721418619}
+      scale: {x: 1.00000072, y: .999999702, z: .99999994}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_L
+      position: {x: -.0564420298, y: -3.81953583e-07, z: 9.88528583e-08}
+      rotation: {x: .00050418661, y: .000829675177, z: .0382537767, w: .999267519}
+      scale: {x: .999998868, y: 1.00000072, z: .999999881}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_L
+      position: {x: -.0420415252, y: -1.08608822e-06, z: -9.94823068e-08}
+      rotation: {x: -.000118968695, y: -.00037980848, z: -.0172277819, w: .999851465}
+      scale: {x: 1.00000048, y: .999999642, z: .999999464}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_L
+      position: {x: -.147617176, y: .00373971532, z: -.0309689213}
+      rotation: {x: -.685000539, y: -.0790549517, z: -.00300097326, w: .724234402}
+      scale: {x: 1.00000012, y: .999999106, z: 1.00000048}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_L
+      position: {x: -.0831599683, y: -1.29327861e-06, z: -3.14059156e-09}
+      rotation: {x: 8.68817551e-09, y: 2.54502641e-10, z: .0402043462, w: .999191403}
+      scale: {x: .999999821, y: 1.00000119, z: .999999404}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_L
+      position: {x: -.0588463061, y: 1.1359468e-08, z: 1.09058895e-08}
+      rotation: {x: 1.22093768e-09, y: -1.51142254e-09, z: .0515299402, w: .998671412}
+      scale: {x: .99999994, y: .999999583, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_L
+      position: {x: -.0697223544, y: .0861880854, z: .0393457003}
+      rotation: {x: .0818153843, y: -.0484396294, z: -.356538087, w: .929430127}
+      scale: {x: .999999404, y: 1.00000048, z: 1.00000048}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_L
+      position: {x: -.0700131431, y: 8.49281889e-08, z: 1.79213032e-06}
+      rotation: {x: -1.27134797e-07, y: -.086872533, z: 5.47073924e-08, w: .996219397}
+      scale: {x: 1.0000006, y: .999999642, z: .999999583}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Arm_R
+      position: {x: .0350249223, y: -.0100021726, z: -.321991622}
+      rotation: {x: -.733448148, y: .00571640627, z: .679720998, w: .000705921091}
+      scale: {x: 1.0000006, y: 1, z: .999999464}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Elbow_R
+      position: {x: .422228485, y: 1.92729857e-07, z: -2.76458763e-06}
+      rotation: {x: .00226478279, y: -.0379151851, z: -.0388002582, w: .998524785}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1.00000012}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Wrist_R
+      position: {x: .465528816, y: -1.2363281e-06, z: -4.71012072e-06}
+      rotation: {x: -3.33324213e-09, y: .02115684, z: -.00023850541, w: .999776065}
+      scale: {x: 1.00000036, y: .99999994, z: .999999702}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore_R
+      position: {x: .142667741, y: .0408012457, z: .0331786759}
+      rotation: {x: .684240699, y: .0951533988, z: .00218367577, w: -.723018408}
+      scale: {x: 1.00000036, y: .999999642, z: .999999285}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore1_R
+      position: {x: .0721945092, y: 8.09401809e-06, z: -4.55562343e-08}
+      rotation: {x: .000487015815, y: .00101252622, z: .03973528, w: .999209583}
+      scale: {x: .999999225, y: .999999821, z: .999999583}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Fore2_R
+      position: {x: .0533678606, y: -8.62016714e-06, z: 3.68255172e-07}
+      rotation: {x: -5.21921217e-09, y: 2.94749025e-08, z: .0362620428, w: .999342263}
+      scale: {x: 1, y: 1.00000036, z: 1.00000024}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Index_R
+      position: {x: .150755957, y: -.0490634665, z: .0297259353}
+      rotation: {x: .692603588, y: .075263083, z: .0255405921, w: -.716926277}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1.0000006}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Index1_R
+      position: {x: .0700682327, y: -1.24364033e-06, z: 3.00684661e-07}
+      rotation: {x: -4.82368847e-08, y: -2.77262848e-06, z: .0395169184, w: .999218881}
+      scale: {x: .999999344, y: 1.00000012, z: .99999994}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Index2_R
+      position: {x: .0588435605, y: 2.02762021e-06, z: -4.09916339e-07}
+      rotation: {x: 1.18038894e-08, y: -4.70355488e-08, z: .0713296756, w: .997452736}
+      scale: {x: 1, y: 1.00000012, z: 1.00000036}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Little_R
+      position: {x: .140927956, y: .0819044784, z: .0148275997}
+      rotation: {x: .683290303, y: .111040555, z: .0184248444, w: -.721418679}
+      scale: {x: 1.00000024, y: .999999702, z: 1.00000012}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Little1_R
+      position: {x: .0564439818, y: 4.49337495e-06, z: 3.59529196e-07}
+      rotation: {x: .000504624739, y: .00083329936, z: .0384231433, w: .999261022}
+      scale: {x: .999999762, y: 1.00000095, z: 1.00000036}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Little2_R
+      position: {x: .0420455262, y: -9.53457129e-06, z: 6.6177455e-07}
+      rotation: {x: -.000118952841, y: -.000379833509, z: -.0172277205, w: .999851465}
+      scale: {x: .999999642, y: 1.0000006, z: 1.00000036}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle_R
+      position: {x: .147615671, y: -.00373934722, z: .0309749991}
+      rotation: {x: .68500042, y: .0790549517, z: .00300096232, w: -.724234462}
+      scale: {x: 1, y: .999999642, z: .999999225}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle1_R
+      position: {x: .0831627697, y: -1.72487461e-07, z: 5.69895313e-08}
+      rotation: {x: -2.40543159e-08, y: -2.84546616e-07, z: .0401723832, w: .999192715}
+      scale: {x: 1, y: 1.00000048, z: 1}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Middle2_R
+      position: {x: .058847867, y: 2.4970177e-06, z: 3.81150009e-08}
+      rotation: {x: 5.3617029e-08, y: -3.42947644e-08, z: .0515300333, w: .998671412}
+      scale: {x: .999999583, y: 1.00000083, z: 1.0000006}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb_R
+      position: {x: .0697206184, y: -.0861876681, z: -.0393409692}
+      rotation: {x: .0818187669, y: -.04842842, z: -.356519639, w: .929437459}
+      scale: {x: .999998569, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Thumb1_R
+      position: {x: .0700140297, y: -2.95294126e-06, z: 1.79235064e-06}
+      rotation: {x: 6.37977919e-08, y: -.0868725404, z: 6.27034638e-08, w: .996219397}
+      scale: {x: 1.00000036, y: 1.00000036, z: .999999762}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Neck
+      position: {x: -.16847384, y: -.016652463, z: -.00845681224}
+      rotation: {x: -.976241112, y: .216632456, z: -.00474807015, w: .00105355214}
+      scale: {x: 1, y: .999998748, z: .999999762}
+      transformModified: 1
+    - name: FixedChar_Male_Mesh_RiggedAllMesh:man_Head
+      position: {x: -.157569289, y: 4.47472985e-06, z: -7.90584878e-08}
+      rotation: {x: .379808784, y: -.596443832, z: .379808784, w: .596443772}
+      scale: {x: 1.00000012, y: .999999523, z: 1.00000095}
+      transformModified: 1
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 3
+  userData: 

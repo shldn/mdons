@@ -1,0 +1,14 @@
+Library/*
+Temp/*
+deploy/virbela_Data/*
+obj/*
+*.csproj
+*.pidb
+*.unityproj
+*Thumbs.db
+*Thumbs.db.meta
+*.sln
+*.suo
+*.userprefs
+*.cache
+*.exe
