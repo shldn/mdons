@@ -197,7 +197,8 @@ public class MainCameraController : MonoBehaviour {
             Vector3 playerHead = GameManager.Inst.LocalPlayer.HeadPosition;
             Ray followPlayerRay = new Ray(playerHead, cameraTargetPos - playerHead);
             RaycastHit followPlayerHit = new RaycastHit();
-            float castRadius = GameManager.Inst.LevelLoaded == GameManager.Level.BIZSIM ? 0.3f : 0.7f;
+            float castRadius = (GameManager.Inst.LevelLoaded == GameManager.Level.BIZSIM) ? 0.3f : 0.7f;
+            castRadius = (GameManager.Inst.LevelLoaded == GameManager.Level.MOTION_TEST) ? 0.075f : castRadius;
             if (Physics.SphereCast(followPlayerRay, castRadius, out followPlayerHit, followPlayerDistance)){
                 if(!followPlayerHit.collider.gameObject.GetComponent<PlayerController>())
                     cameraTargetPos = followPlayerRay.origin + followPlayerRay.direction.normalized * (followPlayerHit.distance - 1f);
@@ -255,7 +256,7 @@ public class MainCameraController : MonoBehaviour {
         if (GameManager.Inst.LocalPlayer != null)
         {
             float distToCam = Vector3.Distance(GameManager.Inst.LocalPlayer.HeadPosition, mainCamera.transform.position);
-            float distHidePlayer = 1.5f;
+            float distHidePlayer = (GameManager.Inst.LevelLoaded == GameManager.Level.MOTION_TEST) ? 0.5f : 1.5f;
             if ((distToCam < distHidePlayer) && GameManager.Inst.LocalPlayer.Visible)
             {
                 GameManager.Inst.LocalPlayer.Visible = false;
