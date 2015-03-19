@@ -169,7 +169,8 @@ public class Player {
     public Color Color { get { return colors[ColorIdx]; } }
     public Color OpaqueColor { get { Color c = colors[ColorIdx]; c.a = 1.0f; return c; } }
     public PrivateVolume InPrivateVolume { get; set; }
-    public Vector3 HeadPosition { get { return gameObject.transform.position + (Vector3.up * 3f); } }
+    public Vector3 HeadPosition { get { return gameObject.transform.position + (Vector3.up * 3f * gameObject.transform.localScale.x); } }
+    public Vector3 HeadTopPosition { get { return gameObject.transform.position + (Vector3.up * 3.44f * gameObject.transform.localScale.x); } }
     public bool isBot = false;
     public bool Visible
     {
