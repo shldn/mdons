@@ -69,7 +69,7 @@ public class TunnelGameManager : MonoBehaviour {
     void StartExperiment(int idx)
     {
         bool[] playerVis = { true, false, false, true };
-        UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.PARTIAL, UserControl.NONE };
+        UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.NONE, UserControl.PARTIAL };
         StartExperiment(playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
     }
 
