@@ -45,6 +45,9 @@ public class TunnelGameManager : MonoBehaviour {
     {
         if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Equals))
             GameManager.Inst.LoadLevel(GameManager.Level.SCALE_GAME);
+
+        if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.E))
+            StartExperiment(expCount);
     }
 
     void OnDestroy()
@@ -67,7 +70,7 @@ public class TunnelGameManager : MonoBehaviour {
     {
         bool[] playerVis = { true, false, false, true };
         UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.PARTIAL, UserControl.NONE };
-        StartExperiment(playerVis[idx], userControl[idx]);
+        StartExperiment(playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
     }
 
     void StartExperiment(bool playerVis, UserControl uControl)
