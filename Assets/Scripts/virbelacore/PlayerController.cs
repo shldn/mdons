@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour {
 
     public float targetDistFromDest = 0.1f;
     NavMeshAgent navAgent = null;
+    public NavMeshAgent NavAgent { get { return navAgent; } }
     public GameObject goToIndicatorPrefab = null;
     GameObject goToIndicator = null;
 
@@ -217,12 +218,14 @@ public class PlayerController : MonoBehaviour {
 
             if(followedPlayer){
                 pathfindingDest.transform.position = followedPlayer.gameObject.transform.position;
+                // would be better to only do this if the followedPlayer position has changed.
+                navAgent.SetDestination(pathfindingDest.transform.position);
                 pathfindingActive = true;
             }
 
             if (pathfindingActive){
                 pathfindingDest.SetActive(true);
-                navAgent.SetDestination(pathfindingDest.transform.position);
+                //navAgent.SetDestination(pathfindingDest.transform.position);
             }
             else{
                 pathfindingDest.SetActive(false);
@@ -232,6 +235,7 @@ public class PlayerController : MonoBehaviour {
 
             if(navDestHeld){
                 pathfindingDest.transform.position = holdNavDest;
+                navAgent.SetDestination(pathfindingDest.transform.position);
                 pathfindingActive = true;
                 navDestHeld = false;
             }
@@ -545,6 +549,7 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetMouseButtonDown(0) && !GameGUI.Inst.IsMouseOverGuiLayerElement && (GameGUI.Inst.guiLayer == null || !GameGUI.Inst.guiLayer.ClickOffElementOpen) && !AnnouncementManager.Inst.IsAnnouncementDisplayed && MouseHelpers.GetCurrentGameObjectHit().GetComponent<CollabBrowserTexture>() == null) {
                 followedPlayer = null;
                 pathfindingDest.transform.position = goToIndicator.transform.position;
+                navAgent.SetDestination(pathfindingDest.transform.position);
                 pathfindingActive = true;
             }
         }
