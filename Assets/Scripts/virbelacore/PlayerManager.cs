@@ -687,7 +687,9 @@ public class PlayerManager : MonoBehaviour {
         {
             localPlayerGO.transform.position = transform.position;
             localPlayerGO.transform.rotation = transform.rotation;
-            localPlayerGO.GetComponent<PlayerController>().forwardAngle = transform.eulerAngles.y;
+            PlayerController playerController = localPlayerGO.GetComponent<PlayerController>();
+            playerController.forwardAngle = transform.eulerAngles.y;
+            playerController.SetNavDestination(transform.position, transform.eulerAngles.y);
             //if( snapCamera )
                 //LocalPlayerCameraMgr.keyControlCam.Cut(playerCameraMgr.keyControlCam.transform, Vector3.zero);                
         }
