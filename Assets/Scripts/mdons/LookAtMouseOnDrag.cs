@@ -3,6 +3,8 @@
 // Will face the object's forward vector toward the point the mouse intersects with the ground once the object is clicked.
 // Expects the ground to be on a layer called "ground"
 // Will only rotate the object around the y-axis.
+
+// For better results could use a virtual plane at 45 degree angle, centered at the object
 public class LookAtMouseOnDrag : MonoBehaviour {
 
     bool dragging = false;

@@ -6,15 +6,17 @@ public class SplineDecorator : MonoBehaviour {
 
 	public int frequency;
 
+    public float percentage = 1.0f;
+
 	public bool lookForward;
 
 	public Transform[] items;
 
 	private void Awake () {
-		if (frequency <= 0 || items == null || items.Length == 0) {
+		if (frequency <= 0 || items == null || items.Length == 0 || percentage <= 0.0f) {
 			return;
 		}
-		float stepSize = frequency * items.Length;
+        float stepSize = frequency * items.Length / percentage;
 		if (spline.Loop || stepSize == 1) {
 			stepSize = 1f / stepSize;
 		}
