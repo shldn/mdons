@@ -13,6 +13,8 @@ public class TunnelLight : MonoBehaviour {
     }
 
 	void Awake () {
+        if (GameManager.Inst.LevelLoaded != GameManager.Level.MOTION_TEST)
+            gameObject.SetActive(false);
         all.Add(this);
 	}
 	

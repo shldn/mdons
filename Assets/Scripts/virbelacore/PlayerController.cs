@@ -101,6 +101,7 @@ public class PlayerController : MonoBehaviour {
     public bool isMoving = false;
     [HideInInspector] public bool positionDirty = false;
     [HideInInspector] public bool animationDirty = false;
+    [HideInInspector] public bool scaleDirty = false;
 
     private Vector3 lastPos = Vector3.zero;
     private float lastAngle = 0f;

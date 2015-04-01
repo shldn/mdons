@@ -47,13 +47,13 @@ public class ScaleGameManager : MonoBehaviour
             if (Physics.Raycast(ray, out hit) && hit.distance < 1.0f)
                 scaleFactor = 1.0f;
 
-            GameManager.Inst.LocalPlayer.gameObject.transform.localScale *= scaleFactor;
+            GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
             UpdateGravity();
             UpdateFocalLength();
         }
         if (Input.GetKey(KeyCode.Minus))
         {
-            GameManager.Inst.LocalPlayer.gameObject.transform.localScale *= (1.0f - scaleSpeed);
+            GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
             UpdateGravity();
             UpdateFocalLength();
         }
@@ -63,7 +63,7 @@ public class ScaleGameManager : MonoBehaviour
 
     void UpdateGravity()
     {
-        Physics.gravity = GameManager.Inst.LocalPlayer.gameObject.transform.localScale.x * new Vector3(0, -19.62F, 0);
+        Physics.gravity = GameManager.Inst.LocalPlayer.Scale.x * new Vector3(0, -19.62F, 0);
     }
 
     void UpdateFocalLength()

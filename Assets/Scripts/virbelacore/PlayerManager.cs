@@ -188,6 +188,8 @@ public class PlayerManager : MonoBehaviour {
                 userVariables.Add(new SFSUserVariable("gt", (double)playerController.gazePanTilt.x));
                 userVariables.Add(new SFSUserVariable("gp", (double)playerController.gazePanTilt.y));
             }
+            if (playerController.scaleDirty)
+                userVariables.Add(new SFSUserVariable("scl", (double)localPlayerGO.transform.localScale.x));
 
             if( localAnimator != null )
 			{
@@ -199,6 +201,7 @@ public class PlayerManager : MonoBehaviour {
             CommunicationManager.SendMsg(new SetUserVariablesRequest(userVariables));
             playerController.positionDirty = false;
             playerController.animationDirty = false;
+            playerController.scaleDirty = false;
         }
 
 		if (playerModelIsDirty)
@@ -303,12 +306,15 @@ public class PlayerManager : MonoBehaviour {
             if (changedVars.Contains("x") || changedVars.Contains("y") || changedVars.Contains("z") || changedVars.Contains("rot"))
             {
                 float rotAngle = (float)user.GetVariable("rot").GetDoubleValue();
+                bool rotChanged = rotAngle != remotePlayer.gameObject.transform.rotation.eulerAngles.y;
                 Vector3 newPos = new Vector3((float)user.GetVariable("x").GetDoubleValue(), (float)user.GetVariable("y").GetDoubleValue(), (float)user.GetVariable("z").GetDoubleValue());
                 remotePlayer.UpdateTransform(newPos, rotAngle);
-                remotePlayer.playerController.shuffleTime = 0.25f;
+                if (rotChanged)
+                    remotePlayer.playerController.shuffleTime = 0.25f;
             }
 
-
+            if (changedVars.Contains("scl"))
+                remotePlayer.UpdateScale(user.GetVariable("scl"));
 
             if (changedVars.Contains("modelAnimation"))
                 remotePlayer.UpdateAnimState(user.GetVariable("modelAnimation"));
@@ -596,7 +602,7 @@ public class PlayerManager : MonoBehaviour {
         {
             remotePlayer = new Player(user, remotePlayerGO, modelIndex, ptype, parseId, displayName, teamID);
             players.Add(user.Id, remotePlayer);
-            if (parseId != "")
+            if (parseId != "" && GameGUI.Inst.guiLayer != null)
                 GameGUI.Inst.guiLayer.ExecuteJavascriptWithValue(remotePlayer.GetAddToGUIUserListJSCmd());
         }
         remotePlayer.UpdateTransform(pos, rot.eulerAngles.y);
@@ -677,7 +683,8 @@ public class PlayerManager : MonoBehaviour {
             remotePlayers.Remove(user);
             string cmd = "removeFromUserList({name:\"" + players[user.Id].Name + "\",userid:\"" + players[user.Id].ParseId + "\"});";
             players.Remove(user.Id);
-            GameGUI.Inst.guiLayer.ExecuteJavascriptWithValue(cmd);
+            if( GameGUI.Inst.guiLayer != null )
+                GameGUI.Inst.guiLayer.ExecuteJavascriptWithValue(cmd);
         }
     }
 

@@ -462,8 +462,10 @@ public class ReplayManager : MonoBehaviour {
                 transformMsgCount++;
                 if( transformMsgCount == 4 )
                 {
+                    bool rotChanged = newRotAngle != player.gameObject.transform.rotation.eulerAngles.y;
                     player.UpdateTransform(newPos, newRotAngle);
-                    player.playerController.shuffleTime = 0.25f;
+                    if (rotChanged)
+                        player.playerController.shuffleTime = 0.25f;
                 }
             }
             else

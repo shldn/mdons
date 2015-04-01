@@ -169,8 +169,9 @@ public class Player {
     public Color Color { get { return colors[ColorIdx]; } }
     public Color OpaqueColor { get { Color c = colors[ColorIdx]; c.a = 1.0f; return c; } }
     public PrivateVolume InPrivateVolume { get; set; }
-    public Vector3 HeadPosition { get { return gameObject.transform.position + (Vector3.up * 3f * gameObject.transform.localScale.x); } }
-    public Vector3 HeadTopPosition { get { return gameObject.transform.position + (Vector3.up * 3.44f * gameObject.transform.localScale.x); } }
+    public Vector3 HeadPosition { get { return gameObject.transform.position + (Vector3.up * 3f * Scale.x); } }
+    public Vector3 HeadTopPosition { get { return gameObject.transform.position + (Vector3.up * 3.44f * Scale.x); } }
+    public Vector3 Scale { get { return gameObject.transform.localScale; } set { gameObject.transform.localScale = value; playerController.scaleDirty = true; } }
     public bool isBot = false;
     public bool Visible
     {
@@ -389,6 +390,16 @@ public class Player {
         speedStopTimer = 2f;
     }
 
+    public void UpdateScale(UserVariable userVar)
+    {
+        UpdateScale((float)userVar.GetDoubleValue());
+    }
+
+    public void UpdateScale(float scale)
+    {
+        gameObject.transform.localScale = new Vector3(scale, scale, scale);
+    }
+
     public void UpdateSpeed(UserVariable userVar) {
         UpdateSpeed((float)userVar.GetDoubleValue());
     }
@@ -450,6 +461,8 @@ public class Player {
             UpdateGaze(userVar.Name, (float)userVar.GetDoubleValue());
         else if (userVar.Name == "sit")
             UpdateSit(userVar.GetBoolValue());
+        else if (userVar.Name == "scl")
+            UpdateScale((float)userVar.GetDoubleValue());
         else
             Debug.LogError("Unsupported userVar: " + userVar.Name);
     }
