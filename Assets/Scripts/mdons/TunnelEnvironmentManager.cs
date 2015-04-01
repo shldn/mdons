@@ -20,6 +20,7 @@ public class TunnelEnvironmentManager : MonoBehaviour {
 
     public void Reset()
     {
+        TunnelLight.EnableAll();
         tunnelDecorator.SetActive(true);
         endArrow.SetActive(false);
     }
