@@ -11,7 +11,7 @@ public class ReceiveLSL : MonoBehaviour {
 	private static liblsl.StreamInfo[] results ;
 	private static float[] sample;// = new float[8];
 	private static string t;
-	
+	private static bool INITIAL = false;
 	private static bool STOP_RECEIVING = false;
 	private static bool STOP_RETRIVING = false;
 	Thread ReceivingFromLSL = new Thread(new ThreadStart(receiving));
@@ -19,7 +19,7 @@ public class ReceiveLSL : MonoBehaviour {
 	
 	//for GUI
 	public int rotateSpeed;
-	public GUIText dispText;
+	//public GUIText dispText;
 	
 	//rotation the cube
 	private static float[] gyroXmean,gyroYmean;
@@ -33,15 +33,21 @@ public class ReceiveLSL : MonoBehaviour {
 
 	//drowsiness detection
 	private static FeatureExtraction fe;
+
 	void OnDestroy() {
-		STOP_RECEIVING = true;
-		STOP_RETRIVING = true;
-		inlet.close_stream ();
+		if (!INITIAL) {
+			INITIAL = true;
+		} else {
+			STOP_RECEIVING = true;
+			STOP_RETRIVING = true;
+		}
+		if(inlet != null)
+			inlet.close_stream ();
 		print ("Stream closed");
 	}
 	void OnMouseDown() {
-		STOP_RECEIVING = true;
-		STOP_RETRIVING = true;
+		//STOP_RECEIVING = true;
+		//STOP_RETRIVING = true;
 		print ("mouse down");
 	}
 	// Use this for initialization
@@ -57,7 +63,7 @@ public class ReceiveLSL : MonoBehaviour {
 		gyroX = gyroY = 0;
 		rotationX = rotationY = 0;
 		// create stream info and outlet
-		dispText.text = "initial";
+		//dispText.text = "initial";
 		ReceivingFromLSL.Start();
 		RetrivingFromBuffer.Start ();
 	}
@@ -68,7 +74,7 @@ public class ReceiveLSL : MonoBehaviour {
 	}
 	void FixedUpdate()
 	{
-		dispText.text = t;
+		//dispText.text = t;
 	}
 	float getGyroX(){
 		return gyroX;
