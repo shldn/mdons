@@ -5,8 +5,8 @@ public class cameraswap : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GameObject.Find("minimapcam1").GetComponent("Camera").active = false;
-        GameObject.Find("minimapcam2").GetComponent("Camera").active = true;
+		//GameObject.Find("minimapcam1").GetComponent("Camera").active = false;
+        //GameObject.Find("minimapcam2").GetComponent("Camera").active = true;
 	
 	}
 	
