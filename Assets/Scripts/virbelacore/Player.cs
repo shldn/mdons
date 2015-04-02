@@ -118,7 +118,7 @@ public class Player {
             if (nameTextMesh != null)
             {
                 nameTextMesh.color = OpaqueColor; // font color -- for show thru walls mode
-                nameTextMesh.renderer.material.color = OpaqueColor; // material color -- for 3D text
+                nameTextMesh.GetComponent<Renderer>().material.color = OpaqueColor; // material color -- for 3D text
             }
             Transform talkBubbleTrans = go.transform.Find("talk_bubble");
             if (talkBubbleTrans != null)
@@ -143,7 +143,7 @@ public class Player {
                 minimapIconGO = miniMapIcon.gameObject;
                 if (IsLocal)
                     minimapIconGO.transform.localScale *= 1.5f;
-                minimapIconGO.renderer.material.color = OpaqueColor;
+                minimapIconGO.GetComponent<Renderer>().material.color = OpaqueColor;
             }
 
             playerController = go.GetComponent<PlayerController>();
@@ -365,7 +365,7 @@ public class Player {
             Color c = colors[id % colors.Length];
             c.a = 1.0f;
             nameTextMesh.color = c;
-            nameTextMesh.renderer.material.color = c;
+            nameTextMesh.GetComponent<Renderer>().material.color = c;
         }
     }
 

@@ -107,9 +107,9 @@ public class OverlayBrowserManager : MonoBehaviour
 
     void Center(int width, int height)
     {
-        if (guiPanel.guiTexture == null)
+        if (guiPanel.GetComponent<GUITexture>() == null)
             return;
-        guiPanel.guiTexture.pixelInset = new Rect(-width / 2, -height / 2, width, height);
+        guiPanel.GetComponent<GUITexture>().pixelInset = new Rect(-width / 2, -height / 2, width, height);
     }
 
     void SetPosition(int x, int y)

@@ -28,7 +28,7 @@ public class HTMLPanelGUI : MonoBehaviour {
 	void Awake()
 	{
 		overlayGO = new GameObject("HtmlPanelGO");
-		overlayGO.AddComponent("GUITexture");
+		overlayGO.AddComponent<GUITexture>();
 		overlayGO.transform.localScale = Vector3.zero;
 		DontDestroyOnLoad(overlayGO);
 		x = (Screen.width-width) / 2;
@@ -127,16 +127,16 @@ public class HTMLPanelGUI : MonoBehaviour {
 
 	void Center(int w, int h)
 	{
-		if (overlayGO.guiTexture == null)
+		if (overlayGO.GetComponent<GUITexture>() == null)
 			return;
 		x = (Screen.width-w) / 2;
 		y = (Screen.height-h) / 2;
-		overlayGO.guiTexture.pixelInset = new Rect(x, y, w, h);
+		overlayGO.GetComponent<GUITexture>().pixelInset = new Rect(x, y, w, h);
 	}
 	
 	public void Place(int _x=-1, int _y=-1)
 	{
-		if (overlayGO.guiTexture == null)
+		if (overlayGO.GetComponent<GUITexture>() == null)
 			return;
 		if (_x<0 && _y<0)
 		{
@@ -145,7 +145,7 @@ public class HTMLPanelGUI : MonoBehaviour {
 		}
 		x = _x;
 		y = _y;
-		overlayGO.guiTexture.pixelInset = new Rect(x, y-height, width, height);
+		overlayGO.GetComponent<GUITexture>().pixelInset = new Rect(x, y-height, width, height);
 	}
 	
 	public void SetActive(bool active)

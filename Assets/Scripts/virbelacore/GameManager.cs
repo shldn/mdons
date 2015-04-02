@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour {
         string[] componentsToAdd = { "GameGUI", "TeleportGUI" };
         foreach (string componentName in componentsToAdd)
             if (this.gameObject.GetComponent(componentName) == null)
-                this.gameObject.AddComponent(componentName);
+                UnityEngineInternal.APIUpdaterRuntimeServices.AddComponent(this.gameObject, "Assets/Scripts/virbelacore/GameManager.cs (98,17)", componentName);
     }
 
     void OnLevelWasLoaded(int level)

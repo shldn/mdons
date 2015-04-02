@@ -209,11 +209,11 @@ public class AvatarOptionManager{
             childElemName = elementName.Substring(sepIdx + 1);
         }
         Transform subMeshTransform = avatarGO.transform.Find(parentElemName);
-        if (subMeshTransform != null && subMeshTransform.renderer == null)
+        if (subMeshTransform != null && subMeshTransform.GetComponent<Renderer>() == null)
             subMeshTransform = subMeshTransform.Find(childElemName); // look one layer down as well
-        if (subMeshTransform == null || subMeshTransform.renderer == null)
+        if (subMeshTransform == null || subMeshTransform.GetComponent<Renderer>() == null)
             return false;
-        subMeshTransform.renderer.material.color = newColor;
+        subMeshTransform.GetComponent<Renderer>().material.color = newColor;
         return true;
     }
 
@@ -241,7 +241,7 @@ public class AvatarOptionManager{
                 return;
             }
             GameObject newMeshGO = (GameObject)meshOptList.GetResource(newModelIdx);
-            subMeshTransform.renderer.enabled = newMeshGO != null;
+            subMeshTransform.GetComponent<Renderer>().enabled = newMeshGO != null;
             if (newMeshGO != null)
                 subMeshTransform.gameObject.GetComponent<MeshFilter>().mesh = ((GameObject)meshOptList.GetResource(newModelIdx)).GetComponent<MeshFilter>().mesh;
         }
@@ -250,9 +250,9 @@ public class AvatarOptionManager{
     private bool SetNewMainTexture(GameObject avatarGO, string elementName, Texture2D newTexture)
     {
         Transform subMeshTransform = avatarGO.transform.Find(elementName);
-        if (subMeshTransform == null || subMeshTransform.renderer == null)
+        if (subMeshTransform == null || subMeshTransform.GetComponent<Renderer>() == null)
             return false;
-        subMeshTransform.renderer.material.SetTexture("_MainTex", newTexture);
+        subMeshTransform.GetComponent<Renderer>().material.SetTexture("_MainTex", newTexture);
         return true;
     }
 

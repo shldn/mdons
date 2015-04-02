@@ -17,12 +17,12 @@ public class RemoteLogo : MonoBehaviour {
 	void Start () {
         Texture2D texture = null;
         if (texturesDownloaded.TryGetValue(GetLogoURL(), out texture))
-            renderer.material.mainTexture = texture;
+            GetComponent<Renderer>().material.mainTexture = texture;
         else if (texturesToApplyOnDownloadComplete.ContainsKey(GetLogoURL()))
-            texturesToApplyOnDownloadComplete[GetLogoURL()].Add(renderer.material);
+            texturesToApplyOnDownloadComplete[GetLogoURL()].Add(GetComponent<Renderer>().material);
         else
         {
-            List<Material> matList = new List<Material>() { renderer.material };
+            List<Material> matList = new List<Material>() { GetComponent<Renderer>().material };
             texturesToApplyOnDownloadComplete.Add(GetLogoURL(), matList);
 
             gameObject.AddComponent<DownloadHelper>().StartDownload(GetLogoURL(), HandleDownloadComplete);

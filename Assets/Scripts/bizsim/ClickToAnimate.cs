@@ -22,8 +22,8 @@ public class ClickToAnimate : MonoBehaviour {
             if (hitObject == gameObject)
             {
                 Animation anim = GetComponent<Animation>();
-                anim.animation[animationToPlay].speed = (!alternateDir || clickCount % 2 == 0) ? 1 : -1;
-                anim.animation[animationToPlay].time = (!alternateDir || clickCount % 2 == 0) ? 0 : anim.animation[animationToPlay].length;
+                anim.GetComponent<Animation>()[animationToPlay].speed = (!alternateDir || clickCount % 2 == 0) ? 1 : -1;
+                anim.GetComponent<Animation>()[animationToPlay].time = (!alternateDir || clickCount % 2 == 0) ? 0 : anim.GetComponent<Animation>()[animationToPlay].length;
                 anim.Play(animationToPlay);
                 ++clickCount;
             }

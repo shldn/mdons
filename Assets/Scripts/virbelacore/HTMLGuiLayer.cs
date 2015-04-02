@@ -941,7 +941,7 @@ public class HTMLGuiLayer : MonoBehaviour {
         return time.ToUniversalTime().Subtract(new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds;
     }
 
-    public bool Visible { set { htmlPanel.browserTexture.guiTexture.enabled = value; } }
+    public bool Visible { set { htmlPanel.browserTexture.GetComponent<GUITexture>().enabled = value; } }
     public bool HasInputFocus { get { return hasInputFocus; } }
     public bool ClickOffElementOpen { get { return clickOffElementOpen; } }
     public bool IsBlockingClickToMove { get { return clickOffElementOpen || hasInputFocus || IsMouseOverGUIElement(); } }

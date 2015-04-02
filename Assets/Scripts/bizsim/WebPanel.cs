@@ -68,7 +68,7 @@ public class WebPanel : MonoBehaviour {
                 if (browserTexture.minWriteAccessType > PlayerType.NORMAL && browserTexture.minWriteAccessType > GameManager.Inst.LocalPlayerType)
                     c = new Color(1.0f, 0.286f, 0.286f, 0.5f);
                     
-                goToActivateOnFocus.renderer.material.SetColor ("_TintColor", c);
+                goToActivateOnFocus.GetComponent<Renderer>().material.SetColor ("_TintColor", c);
             }
         }
 
