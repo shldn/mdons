@@ -10,6 +10,8 @@ public class CityBlockGenerator : MonoBehaviour {
     public int cols = 3;
     public GameObject building = null;
 
+    Grid2D blockGrid = null;
+
 	// Use this for initialization
 	void Start () {
         if (building == null)
@@ -18,29 +20,39 @@ public class CityBlockGenerator : MonoBehaviour {
             return;
         }
 
-        float rowDist = blockWidth + streetWidth;
-        float colDist = rowDist;
-        Vector3 rowOffset = rowDist * Vector3.forward;
-        Vector3 colOffset = colDist * Vector3.right;
+        blockGrid = new Grid2D(To2D(transform.position), rows, cols, new Vector2(blockWidth, blockWidth), streetWidth); 
 
-        Vector3 startPos = transform.position - 0.5f * (float)(rows) * rowOffset - 0.5f * (float)(cols) * colOffset;
-        Vector3 center = startPos + 0.5f * rowOffset + 0.5f * colOffset;
         for (int r = 0; r < rows; ++r)
         {
             for (int c = 0; c < cols; ++c)
             {
                 GameObject obj = GameObject.Instantiate(building) as GameObject;
-                obj.transform.position = center;
-                center += colOffset;
+                obj.transform.position = To3D(blockGrid.LeftEdgeLerp(r, c, 0.5f));
+                obj.transform.forward = -Vector3.right;
+
+                GameObject obj2 = GameObject.Instantiate(building) as GameObject;
+                obj2.transform.position = To3D(blockGrid.RightEdgeLerp(r, c, 0.5f));
+                obj2.transform.forward = Vector3.right;
+
+                GameObject obj3 = GameObject.Instantiate(building) as GameObject;
+                obj3.transform.position = To3D(blockGrid.TopEdgeLerp(r, c, 0.5f));
+                obj3.transform.forward = Vector3.forward;
+
+                GameObject obj4 = GameObject.Instantiate(building) as GameObject;
+                obj4.transform.position = To3D(blockGrid.BottomEdgeLerp(r, c, 0.5f));
+                obj4.transform.forward = -Vector3.forward;
             }
-            center -= cols * colOffset;
-            center += rowOffset;
         }
 	}
 
-    // Update is called once per frame
-    void Update()
+    Vector3 To3D(Vector2 v)
     {
-	
-	}
+        return new Vector3(v.x, transform.position.y, v.y);
+    }
+
+    Vector2 To2D(Vector3 v)
+    {
+        return new Vector2(v.x, v.z);
+    }
+
 }
