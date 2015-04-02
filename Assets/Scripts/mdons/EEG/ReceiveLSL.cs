@@ -4,6 +4,9 @@ using LSL;
 using System.Threading;
 using DrowsinessDetection;
 //using System.Collections;
+/// <summary>
+/// Rlllllll
+/// </summary>
 
 public class ReceiveLSL : MonoBehaviour {
 	//LSL

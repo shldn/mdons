@@ -23,7 +23,7 @@ public class AnimateBrushstrokes : MonoBehaviour
 	//	
     void changeTex() {
 		
-	    renderer.material.mainTexture = (textures[counter]);
+	    GetComponent<Renderer>().material.mainTexture = (textures[counter]);
 		
 		counter = (counter + 1);
 		
