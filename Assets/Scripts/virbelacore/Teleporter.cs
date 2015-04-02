@@ -41,7 +41,7 @@ public class Teleporter : MonoBehaviour {
             {
                 SoundManager.Inst.PlayTeleport();
                 GameManager.Inst.playerManager.SetLocalPlayerTransform(teleportDestination.transform);
-                GameManager.Inst.LocalPlayer.gameObject.rigidbody.velocity = Vector3.zero;
+                GameManager.Inst.LocalPlayer.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 GameManager.Inst.LocalPlayer.gameObject.GetComponent<PlayerController>().forwardAngle = teleportDestination.transform.eulerAngles.y;
                 //GameManager.Inst.LocalPlayer.EnableRigidBody = false;
 

@@ -30,8 +30,8 @@ public static class LightmapManager {
         if (go != null)
         {
             Debug.LogError("Applying lightmap to " + name);
-            if (go.renderer != null)
-                go.renderer.lightmapIndex = lightmapIdx;
+            if (go.GetComponent<Renderer>() != null)
+                go.GetComponent<Renderer>().lightmapIndex = lightmapIdx;
             else
                 Debug.LogError("Null renderer for " + name);
         }

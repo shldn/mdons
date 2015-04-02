@@ -64,7 +64,7 @@ public class TiltShift : PostEffectsBase
 		
 		// automagically calculate parameters based on focalPoint
 
-		float focalPoint01 = camera.WorldToViewportPoint (focalPoint * camera.transform.forward + camera.transform.position).z / (camera.farClipPlane);	
+		float focalPoint01 = GetComponent<Camera>().WorldToViewportPoint (focalPoint * GetComponent<Camera>().transform.forward + GetComponent<Camera>().transform.position).z / (GetComponent<Camera>().farClipPlane);	
 	
 		distance01 = focalPoint01;
 		start01 = 0.0f;

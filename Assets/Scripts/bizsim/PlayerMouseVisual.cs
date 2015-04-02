@@ -36,8 +36,8 @@ public class PlayerMouseVisual : MonoBehaviour
 				
 		mouseVisual = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         mouseVisual.transform.localScale = Vector3.one * scale * currentScale * textureScaleMult;
-        mouseVisual.renderer.material.shader = Shader.Find("GUI/3D Text Shader");
-        mouseVisual.renderer.material.renderQueue = 3500; // Transparent == 3000, Overlay == 4000
+        mouseVisual.GetComponent<Renderer>().material.shader = Shader.Find("GUI/3D Text Shader");
+        mouseVisual.GetComponent<Renderer>().material.renderQueue = 3500; // Transparent == 3000, Overlay == 4000
         mouseVisual.layer = LayerMask.NameToLayer("Ignore Raycast"); // allow users to click through the mouse visual (makes the representation disappear on rollover though...)		
 	}
 	
@@ -49,7 +49,7 @@ public class PlayerMouseVisual : MonoBehaviour
 	public void SetColor(Color c)
 	{
 		Init();
-		mouseVisual.renderer.material.color = c;
+		mouseVisual.GetComponent<Renderer>().material.color = c;
 	}
 	
 	public void SetID(int id)
@@ -71,12 +71,12 @@ public class PlayerMouseVisual : MonoBehaviour
 
     }
 
-    public bool Visible { get { Init(); return mouseVisual.renderer.enabled; } }
+    public bool Visible { get { Init(); return mouseVisual.GetComponent<Renderer>().enabled; } }
 
 	public void SetVisibility(bool visible)
 	{
 		Init();
-		mouseVisual.renderer.enabled = visible;
+		mouseVisual.GetComponent<Renderer>().enabled = visible;
 	}
 
     public Vector3 TranformBrowserTextureCoordinatesToWorldSpace(int textureX, int textureY)

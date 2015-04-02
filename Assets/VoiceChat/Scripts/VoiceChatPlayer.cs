@@ -30,8 +30,8 @@ public class VoiceChatPlayer : MonoBehaviour
 			return;
         int size = VoiceChatSettings.Instance.Frequency * 20;
 
-        audio.loop = true;
-        audio.clip = AudioClip.Create("VoiceChat", size, 1, VoiceChatSettings.Instance.Frequency, false, false);
+        GetComponent<AudioSource>().loop = true;
+        GetComponent<AudioSource>().clip = AudioClip.Create("VoiceChat", size, 1, VoiceChatSettings.Instance.Frequency, false, false);
         data = new float[size];
 
         if (VoiceChatSettings.Instance.LocalDebug)
@@ -43,18 +43,18 @@ public class VoiceChatPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (audio.isPlaying)
+        if (GetComponent<AudioSource>().isPlaying)
         {
             // Wrapped around
-            if (lastTime > audio.time)
+            if (lastTime > GetComponent<AudioSource>().time)
             {
-                played += audio.clip.length;
+                played += GetComponent<AudioSource>().clip.length;
             }
 
-            lastTime = audio.time;
+            lastTime = GetComponent<AudioSource>().time;
 
             // Check if we've played too far
-            if (played + audio.time >= received)
+            if (played + GetComponent<AudioSource>().time >= received)
             {
                 Stop();
                 shouldPlay = false;
@@ -76,7 +76,7 @@ public class VoiceChatPlayer : MonoBehaviour
 
                 if (playDelay <= 0)
                 {
-                    audio.Play();
+                    GetComponent<AudioSource>().Play();
                     Player player = null;
                     if (GameManager.Inst.playerManager.TryGetPlayer(userId, out player) && player != null)
                         player.IsTalking = true;
@@ -87,8 +87,8 @@ public class VoiceChatPlayer : MonoBehaviour
 
     void Stop()
     {
-        audio.Stop();
-        audio.time = 0;
+        GetComponent<AudioSource>().Stop();
+        GetComponent<AudioSource>().time = 0;
         index = 0;
         played = 0;
         received = 0;
@@ -119,16 +119,16 @@ public class VoiceChatPlayer : MonoBehaviour
         index += length;
 
         // Handle wrap-around
-        if (index >= audio.clip.samples)
+        if (index >= GetComponent<AudioSource>().clip.samples)
         {
             index = 0;
         }
 
         // Set data
-        audio.clip.SetData(data, 0);
+        GetComponent<AudioSource>().clip.SetData(data, 0);
 
         // If we're not playing
-        if (!audio.isPlaying)
+        if (!GetComponent<AudioSource>().isPlaying)
         {
             // Set that we should be playing
             shouldPlay = true;

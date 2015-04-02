@@ -237,12 +237,12 @@ public class CollabBrowserTexture : MonoBehaviour
         Pixels = texture.GetPixels32(0);
         PixelsHandle = GCHandle.Alloc(Pixels, GCHandleType.Pinned);
 
-        if (renderer)
+        if (GetComponent<Renderer>())
         {
-            renderer.material.mainTexture = texture;
+            GetComponent<Renderer>().material.mainTexture = texture;
             string matName = useTransparentMaterial ? "Unlit/Transparent" : "Unlit/Texture";
             defaultShader = Shader.Find(matName);
-            renderer.material.shader = defaultShader;
+            GetComponent<Renderer>().material.shader = defaultShader;
         }
         else if (GetComponent(typeof(GUITexture)))
         {
@@ -343,16 +343,16 @@ public class CollabBrowserTexture : MonoBehaviour
     {
         if (loadingTexture == null)
             return;
-        renderer.material = refreshMat;
+        GetComponent<Renderer>().material = refreshMat;
         showingLoadingTexture = true;
     }
 
     private void SetToWebViewRender()
     {
         // Set material to the webview texture.
-        if (renderer){
-            renderer.material.mainTexture = texture;
-            renderer.material.shader = defaultShader;
+        if (GetComponent<Renderer>()){
+            GetComponent<Renderer>().material.mainTexture = texture;
+            GetComponent<Renderer>().material.shader = defaultShader;
         }
         else if (GetComponent(typeof(GUITexture))){
             gui = GetComponent(typeof(GUITexture)) as GUITexture;
