@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour {
 
     public static PlayerController playerController = null;
     public List<GameObject> playerModels = new List<GameObject>();
-    private static string[] playerModelNames = { "Avatars/male", "Avatars/female" };
+    private static string[] playerModelNames = { "Avatars/male", "Avatars/male__" };
     private static string[] playerMedModelNames = { "Avatars/male_med", "Avatars/female_med" };
     public static string[] playerModelDisplayNames = { "Male", "Female" };
     public static string[] PlayerModelNames { get { return (GameManager.Inst.ServerConfig == "Medical" ? playerMedModelNames : playerModelNames); } }

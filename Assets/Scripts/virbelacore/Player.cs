@@ -207,9 +207,9 @@ public class Player {
                         while (disabledGOs.Count > 0)
                             disabledGOs.Pop().SetActive(visible);
 
-                    if (!IsTalking)
+                    if (!IsTalking && isTalkingGO != null)
                         isTalkingGO.SetActive(false);
-                    if (!IsTyping)
+                    if (!IsTyping && isTypingGO != null)
                         isTypingGO.SetActive(false);
                 }
 

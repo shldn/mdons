@@ -201,7 +201,7 @@ public class CustomizeAvatarGUI : MonoBehaviour {
     {
         originalModelIdx = GameManager.Inst.playerManager.GetLocalPlayer().ModelIdx;
         currentModelIdx = originalModelIdx;
-        if (!GameGUI.Inst.IsVisible(GUIVis.AVATARGUI))
+        if (!GameGUI.Inst.IsVisible(GUIVis.AVATARGUI) && GameGUI.Inst.guiLayer != null)
             GameGUI.Inst.guiLayer.InitAvatarLevel(GameManager.Inst.playerManager.GetLocalPlayer().GetUnisexAvatarOptionJSON());
     }
 }

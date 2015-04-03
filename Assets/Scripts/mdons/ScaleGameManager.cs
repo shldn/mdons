@@ -59,6 +59,13 @@ public class ScaleGameManager : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.T))
             Camera.main.gameObject.GetComponent<TiltShift>().enabled = !Camera.main.gameObject.GetComponent<TiltShift>().enabled;
+
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            GameGUI.Inst.customizeAvatarGui.ChangeCharacter((GameManager.Inst.LocalPlayer.ModelIdx + 1) % PlayerManager.PlayerModelNames.Length);
+            GameManager.Inst.LocalPlayer.playerController.enabled = true;
+            GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
+        }
     }
 
     void UpdateGravity()
