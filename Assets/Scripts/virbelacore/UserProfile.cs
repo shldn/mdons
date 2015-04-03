@@ -210,7 +210,7 @@ public class UserProfile {
 	
 	private string Refresh()
 	{
-		if (CheckLogin())
+		if (GameManager.Inst.ServerConfig != "MDONS" && CheckLogin())
 		{
 			rawJson = userDao.GetUser(userID);
 			if (rawJson != "")

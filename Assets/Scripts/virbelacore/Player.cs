@@ -341,7 +341,7 @@ public class Player {
         sitController = new SitController(this);
 
         // Check hardware info for changes.
-        if (IsLocal)
+        if (IsLocal && GameManager.Inst.ServerConfig != "MDONS")
         {
             string oldHardwareInfo = CommunicationManager.CurrentUserProfile.GetLocalHardwareInfo();
             CommunicationManager.CurrentUserProfile.UpdateLocalHardwareInfo();
