@@ -4,7 +4,7 @@
 //  - initial spline direction is the global frame of reference
 //  - end spline direction is the end local frame of reference
 //  - first point of spline is the lookAt position.
-public class AllocentricTunnelTestLookAt : MonoBehaviour {
+public class AllocentricTunnelTestLookAt : TunnelArrowClickChoice{
 
     public BezierSpline tunnel = null;
     public Transform overridelookAtObject = null;

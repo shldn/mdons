@@ -7,7 +7,7 @@ public class SetPositionRelativeToSplineEnd : MonoBehaviour {
     public Vector3 offset = Vector3.forward;
     public bool setOrientationToSpineEnd = true;
 
-	void Start () {
+	void Awake () {
         if (spline == null)
             return;
         Quaternion orient = Quaternion.LookRotation(spline.GetDirection(1.0f).normalized,Vector3.up);

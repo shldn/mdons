@@ -22,6 +22,9 @@ public class TunnelGameManager : MonoBehaviour {
     // Experiment variables
     int expCount = 0;
     bool allowUserControls = true;
+    bool chooseArrow = false;
+
+    public bool UseRotatableArrow { get { return !chooseArrow; } }
     bool AutoMovePlayer { get { return !allowUserControls; } }
 
     // LSL variables

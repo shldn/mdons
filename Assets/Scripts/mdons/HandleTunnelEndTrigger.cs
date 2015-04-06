@@ -5,5 +5,11 @@ public class HandleTunnelEndTrigger : MonoBehaviour
 {
 	void OnTriggerEnter () {
         TunnelLight.DisableAll();
+
+        // Display Proper Arrows for experiment
+        if (TunnelGameManager.Inst.UseRotatableArrow)
+            TunnelEnvironmentManager.Inst.rotatableArrow.SetActive(true);
+        else
+            TunnelArrowClickChoice.EnableAll();
 	}
 }

@@ -7,7 +7,7 @@ public class TunnelEnvironmentManager : MonoBehaviour {
     
     GameObject tunnelSpline = null;
     GameObject tunnelDecorator = null;
-    GameObject endArrow = null;
+    public GameObject rotatableArrow = null;
 
     void Awake()
     {
@@ -15,13 +15,20 @@ public class TunnelEnvironmentManager : MonoBehaviour {
 
         tunnelSpline = GameObject.Find("TunnelSpline");
         tunnelDecorator = GameObject.Find("TunnelDecorator");
-        endArrow = GameObject.Find("EndArrow");
+        rotatableArrow = GameObject.Find("EndArrow");
+    }
+
+    void Start()
+    {
+        // Set initial state
+        Reset();
     }
 
     public void Reset()
     {
         TunnelLight.EnableAll();
+        TunnelArrowClickChoice.DisableAll();
         tunnelDecorator.SetActive(true);
-        endArrow.SetActive(false);
+        rotatableArrow.SetActive(false);
     }
 }

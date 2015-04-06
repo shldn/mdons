@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EgocentricTunnelTestLookAt : MonoBehaviour {
+public class EgocentricTunnelTestLookAt : TunnelArrowClickChoice {
 
     public BezierSpline tunnel = null;
 
