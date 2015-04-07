@@ -460,8 +460,11 @@ public class PlayerController : MonoBehaviour {
             smoothedLookAtPos = Vector3.SmoothDamp(smoothedLookAtPos, targetLookAtPos, ref lookAtSmoothVel, lookAtSpeed);
 
             // Look at weight values...
-            GetComponent<Animator>().SetLookAtPosition(smoothedLookAtPos);
-            GetComponent<Animator>().SetLookAtWeight(lookAtWeight, 0.1f, 1f, 0f, 0f);
+            if( GameManager.Inst.LevelLoaded != GameManager.Level.SCALE_GAME )
+            {
+                GetComponent<Animator>().SetLookAtPosition(smoothedLookAtPos);
+                GetComponent<Animator>().SetLookAtWeight(lookAtWeight, 0.1f, 1f, 0f, 0f);
+            }
             // Lookat weight blends out if a custom animation is playing.
             lookAtWeight = Mathf.MoveTowards(lookAtWeight, (GetComponent<AnimatorHelper>().CustomAnimPlaying() && !playerScript.IsSitting )? 0f : 1f, Time.deltaTime * 2f);
         }
