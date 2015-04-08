@@ -12,7 +12,8 @@ public class MoveAlongPath : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.N) && path != null)
         {
             GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.navmesh;
-            GameManager.Inst.LocalPlayer.playerController.SetNavDestination(path.GetPoint(t += step), path.GetDirection(t)); 
+            if (!GameManager.Inst.LocalPlayer.playerController.NavAgent.hasPath || GameManager.Inst.LocalPlayer.playerController.NavAgent.remainingDistance < 4.0f)
+                GameManager.Inst.LocalPlayer.playerController.SetNavDestination(path.GetPoint(t += step), path.GetDirection(t)); 
         }
         if( automatic && path != null )
         {
