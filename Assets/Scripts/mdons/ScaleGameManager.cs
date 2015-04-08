@@ -21,11 +21,17 @@ public class ScaleGameManager : MonoBehaviour
     // Options
     public float scaleSpeed = 0.01f;
 
+    // Helpers
+    float origNearClip = 1.0f;
+    float origFarClip = 15000.0f;
+
     public void Touch() { }
 
     void Awake()
     {
         GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
+        origNearClip = Camera.main.nearClipPlane;
+        origFarClip = Camera.main.farClipPlane;
 
 #if UNITY_WEBPLAYER
         sendLSLData = false;
@@ -50,12 +56,14 @@ public class ScaleGameManager : MonoBehaviour
             GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
             UpdateGravity();
             UpdateFocalLength();
+            UpdateClippingPlanes();
         }
         if (Input.GetKey(KeyCode.Minus))
         {
             GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
             UpdateGravity();
             UpdateFocalLength();
+            UpdateClippingPlanes();
         }
         if (Input.GetKeyUp(KeyCode.T))
             Camera.main.gameObject.GetComponent<TiltShift>().enabled = !Camera.main.gameObject.GetComponent<TiltShift>().enabled;
@@ -77,6 +85,12 @@ public class ScaleGameManager : MonoBehaviour
     {
         float distToPlayer = (GameManager.Inst.LocalPlayer.HeadPosition - Camera.main.transform.position).magnitude;
         Camera.main.GetComponent<TiltShift>().focalPoint = distToPlayer;
+    }
+
+    void UpdateClippingPlanes()
+    {
+        Camera.main.farClipPlane = Mathf.Max(origFarClip * 0.1f, origFarClip * (GameManager.Inst.LocalPlayer.Scale.x));
+        Camera.main.nearClipPlane = Mathf.Max(origNearClip * 0.1f, origNearClip * (GameManager.Inst.LocalPlayer.Scale.x));
     }
 
     void OnDestroy()
