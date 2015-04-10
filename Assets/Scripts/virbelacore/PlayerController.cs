@@ -487,20 +487,24 @@ public class PlayerController : MonoBehaviour {
             rigidbody.AddForce(moveVector * 50f, ForceMode.Force);
     } // End of FixedUpdate().
 
+    void OnCollisionEnter(Collision collision)
+    {
+        OnCollisionStay(collision);
+    } // End of OnCollisionEnter().
 
     void OnCollisionStay(Collision collision){
         grounded = true;
         rigidbody.drag = 25f;
-    } // End of OnCollisionEnter().
+    } // End of OnCollisionStay().
 
     void OnCollisionExit(Collision collision){
         grounded = false;
         rigidbody.drag = 0f;
-    } // End of OnCollisionEnter().
+    } // End of OnCollisionExit().
 
 
     public void Jump(){
-        if(grounded)
+        if (grounded)
             rigidbody.AddForce(gameObject.transform.localScale.x * Vector3.up * 8f, ForceMode.Impulse);
     } // End of Jump().
 
