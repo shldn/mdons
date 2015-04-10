@@ -22,6 +22,12 @@ public class SplineToTunnelTurn : MonoBehaviour {
             return;
         }
 
+        SetSplineToAngle();
+
+	}
+
+    void SetSplineToAngle()
+    {
         spline.SetControlPoint(1, spline.GetControlPoint(0) + curveCuspDist * startDir);
 
         // forming an isosolese triangle, so 2 times dist of right triangle
@@ -29,7 +35,11 @@ public class SplineToTunnelTurn : MonoBehaviour {
         Vector3 endPoint = spline.GetControlPoint(0) + endPtDist * (Quaternion.AngleAxis(angle, Vector3.up) * startDir);
         spline.SetControlPoint(3, endPoint);
         spline.SetControlPoint(2, spline.GetControlPoint(1));
+    }
 
-	}
+    public void ReCompute()
+    {
+        SetSplineToAngle();
+    }
 
 }

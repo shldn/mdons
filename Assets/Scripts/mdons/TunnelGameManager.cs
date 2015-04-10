@@ -51,6 +51,8 @@ public class TunnelGameManager : MonoBehaviour {
 
         if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.E))
             StartExperiment(expCount);
+        if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.T))
+            TunnelEnvironmentManager.Inst.ReCompute();
     }
 
     void OnDestroy()

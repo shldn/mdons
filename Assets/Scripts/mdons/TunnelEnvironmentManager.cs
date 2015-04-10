@@ -31,4 +31,10 @@ public class TunnelEnvironmentManager : MonoBehaviour {
         tunnelDecorator.SetActive(true);
         rotatableArrow.SetActive(false);
     }
+
+    public void ReCompute()
+    {
+        tunnelSpline.GetComponent<SplineToTunnelTurn>().ReCompute();
+        tunnelDecorator.GetComponent<SplineDecorator>().ReDecorate();
+    }
 }
