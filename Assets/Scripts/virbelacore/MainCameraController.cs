@@ -310,10 +310,12 @@ public class MainCameraController : MonoBehaviour {
             return;
 
         Transform playerTransform = GameManager.Inst.LocalPlayer.gameObject.transform;
-        Vector3 playerHead = playerTransform.position + (Vector3.up * 3f);
 
-        mainCamera.transform.position = playerHead;
-        cameraTargetPos = playerHead;
+        Vector3 playerForwardVector = MathHelper.MoveAngleUnitVector(playerController.forwardAngle);
+        Vector3 playerRightVector = MathHelper.MoveAngleUnitVector(playerController.forwardAngle + 90f);
+        cameraTargetPos = playerTransform.position + playerTransform.localScale.x * ((playerForwardVector * -followPlayerDistance) + (Vector3.up * followPlayerHeight) + (playerRightVector * rightOffset));
+
+        mainCamera.transform.position = cameraTargetPos;
         cameraPosVel = Vector3.zero;
 
         mainCamera.transform.rotation = playerTransform.rotation;

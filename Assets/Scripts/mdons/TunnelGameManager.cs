@@ -82,9 +82,9 @@ public class TunnelGameManager : MonoBehaviour {
     {
         Debug.LogError("Starting experiment: " + expCount);
         GameManager.Inst.LocalPlayer.Visible = playerVis;
-
         MoveAlongPath moveScript = (MoveAlongPath)FindObjectOfType(typeof(MoveAlongPath));
         GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
+        GameManager.Inst.LocalPlayer.playerController.StopMomentum();
         moveScript.Reset();
         TunnelEnvironmentManager.Inst.Reset();
 

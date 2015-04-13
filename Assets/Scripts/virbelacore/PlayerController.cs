@@ -613,14 +613,19 @@ public class PlayerController : MonoBehaviour {
 
     public void StopFalling(){
         falling = false;
+        navAgent.enabled = true;
+        StopMomentum();
+    } // End of StopFalling().
+
+    public void StopMomentum()
+    {
         fallVelocity = Vector3.zero;
         rigidbody.velocity = Vector3.zero;
-        navAgent.enabled = true;
         moveVector = Vector3.zero;
         forwardThrottle = 0f;
         turnThrottle = 0f;
         moveSpeed = 0f;
-    } // End of StopFalling().
+    }
 
 
     public void UpdateTransform(Vector3 pos, float newRot){
