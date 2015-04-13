@@ -74,14 +74,16 @@ public class TunnelGameManager : MonoBehaviour {
     void StartExperiment(int idx)
     {
         bool[] playerVis = { true, false, false, true };
+        float[] tunnelAngle = { -45f, 30f, -15f, 45f, -30f, 15f };
         UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.NONE, UserControl.PARTIAL };
-        StartExperiment(playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
+        StartExperiment(tunnelAngle[idx % tunnelAngle.Length], playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
     }
 
-    void StartExperiment(bool playerVis, UserControl uControl)
+    void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl)
     {
         Debug.LogError("Starting experiment: " + expCount);
         GameManager.Inst.LocalPlayer.Visible = playerVis;
+        TunnelEnvironmentManager.Inst.SetTunnelAngle(tunnelAngle);
         MoveAlongPath moveScript = (MoveAlongPath)FindObjectOfType(typeof(MoveAlongPath));
         GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
         GameManager.Inst.LocalPlayer.playerController.StopMomentum();

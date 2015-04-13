@@ -620,7 +620,8 @@ public class PlayerController : MonoBehaviour {
     public void StopMomentum()
     {
         fallVelocity = Vector3.zero;
-        rigidbody.velocity = Vector3.zero;
+        if(!rigidbody.isKinematic)
+            rigidbody.velocity = Vector3.zero;
         moveVector = Vector3.zero;
         forwardThrottle = 0f;
         turnThrottle = 0f;

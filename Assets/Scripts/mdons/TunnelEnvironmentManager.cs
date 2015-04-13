@@ -39,4 +39,10 @@ public class TunnelEnvironmentManager : MonoBehaviour {
         SetPositionRelativeToSplineEnd.ResetAll();
         TunnelArrowClickChoice.ResetAll(); 
     }
+
+    public void SetTunnelAngle(float angle)
+    {
+        tunnelSpline.GetComponent<SplineToTunnelTurn>().angle = angle;
+        ReCompute();
+    }
 }
