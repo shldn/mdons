@@ -20,6 +20,15 @@ public class TunnelArrowClickChoice : MonoBehaviour {
             l.gameObject.SetActive(false);
     }
 
+    public static void ResetAll()
+    {
+        foreach (TunnelArrowClickChoice l in all)
+        {
+            l.ReCompute();
+            l.Selected = true;
+        }
+    }
+
 
 	void Awake () {
         all.Add(this);
@@ -37,6 +46,10 @@ public class TunnelArrowClickChoice : MonoBehaviour {
             foreach (TunnelArrowClickChoice arrow in all)
                 arrow.Selected = (arrow == this);
         }
+    }
+
+    virtual public void ReCompute()
+    {
     }
 
     bool Selected

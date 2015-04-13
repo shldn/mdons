@@ -36,5 +36,7 @@ public class TunnelEnvironmentManager : MonoBehaviour {
     {
         tunnelSpline.GetComponent<SplineToTunnelTurn>().ReCompute();
         tunnelDecorator.GetComponent<SplineDecorator>().ReDecorate();
+        SetPositionRelativeToSplineEnd.ResetAll();
+        TunnelArrowClickChoice.ResetAll(); 
     }
 }

@@ -10,13 +10,17 @@ public class AllocentricTunnelTestLookAt : TunnelArrowClickChoice{
     public Transform overridelookAtObject = null;
 
 	void Start () {
-        if( overridelookAtObject != null )
+        ReCompute();        
+	}
+
+    override public void ReCompute()
+    {
+        if (overridelookAtObject != null)
             transform.LookAt(overridelookAtObject);
         else
             transform.LookAt(tunnel.GetPoint(0.0f));
 
         // adjust for local frame of reference
         transform.rotation = Quaternion.FromToRotation(tunnel.GetDirection(0.0f), tunnel.GetDirection(1.0f)) * transform.rotation;
-        
-	}	
+    }
 }
