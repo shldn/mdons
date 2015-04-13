@@ -63,6 +63,7 @@ public class MainCameraController : MonoBehaviour {
     public float followPlayerDistance = 6f;
     public float rightOffset = 1f;
     public float tilt = 0f;
+    public float orbitOffsetAngle = 0.0f; // 180 will cause the camera to look at the front of the player.
 
     // Snap camera options
     public bool snapCamMakesPlayersInvisible = true;
@@ -185,7 +186,7 @@ public class MainCameraController : MonoBehaviour {
             // experimental ------------------------
             // Rotate camera target pos based on player's normal to ground.
             Vector3 cameraTargetVector = cameraTargetPos - playerTransform.position;
-            Quaternion cameraTargetQuat = Quaternion.LookRotation(cameraTargetVector);
+            Quaternion cameraTargetQuat = Quaternion.AngleAxis(orbitOffsetAngle, Vector3.up) * Quaternion.LookRotation(cameraTargetVector);
 
             float camAngleAdjust = Vector3.Angle(playerController.groundNormal, playerTransform.forward) - 90f;
             camAngleAdjust *= 0.5f;
@@ -207,9 +208,9 @@ public class MainCameraController : MonoBehaviour {
             
             
             if(gazeTiltEnabled && !gazePanLock && appFocused)
-                cameraTargetEulers = new Vector3(tilt - camAngleAdjust - (gazePanTiltNormalized.x * maxGazeTilt), playerController.forwardAngle + (gazePanTiltNormalized.y * maxGazePan), 0f);
+                cameraTargetEulers = new Vector3(tilt - camAngleAdjust - (gazePanTiltNormalized.x * maxGazeTilt), playerController.forwardAngle + (gazePanTiltNormalized.y * maxGazePan) + orbitOffsetAngle, 0f);
             else
-                cameraTargetEulers = new Vector3(tilt - camAngleAdjust, playerController.forwardAngle, 0f);
+                cameraTargetEulers = new Vector3(tilt - camAngleAdjust, playerController.forwardAngle + orbitOffsetAngle, 0f);
         }
 
         // First-person mouse-controlled camera.
@@ -306,7 +307,7 @@ public class MainCameraController : MonoBehaviour {
 
     public void CameraToInitialPos(){
 
-        if (!GameManager.Inst.LocalPlayer)
+        if (!GameManager.Inst.LocalPlayer || !GameManager.Inst.LocalPlayer.gameObject)
             return;
 
         Transform playerTransform = GameManager.Inst.LocalPlayer.gameObject.transform;
