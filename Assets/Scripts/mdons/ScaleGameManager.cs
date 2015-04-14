@@ -78,20 +78,23 @@ public class ScaleGameManager : MonoBehaviour
             GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
             SetToTargetScale(targetScale);
         }
+
+        if( Input.GetKeyUp(KeyCode.O))
+            ScaleAvatarOnCollision.used.Clear();
     }
 
     void SetToTargetScale(Vector3 scale)
     {
         GameManager.Inst.LocalPlayer.Scale = scale;
-        UpdateEnvironment();
     }
 
-    void UpdateEnvironment()
+    public void UpdateEnvironment()
     {
         UpdateGravity();
         UpdateFocalLength();
         UpdateClippingPlanes();
     }
+
     void UpdateGravity()
     {
         Physics.gravity = GameManager.Inst.LocalPlayer.Scale.x * new Vector3(0, -19.62F, 0);
