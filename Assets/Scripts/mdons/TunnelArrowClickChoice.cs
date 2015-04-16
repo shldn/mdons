@@ -46,6 +46,17 @@ public class TunnelArrowClickChoice : MonoBehaviour {
             foreach (TunnelArrowClickChoice arrow in all)
                 arrow.Selected = (arrow == this);
         }
+
+        GUILayout.BeginArea(new Rect(0.25f * Screen.width, 0.25f * Screen.height, 0.5f * Screen.width, 0.5f * Screen.height));
+            GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+            GUI.skin.label.clipping = TextClipping.Overflow;
+            GUI.skin.label.fontSize = Mathf.CeilToInt(Screen.height * 0.05f);
+            GUILayout.Space(Mathf.Max(Screen.height * 0.005f, 4));
+            GUILayout.Label("Where did the tunnel start?");
+            GUI.skin.label.fontSize = Mathf.CeilToInt(Screen.height * 0.02f);
+            GUILayout.Label("(Click the arrow to choose)");
+            GUI.skin.label.fontSize = 12;
+        GUILayout.EndArea();
     }
 
     virtual public void ReCompute()

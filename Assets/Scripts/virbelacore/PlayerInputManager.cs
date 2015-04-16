@@ -45,6 +45,9 @@ public class PlayerInputManager : MonoBehaviour {
         v = 0f;
         h = 0f;
 
+        if (disableKeyPressMovement)
+            return;
+
         if(upKey.down)
             v += 1f;
         if(downKey.down)

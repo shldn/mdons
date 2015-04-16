@@ -22,7 +22,7 @@ public class TunnelGameManager : MonoBehaviour {
     // Experiment variables
     int expCount = 0;
     bool allowUserControls = true;
-    bool chooseArrow = false;
+    bool chooseArrow = true;
 
     public bool UseRotatableArrow { get { return !chooseArrow; } }
     bool AutoMovePlayer { get { return !allowUserControls; } }
@@ -65,10 +65,11 @@ public class TunnelGameManager : MonoBehaviour {
     void OnGUI()
     {
         int buttonWidth = 200;
-        if (GUI.Button(new Rect(Screen.width / 2 - buttonWidth / 2, 20, buttonWidth, 30), "Start Next Experiment"))
+        if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
             StartExperiment(expCount);
-        string experimentDesc = "User Control: " + allowUserControls.ToString();
-        GUI.Label(new Rect(10,10, 300,100), experimentDesc);
+        //string experimentDesc = "User Control: " + allowUserControls.ToString();
+        //GUI.skin.label.fontSize = 14;
+        //GUI.Label(new Rect(10,10, 300,100), experimentDesc);
     }
 
     void StartExperiment(int idx)
@@ -95,9 +96,11 @@ public class TunnelGameManager : MonoBehaviour {
             case UserControl.NONE:
                 allowUserControls = false;
                 moveScript.AutoStart();
+                GameManager.Inst.playerManager.playerInputMgr.disableKeyPressMovement = true;
                 break;
             case UserControl.PARTIAL:
                 allowUserControls = true;
+                GameManager.Inst.playerManager.playerInputMgr.disableKeyPressMovement = true;
                 break;
             default:
                 Debug.LogError("UserControl: " + uControl + " not yet handled");
