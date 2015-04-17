@@ -209,6 +209,8 @@ public class PlayerController : MonoBehaviour {
             pathfindingDest = new GameObject();
         }
 
+        if( GameManager.Inst.LevelLoaded == GameManager.Level.MOTION_TEST)
+            turnSpeed = 180f;
     } // End of Start().
 
 

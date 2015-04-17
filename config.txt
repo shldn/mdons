@@ -1,0 +1,29 @@
+[	
+    {
+        "type": "description",
+        "angle": "float in [-65,65] - The turn in degrees. Positive numbers turn right, negative turn left",
+    	"avatar": "visible/invisible/abstract",
+        "arrows": "one/two - one lets user rotate arrow, two gives them a choice",
+        "navigation": "auto/one key/full/",
+        "constants section": "defines the defaults for variables if they will be constant throughout the trial, can use same variables as a trial, this overrides values in the trail definition"
+    },
+    {
+        "type": "constants",
+        "arrows": "two",
+        "navigation": "auto"
+    },
+    {
+        "type": "trial",    
+        "angle": 30,
+    	"avatar": "visible",
+        "arrows": "one",
+        "navigation": "auto"
+    },
+    {
+        "type": "trial",    
+        "angle": -45,
+    	"avatar": "invisible",
+        "arrows": "two",
+        "navigation": "auto"
+    }
+]

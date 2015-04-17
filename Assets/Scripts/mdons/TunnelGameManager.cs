@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public enum UserControl
 {
     NONE,
     PARTIAL,
+    FULL,
 }
 
 public enum TunnelEvent
@@ -35,6 +37,7 @@ public class TunnelGameManager : MonoBehaviour {
     int expCount = 0;
     bool allowUserControls = true;
     bool chooseArrow = true;
+    List<Experiment> experiments = new List<Experiment>();
 
     public bool UseRotatableArrow { get { return !chooseArrow; } }
     bool AutoMovePlayer { get { return !allowUserControls; } }
@@ -55,6 +58,9 @@ public class TunnelGameManager : MonoBehaviour {
 
         if (sendLSLData)
             gameObject.AddComponent<LSLSender>();
+
+        // Read Config file if it exists
+        experiments = TunnelConfigReader.Read("config.txt");
 	}
 
     void Update()
@@ -87,12 +93,24 @@ public class TunnelGameManager : MonoBehaviour {
 
     void StartExperiment(int idx)
     {
-        bool[] playerVis = { true, false, false, true };
-        float[] tunnelAngle = { -45f, 30f, -15f, 45f, -30f, 15f };
-        UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.NONE, UserControl.PARTIAL };
-        StartExperiment(tunnelAngle[idx % tunnelAngle.Length], playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
+        if( experiments.Count > 0 )
+        {
+            StartExperiment(experiments[idx % experiments.Count]);
+        }
+        else
+        {
+            bool[] playerVis = { true, false, false, true };
+            float[] tunnelAngle = { -45f, 30f, -15f, 45f, -30f, 15f };
+            UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.NONE, UserControl.PARTIAL };
+            StartExperiment(tunnelAngle[idx % tunnelAngle.Length], playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
+        }
     }
 
+    void StartExperiment(Experiment exp)
+    {
+        chooseArrow = exp.chooseArrow;
+        StartExperiment(exp.angle, exp.avatarVisible, exp.userControl);
+    }
     void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl)
     {
         if (expCount != 0)
