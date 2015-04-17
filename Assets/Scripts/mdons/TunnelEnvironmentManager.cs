@@ -7,6 +7,7 @@ public class TunnelEnvironmentManager : MonoBehaviour {
     
     GameObject tunnelSpline = null;
     GameObject tunnelDecorator = null;
+    GameObject tunnelTriggerDecorator = null;
     public GameObject rotatableArrow = null;
 
     void Awake()
@@ -15,6 +16,7 @@ public class TunnelEnvironmentManager : MonoBehaviour {
 
         tunnelSpline = GameObject.Find("TunnelSpline");
         tunnelDecorator = GameObject.Find("TunnelDecorator");
+        tunnelTriggerDecorator = GameObject.Find("TunnelTriggerDecorator");
         rotatableArrow = GameObject.Find("EndArrow");
     }
 
@@ -36,6 +38,7 @@ public class TunnelEnvironmentManager : MonoBehaviour {
     {
         tunnelSpline.GetComponent<SplineToTunnelTurn>().ReCompute();
         tunnelDecorator.GetComponent<SplineDecorator>().ReDecorate();
+        tunnelTriggerDecorator.GetComponent<SplinePtDecorator>().ReDecorate();
         SetPositionRelativeToSplineEnd.ResetAll();
         TunnelArrowClickChoice.ResetAll(); 
     }
@@ -44,5 +47,10 @@ public class TunnelEnvironmentManager : MonoBehaviour {
     {
         tunnelSpline.GetComponent<SplineToTunnelTurn>().angle = angle;
         ReCompute();
+    }
+
+    public float GetTunnelAngle()
+    {
+        return tunnelSpline.GetComponent<SplineToTunnelTurn>().angle;
     }
 }

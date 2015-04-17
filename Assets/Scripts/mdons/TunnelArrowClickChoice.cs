@@ -72,6 +72,7 @@ public class TunnelArrowClickChoice : MonoBehaviour {
             for (int i = 0; i < renderers.Length; ++i)
                 renderers[i].material.color = c;
             selected = value;
+            TunnelGameManager.Inst.RegisterEvent(TunnelEvent.DECISION);
         }
     }
 }

@@ -14,5 +14,7 @@ public class HandleTunnelEndTrigger : MonoBehaviour
 
         // Stop player and camera
         GameManager.Inst.LocalPlayer.playerController.StopMomentum();
+
+        TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TUNNEL_EXIT);
 	}
 }

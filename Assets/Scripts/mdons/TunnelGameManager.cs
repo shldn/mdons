@@ -6,6 +6,16 @@ public enum UserControl
     PARTIAL,
 }
 
+public enum TunnelEvent
+{
+    TUNNEL_ENTRANCE = 100,
+    TURN_START = 200,
+    TURN_END = 300,
+    TUNNEL_EXIT = 400,
+    DECISION = 500,
+    TRIAL_DONE = 600,
+}
+
 public class TunnelGameManager : MonoBehaviour {
 
     private static TunnelGameManager mInst = null;
@@ -19,6 +29,8 @@ public class TunnelGameManager : MonoBehaviour {
         }
     }
 
+
+
     // Experiment variables
     int expCount = 0;
     bool allowUserControls = true;
@@ -29,6 +41,7 @@ public class TunnelGameManager : MonoBehaviour {
 
     // LSL variables
     public bool sendLSLData = true;
+    public int lastCode = 0;
 
     public void Touch() { }
 
@@ -67,9 +80,9 @@ public class TunnelGameManager : MonoBehaviour {
         int buttonWidth = 200;
         if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
             StartExperiment(expCount);
-        //string experimentDesc = "User Control: " + allowUserControls.ToString();
-        //GUI.skin.label.fontSize = 14;
-        //GUI.Label(new Rect(10,10, 300,100), experimentDesc);
+        string experimentDesc = "Code: " + lastCode;
+        GUI.skin.label.fontSize = 14;
+        GUI.Label(new Rect(10,10, 300,100), experimentDesc);
     }
 
     void StartExperiment(int idx)
@@ -82,6 +95,8 @@ public class TunnelGameManager : MonoBehaviour {
 
     void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl)
     {
+        if (expCount != 0)
+            TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TRIAL_DONE);
         Debug.LogError("Starting experiment: " + expCount);
         GameManager.Inst.LocalPlayer.Visible = playerVis;
         TunnelEnvironmentManager.Inst.SetTunnelAngle(tunnelAngle);
@@ -108,6 +123,24 @@ public class TunnelGameManager : MonoBehaviour {
         }
 
         ++expCount;
+        RegisterEvent(TunnelEvent.TUNNEL_ENTRANCE);
+    }
+
+    public int GetCurrentCodeBase()
+    {
+        float tunnelAngle = TunnelEnvironmentManager.Inst.GetTunnelAngle();
+
+        int code = 2000;
+        code += (int)Mathf.Abs(tunnelAngle);
+        code += GameManager.Inst.LocalPlayer.Visible ? 0 : 1000;
+        code += tunnelAngle > 0 ? 0 : 1000;
+
+        return code;
+    }
+
+    public void RegisterEvent(TunnelEvent tEvent)
+    {
+        lastCode = GetCurrentCodeBase() + (int)tEvent;
     }
 
 }
