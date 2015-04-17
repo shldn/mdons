@@ -4,25 +4,17 @@ using System;
 using System.IO;
 using Boomlagoon.JSON;
 
-public struct Experiment
+public class Experiment
 {
     public Experiment(JSONObject obj)
     {
-        // Defaults
-        angle = 30f;
-        chooseArrow = false;
-        avatarVisible = true;
-        userControl = UserControl.NONE;
-
-
         foreach (KeyValuePair<string, JSONValue> v in obj)
             SetValue(v.Key, v.Value);
-
-
     }
 
     public void SetValue(string name, JSONValue v)
     {
+        name = name.ToLower();
         if (name == "angle")
             angle = (float)v.Number;
         else if (name == "avatar")
@@ -30,7 +22,9 @@ public struct Experiment
         else if (name == "arrows")
             SetArrows(v.Str);
         else if (name == "navigation")
-            SetNavigation(v.Str); 
+            SetNavigation(v.Str);
+        else if (name == "choicemethod")
+            SetChoiceMethod(v.Str);
     }
 
     public void SetAvatar(string str)
@@ -52,13 +46,18 @@ public struct Experiment
             userControl = UserControl.NONE;
         else // "full"
             userControl = UserControl.FULL;
-
     }
 
-    public float angle;
-    public bool chooseArrow;
-    public bool avatarVisible;
-    public UserControl userControl;
+    public void SetChoiceMethod(string str)
+    {
+        mouseClickToChoose = (str.ToLower() == "click");
+    }
+
+    public float angle = 30f;
+    public bool chooseArrow = false;
+    public bool avatarVisible = true;
+    public bool mouseClickToChoose = true;
+    public UserControl userControl = UserControl.NONE;
 }
 
 public class TunnelConfigReader {
