@@ -13,6 +13,13 @@ public class AllocentricTunnelTestLookAt : TunnelArrowClickChoice{
         ReCompute();        
 	}
 
+
+    void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Alpha2))
+            ChooseThis();
+    }
+
     override public void ReCompute()
     {
         if (overridelookAtObject != null)
@@ -23,4 +30,19 @@ public class AllocentricTunnelTestLookAt : TunnelArrowClickChoice{
         // adjust for local frame of reference
         transform.rotation = Quaternion.FromToRotation(tunnel.GetDirection(0.0f), tunnel.GetDirection(1.0f)) * transform.rotation;
     }
+
+    override protected void ChooseThis()
+    {
+        TunnelGameManager.Inst.RegisterChoice(TunnelChoice.ALLOCENTRIC);
+        base.ChooseThis();
+    }
+
+    override protected void OnGUI()
+    {
+        base.OnGUI();
+
+        if (TunnelGameManager.Inst.UseMouseButtonsToChoose && Event.current != null && Event.current.type == EventType.MouseUp && Event.current.button == 1)
+            ChooseThis();
+    }
+
 }

@@ -18,6 +18,12 @@ public enum TunnelEvent
     TRIAL_DONE = 600,
 }
 
+public enum TunnelChoice
+{
+    ALLOCENTRIC = 1,
+    EGOCENTRIC = 2,
+}
+
 public class TunnelGameManager : MonoBehaviour {
 
     private static TunnelGameManager mInst = null;
@@ -37,9 +43,11 @@ public class TunnelGameManager : MonoBehaviour {
     int expCount = 0;
     bool allowUserControls = true;
     bool chooseArrow = true;
+    bool useMouseButtonsToChoose = true;
     List<Experiment> experiments = new List<Experiment>();
 
     public bool UseRotatableArrow { get { return !chooseArrow; } }
+    public bool UseMouseButtonsToChoose { get { return useMouseButtonsToChoose; } }
     bool AutoMovePlayer { get { return !allowUserControls; } }
 
     // LSL variables
@@ -68,7 +76,7 @@ public class TunnelGameManager : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Equals))
             GameManager.Inst.LoadLevel(GameManager.Level.SCALE_GAME);
 
-        if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.Space))
             StartExperiment(expCount);
         if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.T))
             TunnelEnvironmentManager.Inst.ReCompute();
@@ -109,8 +117,10 @@ public class TunnelGameManager : MonoBehaviour {
     void StartExperiment(Experiment exp)
     {
         chooseArrow = exp.chooseArrow;
+        useMouseButtonsToChoose = exp.mouseClickToChoose;
         StartExperiment(exp.angle, exp.avatarVisible, exp.userControl);
     }
+
     void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl)
     {
         if (expCount != 0)
@@ -159,6 +169,11 @@ public class TunnelGameManager : MonoBehaviour {
     public void RegisterEvent(TunnelEvent tEvent)
     {
         lastCode = GetCurrentCodeBase() + (int)tEvent;
+    }
+
+    public void RegisterChoice(TunnelChoice choice)
+    {
+        Debug.Log(choice.ToString());
     }
 
 }

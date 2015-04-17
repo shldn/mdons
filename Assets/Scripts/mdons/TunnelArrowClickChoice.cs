@@ -39,13 +39,16 @@ public class TunnelArrowClickChoice : MonoBehaviour {
         all.Remove(this);
     }
 
-    void OnGUI()
+    virtual protected void ChooseThis()
     {
-        if (Event.current != null && Event.current.type == EventType.MouseUp && MouseHelpers.GetCurrentGameObjectHit() == gameObject)
-        {
-            foreach (TunnelArrowClickChoice arrow in all)
-                arrow.Selected = (arrow == this);
-        }
+        foreach (TunnelArrowClickChoice arrow in all)
+            arrow.Selected = (arrow == this);
+    }
+
+    virtual protected void OnGUI()
+    {
+        if (!TunnelGameManager.Inst.UseMouseButtonsToChoose && Event.current != null && Event.current.type == EventType.MouseUp && MouseHelpers.GetCurrentGameObjectHit() == gameObject)
+            ChooseThis();
 
         GUILayout.BeginArea(new Rect(0.25f * Screen.width, 0.25f * Screen.height, 0.5f * Screen.width, 0.5f * Screen.height));
             GUI.skin.label.alignment = TextAnchor.MiddleCenter;
@@ -54,7 +57,13 @@ public class TunnelArrowClickChoice : MonoBehaviour {
             GUILayout.Space(Mathf.Max(Screen.height * 0.005f, 4));
             GUILayout.Label("Where did the tunnel start?");
             GUI.skin.label.fontSize = Mathf.CeilToInt(Screen.height * 0.02f);
-            GUILayout.Label("(Click the arrow to choose)");
+            if( !TunnelGameManager.Inst.UseMouseButtonsToChoose)
+                GUILayout.Label("(Click the arrow to choose)");
+            else
+            {
+                GUILayout.Space(Mathf.Max(Screen.height * 0.005f, 4));
+                GUILayout.Label("(Click left mouse button for left arrow | Click right mouse button for right arrow)");
+            }
             GUI.skin.label.fontSize = 12;
         GUILayout.EndArea();
     }

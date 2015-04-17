@@ -58,7 +58,7 @@ public class PlayerInputManager : MonoBehaviour {
         if(rightKey.down)
             h += 1f;
 
-        if(jumpKey.down)
+        if(jumpKey.down && GameManager.Inst.LevelLoaded != GameManager.Level.MOTION_TEST)
             jump = true;
     }
 
