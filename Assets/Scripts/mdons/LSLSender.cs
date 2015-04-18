@@ -29,16 +29,20 @@ public class LSLSender : MonoBehaviour {
         data[3] = playerRot.eulerAngles.y;
         data[4] = playerRot.eulerAngles.z;
         data[5] = 0f;
-        data[6] = 0f;
-        data[7] = 0f;
+        data[6] = (float)TunnelGameManager.Inst.lastCode;
+        data[7] = (float)TunnelGameManager.Inst.lastChoice;
 
-        GameObject arrow = GameObject.Find("Arrow");
-        if (arrow != null)
-        {
-            data[5] = arrow.transform.eulerAngles.x;
-            data[6] = arrow.transform.eulerAngles.y;
-            data[7] = arrow.transform.eulerAngles.z;
-        }
         outlet.push_sample(data);
+
 	}
+
+    public void SendCode(int code)
+    {
+        //outlet.push_sample(data);
+    }
+
+    public void SendChoice(int choice)
+    {
+        //outlet.push_sample(data);
+    }
 }

@@ -53,6 +53,8 @@ public class TunnelGameManager : MonoBehaviour {
     // LSL variables
     public bool sendLSLData = true;
     public int lastCode = 0;
+    public int lastChoice = 0;
+    LSLSender lslSender = null;
 
     public void Touch() { }
 
@@ -65,7 +67,7 @@ public class TunnelGameManager : MonoBehaviour {
 #endif
 
         if (sendLSLData)
-            gameObject.AddComponent<LSLSender>();
+            lslSender = gameObject.AddComponent<LSLSender>();
 
         // Read Config file if it exists
         experiments = TunnelConfigReader.Read("config.txt");
@@ -126,6 +128,7 @@ public class TunnelGameManager : MonoBehaviour {
         if (expCount != 0)
             TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TRIAL_DONE);
         Debug.LogError("Starting experiment: " + expCount);
+        lastChoice = 0;
         GameManager.Inst.LocalPlayer.Visible = playerVis;
         TunnelEnvironmentManager.Inst.SetTunnelAngle(tunnelAngle);
         MoveAlongPath moveScript = (MoveAlongPath)FindObjectOfType(typeof(MoveAlongPath));
@@ -169,11 +172,15 @@ public class TunnelGameManager : MonoBehaviour {
     public void RegisterEvent(TunnelEvent tEvent)
     {
         lastCode = GetCurrentCodeBase() + (int)tEvent;
+        if (lslSender != null)
+            lslSender.SendCode(lastCode);
     }
 
     public void RegisterChoice(TunnelChoice choice)
     {
-        Debug.Log(choice.ToString());
+        lastChoice = (int)choice;
+        if (lslSender != null)
+            lslSender.SendChoice((int)choice);
     }
 
 }
