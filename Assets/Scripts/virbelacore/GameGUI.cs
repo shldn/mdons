@@ -944,6 +944,10 @@ public class GameGUI : MonoBehaviour
         ((Screen.height - Input.mousePosition.y) < (rect.y + rect.height));
     } // End of RectActuallyContains().
 
+    public void CutToBlack()
+    {
+        fadeAlpha = 1.0f;
+    }
 
 
     // Helpers for Guilayer

@@ -20,6 +20,7 @@ public class ScaleGameManager : MonoBehaviour
 
     // Options
     public float scaleSpeed = 0.01f;
+    public float startScale = 100.0f;
 
     // Helpers
     float origNearClip = 1.0f;
@@ -41,6 +42,11 @@ public class ScaleGameManager : MonoBehaviour
             gameObject.AddComponent<LSLSender>();
     }
 
+    void Start()
+    {
+        SetToTargetScale(new Vector3(startScale,startScale,startScale));
+    }
+
     void Update()
     {
         if (Input.GetKey(KeyCode.Equals))
@@ -54,26 +60,39 @@ public class ScaleGameManager : MonoBehaviour
                 scaleFactor = 1.0f;
 
             GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
-            UpdateGravity();
-            UpdateFocalLength();
-            UpdateClippingPlanes();
+            UpdateEnvironment();
         }
         if (Input.GetKey(KeyCode.Minus))
         {
             GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
-            UpdateGravity();
-            UpdateFocalLength();
-            UpdateClippingPlanes();
+            UpdateEnvironment();
         }
         if (Input.GetKeyUp(KeyCode.T))
             Camera.main.gameObject.GetComponent<TiltShift>().enabled = !Camera.main.gameObject.GetComponent<TiltShift>().enabled;
 
         if (Input.GetKeyUp(KeyCode.P))
         {
+            Vector3 targetScale = GameManager.Inst.LocalPlayer.Scale;
             GameGUI.Inst.customizeAvatarGui.ChangeCharacter((GameManager.Inst.LocalPlayer.ModelIdx + 1) % PlayerManager.PlayerModelNames.Length);
             GameManager.Inst.LocalPlayer.playerController.enabled = true;
             GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
+            SetToTargetScale(targetScale);
         }
+
+        if( Input.GetKeyUp(KeyCode.O))
+            ScaleAvatarOnCollision.used.Clear();
+    }
+
+    void SetToTargetScale(Vector3 scale)
+    {
+        GameManager.Inst.LocalPlayer.Scale = scale;
+    }
+
+    public void UpdateEnvironment()
+    {
+        UpdateGravity();
+        UpdateFocalLength();
+        UpdateClippingPlanes();
     }
 
     void UpdateGravity()

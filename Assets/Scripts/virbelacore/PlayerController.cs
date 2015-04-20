@@ -209,6 +209,8 @@ public class PlayerController : MonoBehaviour {
             pathfindingDest = new GameObject();
         }
 
+        if( GameManager.Inst.LevelLoaded == GameManager.Level.MOTION_TEST)
+            turnSpeed = 180f;
     } // End of Start().
 
 
@@ -487,20 +489,24 @@ public class PlayerController : MonoBehaviour {
             rigidbody.AddForce(moveVector * 50f, ForceMode.Force);
     } // End of FixedUpdate().
 
+    void OnCollisionEnter(Collision collision)
+    {
+        OnCollisionStay(collision);
+    } // End of OnCollisionEnter().
 
     void OnCollisionStay(Collision collision){
         grounded = true;
         rigidbody.drag = 25f;
-    } // End of OnCollisionEnter().
+    } // End of OnCollisionStay().
 
     void OnCollisionExit(Collision collision){
         grounded = false;
         rigidbody.drag = 0f;
-    } // End of OnCollisionEnter().
+    } // End of OnCollisionExit().
 
 
     public void Jump(){
-        if(grounded)
+        if (grounded)
             rigidbody.AddForce(gameObject.transform.localScale.x * Vector3.up * 8f, ForceMode.Impulse);
     } // End of Jump().
 
@@ -609,14 +615,20 @@ public class PlayerController : MonoBehaviour {
 
     public void StopFalling(){
         falling = false;
-        fallVelocity = Vector3.zero;
-        rigidbody.velocity = Vector3.zero;
         navAgent.enabled = true;
+        StopMomentum();
+    } // End of StopFalling().
+
+    public void StopMomentum()
+    {
+        fallVelocity = Vector3.zero;
+        if(!rigidbody.isKinematic)
+            rigidbody.velocity = Vector3.zero;
         moveVector = Vector3.zero;
         forwardThrottle = 0f;
         turnThrottle = 0f;
         moveSpeed = 0f;
-    } // End of StopFalling().
+    }
 
 
     public void UpdateTransform(Vector3 pos, float newRot){

@@ -171,7 +171,7 @@ public class Player {
     public PrivateVolume InPrivateVolume { get; set; }
     public Vector3 HeadPosition { get { return gameObject.transform.position + (Vector3.up * 3f * Scale.x); } }
     public Vector3 HeadTopPosition { get { return gameObject.transform.position + (Vector3.up * 3.44f * Scale.x); } }
-    public Vector3 Scale { get { return gameObject.transform.localScale; } set { gameObject.transform.localScale = value; playerController.scaleDirty = true; } }
+    public Vector3 Scale { get { return gameObject.transform.localScale; } set { gameObject.transform.localScale = value; playerController.scaleDirty = true; ScaleGameManager.Inst.UpdateEnvironment(); } }
     public bool isBot = false;
     public bool Visible
     {

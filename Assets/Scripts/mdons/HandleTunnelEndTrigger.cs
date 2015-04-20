@@ -11,5 +11,10 @@ public class HandleTunnelEndTrigger : MonoBehaviour
             TunnelEnvironmentManager.Inst.rotatableArrow.SetActive(true);
         else
             TunnelArrowClickChoice.EnableAll();
+
+        // Stop player and camera
+        GameManager.Inst.LocalPlayer.playerController.StopMomentum();
+
+        TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TUNNEL_EXIT);
 	}
 }
