@@ -119,7 +119,7 @@ public class TunnelGameManager : MonoBehaviour {
     void StartExperiment(Experiment exp)
     {
         chooseArrow = exp.chooseArrow;
-        useMouseButtonsToChoose = exp.mouseClickToChoose;
+        useMouseButtonsToChoose = !exp.mouseClickToChoose;
         StartExperiment(exp.angle, exp.avatarVisible, exp.userControl);
     }
 
