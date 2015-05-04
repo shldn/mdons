@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
     public static BuildType buildType = BuildType.DEMO;
 
     // Level definitions, cooresponds to build order in unity
-    public enum Level { NONE = -1, CONNECT = 0, CAMPUS = 1, BIZSIM = 2, INVPATH = 3, ORIENT = 4, AVATARSELECT = 5, TEAMROOM = 6, CMDROOM = 7, MINICAMPUS = 8, NAVTUTORIAL = 9, COURTROOM = 10, HOSPITALROOM = 11, BOARDROOM = 12, BOARDROOM_MED = 13, BOARDROOM_SM = 14, ASSEMBLY_CROQ = 15, OFFICE = 16, OPENCAMPUS = 17, MOTION_TEST = 18, SCALE_GAME = 19 };
+    public enum Level { NONE = -1, CONNECT = 0, CAMPUS = 1, BIZSIM = 2, INVPATH = 3, ORIENT = 4, AVATARSELECT = 5, TEAMROOM = 6, CMDROOM = 7, MINICAMPUS = 8, NAVTUTORIAL = 9, COURTROOM = 10, HOSPITALROOM = 11, BOARDROOM = 12, BOARDROOM_MED = 13, BOARDROOM_SM = 14, ASSEMBLY_CROQ = 15, OFFICE = 16, OPENCAMPUS = 17, MOTION_TEST = 18, SCALE_GAME = 19, MDONS_TEST = 20 };
     private Level loadLevel = Level.NONE;
 
     public int lastRoomId = -1;
@@ -135,6 +135,7 @@ public class GameManager : MonoBehaviour {
                 TunnelGameManager.Inst.Touch();
                 break;
             case Level.SCALE_GAME:
+            case Level.MDONS_TEST:
                 ScaleGameManager.Inst.Touch();
                 break;
             default:
@@ -368,6 +369,8 @@ public class GameManager : MonoBehaviour {
                 return "tunnel";
             case GameManager.Level.SCALE_GAME:
                 return "scale";
+            case GameManager.Level.MDONS_TEST:
+                return "playground";
             default:
                 Debug.LogError("Level: " + level + " unknown");
                 break;

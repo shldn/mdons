@@ -77,6 +77,8 @@ public class TunnelGameManager : MonoBehaviour {
     {
         if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Equals))
             GameManager.Inst.LoadLevel(GameManager.Level.SCALE_GAME);
+        if (Input.GetKeyUp(KeyCode.Alpha3))
+            GameManager.Inst.LoadLevel(GameManager.Level.MDONS_TEST);
 
         if (Input.GetKeyUp(KeyCode.Space))
             StartExperiment(expCount);
@@ -90,16 +92,16 @@ public class TunnelGameManager : MonoBehaviour {
     }
 
     
-    // GUI
-    void OnGUI()
-    {
-        int buttonWidth = 200;
-        if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
-            StartExperiment(expCount);
-        string experimentDesc = "Code: " + lastCode;
-        GUI.skin.label.fontSize = 14;
-        GUI.Label(new Rect(10,10, 300,100), experimentDesc);
-    }
+    //// GUI
+    //void OnGUI()
+    //{
+    //    int buttonWidth = 200;
+    //    if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
+    //        StartExperiment(expCount);
+    //    string experimentDesc = "Code: " + lastCode;
+    //    GUI.skin.label.fontSize = 14;
+    //    GUI.Label(new Rect(10,10, 300,100), experimentDesc);
+    //}
 
     void StartExperiment(int idx)
     {
