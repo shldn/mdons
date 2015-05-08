@@ -1,0 +1,284 @@
+[ TRACE ] Creating and configuring console log listener
+[ TRACE ] Creating configuration manager
+[ TRACE ] Adding configuration file(s) [../share/openvibe.conf]
+[ TRACE ] Processing configuration file ../share/openvibe.conf
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ######################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ## OpenViBE configuration file
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ##
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ## - The file consists of a list of "token name = token value"
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ## - Whatever space / tabulation at the begining or end of a line is removed
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ## - Comments start with #
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ## - Lines ending with \ continue on the next line (all ending \ are removed)
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ## - You can use ${token name} in a token value
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ## - You can use $Environment{env name} in a token value to get an environment variable
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ######################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : ######################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # OpenViBE configuration
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Changing configuration token Path_Root to ..
+[ TRACE ] Changing configuration token Path_Bin to ${Path_Root}/bin
+[ TRACE ] Changing configuration token Path_Lib to ${Path_Root}/lib
+[ TRACE ] Changing configuration token Path_Log to ${Path_Root}/log
+[ TRACE ] Changing configuration token Path_Tmp to ${Path_Root}/tmp
+[ TRACE ] Adding configuration token Path_Samples : ${Path_Root}/share/openvibe-scenarios
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # System Generalization
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Adding configuration token Shell_ExtensionWindows : .cmd
+[ TRACE ] Adding configuration token Shell_ExtensionLinux : .sh
+[ TRACE ] Adding configuration token Shell_Extension : ${Shell_Extension${OperatingSystem}}
+[ TRACE ] Adding configuration token Program_Launcher_PrefixWindows : ov-
+[ TRACE ] Adding configuration token Program_Launcher_PrefixLinux : ov-
+[ TRACE ] Adding configuration token Program_Launcher_Prefix : ${Program_Launcher_Prefix${OperatingSystem}}
+[ TRACE ] Adding configuration token External_Application_LauncherWindows : OpenViBE-external-application-launcher.cmd
+[ TRACE ] Adding configuration token External_Application_LauncherLinux : ./OpenViBE-external-application-launcher.sh
+[ TRACE ] Adding configuration token External_Application_Launcher : ${External_Application_Launcher${OperatingSystem}}
+[ TRACE ] Adding configuration token VRPN_ExternalServerPort : 53883
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # OpenViBE kernel configuration
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Changing configuration token Kernel_PluginsPatternLinux to ${Path_Lib}/libOpenViBE-plugins-*.so
+[ TRACE ] Changing configuration token Kernel_PluginsPatternWindows to ${Path_Bin}/OpenViBE-plugins-*.dll
+[ TRACE ] Changing configuration token Kernel_Plugins to ${Kernel_PluginsPattern${OperatingSystem}}
+[ TRACE ] Changing configuration token Kernel_MainLogLevel to Information
+[ TRACE ] Changing configuration token Kernel_ConsoleLogLevel to Trace
+[ TRACE ] Adding configuration token Kernel_ConsoleLogWithHexa : False
+[ TRACE ] Adding configuration token Kernel_ConsoleLogTimeInSecond : True
+[ TRACE ] Adding configuration token Kernel_ConsoleLogTimePrecision : 3
+[ TRACE ] Changing configuration token Kernel_FileLogLevel to Debug
+[ TRACE ] Adding configuration token Kernel_FileLogWithHexa : True
+[ TRACE ] Adding configuration token Kernel_FileLogTimeInSecond : False
+[ TRACE ] Adding configuration token Kernel_FileLogTimePrecision : 3
+[ TRACE ] Changing configuration token Kernel_PlayerFrequency to 128
+[ TRACE ] Adding configuration token Kernel_DelayedConfiguration : ${Path_Root}/share/openvibe-delayed.conf
+[ TRACE ] Adding configuration token Kernel_AllowUnregisteredNumericalStimulationIdentifiers : false
+[ TRACE ] Adding configuration token Kernel_3DVisualisationEnabled : true
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgreStatisticsOverlayEnabled : false
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgreConfiguration : ${Path_Root}/share/openvibe-kernel-omk/ogre.cfg
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgreResources : ${Path_Root}/share/openvibe-kernel-omk/resources.cfg
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgrePluginsLinux : $Environment{OGRE_HOME}/lib/OGRE/Plugins.cfg
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgrePluginsWindowsSubDirectoryRelease : release
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgrePluginsWindowsSubDirectoryDebug : debug
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgrePluginsWindows : $Environment{OGRE_HOME}/bin/${Kernel_3DVisualisationOgrePluginsWindowsSubDirectory${BuildType}}/Plugins.cfg
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgrePlugins : ${Kernel_3DVisualisationOgrePlugins${OperatingSystem}}
+[ TRACE ] Adding configuration token Kernel_3DVisualisationOgreLogLevel : Debug
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # OpenViBE plugin configuration
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Adding configuration token Plugin_Classification_RandomizeKFoldTestData : true
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # OpenViBE application designer configuration
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Adding configuration token Designer_Locale : C
+[ TRACE ] Adding configuration token Designer_UndoRedoStackSize : 64
+[ TRACE ] Adding configuration token Designer_ShowAlgorithms : false
+[ TRACE ] Adding configuration token Designer_ShowDeprecated : false
+[ TRACE ] Adding configuration token Designer_ShowUnstable : false
+[ TRACE ] Adding configuration token Designer_ShowOriginalBoxName : true
+[ TRACE ] Adding configuration token Designer_FullscreenEditor : false
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #Designer_FullscreenVisualisation = true
+[ TRACE ] Adding configuration token Designer_UnaffectedVisualisationWindowWidth : 480
+[ TRACE ] Adding configuration token Designer_UnaffectedVisualisationWindowHeight : 320
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #Designer_UnaffectedVisualisationWindowFullscreen = false
+[ TRACE ] Adding configuration token Designer_DefaultWorkingDirectory : ${Path_Root}
+[ TRACE ] Adding configuration token Designer_WindowManager_Center : false
+[ TRACE ] Adding configuration token Designer_WebBrowserCommand_Windows : start
+[ TRACE ] Adding configuration token Designer_WebBrowserCommand_Linux : xdg-open
+[ TRACE ] Adding configuration token Designer_WebBrowserCommand : ${Designer_WebBrowserCommand_${OperatingSystem}}
+[ TRACE ] Adding configuration token Designer_WebBrowserHelpURLBase : http://openvibe.inria.fr/documentation/unstable
+[ TRACE ] Adding configuration token Designer_WebBrowserOpenViBEHomepage : http://openvibe.inria.fr/
+[ TRACE ] Adding configuration token Designer_ScriptEditorCommand_Windows : notepad
+[ TRACE ] Adding configuration token Designer_ScriptEditorCommand_Linux : xdg-open
+[ TRACE ] Adding configuration token Designer_ScriptEditorCommand : ${Designer_ScriptEditorCommand_${OperatingSystem}}
+[ TRACE ] Adding configuration token Designer_PopUpOnError : false
+[ TRACE ] Adding configuration token Designer_AllowUpCastConnection : false
+[ TRACE ] Adding configuration token Designer_ConsoleLogWithHexa : false
+[ TRACE ] Adding configuration token Designer_ConsoleLogTimeInSecond : True
+[ TRACE ] Adding configuration token Designer_ConsoleLogTimePrecision : 3
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # OpenViBE application acquisition server configuration
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Adding configuration token AcquisitionServer_ShowUnstable : true
+[ TRACE ] Adding configuration token AcquisitionServer_HostName : localhost
+[ TRACE ] Adding configuration token AcquisitionServer_DefaultDriver : ${AcquisitionServer_LastDriver}
+[ TRACE ] Adding configuration token AcquisitionServer_DefaultSampleCountPerBuffer : ${AcquisitionServer_LastSampleCountPerBuffer}
+[ TRACE ] Adding configuration token AcquisitionServer_DefaultConnectionPort : ${AcquisitionServer_LastConnectionPort}
+[ TRACE ] Adding configuration token AcquisitionServer_LastDriver : Generic oscillator
+[ TRACE ] Adding configuration token AcquisitionServer_LastSampleCountPerBuffer : 32
+[ TRACE ] Adding configuration token AcquisitionServer_LastConnectionPort : 1024
+[ TRACE ] Adding configuration token AcquisitionServer_DriftCorrectionPolicy : DriverChoice
+[ TRACE ] Adding configuration token AcquisitionServer_JitterEstimationCountForDrift : 16
+[ TRACE ] Adding configuration token AcquisitionServer_DriftToleranceDuration : 2
+[ TRACE ] Adding configuration token AcquisitionServer_OverSamplingFactor : 1
+[ TRACE ] Adding configuration token AcquisitionServer_StartedDriverSleepDuration : 4
+[ TRACE ] Adding configuration token AcquisitionServer_StoppedDriverSleepDuration : 100
+[ TRACE ] Adding configuration token AcquisitionServer_DriverTimeoutDuration : 5000
+[ TRACE ] Adding configuration token AcquisitionServer_NaNReplacementPolicy : LastCorrectValue
+[ TRACE ] Adding configuration token AcquisitionServer_CheckImpedance : false
+[ TRACE ] Adding configuration token AcquisitionServer_CheckImpedance_ColumnCount : 8
+[ TRACE ] Adding configuration token AcquisitionServer_Driver_MicromedTimeOut : ${AcquisitionServer_DriverTimeoutDuration}
+[ TRACE ] Adding configuration token AcquisitionServer_NeuroskyMindset_ESenseValues : false
+[ TRACE ] Adding configuration token AcquisitionServer_NeuroskyMindset_PowerBands : false
+[ TRACE ] Adding configuration token AcquisitionServer_NeuroskyMindset_BlinkStrength : false
+[ TRACE ] Adding configuration token AcquisitionServer_NeuroskyMindset_Blink : false
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # OpenViBE application plugin inspector configuration
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Adding configuration token PluginInspector_DumpGlobalDefinesDirectory : ${Path_Root}
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #PluginInspector_DumpAlgorithmSnapshotDirectory = $Environment{OpenViBE_documentation}/src/algorithm-snapshots
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #PluginInspector_DumpAlgorithmDocTemplateDirectory = $Environment{OpenViBE_documentation}/src/algorithm-doc
+[ TRACE ] Adding configuration token PluginInspector_DumpBoxAlgorithmSnapshotDirectory : $Environment{OpenViBE_documentation}/src/box-algorithm-snapshots
+[ TRACE ] Adding configuration token PluginInspector_DumpBoxAlgorithmDocTemplateDirectory : $Environment{OpenViBE_documentation}/src/box-algorithm-doc
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : # Include custom configuration
+[ DEBUG ] Ignored comment in configuration file ../share/openvibe.conf : #####################################################################################
+[ TRACE ] Adding configuration token CustomConfigurationPrefixWindows : ${UserHome}/openvibe
+[ TRACE ] Adding configuration token CustomConfigurationPrefixLinux : ${UserHome}/.openvibe
+[ TRACE ] Adding configuration token CustomConfigurationSuffixWindows : .conf
+[ TRACE ] Adding configuration token CustomConfigurationSuffixLinux : rc
+[ TRACE ] Adding configuration token CustomConfiguration : ${CustomConfigurationPrefix${OperatingSystem}}${CustomConfigurationSuffix${OperatingSystem}}
+[ TRACE ] Adding configuration token CustomConfigurationApplication : ${CustomConfigurationPrefix${OperatingSystem}}-${ApplicationName}${CustomConfigurationSuffix${OperatingSystem}}
+[ TRACE ] Including configuration file C:\Users\lbonnet/openvibe-designer.conf...
+[ TRACE ] Adding configuration file(s) [C:\Users\lbonnet/openvibe-designer.conf]
+[ TRACE ] Processing configuration file C:\Users\lbonnet/openvibe-designer.conf
+[ DEBUG ] Ignored comment in configuration file C:\Users\lbonnet/openvibe-designer.conf : # This file is generated
+[ DEBUG ] Ignored comment in configuration file C:\Users\lbonnet/openvibe-designer.conf : # Do not modify
+[ TRACE ] Changing configuration token Designer_ShowUnstable to True
+[ DEBUG ] Ignored comment in configuration file C:\Users\lbonnet/openvibe-designer.conf : # Last files opened in the designer
+[ TRACE ] Adding configuration token Designer_LastScenarioFilename_001 : C:/openvibe/dist/matlab/dll-test/test-matlabdll.xml
+[ TRACE ] Adding configuration token Designer_LastScenarioFilename_002 : C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/matlab/tuto2-FFT-filter.xml
+[ TRACE ] Adding configuration token Designer_LastScenarioFilename_003 : C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/matlab/tuto3-sinus-generator.xml
+[ TRACE ] Adding configuration token Designer_LastScenarioFilename_004 : C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/matlab/tuto1-signal-filter.xml
+[ TRACE ] Adding configuration token Designer_LastScenarioFilename_005 : C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/python/scenarios/python-sinus-oscillator.xml
+[ TRACE ] Processing configuration file C:\Users\lbonnet/openvibe-designer.conf finished
+[ TRACE ] Including configuration file C:\Users\lbonnet/openvibe-designer.conf done...
+[ TRACE ] Including configuration file C:\Users\lbonnet/openvibe.conf...
+[ TRACE ] Adding configuration file(s) [C:\Users\lbonnet/openvibe.conf]
+[ TRACE ] Processing configuration file C:\Users\lbonnet/openvibe.conf
+[ TRACE ] Changing configuration token Designer_ShowUnstable to true
+[ DEBUG ] Ignored comment in configuration file C:\Users\lbonnet/openvibe.conf : # Kernel_MainLogLevel = Trace
+[ DEBUG ] Ignored comment in configuration file C:\Users\lbonnet/openvibe.conf : # Kernel_ConsoleLogLevel = Information
+[ DEBUG ] Ignored comment in configuration file C:\Users\lbonnet/openvibe.conf : # Kernel_FileLogLevel = Trace
+[ DEBUG ] Ignored comment in configuration file C:\Users\lbonnet/openvibe.conf : #Include = C:/lbonnet/tie-fighter-laplacian-old/tie-fighter-laplacian.conf
+[ TRACE ] Including configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf...
+[ TRACE ] Adding configuration file(s) [C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf]
+[ TRACE ] Processing configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #################################################
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # Config file for the Multiuser BCI experiment  #
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #    - date : 23 aug 2011                       #
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #    - Author : Laurent Bonnet                  #
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #    - Company : INRIA                          #
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #################################################
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : ##################################################################
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # WARNING !! BE SURE TO CHECK THE FOLLOWING TOKENS:
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-----------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_PathRoot : C:/openvibe/dist/multiuser-bci
+[ TRACE ] Adding configuration token ActiveUser : User1
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #ActiveUser = User2
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : ##################################################################
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #Multiuser_ConfigDir =  ${Multiuser_PathRoot}/config
+[ TRACE ] Adding configuration token Multiuser_ConfigDir : C:/lbonnet/Dropbox/multiuser
+[ TRACE ] Adding configuration token Multiuser_ScriptDir : ${Multiuser_PathRoot}/scripts
+[ TRACE ] Adding configuration token Multiuser_SignalDir : ${Multiuser_PathRoot}/signal
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # Acquisition :
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_User1_AcquisitionServer_HostName : localhost
+[ TRACE ] Adding configuration token Multiuser_User1_AcquisitionServer_Port : 1024
+[ TRACE ] Adding configuration token Multiuser_User2_AcquisitionServer_HostName : localhost
+[ TRACE ] Adding configuration token Multiuser_User2_AcquisitionServer_Port : 2048
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_AcquisitionServer_HostName : ${Multiuser_${ActiveUser}_AcquisitionServer_HostName}
+[ TRACE ] Adding configuration token Multiuser_AcquisitionServer_Port : ${Multiuser_${ActiveUser}_AcquisitionServer_Port}
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # Channel selection : only needed with 2 acquisition on 1 g.USBAmp
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_User1_ChannelList : 1:8
+[ TRACE ] Adding configuration token Multiuser_User2_ChannelList : 9:16
+[ TRACE ] Adding configuration token Multiuser_User1_ChannelRenameList : C3;C4;FC3;FC4;C1;C2;CP3;CP4
+[ TRACE ] Adding configuration token Multiuser_User2_ChannelRenameList : C3;C4;FC3;FC4;C1;C2;CP3;CP4
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_ChannelList : ${Multiuser_${ActiveUser}_ChannelList}
+[ TRACE ] Adding configuration token Multiuser_ChannelRenameList : ${Multiuser_${ActiveUser}_ChannelRenameList}
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # EEG File saving :
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_User1_AcquisitionFile : ${Multiuser_SignalDir}/user1/1-multiuser-acquisition-user1-[$core{date}-$core{time}].ov
+[ TRACE ] Adding configuration token Multiuser_User2_AcquisitionFile : ${Multiuser_SignalDir}/user2/1-multiuser-acquisition-user2-[$core{date}-$core{time}].ov
+[ TRACE ] Adding configuration token Multiuser_User1_OnlineFile : ${Multiuser_SignalDir}/user1/4-multiuser-online-user1-[$core{date}-$core{time}].ov
+[ TRACE ] Adding configuration token Multiuser_User2_OnlineFile : ${Multiuser_SignalDir}/user2/4-multiuser-online-user2-[$core{date}-$core{time}].ov
+[ TRACE ] Adding configuration token Multiuser_User1_LastConcatenationFile : ${Multiuser_SignalDir}/user1/x-last-concatenation.ov
+[ TRACE ] Adding configuration token Multiuser_User2_LastConcatenationFile : ${Multiuser_SignalDir}/user2/x-last-concatenation.ov
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_AcquisitionFile : ${Multiuser_${ActiveUser}_AcquisitionFile}
+[ TRACE ] Adding configuration token Multiuser_OnlineFile : ${Multiuser_${ActiveUser}_OnlineFile}
+[ TRACE ] Adding configuration token Multiuser_LastConcatenationFile : ${Multiuser_${ActiveUser}_LastConcatenationFile}
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # CSP config File saving :
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_User1_CSPConfigFile : ${Multiuser_ConfigDir}/user1-csp-spatial-filter.cfg
+[ TRACE ] Adding configuration token Multiuser_User2_CSPConfigFile : ${Multiuser_ConfigDir}/user2-csp-spatial-filter.cfg
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_CSPConfigFile : ${Multiuser_${ActiveUser}_CSPConfigFile}
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # LDA config File saving :
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_User1_LDAConfigFile : ${Multiuser_ConfigDir}/user1-lda.cfg
+[ TRACE ] Adding configuration token Multiuser_User2_LDAConfigFile : ${Multiuser_ConfigDir}/user2-lda.cfg
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_LDAConfigFile : ${Multiuser_${ActiveUser}_LDAConfigFile}
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : # Launch commands :
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_Linux_LaunchCommandSolo : cd ${Path_Root} &&  ./handball-solo.sh &
+[ TRACE ] Adding configuration token Multiuser_Windows_LaunchCommandSolo : cd ${Path_Root} & START handball-solo.cmd&
+[ TRACE ] Adding configuration token Multiuser_Linux_LaunchCommandMulti : cd ${Path_Root} &&  ./handball-multi.sh &
+[ TRACE ] Adding configuration token Multiuser_Windows_LaunchCommandMulti : cd ${Path_Root} & START handball-multi.cmd&
+[ TRACE ] Adding configuration token Multiuser_Linux_LaunchCommandConcur : cd ${Path_Root} &&  ./handball-concur.sh &
+[ TRACE ] Adding configuration token Multiuser_Windows_LaunchCommandConcur : cd ${Path_Root} & START handball-concur.cmd&
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Adding configuration token Multiuser_LaunchCommandSolo : ${Multiuser_${OperatingSystem}_LaunchCommandSolo}
+[ TRACE ] Adding configuration token Multiuser_LaunchCommandMulti : ${Multiuser_${OperatingSystem}_LaunchCommandMulti}
+[ TRACE ] Adding configuration token Multiuser_LaunchCommandConcur : ${Multiuser_${OperatingSystem}_LaunchCommandConcur}
+[ DEBUG ] Ignored comment in configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf : #-------------------------------------------------------------------------------------------
+[ TRACE ] Processing configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf finished
+[ TRACE ] Including configuration file C:/openvibe/dist/multiuser-bci/multiuser-configuration.conf done...
+[ TRACE ] Processing configuration file C:\Users\lbonnet/openvibe.conf finished
+[ TRACE ] Including configuration file C:\Users\lbonnet/openvibe.conf done...
+[ TRACE ] Processing configuration file ../share/openvibe.conf finished
+[  INF  ] Adding [../bin/OpenViBE-plugins-*.dll]
+[  INF  ] Added 2 (0x2) plugin object descriptor(s) from [../bin/OpenViBE-plugins-acquisition-dynamic.dll]
+[  INF  ] Added 6 (0x6) plugin object descriptor(s) from [../bin/OpenViBE-plugins-classification-dynamic.dll]
+[  INF  ] Added 1 (0x1) plugin object descriptor(s) from [../bin/OpenViBE-plugins-classification-gpl-dynamic.dll]
+[  INF  ] Added 1 (0x1) plugin object descriptor(s) from [../bin/OpenViBE-plugins-feature-extraction-dynamic.dll]
+[  INF  ] Added 17 (0x11) plugin object descriptor(s) from [../bin/OpenViBE-plugins-file-io-dynamic.dll]
+[  INF  ] Added 2 (0x2) plugin object descriptor(s) from [../bin/OpenViBE-plugins-matlab-dynamic.dll]
+[  INF  ] Added 1 (0x1) plugin object descriptor(s) from [../bin/OpenViBE-plugins-python-dynamic.dll]
+[  INF  ] Added 9 (0x9) plugin object descriptor(s) from [../bin/OpenViBE-plugins-samples-dynamic.dll]
+[  INF  ] Added 29 (0x1d) plugin object descriptor(s) from [../bin/OpenViBE-plugins-signal-processing-dynamic.dll]
+[  INF  ] Added 22 (0x16) plugin object descriptor(s) from [../bin/OpenViBE-plugins-signal-processing-gpl-dynamic.dll]
+[  INF  ] Added 17 (0x11) plugin object descriptor(s) from [../bin/OpenViBE-plugins-simple-visualisation-dynamic.dll]
+[  INF  ] Added 12 (0xc) plugin object descriptor(s) from [../bin/OpenViBE-plugins-stimulation-dynamic.dll]
+[  INF  ] Added 19 (0x13) plugin object descriptor(s) from [../bin/OpenViBE-plugins-stream-codecs-dynamic.dll]
+[  INF  ] Added 3 (0x3) plugin object descriptor(s) from [../bin/OpenViBE-plugins-streaming-dynamic.dll]
+[  INF  ] Added 4 (0x4) plugin object descriptor(s) from [../bin/OpenViBE-plugins-tools-dynamic.dll]
+[  INF  ] Added 4 (0x4) plugin object descriptor(s) from [../bin/OpenViBE-plugins-vrpn-dynamic.dll]
+[  INF  ] Restoring scenario [C:/openvibe/dist/matlab/dll-test/test-matlabdll.xml]
+[  INF  ] Importing scenario...
+[WARNING] Box algorithm descriptor not found
+[  INF  ] Restoring scenario [C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/matlab/tuto2-FFT-filter.xml]
+[  INF  ] Importing scenario...
+[  INF  ] Restoring scenario [C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/matlab/tuto3-sinus-generator.xml]
+[  INF  ] Importing scenario...
+[  INF  ] Restoring scenario [C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/matlab/tuto1-signal-filter.xml]
+[  INF  ] Importing scenario...
+[  INF  ] Restoring scenario [C:/openvibe/dist/share/openvibe-scenarios/box-tutorials/python/scenarios/python-sinus-oscillator.xml]
+[  INF  ] Importing scenario...
+[  INF  ] Initialization took 5823 ms
+[  INF  ] At time 0 (0x0) <Box algorithm::Signal filter> 
+---- MATLAB BUFFER - INFO ----
+Matlab initialize function has been called.
+
+[  INF  ] At time 10737418240 (0x280000000) <Box algorithm::Signal filter> 
+---- MATLAB BUFFER - INFO ----
+Matlab uninitialize function has been called.
+
