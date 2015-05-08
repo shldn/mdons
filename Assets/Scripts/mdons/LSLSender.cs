@@ -12,14 +12,17 @@ public class LSLSender : MonoBehaviour {
 	// Unity calls this when the object is constructed
 	void Awake () {
         // create stream info and outlet
-        liblsl.StreamInfo info = new liblsl.StreamInfo("BioSemi", "EEG", 8, liblsl.IRREGULAR_RATE, liblsl.channel_format_t.cf_float32, "sddsfsdf");
-        outlet = new liblsl.StreamOutlet(info);
+        if(LSLMode.Sending)
+        {
+            liblsl.StreamInfo info = new liblsl.StreamInfo("BioSemi", "EEG", 8, liblsl.IRREGULAR_RATE, liblsl.channel_format_t.cf_float32, "sddsfsdf");
+            outlet = new liblsl.StreamOutlet(info);
+        }
 	}
 	
 	// This is called at a fixed time step defined in project settings (Usually used for physics updates)
 	void FixedUpdate () {
 
-        if( false )
+        if (LSLMode.Sending)
         {
             // initial data to send
             Vector3 playerPos = GameManager.Inst.LocalPlayer.gameObject.transform.position;
@@ -41,6 +44,8 @@ public class LSLSender : MonoBehaviour {
 
     public void SendCode(int code)
     {
+        if(!LSLMode.Sending)
+            return;
         float[] data = new float[8];
         data[0] = (float)code;
         data[1] = 0f;
@@ -55,6 +60,8 @@ public class LSLSender : MonoBehaviour {
 
     public void SendChoice(int choice)
     {
+        if (!LSLMode.Sending)
+            return;
         float[] data = new float[8];
         data[0] = (float)choice;
         data[1] = 0f;
