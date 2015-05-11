@@ -15,6 +15,9 @@ public enum GyroControl
 }
 
 public class ReceiveLSL : MonoBehaviour {
+
+    private static ReceiveLSL Inst = null; 
+
 	//LSL
 	private static liblsl.StreamInlet inlet;
 	private static liblsl.StreamInfo[] results ;
@@ -62,7 +65,10 @@ public class ReceiveLSL : MonoBehaviour {
 		//STOP_RETRIVING = true;
 		print ("mouse down");
 	}
-	// Use this for initialization
+    void Awake() {
+        Inst = this;
+    }
+
 	void Start () {
 		//EPOC..
 		buffer = new Buffer ();
@@ -98,7 +104,8 @@ public class ReceiveLSL : MonoBehaviour {
         }
         else if(gyroControl == GyroControl.MOVEMENT)
         {
-            transform.position = transform.position + movementSpeed * Time.deltaTime * new Vector3(rotationX, -rotationY, 0);
+            Transform playerTransform = GameManager.Inst.LocalPlayer.gameObject.transform;
+            transform.position = transform.position + movementSpeed * Time.deltaTime * (rotationX * playerTransform.right - rotationY * playerTransform.up);
             GameManager.Inst.LocalPlayer.playerController.LookAtTransform(transform);
         }
 		rotationX = 0;
@@ -136,9 +143,9 @@ public class ReceiveLSL : MonoBehaviour {
 				//print ("gyrox= "+gyroX.ToString()+" gyroy= "+gyroY.ToString()+" Buffer size= "+buffer.getSize());
 			}
 		} else {
-			if( Mathf.Abs(x-gyroX) >10 && Mathf.Abs(x-gyroX) <300  )
+			if( Mathf.Abs(x-gyroX) >10 && (Inst.gyroControl == GyroControl.MOVEMENT || Mathf.Abs(x-gyroX) <300) )
 				rotationX = gyroX-x;
-			if(Mathf.Abs(gyroY-y) >10 && Mathf.Abs(gyroY-y) <300 )
+            if (Mathf.Abs(gyroY - y) > 10 && (Inst.gyroControl == GyroControl.MOVEMENT || Mathf.Abs(gyroY - y) < 300))
 				rotationY = y-gyroY;
 		}
 		//print ("gyrox= "+gyroX.ToString()+" gyroy= "+gyroY.ToString()+" Buffer size= "+buffer.getSize());
