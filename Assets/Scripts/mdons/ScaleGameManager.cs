@@ -40,9 +40,6 @@ public class ScaleGameManager : MonoBehaviour
 
         if (sendLSLData)
             gameObject.AddComponent<LSLSender>();
-
-        if (GameManager.Inst.LevelLoaded == GameManager.Level.MDONS_TEST)
-            MainCameraController.Inst.cameraSmooth = 0.0f;
     }
 
     void Start()
