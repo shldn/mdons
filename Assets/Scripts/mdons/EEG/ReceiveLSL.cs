@@ -22,7 +22,6 @@ public class ReceiveLSL : MonoBehaviour {
 	private static liblsl.StreamInlet inlet;
 	private static liblsl.StreamInfo[] results ;
 	private static float[] sample;// = new float[8];
-	private static string t;
 	private static bool INITIAL = false;
 	private static bool STOP_RECEIVING = false;
 	private static bool STOP_RETRIVING = false;
@@ -159,10 +158,9 @@ public class ReceiveLSL : MonoBehaviour {
 		// open an inlet and print some interesting info about the stream (meta-data, etc.)
 		inlet = new liblsl.StreamInlet(results[0]);
 		//print (inlet.info ().as_xml ());
-		while (inlet.pull_sample (sample) != 0 && !STOP_RECEIVING) {
+		while (!STOP_RECEIVING && inlet.pull_sample (sample) != 0) {
 			//print (sample[0].ToString());
 			//for (int index = 14; index<sample.Length ;index++)
-			t = sample [14].ToString ()+ " " + sample[15].ToString();//print((string)sample [index].ToString ()+ " ");
 			updataGyro(sample[14],sample[15]);
 			buffer.addData(sample);//push into the buffer
 		}
