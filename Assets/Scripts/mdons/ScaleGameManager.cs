@@ -130,6 +130,8 @@ public class ScaleGameManager : MonoBehaviour
     void OnDestroy()
     {
         Physics.gravity = new Vector3(0, -19.62F, 0);
+        if( GameManager.Inst.LevelLoaded == GameManager.Level.MDONS_TEST )
+            LSLManager.Destroy();
         mInst = null;
     }
 }
