@@ -84,6 +84,11 @@ public class TunnelGameManager : MonoBehaviour {
             StartExperiment(expCount);
         if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.T))
             TunnelEnvironmentManager.Inst.ReCompute();
+        if(Debug.isDebugBuild && Input.GetKeyUp(KeyCode.P))
+        {
+            GameGUI.Inst.customizeAvatarGui.ChangeCharacter((GameManager.Inst.LocalPlayer.ModelIdx + 1) % PlayerManager.PlayerModelNames.Length);
+            GameManager.Inst.LocalPlayer.playerController.enabled = true;
+        }
     }
 
     void OnDestroy()
