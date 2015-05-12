@@ -48,6 +48,7 @@ public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
         newRot.ToAngleAxis(out newRotAngle, out newRotAxis);
         parent.transform.RotateAround(transform.position, newRotAxis, newRotAngle);
 
+        parent.transform.parent = transform.parent;
         createdBigger = true;
     }
 
@@ -57,10 +58,10 @@ public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
         child.name = name;
         child.transform.position = nextLevelTransform.position;
         child.transform.rotation = nextLevelTransform.rotation;
-        //child.transform.parent = transform;
         child.transform.localScale = new Vector3(nextLevelTransform.localScale.x * transform.lossyScale.x, nextLevelTransform.localScale.y * transform.lossyScale.y, nextLevelTransform.localScale.z * transform.lossyScale.z);
         child.GetComponent<RealTimeRecursiveObjectGenerator>().nextLevelTransform = child.transform.Find(nextLevelTransform.name);
         child.GetComponent<RealTimeRecursiveObjectGenerator>().createdBigger = true;
+        child.transform.parent = transform.parent;
         createdSmaller = true;
     }
 }
