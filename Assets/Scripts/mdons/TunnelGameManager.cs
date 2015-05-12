@@ -127,15 +127,17 @@ public class TunnelGameManager : MonoBehaviour {
     {
         chooseArrow = exp.chooseArrow;
         useMouseButtonsToChoose = !exp.mouseClickToChoose;
-        StartExperiment(exp.angle, exp.avatarVisible, exp.userControl);
+        StartExperiment(exp.angle, exp.avatarVisible, exp.userControl, exp.avatarPixelated);
     }
 
-    void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl)
+    void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl, bool playerAbstract = false)
     {
         if (expCount != 0)
             TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TRIAL_DONE);
         Debug.LogError("Starting experiment: " + expCount);
         lastChoice = 0;
+        GameGUI.Inst.customizeAvatarGui.ChangeCharacter(playerAbstract ? 2 : 0);
+        GameManager.Inst.LocalPlayer.playerController.enabled = true;
         GameManager.Inst.LocalPlayer.Visible = playerVis;
         TunnelEnvironmentManager.Inst.SetTunnelAngle(tunnelAngle);
         MoveAlongPath moveScript = (MoveAlongPath)FindObjectOfType(typeof(MoveAlongPath));

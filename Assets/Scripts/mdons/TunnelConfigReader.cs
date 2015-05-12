@@ -29,7 +29,8 @@ public class Experiment
 
     public void SetAvatar(string str)
     {
-        avatarVisible = (str.ToLower() == "visible");
+        avatarVisible = (str.ToLower() != "invisible");
+        avatarPixelated = (str.ToLower() == "abstract");
     }
 
     public void SetArrows(string str)
@@ -56,6 +57,7 @@ public class Experiment
     public float angle = 30f;
     public bool chooseArrow = false;
     public bool avatarVisible = true;
+    public bool avatarPixelated = false;
     public bool mouseClickToChoose = true;
     public UserControl userControl = UserControl.NONE;
 }
