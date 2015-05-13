@@ -8,13 +8,14 @@ public class CityBlockGenerator : MonoBehaviour {
     public float blockWidth = 200.0f;
     public int rows = 3;
     public int cols = 3;
-    public GameObject building = null;
+    public GameObject[] building;
 
     Grid2D blockGrid = null;
+    int buildingCounter = 0;
 
 	// Use this for initialization
 	void Start () {
-        if (building == null)
+        if (building == null || building.Length == 0)
         {
             Debug.LogError("City Block Generator - Please Specify a building!");
             return;
@@ -26,19 +27,19 @@ public class CityBlockGenerator : MonoBehaviour {
         {
             for (int c = 0; c < cols; ++c)
             {
-                GameObject obj = GameObject.Instantiate(building) as GameObject;
+                GameObject obj = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
                 obj.transform.position = To3D(blockGrid.LeftEdgeLerp(r, c, 0.5f));
                 obj.transform.forward = -Vector3.right;
 
-                GameObject obj2 = GameObject.Instantiate(building) as GameObject;
+                GameObject obj2 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
                 obj2.transform.position = To3D(blockGrid.RightEdgeLerp(r, c, 0.5f));
                 obj2.transform.forward = Vector3.right;
 
-                GameObject obj3 = GameObject.Instantiate(building) as GameObject;
+                GameObject obj3 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
                 obj3.transform.position = To3D(blockGrid.TopEdgeLerp(r, c, 0.5f));
                 obj3.transform.forward = Vector3.forward;
 
-                GameObject obj4 = GameObject.Instantiate(building) as GameObject;
+                GameObject obj4 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
                 obj4.transform.position = To3D(blockGrid.BottomEdgeLerp(r, c, 0.5f));
                 obj4.transform.forward = -Vector3.forward;
             }
