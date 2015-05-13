@@ -499,12 +499,15 @@ public class Player {
         if (Type == PlayerType.STEALTH)
             return;
         int numOptionsDefined = 0;
-        foreach (string option in AvatarOptionManager.Inst.OptionTypes[ModelIdx])
+        if (AvatarOptionManager.Inst.OptionTypes.ContainsKey(ModelIdx))
         {
-            int fieldIdx = 0;
-            if (int.TryParse(userProfile.GetField(option), out fieldIdx))
-                ++numOptionsDefined;
-            AvatarOptionManager.Inst.UpdateElement(gameObject, ModelIdx, option, fieldIdx);
+            foreach (string option in AvatarOptionManager.Inst.OptionTypes[ModelIdx])
+            {
+                int fieldIdx = 0;
+                if (int.TryParse(userProfile.GetField(option), out fieldIdx))
+                    ++numOptionsDefined;
+                AvatarOptionManager.Inst.UpdateElement(gameObject, ModelIdx, option, fieldIdx);
+            }
         }
         if (numOptionsDefined == 0)
         {

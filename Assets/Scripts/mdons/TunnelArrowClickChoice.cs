@@ -52,17 +52,17 @@ public class TunnelArrowClickChoice : MonoBehaviour {
 
         GUILayout.BeginArea(new Rect(0.25f * Screen.width, 0.25f * Screen.height, 0.5f * Screen.width, 0.5f * Screen.height));
             GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-            GUI.skin.label.clipping = TextClipping.Overflow;
             GUI.skin.label.fontSize = Mathf.CeilToInt(Screen.height * 0.05f);
-            GUILayout.Space(Mathf.Max(Screen.height * 0.005f, 4));
-            GUILayout.Label("Where did the tunnel start?");
+            GUILayout.Space(Mathf.Max(Screen.height * 0.01f, 4));
+            GUILayout.Label("Where did the tunnel start?", GUILayout.Height(Mathf.Max(GUI.skin.label.fontSize + 6, Mathf.CeilToInt(Screen.height * 0.06f))));
+            GUILayout.Space(Mathf.Max(Screen.height * 0.01f, 4));
             GUI.skin.label.fontSize = Mathf.CeilToInt(Screen.height * 0.02f);
             if( !TunnelGameManager.Inst.UseMouseButtonsToChoose)
-                GUILayout.Label("(Click the arrow to choose)");
+                GUILayout.Label("(Click the arrow to choose)", GUILayout.Height(Mathf.Max(GUI.skin.label.fontSize + 4, Mathf.CeilToInt(Screen.height * 0.03f))));
             else
             {
                 GUILayout.Space(Mathf.Max(Screen.height * 0.005f, 4));
-                GUILayout.Label("(Click left mouse button for left arrow | Click right mouse button for right arrow)");
+                GUILayout.Label("(Click left mouse button for left arrow | Click right mouse button for right arrow)", GUILayout.Height(Mathf.Max(GUI.skin.label.fontSize + 4, Mathf.CeilToInt(Screen.height * 0.03f))));
             }
             GUI.skin.label.fontSize = 12;
         GUILayout.EndArea();

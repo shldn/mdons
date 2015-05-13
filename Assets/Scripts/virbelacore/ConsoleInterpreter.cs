@@ -2456,6 +2456,10 @@ public class ConsoleInterpreter : MonoBehaviour {
             case "sgame":
             case "19":
                 return GameManager.Level.SCALE_GAME;
+            case "playground":
+            case "mdonsplayground":
+            case "20":
+                return GameManager.Level.MDONS_TEST;
             case "office":
             case "off":
             case "16":

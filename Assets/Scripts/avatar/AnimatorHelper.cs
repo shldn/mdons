@@ -45,7 +45,7 @@ public class AnimatorHelper : MonoBehaviour {
     }
 
     void Update() {
-        int currentStateHash = anim.GetCurrentAnimatorStateInfo(0).nameHash;
+        int currentStateHash = (anim != null) ? anim.GetCurrentAnimatorStateInfo(0).nameHash : -1;
 
         // If playing an anim that should only play once, turn off the flag that sends mecanim to its play state
         if (availableAnims.ContainsKey(currentStateHash))

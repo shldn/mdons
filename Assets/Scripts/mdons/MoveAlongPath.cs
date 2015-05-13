@@ -29,7 +29,8 @@ public class MoveAlongPath : MonoBehaviour {
     {
         t = 0.0f;
         automatic = false;
-        GameManager.Inst.LocalPlayer.playerController.NavAgent.Stop();
+        if (GameManager.Inst.LocalPlayer.playerController.NavAgent != null)
+            GameManager.Inst.LocalPlayer.playerController.NavAgent.Stop();
     }
 
     public void AutoStart()

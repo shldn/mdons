@@ -81,6 +81,23 @@ public class ScaleGameManager : MonoBehaviour
 
         if( Input.GetKeyUp(KeyCode.O))
             ScaleAvatarOnCollision.used.Clear();
+
+        if (Input.GetKeyUp(KeyCode.RightBracket))
+        {
+            MainCameraController.Inst.tilt = -0.5f * Camera.main.fieldOfView;
+            MainCameraController.Inst.followPlayerDistance = 1.69f;
+            MainCameraController.Inst.followPlayerHeight = 0.0f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftBracket))
+        {
+            MainCameraController.Inst.tilt = 11f;
+            MainCameraController.Inst.followPlayerDistance = 10f;
+            MainCameraController.Inst.followPlayerHeight = 10f;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha3))
+            GameManager.Inst.LoadLevel(GameManager.Level.MDONS_TEST);
     }
 
     void SetToTargetScale(Vector3 scale)

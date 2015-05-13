@@ -13,7 +13,7 @@ public class MaterialHelpers {
 
     static public void SetNewTexture(Renderer renderer, int materialIdx, Texture2D newTexture)
     {
-        if (materialIdx < 0 || materialIdx >= renderer.materials.Length || renderer == null)
+        if (materialIdx < 0 || renderer == null || materialIdx >= renderer.materials.Length)
             return;
 
         // can't modify elements of the array directly, have to make a copy and set them all...
