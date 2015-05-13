@@ -1,28 +1,81 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public class RecursiveObjCreationEventArgs : System.EventArgs
+{
+    public RecursiveObjCreationEventArgs(int id_, Vector3 pos_) { id = id_; position = pos_; }
+    public int id;
+    public Vector3 position;
+}
+
+
 public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
 
     GameObject baseObject = null;
     public Transform nextLevelTransform = null;
     public GameObject objToTransform = null;
 
-    public bool createdBigger = false;
-    public bool createdSmaller = false;
+    public int id = 0;
+    public bool grounded = true;
+    private bool setGrounded = false;
+    public RealTimeRecursiveObjectGenerator biggerNeighbor = null;
+    public RealTimeRecursiveObjectGenerator smallerNeighbor = null;
+
+    // events
+    public delegate void CreationHandler(object sender, RecursiveObjCreationEventArgs e);
+    public static event CreationHandler Creation;
 
 	void Start () {
         if (baseObject == null)
             baseObject = gameObject;
         if( nextLevelTransform == null )
             nextLevelTransform = transform.Find("RecursiveTransform");
+        RaiseCreationEvent();
 	}
 
     void Update()
     {
-        if (!createdBigger && Input.GetKeyUp(KeyCode.B))
+        if (!biggerNeighbor && Input.GetKeyUp(KeyCode.B))
             CreateBigger();
-        if (!createdSmaller && Input.GetKeyUp(KeyCode.N))
+        if (!smallerNeighbor && Input.GetKeyUp(KeyCode.N))
             CreateSmaller();
+        if (grounded && Input.GetKeyUp(KeyCode.K))
+        {
+            if( biggerNeighbor != null )
+            {
+                Transform topParent = transform.parent;
+                while (topParent.parent != null)
+                    topParent = topParent.parent;
+                float angle = 10;
+                topParent.transform.RotateAround(transform.position, Vector3.forward, angle);
+                Vector3 groundOffset = biggerNeighbor.transform.position.y * Vector3.up;
+                topParent.transform.position -= groundOffset;
+                biggerNeighbor.setGrounded = true;
+                grounded = false;
+            }
+        }
+        if( grounded && Input.GetKeyUp(KeyCode.L) )
+        {
+            if (smallerNeighbor != null)
+            {
+
+                Transform topParent = transform.parent;
+                while (topParent.parent != null)
+                    topParent = topParent.parent;
+                float angle = -10;
+                topParent.transform.RotateAround(smallerNeighbor.transform.position, Vector3.forward, angle);
+                Vector3 groundOffset = smallerNeighbor.transform.position.y * Vector3.up;
+                topParent.transform.position -= groundOffset;
+                smallerNeighbor.setGrounded = true;
+                grounded = false;
+            }
+        }
+
+        if (setGrounded)
+        {
+            grounded = true;
+            setGrounded = false;
+        }
 
     }
 
@@ -34,9 +87,11 @@ public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
         Vector3 invNextLevelScale = 2f * Vector3.one - nextLevelTransform.localScale;
         parent.transform.localScale = new Vector3(invNextLevelScale.x * transform.lossyScale.x, invNextLevelScale.y * transform.lossyScale.y, invNextLevelScale.z * transform.lossyScale.z);
 
-        RealTimeRecursiveObjectGenerator parentGenerator = parent.GetComponent<RealTimeRecursiveObjectGenerator>();
-        parentGenerator.nextLevelTransform = parent.transform.Find(nextLevelTransform.name);
-        parentGenerator.createdSmaller = true;
+        parent.GetComponent<RealTimeRecursiveObjectGenerator>().nextLevelTransform = parent.transform.Find(nextLevelTransform.name);
+        parent.GetComponent<RealTimeRecursiveObjectGenerator>().id = id;
+        parent.GetComponent<RealTimeRecursiveObjectGenerator>().grounded = false;
+        parent.GetComponent<RealTimeRecursiveObjectGenerator>().smallerNeighbor = this;
+        biggerNeighbor = parent.GetComponent<RealTimeRecursiveObjectGenerator>();
 
         parent.transform.position = transform.position;
         Vector3 posOffset = nextLevelTransform.position - transform.position;
@@ -49,7 +104,6 @@ public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
         parent.transform.RotateAround(transform.position, newRotAxis, newRotAngle);
 
         parent.transform.parent = transform.parent;
-        createdBigger = true;
     }
 
     void CreateSmaller()
@@ -60,8 +114,24 @@ public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
         child.transform.rotation = nextLevelTransform.rotation;
         child.transform.localScale = new Vector3(nextLevelTransform.localScale.x * transform.lossyScale.x, nextLevelTransform.localScale.y * transform.lossyScale.y, nextLevelTransform.localScale.z * transform.lossyScale.z);
         child.GetComponent<RealTimeRecursiveObjectGenerator>().nextLevelTransform = child.transform.Find(nextLevelTransform.name);
-        child.GetComponent<RealTimeRecursiveObjectGenerator>().createdBigger = true;
+        child.GetComponent<RealTimeRecursiveObjectGenerator>().id = id;
+        child.GetComponent<RealTimeRecursiveObjectGenerator>().grounded = false;
+        child.GetComponent<RealTimeRecursiveObjectGenerator>().biggerNeighbor = this;
+        smallerNeighbor = child.GetComponent<RealTimeRecursiveObjectGenerator>();
         child.transform.parent = transform.parent;
-        createdSmaller = true;
     }
+
+    private void RaiseCreationEvent()
+    {
+        try
+        {
+            if (Creation != null)
+                Creation(this, new RecursiveObjCreationEventArgs(id, transform.position));
+        }
+        catch
+        {
+            Debug.Log("Exception raised throwing CreationHandler event");
+        }
+    }
+
 }
