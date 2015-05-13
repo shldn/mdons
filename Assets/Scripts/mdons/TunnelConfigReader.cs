@@ -29,7 +29,7 @@ public class Experiment
 
     public void SetAvatar(string str)
     {
-        avatarVisible = (str.ToLower() != "invisible");
+        avatarVisible = (str.ToLower() == "visible");
         avatarPixelated = (str.ToLower() == "abstract");
     }
 

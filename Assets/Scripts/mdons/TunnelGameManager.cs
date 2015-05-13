@@ -44,6 +44,7 @@ public class TunnelGameManager : MonoBehaviour {
     bool allowUserControls = true;
     bool chooseArrow = true;
     bool useMouseButtonsToChoose = true;
+    bool showAbstractPlayer = false;
     List<Experiment> experiments = new List<Experiment>();
 
     public bool UseRotatableArrow { get { return !chooseArrow; } }
@@ -55,6 +56,9 @@ public class TunnelGameManager : MonoBehaviour {
     public int lastCode = 0;
     public int lastChoice = 0;
     LSLSender lslSender = null;
+
+    // Abstract player
+    Texture abstractTexture;
 
     public void Touch() { }
 
@@ -71,6 +75,8 @@ public class TunnelGameManager : MonoBehaviour {
 
         // Read Config file if it exists
         experiments = TunnelConfigReader.Read("config.txt");
+
+        abstractTexture = (Texture2D)Resources.Load("Textures/abstractPlayer");
 	}
 
     void Update()
@@ -96,17 +102,31 @@ public class TunnelGameManager : MonoBehaviour {
         mInst = null;
     }
 
-    
-    //// GUI
-    //void OnGUI()
-    //{
-    //    int buttonWidth = 200;
-    //    if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
-    //        StartExperiment(expCount);
-    //    string experimentDesc = "Code: " + lastCode;
-    //    GUI.skin.label.fontSize = 14;
-    //    GUI.Label(new Rect(10,10, 300,100), experimentDesc);
-    //}
+
+    // GUI
+    void OnGUI()
+    {
+        if(showAbstractPlayer)
+        {
+            float width = 0.15f * Screen.width;
+            float height = 0.4f * Screen.height;
+            float left = 0.5f * (Screen.width - width);
+            float top = Screen.height - height;
+            GUI.DrawTexture(new Rect(left,top, width, height), abstractTexture);
+        }
+
+        //int buttonWidth = 200;
+        //if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
+        //    StartExperiment(expCount);
+        //string experimentDesc = "Code: " + lastCode;
+        //GUI.skin.label.fontSize = 14;
+        //GUI.Label(new Rect(10, 10, 300, 100), experimentDesc);
+    }
+
+    public void HideAbstractPlayer()
+    {
+        showAbstractPlayer = false;
+    }
 
     void StartExperiment(int idx)
     {
@@ -136,9 +156,8 @@ public class TunnelGameManager : MonoBehaviour {
             TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TRIAL_DONE);
         Debug.LogError("Starting experiment: " + expCount);
         lastChoice = 0;
-        GameGUI.Inst.customizeAvatarGui.ChangeCharacter(playerAbstract ? 2 : 0);
-        GameManager.Inst.LocalPlayer.playerController.enabled = true;
         GameManager.Inst.LocalPlayer.Visible = playerVis;
+        showAbstractPlayer = playerAbstract;
         TunnelEnvironmentManager.Inst.SetTunnelAngle(tunnelAngle);
         MoveAlongPath moveScript = (MoveAlongPath)FindObjectOfType(typeof(MoveAlongPath));
         GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
