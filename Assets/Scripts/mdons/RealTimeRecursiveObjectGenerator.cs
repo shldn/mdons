@@ -49,7 +49,9 @@ public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
                 float angle = 10;
                 topParent.transform.RotateAround(transform.position, Vector3.forward, angle);
                 Vector3 groundOffset = biggerNeighbor.transform.position.y * Vector3.up;
+                Vector3 rightOffset = (biggerNeighbor.transform.position.x - transform.position.x) * Vector3.right;
                 topParent.transform.position -= groundOffset;
+                topParent.transform.position -= rightOffset;
                 biggerNeighbor.setGrounded = true;
                 grounded = false;
             }
@@ -65,7 +67,9 @@ public class RealTimeRecursiveObjectGenerator : MonoBehaviour {
                 float angle = -10;
                 topParent.transform.RotateAround(smallerNeighbor.transform.position, Vector3.forward, angle);
                 Vector3 groundOffset = smallerNeighbor.transform.position.y * Vector3.up;
+                Vector3 rightOffset = (smallerNeighbor.transform.position.x - transform.position.x) * Vector3.right;
                 topParent.transform.position -= groundOffset;
+                topParent.transform.position -= rightOffset;
                 smallerNeighbor.setGrounded = true;
                 grounded = false;
             }
