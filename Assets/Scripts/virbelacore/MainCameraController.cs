@@ -257,7 +257,9 @@ public class MainCameraController : MonoBehaviour {
         if (GameManager.Inst.LocalPlayer != null)
         {
             float distToCam = Vector3.Distance(GameManager.Inst.LocalPlayer.HeadPosition, mainCamera.transform.position);
-            float distHidePlayer = (GameManager.Inst.LevelLoaded == GameManager.Level.MOTION_TEST || GameManager.Inst.LevelLoaded == GameManager.Level.SCALE_GAME) ? 0.5f * GameManager.Inst.LocalPlayer.gameObject.transform.localScale.x : 1.5f;
+            float distHidePlayer = (GameManager.Inst.ServerConfig == "MDONS") ? 0.5f * GameManager.Inst.LocalPlayer.gameObject.transform.localScale.x : 1.5f;
+            if (GameManager.Inst.LevelLoaded == GameManager.Level.MOTION_TEST)
+                distHidePlayer = -1f;
             if ((distToCam < distHidePlayer) && GameManager.Inst.LocalPlayer.Visible)
             {
                 GameManager.Inst.LocalPlayer.Visible = false;

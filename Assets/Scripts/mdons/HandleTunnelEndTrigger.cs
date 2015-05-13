@@ -16,6 +16,7 @@ public class HandleTunnelEndTrigger : MonoBehaviour
         GameManager.Inst.LocalPlayer.playerController.StopMomentum();
 
         TunnelGameManager.Inst.HideAbstractPlayer();
+        GameManager.Inst.LocalPlayer.Visible = false;
         TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TUNNEL_EXIT);
 	}
 }
