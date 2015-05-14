@@ -37,6 +37,9 @@ public class TunnelGameManager : MonoBehaviour {
         }
     }
 
+    // Trial variables
+    float delayAfterChoiceToStartNext = 2f;
+    bool nextExperimentInQueue = false;
 
 
     // Experiment variables
@@ -88,7 +91,7 @@ public class TunnelGameManager : MonoBehaviour {
             GameManager.Inst.LoadLevel(GameManager.Level.MDONS_TEST);
 
         if (Input.GetKeyUp(KeyCode.Space))
-            StartExperiment(expCount);
+            StartNextExperiment();
         if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.T))
             TunnelEnvironmentManager.Inst.ReCompute();
         if(Debug.isDebugBuild && Input.GetKeyUp(KeyCode.P))
@@ -125,7 +128,7 @@ public class TunnelGameManager : MonoBehaviour {
             float btnHeight = btnPercent * Screen.height;
             GUI.skin.button.richText = true;
             if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "Start<size=25>\n<i>Click here or hit Spacebar</i></size>"))
-                StartExperiment(expCount);
+                StartNextExperiment();
         }
 
         //int buttonWidth = 200;
@@ -139,6 +142,11 @@ public class TunnelGameManager : MonoBehaviour {
     public void HideAbstractPlayer()
     {
         showAbstractPlayer = false;
+    }
+
+    void StartNextExperiment()
+    {
+        StartExperiment(expCount);
     }
 
     void StartExperiment(int idx)
@@ -159,6 +167,7 @@ public class TunnelGameManager : MonoBehaviour {
     void StartExperiment(Experiment exp)
     {
         chooseArrow = exp.chooseArrow;
+        delayAfterChoiceToStartNext = exp.autoStartDelay;
         useMouseButtonsToChoose = !exp.mouseClickToChoose;
         StartExperiment(exp.angle, exp.avatarVisible, exp.userControl, exp.avatarPixelated);
     }
@@ -195,6 +204,7 @@ public class TunnelGameManager : MonoBehaviour {
         }
 
         ++expCount;
+        nextExperimentInQueue = false;
         RegisterEvent(TunnelEvent.TUNNEL_ENTRANCE);
     }
 
@@ -222,6 +232,12 @@ public class TunnelGameManager : MonoBehaviour {
         lastChoice = (int)choice;
         if (lslSender != null)
             lslSender.SendChoice((int)choice);
+
+        if (!nextExperimentInQueue && delayAfterChoiceToStartNext >= 0f)
+        {
+            nextExperimentInQueue = true;
+            Invoke("StartNextExperiment", delayAfterChoiceToStartNext);
+        }
     }
 
 }

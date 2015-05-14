@@ -25,6 +25,8 @@ public class Experiment
             SetNavigation(v.Str);
         else if (name == "choicemethod")
             SetChoiceMethod(v.Str);
+        else if(name == "autostartdelay")
+            autoStartDelay = (float)v.Number;
     }
 
     public void SetAvatar(string str)
@@ -55,6 +57,7 @@ public class Experiment
     }
 
     public float angle = 30f;
+    public float autoStartDelay = -1f;
     public bool chooseArrow = false;
     public bool avatarVisible = true;
     public bool avatarPixelated = false;

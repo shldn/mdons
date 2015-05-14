@@ -54,6 +54,12 @@ public class TunnelArrowClickChoice : MonoBehaviour {
         transform.localScale = Vector3.one * currentScale;
     }
 
+    virtual protected void OnDisable()
+    {
+        currentScale = 1f;
+        transform.localScale = Vector3.one;
+    }
+
     virtual protected void OnGUI()
     {
         if (!TunnelGameManager.Inst.UseMouseButtonsToChoose && Event.current != null && Event.current.type == EventType.MouseUp && MouseHelpers.GetCurrentGameObjectHit() == gameObject)
