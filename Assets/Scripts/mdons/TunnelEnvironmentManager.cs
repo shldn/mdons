@@ -9,6 +9,7 @@ public class TunnelEnvironmentManager : MonoBehaviour {
     GameObject tunnelDecorator = null;
     GameObject tunnelTriggerDecorator = null;
     public GameObject rotatableArrow = null;
+    public GUISkin guiSkin = null;
 
     void Awake()
     {

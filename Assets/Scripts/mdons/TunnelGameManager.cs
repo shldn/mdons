@@ -64,7 +64,8 @@ public class TunnelGameManager : MonoBehaviour {
 
 	void Start () {
         RenderSettings.ambientLight = Color.black;
-        GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
+        GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.locked;
+        GameManager.Inst.LocalPlayer.Visible = false;
 
 #if UNITY_WEBPLAYER
         sendLSLData = false;
@@ -113,6 +114,18 @@ public class TunnelGameManager : MonoBehaviour {
             float left = 0.5f * (Screen.width - width);
             float top = Screen.height - height;
             GUI.DrawTexture(new Rect(left,top, width, height), abstractTexture);
+        }
+
+        // Show Start Button
+        if( expCount == 0 )
+        {
+            GUI.skin = TunnelEnvironmentManager.Inst.guiSkin;
+            float btnPercent = 0.5f;
+            float btnWidth = btnPercent * Screen.width;
+            float btnHeight = btnPercent * Screen.height;
+            GUI.skin.button.richText = true;
+            if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "Start<size=25>\n<i>Click here or hit Spacebar</i></size>"))
+                StartExperiment(expCount);
         }
 
         //int buttonWidth = 200;
