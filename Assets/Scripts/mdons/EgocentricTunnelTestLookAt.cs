@@ -12,6 +12,7 @@ public class EgocentricTunnelTestLookAt : TunnelArrowClickChoice {
     {
         if (Input.GetKeyUp(KeyCode.Alpha1))
             ChooseThis();
+        UpdateArrowScale();
     }
 
     override public void ReCompute()

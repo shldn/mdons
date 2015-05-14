@@ -18,6 +18,7 @@ public class AllocentricTunnelTestLookAt : TunnelArrowClickChoice{
     {
         if (Input.GetKeyUp(KeyCode.Alpha2))
             ChooseThis();
+        UpdateArrowScale();
     }
 
     override public void ReCompute()

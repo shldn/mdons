@@ -7,6 +7,7 @@ public class TunnelArrowClickChoice : MonoBehaviour {
     bool selected = true;
     Color selectedColor = new Color(42f/255f, 154f/255f, 5f/255f, 255f/255f);
     Color unSelectedColor = new Color(70f/255f, 94f/255f, 62f/255f, 89f/255f);
+    float currentScale = 1f;
 
     public static void EnableAll()
     {
@@ -32,6 +33,7 @@ public class TunnelArrowClickChoice : MonoBehaviour {
 
 	void Awake () {
         all.Add(this);
+        currentScale = transform.localScale.x;
 	}
 
     void OnDestroy()
@@ -43,6 +45,13 @@ public class TunnelArrowClickChoice : MonoBehaviour {
     {
         foreach (TunnelArrowClickChoice arrow in all)
             arrow.Selected = (arrow == this);
+        currentScale = 1.25f;
+    }
+
+    virtual protected void UpdateArrowScale()
+    {
+        currentScale = Mathf.Lerp(currentScale, 1f, 5f * Time.deltaTime);
+        transform.localScale = Vector3.one * currentScale;
     }
 
     virtual protected void OnGUI()
