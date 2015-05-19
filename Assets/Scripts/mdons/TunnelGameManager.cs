@@ -14,8 +14,9 @@ public enum TunnelEvent
     TURN_START = 200,
     TURN_END = 300,
     TUNNEL_EXIT = 400,
-    DECISION = 500,
-    TRIAL_DONE = 600,
+    DECISION_START = 500,
+    DECISION = 600,
+    TRIAL_DONE = 700,
 }
 
 public enum TunnelChoice
@@ -220,6 +221,11 @@ public class TunnelGameManager : MonoBehaviour {
         return code;
     }
 
+    int GetEventCode(TunnelEvent tEvent)
+    {
+        return GetCurrentCodeBase() + (int)tEvent;
+    }
+
     public void RegisterEvent(TunnelEvent tEvent)
     {
         lastCode = GetCurrentCodeBase() + (int)tEvent;
@@ -232,6 +238,19 @@ public class TunnelGameManager : MonoBehaviour {
         lastChoice = (int)choice;
         if (lslSender != null)
             lslSender.SendChoice((int)choice);
+
+        if (!nextExperimentInQueue && delayAfterChoiceToStartNext >= 0f)
+        {
+            nextExperimentInQueue = true;
+            Invoke("StartNextExperiment", delayAfterChoiceToStartNext);
+        }
+    }
+
+    public void RegisterAngleOffsets(float alloAngleOffset, float egoAngleOffset)
+    {
+        if (lslSender != null)
+            lslSender.SendAngleOffsets(alloAngleOffset, egoAngleOffset, GetEventCode(TunnelEvent.DECISION));
+
 
         if (!nextExperimentInQueue && delayAfterChoiceToStartNext >= 0f)
         {

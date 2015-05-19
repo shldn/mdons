@@ -54,4 +54,19 @@ public class TunnelEnvironmentManager : MonoBehaviour {
     {
         return tunnelSpline.GetComponent<SplineToTunnelTurn>().angle;
     }
+
+    public Vector3 EndTunnelDirection()
+    {
+        return tunnelSpline.GetComponent<BezierSpline>().GetDirection(1.0f).normalized;
+    }
+
+    public Vector3 StartTunnelDirection()
+    {
+        return tunnelSpline.GetComponent<BezierSpline>().GetDirection(0.0f).normalized;
+    }
+
+    public Vector3 StartTunnelPosition()
+    {
+        return tunnelSpline.GetComponent<BezierSpline>().GetPoint(0.0f);
+    }
 }

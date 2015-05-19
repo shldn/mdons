@@ -17,10 +17,11 @@ public class MoveAlongPath : MonoBehaviour {
         }
         if( automatic && path != null )
         {
-            if( GameManager.Inst.LocalPlayer.playerController.NavAgent.remainingDistance < 4.0f)
+            PlayerController pController = GameManager.Inst.LocalPlayer.playerController;
+            if (pController.NavAgent.hasPath && pController.NavAgent.remainingDistance < 4.0f)
             {
-                GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.navmesh;
-                GameManager.Inst.LocalPlayer.playerController.SetNavDestination(path.GetPoint(t += step), path.GetDirection(t));
+                pController.navMode = PlayerController.NavMode.navmesh;
+                pController.SetNavDestination(path.GetPoint(t += step), path.GetDirection(t));
             }
         }
 	}

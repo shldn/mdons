@@ -56,10 +56,24 @@ public class LSLSender : MonoBehaviour {
     public void SendChoice(int choice)
     {
         float[] data = new float[8];
-        data[0] = (float)choice;
-        data[1] = 0f;
+        data[0] = 0f;
+        data[1] = (float)choice;
         data[2] = 0f;
         data[3] = 0f;
+        data[4] = 0f;
+        data[5] = 0f;
+        data[6] = 0f;
+        data[7] = 0f;
+        outlet.push_sample(data);
+    }
+
+    public void SendAngleOffsets(float alloAngleOffset, float egoAngleOffset, int code = 0)
+    {
+        float[] data = new float[8];
+        data[0] = (float)code;
+        data[1] = alloAngleOffset < egoAngleOffset ? 1f : 2f;
+        data[2] = alloAngleOffset;
+        data[3] = egoAngleOffset;
         data[4] = 0f;
         data[5] = 0f;
         data[6] = 0f;
