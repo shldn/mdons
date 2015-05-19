@@ -6,24 +6,26 @@
 
 // For better results could use a virtual plane at 45 degree angle, centered at the object
 public class LookAtMouseOnDrag : MonoBehaviour {
-
+    public float catchMousePlaneAngle = -20f;
     bool dragging = false;
 	void Update () {
         if (dragging)
         {
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            if (Physics.Raycast(mouseRay, out hit, Mathf.Infinity, 1 << LayerMask.NameToLayer("ground")))
+            Vector3 inNormal = (Quaternion.AngleAxis(catchMousePlaneAngle, Camera.main.transform.right) * Vector3.up).normalized;
+            Plane mouseColliderPlane = new Plane(inNormal, transform.position);
+            float enterDist = 0.0f;
+            if (mouseColliderPlane.Raycast(mouseRay, out enterDist))
             {
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Vector3 newForward = (hit.point - transform.position);
+                Vector3 hitPoint = mouseRay.GetPoint(enterDist);
+                Vector3 newForward = (hitPoint - transform.position);
 
                 // rotate only around the y-axis
                 newForward.y = 0.0f;
                 if (newForward != Vector3.zero)
                     transform.forward = newForward;
             }
-
         }
 	}
 
