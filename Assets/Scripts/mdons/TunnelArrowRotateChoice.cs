@@ -43,7 +43,6 @@ public class TunnelArrowRotateChoice : MonoBehaviour {
                 RegisterChoice();
             startedDrag = false;
         }
-        RegisterChoice();
 
         GUILayout.BeginArea(new Rect(0.25f * Screen.width, 0.25f * Screen.height, 0.5f * Screen.width, 0.5f * Screen.height));
         GUI.skin.label.alignment = TextAnchor.MiddleCenter;
