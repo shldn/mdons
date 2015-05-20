@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TunnelArrowRotateChoice : MonoBehaviour {
 
+    float keyPressAngle = 1f;
+
     bool startedDrag = false;
 
     float GetAngle(TunnelChoice choice)
@@ -36,19 +38,52 @@ public class TunnelArrowRotateChoice : MonoBehaviour {
         TunnelGameManager.Inst.RegisterAngleOffsets(GetAngle(TunnelChoice.ALLOCENTRIC), GetAngle(TunnelChoice.EGOCENTRIC), GetAbsoluteAngle());
     }
 
-    void OnGUI()
+    void Rotate(float angle)
     {
-        if (Event.current != null && Event.current.type == EventType.MouseDown && MouseHelpers.GetCurrentGameObjectHit() == gameObject)
-        {
+        transform.Rotate(Vector3.up, angle);
+    }
+
+    void HandleArrowKey(bool left)
+    {
+        float dir = left ? -1f : 1f;
+        Rotate(dir * keyPressAngle);
+        if(!startedDrag)
             TunnelGameManager.Inst.RegisterEvent(TunnelEvent.DECISION_START);
-            startedDrag = true;
+        startedDrag = true;
+    }
+
+    void Update()
+    {
+        if(TunnelGameManager.Inst.UseKeysToChoose)
+        {
+            if (Input.GetKey(KeyCode.LeftArrow))
+                HandleArrowKey(true);
+            else if (Input.GetKey(KeyCode.RightArrow))
+                HandleArrowKey(false);
+            else
+                startedDrag = false;
+            if( Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) )
+                RegisterChoice();
         }
 
-        if (Event.current != null && Event.current.type == EventType.MouseUp)
+    }
+
+    void OnGUI()
+    {
+        if (!TunnelGameManager.Inst.UseKeysToChoose)
         {
-            if (startedDrag)
-                RegisterChoice();
-            startedDrag = false;
+            if (Event.current != null && Event.current.type == EventType.MouseDown && MouseHelpers.GetCurrentGameObjectHit() == gameObject)
+            {
+                TunnelGameManager.Inst.RegisterEvent(TunnelEvent.DECISION_START);
+                startedDrag = true;
+            }
+
+            if (Event.current != null && Event.current.type == EventType.MouseUp)
+            {
+                if (startedDrag)
+                    RegisterChoice();
+                startedDrag = false;
+            }
         }
 
         GUILayout.BeginArea(new Rect(0.25f * Screen.width, 0.25f * Screen.height, 0.5f * Screen.width, 0.5f * Screen.height));
@@ -59,7 +94,9 @@ public class TunnelArrowRotateChoice : MonoBehaviour {
         GUILayout.Space(Mathf.Max(Screen.height * 0.01f, 4));
         GUI.skin.label.fontSize = Mathf.CeilToInt(Screen.height * 0.02f);
         GUILayout.Space(Mathf.Max(Screen.height * 0.005f, 4));
-        GUILayout.Label("(Click and drag the arrow)", GUILayout.Height(Mathf.Max(GUI.skin.label.fontSize + 4, Mathf.CeilToInt(Screen.height * 0.03f))));
+        string secondaryInstructions = TunnelGameManager.Inst.UseKeysToChoose ? "(Use right and left arrow keys to rotate arrow)" : "(Click and drag the arrow)";
+        GUILayout.Label(secondaryInstructions, GUILayout.Height(Mathf.Max(GUI.skin.label.fontSize + 4, Mathf.CeilToInt(Screen.height * 0.03f))));
+        GUILayout.Space(Mathf.Max(Screen.height * 0.005f, 4));
         GUI.skin.label.fontSize = 12;
         GUILayout.EndArea();
     }

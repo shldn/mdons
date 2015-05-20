@@ -53,6 +53,7 @@ public class TunnelGameManager : MonoBehaviour {
 
     public bool UseRotatableArrow { get { return !chooseArrow; } }
     public bool UseMouseButtonsToChoose { get { return useMouseButtonsToChoose; } }
+    public bool UseKeysToChoose { get { return useMouseButtonsToChoose; } }
     bool AutoMovePlayer { get { return !allowUserControls; } }
 
     // LSL variables

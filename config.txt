@@ -5,16 +5,16 @@
         "arrows": "one/two - one lets user rotate arrow, two gives them a choice",
         "autoStartDelay": "Number of seconds to wait after a choice before auto starting the next experiment, negative numbers will disable auto start",
         "avatar": "visible/invisible/abstract - defines avatar representation",
-        "choiceMethod": "click/mouse buttons - click on the arrow to choose or use the left and right mouse button clicks to define choice",
+        "choiceMethod": "click/mouse buttons/keys - click on the arrow to choose, mouse buttons - use the left and right mouse button clicks to define choice, keys to use arrow keys to rotate",
         "navigation": "auto/one key/full/ - auto moves the avatar automatically, one key - must press n key repeatedly to move, full not hooked up yet",
 
         "constants section": "defines the defaults for variables if they will be constant throughout the trial, can use same variables as a trial, this overrides values in the trail definition",
     },
     {
         "type": "constants",
-        "arrows": "two",
-        "autoStartDelay":1.5,
-        "choiceMethod": "mouse buttons",
+        "arrows": "one",
+        "autoStartDelay":-1.5,
+        "choiceMethod": "keys",
         "navigation": "auto",
     },
     {
@@ -24,12 +24,12 @@
     },
     {
         "type": "trial",
-        "angle": -30,
+        "angle": -15,
         "avatar": "abstract",
     },
     {
         "type": "trial",
-        "angle": 30,
+        "angle": 45,
         "avatar": "visible",
     }
 ]
