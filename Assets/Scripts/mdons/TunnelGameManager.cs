@@ -246,10 +246,10 @@ public class TunnelGameManager : MonoBehaviour {
         }
     }
 
-    public void RegisterAngleOffsets(float alloAngleOffset, float egoAngleOffset)
+    public void RegisterAngleOffsets(float alloAngleOffset, float egoAngleOffset, float absoluteAngle)
     {
         if (lslSender != null)
-            lslSender.SendAngleOffsets(alloAngleOffset, egoAngleOffset, GetEventCode(TunnelEvent.DECISION));
+            lslSender.SendAngleOffsets(alloAngleOffset, egoAngleOffset, absoluteAngle, GetEventCode(TunnelEvent.DECISION));
 
 
         if (!nextExperimentInQueue && delayAfterChoiceToStartNext >= 0f)
