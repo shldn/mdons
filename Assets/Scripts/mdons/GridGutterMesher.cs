@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GridGutterMesher{
 
-    public static void CreateMeshes(Grid2D grid, Transform parent, Texture2D mainTexture, Texture2D intersectionTexture)
+    public static void CreateMeshes(Grid2D grid, Transform parent, Texture2D mainTexture, Texture2D intersectionTexture, Texture2D holeTexture = null)
     {
         int rows = grid.Rows;
         int cols = grid.Cols;
@@ -47,6 +47,23 @@ public class GridGutterMesher{
                 Vector3 topRt = To3D(grid.BottomLeft(r+1, c+1));
                 GameObject planeGO = CreatePlane(btmLt, btmRt, topLt, topRt, intersectionTexture, "RdIS-" + r + "-" + c);
                 planeGO.transform.parent = parent;
+            }
+        }
+
+        // Fill in the holes between the gutters
+        if(holeTexture != null)
+        {
+            for (int r = 0; r < rows; ++r)
+            {
+                for (int c = 0; c < cols; ++c)
+                {
+                    Vector3 btmLt = To3D(grid.BottomLeft(r, c));
+                    Vector3 btmRt = To3D(grid.BottomRight(r, c));
+                    Vector3 topLt = To3D(grid.TopLeft(r, c));
+                    Vector3 topRt = To3D(grid.TopRight(r, c));
+                    GameObject planeGO = CreatePlane(btmLt, btmRt, topLt, topRt, holeTexture, "Block-" + r + "-" + c);
+                    planeGO.transform.parent = parent;
+                }
             }
         }
     }
