@@ -10,6 +10,9 @@ public class CityBlockGenerator : MonoBehaviour {
     public int cols = 3;
     public GameObject[] building;
 
+    public Texture2D roadTexture;
+    public Texture2D intersectionTexture;
+
     Grid2D blockGrid = null;
     int buildingCounter = 0;
 
@@ -44,6 +47,7 @@ public class CityBlockGenerator : MonoBehaviour {
                 obj4.transform.forward = -Vector3.forward;
             }
         }
+        GridGutterMesher.CreateMeshes(blockGrid, transform, roadTexture, intersectionTexture);
 	}
 
     Vector3 To3D(Vector2 v)
