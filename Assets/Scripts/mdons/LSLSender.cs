@@ -12,7 +12,7 @@ public class LSLSender : MonoBehaviour {
 	// Unity calls this when the object is constructed
 	void Awake () {
         // create stream info and outlet
-        liblsl.StreamInfo info = new liblsl.StreamInfo("BioSemi", "EEG", 8, liblsl.IRREGULAR_RATE, liblsl.channel_format_t.cf_float32, "sddsfsdf");
+        liblsl.StreamInfo info = new liblsl.StreamInfo("Tunnel", "EEG", 8, liblsl.IRREGULAR_RATE, liblsl.channel_format_t.cf_float32, "unique_tunnel");
         outlet = new liblsl.StreamOutlet(info);
 	}
 	
