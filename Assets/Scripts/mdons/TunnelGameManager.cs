@@ -65,6 +65,9 @@ public class TunnelGameManager : MonoBehaviour {
     // Abstract player
     Texture abstractTexture;
 
+    // GUI
+    bool showStartScreen = true;
+
     public void Touch() { }
 
 	void Start () {
@@ -121,17 +124,23 @@ public class TunnelGameManager : MonoBehaviour {
             GUI.DrawTexture(new Rect(left,top, width, height), abstractTexture);
         }
 
-        // Show Start Button
-        if( expCount == 0 )
+        // Show Start/End Button
+        if (expCount == 0)
         {
             GUI.skin = TunnelEnvironmentManager.Inst.guiSkin;
             float btnPercent = 0.5f;
             float btnWidth = btnPercent * Screen.width;
             float btnHeight = btnPercent * Screen.height;
             GUI.skin.button.richText = true;
-            if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "Start<size=25>\n<i>Click here or hit Spacebar</i></size>"))
+            string titleText = showStartScreen ? "Start" : "All Done!";
+            if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), titleText + "<size=25>\n<i>Click here or hit Spacebar</i></size>"))
+            {
                 StartNextExperiment();
+                showStartScreen = false;
+            }
         }
+        else
+            showStartScreen = false;
 
         //int buttonWidth = 200;
         //if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
@@ -155,7 +164,17 @@ public class TunnelGameManager : MonoBehaviour {
     {
         if( experiments.Count > 0 )
         {
-            StartExperiment(experiments[idx % experiments.Count]);
+            int nextExperiment = idx % experiments.Count;
+            if (nextExperiment == 0 && idx != 0)
+            {
+                // Show Done Screen
+                expCount = 0;
+                GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
+                TunnelEnvironmentManager.Inst.Reset();
+                return;
+            }
+
+            StartExperiment(experiments[nextExperiment]);
         }
         else
         {
