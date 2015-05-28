@@ -12,6 +12,7 @@
     },
     {
         "type": "constants",
+        "instructions": "In this experiment, you will see several short passages through virtual tunnels.  In each tunnel, there will be a turn either to the right or left.  Your task is to remember your orientation and to indicate, at the end of the passage, where the starting of the position of the passage would be.  At the end of each passage, there will be a green arrow that can be rotated to the left or right using arrow keys on the keyboard.  <b>Please select a key and hold it down to adjust the arrow so that it points back to where you started out.</b>  Please rely on your intuition when you feel uncertain.",
         "arrows": "one",
         "autoStartDelay":-1.5,
         "choiceMethod": "keys",

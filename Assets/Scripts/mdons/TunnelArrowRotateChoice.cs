@@ -46,9 +46,10 @@ public class TunnelArrowRotateChoice : MonoBehaviour {
     void HandleArrowKey(bool left)
     {
         float dir = left ? -1f : 1f;
+        float leftCode = left ? 3f : 4f;
         Rotate(dir * keyPressAngle);
         if(!startedDrag)
-            TunnelGameManager.Inst.RegisterEvent(TunnelEvent.DECISION_START);
+            TunnelGameManager.Inst.RegisterEvent(TunnelEvent.DECISION_START, leftCode);
         startedDrag = true;
     }
 

@@ -8,13 +8,21 @@ public class CityBlockGenerator : MonoBehaviour {
     public float blockWidth = 200.0f;
     public int rows = 3;
     public int cols = 3;
+    public int innerRecursionLevel = 0;
     public GameObject[] building;
 
     public Texture2D roadTexture;
     public Texture2D intersectionTexture;
+    public Texture2D blockTexture;
+
+    public float roadScale = 1f; // helpful for recursion -- applied to all meshes added. -- IMPLEMENT ME!
+    public float objScale = 1f;
 
     Grid2D blockGrid = null;
     int buildingCounter = 0;
+    Bounds ignoreBounds = new Bounds();
+
+    bool IgnoreCenter { get { return innerRecursionLevel > 0; } }
 
 	// Use this for initialization
 	void Start () {
@@ -24,30 +32,87 @@ public class CityBlockGenerator : MonoBehaviour {
             return;
         }
 
-        blockGrid = new Grid2D(To2D(transform.position), rows, cols, new Vector2(blockWidth, blockWidth), streetWidth); 
+        streetWidth *= roadScale;
+        blockWidth *= roadScale;
 
+        blockGrid = new Grid2D(To2D(transform.position), rows, cols, new Vector2(blockWidth, blockWidth), streetWidth);
+
+        if (IgnoreCenter)
+            ignoreBounds = new Bounds(To3D(blockGrid.GridCenter), new Vector3(blockGrid.GridSize.x - 2f * (blockWidth + 0.5f * streetWidth), 10f, blockGrid.GridSize.y - 2f * (blockWidth + 0.5f * streetWidth)));
+
+        GameObject meshContainer = new GameObject("city_meshes");
+        meshContainer.transform.parent = transform;
+        Transform parent = meshContainer.transform;
+
+        Vector3 pos = Vector3.zero;
         for (int r = 0; r < rows; ++r)
         {
             for (int c = 0; c < cols; ++c)
             {
-                GameObject obj = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                obj.transform.position = To3D(blockGrid.LeftEdgeLerp(r, c, 0.5f));
-                obj.transform.forward = -Vector3.right;
+                pos = To3D(blockGrid.LeftEdgeLerp(r, c, 0.5f));
+                if( !ignoreBounds.Contains(pos) )
+                {
+                    GameObject obj = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
+                    obj.transform.position = pos;
+                    obj.transform.forward = -Vector3.right;
+                    obj.transform.localScale = objScale * Vector3.one;
+                    obj.transform.parent = parent;
+                }
 
-                GameObject obj2 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                obj2.transform.position = To3D(blockGrid.RightEdgeLerp(r, c, 0.5f));
-                obj2.transform.forward = Vector3.right;
+                pos = To3D(blockGrid.RightEdgeLerp(r, c, 0.5f));
+                if (!ignoreBounds.Contains(pos))
+                {
+                    GameObject obj2 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
+                    obj2.transform.position = pos;
+                    obj2.transform.forward = Vector3.right;
+                    obj2.transform.localScale = objScale * Vector3.one;
+                    obj2.transform.parent = parent;
+                }
 
-                GameObject obj3 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                obj3.transform.position = To3D(blockGrid.TopEdgeLerp(r, c, 0.5f));
-                obj3.transform.forward = Vector3.forward;
+                pos = To3D(blockGrid.TopEdgeLerp(r, c, 0.5f));
+                if (!ignoreBounds.Contains(pos))
+                {
+                    GameObject obj3 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
+                    obj3.transform.position = pos;
+                    obj3.transform.forward = Vector3.forward;
+                    obj3.transform.localScale = objScale * Vector3.one;
+                    obj3.transform.parent = parent;
+                }
 
-                GameObject obj4 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                obj4.transform.position = To3D(blockGrid.BottomEdgeLerp(r, c, 0.5f));
-                obj4.transform.forward = -Vector3.forward;
+                pos = To3D(blockGrid.TopEdgeLerp(r, c, 0.5f));
+                if (!ignoreBounds.Contains(pos))
+                {
+                    GameObject obj4 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
+                    obj4.transform.position = To3D(blockGrid.BottomEdgeLerp(r, c, 0.5f));
+                    obj4.transform.forward = -Vector3.forward;
+                    obj4.transform.localScale = objScale * Vector3.one;
+                    obj4.transform.parent = parent;
+                }
             }
         }
-        GridGutterMesher.CreateMeshes(blockGrid, transform, roadTexture, intersectionTexture);
+        GridGutterMesher.CreateMeshes(blockGrid, parent, roadTexture, intersectionTexture, blockTexture, ignoreBounds);
+
+        if(innerRecursionLevel > 0)
+        {
+            GameObject nextLevel = new GameObject("Next Level");
+            nextLevel.transform.position = To3D(blockGrid.BottomLeft(1, 1));
+            nextLevel.transform.parent = parent;
+            CityBlockGenerator blockGen = nextLevel.AddComponent<CityBlockGenerator>();
+            blockGen.streetWidth = streetWidth;
+            blockGen.blockWidth = blockWidth;
+            blockGen.rows = rows;
+            blockGen.cols = cols;
+            Debug.LogError("Scale: " + blockGrid.TopLeft(rows - 2, 1).ToString() + " " + blockGrid.BottomLeft(1, 1).ToString() + " : " + blockGrid.GridSize.x + " " + (blockGrid.BottomRight(rows - 2, 1).x - blockGrid.BottomLeft(1, 1).x) / blockGrid.GridSize.x);
+            blockGen.roadScale = (blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y;
+            blockGen.objScale = blockGen.roadScale * objScale;
+            blockGen.innerRecursionLevel = innerRecursionLevel - 1;
+            blockGen.building = building;
+            blockGen.roadTexture = roadTexture;
+            blockGen.intersectionTexture = intersectionTexture;
+            blockGen.blockTexture = blockTexture;
+
+        }
+
 	}
 
     Vector3 To3D(Vector2 v)
@@ -58,6 +123,15 @@ public class CityBlockGenerator : MonoBehaviour {
     Vector2 To2D(Vector3 v)
     {
         return new Vector2(v.x, v.z);
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.cyan;
+        if (blockGrid != null)
+        {
+            Gizmos.DrawWireCube(ignoreBounds.center, ignoreBounds.size);
+        }
     }
 
 }

@@ -23,7 +23,8 @@ public class Grid2D {
 
     public int Rows { get { return mRows; } }
     public int Cols { get { return mCols; } }
-    public Vector2 GridCenter { get { return mStartPos + 0.5f * (float)(mRows) * mScale.y * mGutter * Vector2.up + 0.5f * (float)(mCols) * mScale.x * mGutter * Vector2.right; } }
+    public Vector2 GridCenter { get { return 0.5f * (BottomLeft(0, 0) + TopRight(Rows - 1, Cols - 1)); } }
+    public Vector2 GridSize { get { return TopRight(Rows - 1, Cols - 1) - BottomLeft(0, 0); } }
 
 
     public Vector2 Center(int row, int col)

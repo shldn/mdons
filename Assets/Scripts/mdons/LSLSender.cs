@@ -12,7 +12,7 @@ public class LSLSender : MonoBehaviour {
 	// Unity calls this when the object is constructed
 	void Awake () {
         // create stream info and outlet
-        liblsl.StreamInfo info = new liblsl.StreamInfo("BioSemi", "EEG", 8, liblsl.IRREGULAR_RATE, liblsl.channel_format_t.cf_float32, "sddsfsdf");
+        liblsl.StreamInfo info = new liblsl.StreamInfo("Tunnel", "EEG", 8, liblsl.IRREGULAR_RATE, liblsl.channel_format_t.cf_float32, "unique_tunnel");
         outlet = new liblsl.StreamOutlet(info);
 	}
 	
@@ -39,7 +39,7 @@ public class LSLSender : MonoBehaviour {
 
 	}
 
-    public void SendCode(int code)
+    public void SendCode(int code, float metaData)
     {
         float[] data = new float[8];
         data[0] = (float)code;
@@ -47,7 +47,7 @@ public class LSLSender : MonoBehaviour {
         data[2] = 0f;
         data[3] = 0f;
         data[4] = 0f;
-        data[5] = 0f;
+        data[5] = metaData;
         data[6] = 0f;
         data[7] = 0f;
         outlet.push_sample(data);

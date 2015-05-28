@@ -65,6 +65,12 @@ public class TunnelGameManager : MonoBehaviour {
     // Abstract player
     Texture abstractTexture;
 
+    // GUI
+    bool showStartScreen = true;
+
+    string errMsg = "";
+    public string ErrorMessage { get { return errMsg; } set { errMsg = value; } }
+
     public void Touch() { }
 
 	void Start () {
@@ -81,6 +87,8 @@ public class TunnelGameManager : MonoBehaviour {
 
         // Read Config file if it exists
         experiments = TunnelConfigReader.Read("config.txt");
+        if (experiments.Count == 0 && ErrorMessage == "")
+            ErrorMessage = "Sorry, No experiments configured";
 
         abstractTexture = (Texture2D)Resources.Load("Textures/abstractPlayer");
 	}
@@ -121,18 +129,36 @@ public class TunnelGameManager : MonoBehaviour {
             GUI.DrawTexture(new Rect(left,top, width, height), abstractTexture);
         }
 
-        // Show Start Button
-        if( expCount == 0 )
+        // Show Start/End Button
+        if (expCount == 0)
         {
             GUI.skin = TunnelEnvironmentManager.Inst.guiSkin;
-            float btnPercent = 0.5f;
+            float btnPercent = showStartScreen ? 0.75f : 0.5f;
             float btnWidth = btnPercent * Screen.width;
             float btnHeight = btnPercent * Screen.height;
             GUI.skin.button.richText = true;
-            if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "Start<size=25>\n<i>Click here or hit Spacebar</i></size>"))
+            GUI.skin.button.wordWrap = true;
+            GUI.skin.button.fontSize = (int)(Screen.height * 0.04f);
+            int titleSize = (int)(Screen.height * 0.05f);
+            string titleText = showStartScreen ? "Hi and Welcome!" : "All Done!";
+            string bodyText = showStartScreen ? TunnelConfigReader.instructions : "";
+            if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "<size=" + titleSize + "><b>" + titleText + "</b>\n</size>\n" + bodyText + "<size=" + (titleSize - 2) + ">\n\n<i>To Start: Click here or hit Spacebar</i></size>"))
+            {
                 StartNextExperiment();
+                showStartScreen = false;
+            }
         }
+        else
+            showStartScreen = false;
 
+        if( errMsg != "" )
+        {
+            GUI.skin.label.alignment = TextAnchor.LowerCenter;
+            GUI.color = Color.red;
+            GUI.Label(new Rect(0, 0, Screen.width, Screen.height), errMsg);
+            GUI.color = Color.white;
+
+        }
         //int buttonWidth = 200;
         //if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
         //    StartExperiment(expCount);
@@ -155,14 +181,26 @@ public class TunnelGameManager : MonoBehaviour {
     {
         if( experiments.Count > 0 )
         {
-            StartExperiment(experiments[idx % experiments.Count]);
+            int nextExperiment = idx % experiments.Count;
+            if (nextExperiment == 0 && idx != 0)
+            {
+                // Show Done Screen
+                expCount = 0;
+                GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
+                TunnelEnvironmentManager.Inst.Reset();
+                return;
+            }
+
+            StartExperiment(experiments[nextExperiment]);
         }
         else
         {
+#if DEMO_MODE
             bool[] playerVis = { true, false, false, true };
             float[] tunnelAngle = { -45f, 30f, -15f, 45f, -30f, 15f };
             UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.NONE, UserControl.PARTIAL };
             StartExperiment(tunnelAngle[idx % tunnelAngle.Length], playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
+#endif
         }
     }
 
@@ -208,6 +246,7 @@ public class TunnelGameManager : MonoBehaviour {
         ++expCount;
         nextExperimentInQueue = false;
         RegisterEvent(TunnelEvent.TUNNEL_ENTRANCE);
+        Screen.showCursor = false;
     }
 
     public int GetCurrentCodeBase()
@@ -227,11 +266,11 @@ public class TunnelGameManager : MonoBehaviour {
         return GetCurrentCodeBase() + (int)tEvent;
     }
 
-    public void RegisterEvent(TunnelEvent tEvent)
+    public void RegisterEvent(TunnelEvent tEvent, float metaData = 0f)
     {
         lastCode = GetCurrentCodeBase() + (int)tEvent;
         if (lslSender != null)
-            lslSender.SendCode(lastCode);
+            lslSender.SendCode(lastCode, metaData);
     }
 
     public void RegisterChoice(TunnelChoice choice)

@@ -67,6 +67,8 @@ public class Experiment
 
 public class TunnelConfigReader {
 
+    public static string instructions = "";
+
     public static List<Experiment> Read(string filePath)
     {
         Dictionary<string, JSONValue> constants = new Dictionary<string, JSONValue>();
@@ -77,13 +79,24 @@ public class TunnelConfigReader {
             {
                 String fileStr = sr.ReadToEnd();
                 JSONArray arr = JSONArray.Parse(fileStr);
+                if( arr == null )
+                {
+                    TunnelGameManager.Inst.ErrorMessage = "Problem parsing " + filePath + " probably not valid JSON";
+                    return experiments;
+                }
                 for (int i = 0; i < arr.Length; ++i )
                 {
                     Debug.LogError("json obj: " + arr[i].ToString());
-                    if( arr[i].Obj.GetString("type") == "trial")
+                    if( arr[i].Obj.GetString("type").Trim() == "trial")
                         experiments.Add(new Experiment(arr[i].Obj));
 
-                    if( arr[i].Obj.GetString("type") == "constants")
+                    if (arr[i].Obj.GetString("instructions") != "")
+                    {
+                        Debug.LogError("Got instructions");
+                        instructions = arr[i].Obj.GetString("instructions");
+                    }
+
+                    if (arr[i].Obj.GetString("type").Trim() == "constants")
                     {
                         foreach(KeyValuePair<string,JSONValue> v in arr[i].Obj)
                         {
@@ -103,7 +116,9 @@ public class TunnelConfigReader {
         }
         catch (Exception e)
         {
-            Debug.LogError("The file could not be read: " + filePath);
+            string errorMsg = "The file could not be read: " + filePath;
+            TunnelGameManager.Inst.ErrorMessage = errorMsg;
+            Debug.LogError(errorMsg);
         }
         return experiments;
     }
