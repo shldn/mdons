@@ -39,7 +39,7 @@ public class LSLSender : MonoBehaviour {
 
 	}
 
-    public void SendCode(int code)
+    public void SendCode(int code, float metaData)
     {
         float[] data = new float[8];
         data[0] = (float)code;
@@ -47,7 +47,7 @@ public class LSLSender : MonoBehaviour {
         data[2] = 0f;
         data[3] = 0f;
         data[4] = 0f;
-        data[5] = 0f;
+        data[5] = metaData;
         data[6] = 0f;
         data[7] = 0f;
         outlet.push_sample(data);
