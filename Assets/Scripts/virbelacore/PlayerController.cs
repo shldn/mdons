@@ -462,7 +462,7 @@ public class PlayerController : MonoBehaviour {
             smoothedLookAtPos = Vector3.SmoothDamp(smoothedLookAtPos, targetLookAtPos, ref lookAtSmoothVel, lookAtSpeed);
 
             // Look at weight values...
-            if( GameManager.Inst.LevelLoaded != GameManager.Level.SCALE_GAME )
+            if (GameManager.Inst.LevelLoaded != GameManager.Level.SCALE_GAME && GameManager.Inst.LevelLoaded != GameManager.Level.MOTION_TEST)
             {
                 GetComponent<Animator>().SetLookAtPosition(smoothedLookAtPos);
                 GetComponent<Animator>().SetLookAtWeight(lookAtWeight, 0.1f, 1f, 0f, 0f);

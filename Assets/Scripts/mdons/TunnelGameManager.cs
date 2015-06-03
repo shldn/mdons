@@ -25,6 +25,12 @@ public enum TunnelChoice
     EGOCENTRIC = 2,
 }
 
+public enum AdminEvent
+{
+    BREAK_START = 77,
+    BREAK_END = 88,
+}
+
 public class TunnelGameManager : MonoBehaviour {
 
     private static TunnelGameManager mInst = null;
@@ -41,10 +47,12 @@ public class TunnelGameManager : MonoBehaviour {
     // Trial variables
     float delayAfterChoiceToStartNext = 2f;
     bool nextExperimentInQueue = false;
+    int breakAfter = -1;
 
 
     // Experiment variables
     int expCount = 0;
+    int breakCount = 0;
     bool allowUserControls = true;
     bool chooseArrow = true;
     bool useMouseButtonsToChoose = true;
@@ -60,6 +68,7 @@ public class TunnelGameManager : MonoBehaviour {
     public bool sendLSLData = true;
     public int lastCode = 0;
     public int lastChoice = 0;
+    private TunnelEvent lastEvent = TunnelEvent.TUNNEL_ENTRANCE;
     LSLSender lslSender = null;
 
     // Abstract player
@@ -67,6 +76,7 @@ public class TunnelGameManager : MonoBehaviour {
 
     // GUI
     bool showStartScreen = true;
+    bool showBreakScreen = false;
 
     string errMsg = "";
     public string ErrorMessage { get { return errMsg; } set { errMsg = value; } }
@@ -90,6 +100,8 @@ public class TunnelGameManager : MonoBehaviour {
         if (experiments.Count == 0 && ErrorMessage == "")
             ErrorMessage = "Sorry, No experiments configured";
 
+        breakAfter = TunnelConfigReader.breakAfter;
+        breakCount = breakAfter == 0 ? -1 : breakAfter;
         abstractTexture = (Texture2D)Resources.Load("Textures/abstractPlayer");
 	}
 
@@ -100,8 +112,15 @@ public class TunnelGameManager : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Alpha3))
             GameManager.Inst.LoadLevel(GameManager.Level.MDONS_TEST);
 
-        if (Input.GetKeyUp(KeyCode.Space))
-            StartNextExperiment();
+        if (Input.GetKeyUp(KeyCode.Space) && (!IsRunningTunnel() || showStartScreen || showBreakScreen))
+        {
+            if (expCount == 0)
+                breakCount = breakAfter;
+            if(showBreakScreen)
+                HandleBreakDone();
+            else
+                StartNextExperiment();
+        }
         if (Debug.isDebugBuild && Input.GetKeyUp(KeyCode.T))
             TunnelEnvironmentManager.Inst.ReCompute();
         if(Debug.isDebugBuild && Input.GetKeyUp(KeyCode.P))
@@ -144,12 +163,29 @@ public class TunnelGameManager : MonoBehaviour {
             string bodyText = showStartScreen ? TunnelConfigReader.instructions : "";
             if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "<size=" + titleSize + "><b>" + titleText + "</b>\n</size>\n" + bodyText + "<size=" + (titleSize - 2) + ">\n\n<i>To Start: Click here or hit Spacebar</i></size>"))
             {
-                StartNextExperiment();
                 showStartScreen = false;
+                breakCount = breakAfter;
+                StartNextExperiment();
             }
         }
         else
             showStartScreen = false;
+
+        // Break Screen
+        if (showBreakScreen)
+        {
+            GUI.skin = TunnelEnvironmentManager.Inst.guiSkin;
+            float btnPercent = 0.5f;
+            float btnWidth = btnPercent * Screen.width;
+            float btnHeight = btnPercent * Screen.height;
+            GUI.skin.button.richText = true;
+            GUI.skin.button.wordWrap = true;
+            GUI.skin.button.fontSize = (int)(Screen.height * 0.04f);
+            int titleSize = (int)(Screen.height * 0.06f);
+            string titleText = "Wanna Break?";
+            if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "<size=" + titleSize + "><b>" + titleText + "</b>\n</size><size=" + (titleSize - 2) + ">\n<i>To Continue: Click here or hit Spacebar</i></size>"))
+                HandleBreakDone();
+        }
 
         if( errMsg != "" )
         {
@@ -167,6 +203,19 @@ public class TunnelGameManager : MonoBehaviour {
         //GUI.Label(new Rect(10, 10, 300, 100), experimentDesc);
     }
 
+    void HandleBreakDone()
+    {
+        breakCount = breakAfter;
+        showBreakScreen = false;
+        RegisterAdminEvent(AdminEvent.BREAK_END);
+        StartNextExperiment();
+    }
+
+    public bool IsRunningTunnel()
+    {
+        return (int)lastEvent < (int)TunnelEvent.TUNNEL_EXIT;
+    }
+
     public void HideAbstractPlayer()
     {
         showAbstractPlayer = false;
@@ -181,6 +230,9 @@ public class TunnelGameManager : MonoBehaviour {
     {
         if( experiments.Count > 0 )
         {
+            if (expCount != 0 && lastEvent != TunnelEvent.TRIAL_DONE)
+                TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TRIAL_DONE);
+
             int nextExperiment = idx % experiments.Count;
             if (nextExperiment == 0 && idx != 0)
             {
@@ -188,6 +240,15 @@ public class TunnelGameManager : MonoBehaviour {
                 expCount = 0;
                 GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
                 TunnelEnvironmentManager.Inst.Reset();
+                return;
+            }
+            if (breakCount == 0)
+            {
+                // Show Break Screen
+                showBreakScreen = true;
+                GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
+                TunnelEnvironmentManager.Inst.Reset();
+                RegisterAdminEvent(AdminEvent.BREAK_START);
                 return;
             }
 
@@ -214,8 +275,6 @@ public class TunnelGameManager : MonoBehaviour {
 
     void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl, bool playerAbstract = false)
     {
-        if (expCount != 0)
-            TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TRIAL_DONE);
         Debug.LogError("Starting experiment: " + expCount);
         lastChoice = 0;
         GameManager.Inst.LocalPlayer.Visible = playerVis;
@@ -244,6 +303,7 @@ public class TunnelGameManager : MonoBehaviour {
         }
 
         ++expCount;
+        --breakCount;
         nextExperimentInQueue = false;
         RegisterEvent(TunnelEvent.TUNNEL_ENTRANCE);
         Screen.showCursor = false;
@@ -268,6 +328,8 @@ public class TunnelGameManager : MonoBehaviour {
 
     public void RegisterEvent(TunnelEvent tEvent, float metaData = 0f)
     {
+        Debug.LogError("Register Event");
+        lastEvent = tEvent;
         lastCode = GetCurrentCodeBase() + (int)tEvent;
         if (lslSender != null)
             lslSender.SendCode(lastCode, metaData);
@@ -275,6 +337,7 @@ public class TunnelGameManager : MonoBehaviour {
 
     public void RegisterChoice(TunnelChoice choice)
     {
+        Debug.LogError("Register Choice");
         lastChoice = (int)choice;
         if (lslSender != null)
             lslSender.SendChoice((int)choice);
@@ -284,6 +347,13 @@ public class TunnelGameManager : MonoBehaviour {
             nextExperimentInQueue = true;
             Invoke("StartNextExperiment", delayAfterChoiceToStartNext);
         }
+    }
+
+    public void RegisterAdminEvent(AdminEvent aEvent)
+    {
+        if (lslSender != null)
+            lslSender.SendCode((int)aEvent);
+
     }
 
     public void RegisterAngleOffsets(float alloAngleOffset, float egoAngleOffset, float absoluteAngle)

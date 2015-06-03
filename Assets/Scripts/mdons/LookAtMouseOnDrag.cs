@@ -31,10 +31,12 @@ public class LookAtMouseOnDrag : MonoBehaviour {
 
     void OnGUI()
     {
-        if (Event.current != null && Event.current.type == EventType.MouseDown && MouseHelpers.GetCurrentGameObjectHit() == gameObject)
-            dragging = true;
-        if (Event.current != null && Event.current.type == EventType.MouseUp)
-            dragging = false;
-
+        if (!TunnelGameManager.Inst.UseKeysToChoose)
+        {
+            if (Event.current != null && Event.current.type == EventType.MouseDown && MouseHelpers.GetCurrentGameObjectHit() == gameObject)
+                dragging = true;
+            if (Event.current != null && Event.current.type == EventType.MouseUp)
+                dragging = false;
+        }
     }
 }

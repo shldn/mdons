@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class TunnelArrowClickChoice : MonoBehaviour {
 
     static HashSet<TunnelArrowClickChoice> all = new HashSet<TunnelArrowClickChoice>();
+    static bool resetting = false;
     bool selected = true;
     Color selectedColor = new Color(42f/255f, 154f/255f, 5f/255f, 255f/255f);
     Color unSelectedColor = new Color(70f/255f, 94f/255f, 62f/255f, 89f/255f);
@@ -23,11 +24,13 @@ public class TunnelArrowClickChoice : MonoBehaviour {
 
     public static void ResetAll()
     {
+        resetting = true;
         foreach (TunnelArrowClickChoice l in all)
         {
             l.ReCompute();
             l.Selected = true;
         }
+        resetting = false;
     }
 
 
@@ -96,7 +99,7 @@ public class TunnelArrowClickChoice : MonoBehaviour {
             for (int i = 0; i < renderers.Length; ++i)
                 renderers[i].material.color = c;
             selected = value;
-            if( selected )
+            if (selected && !resetting)
                 TunnelGameManager.Inst.RegisterEvent(TunnelEvent.DECISION);
         }
     }

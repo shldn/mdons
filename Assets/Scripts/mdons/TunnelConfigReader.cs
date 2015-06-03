@@ -31,18 +31,18 @@ public class Experiment
 
     public void SetAvatar(string str)
     {
-        avatarVisible = (str.ToLower() == "visible");
-        avatarPixelated = (str.ToLower() == "abstract");
+        avatarVisible = (str.ToLower().Trim() == "visible");
+        avatarPixelated = (str.ToLower().Trim() == "abstract");
     }
 
     public void SetArrows(string str)
     {
-        chooseArrow = (str.ToLower() == "two");
-        Debug.LogError("arrow: " + chooseArrow.ToString());
+        chooseArrow = (str.ToLower().Trim() == "two");
     }
 
     public void SetNavigation(string str)
     {
+        str = str.ToLower().Trim();
         if (str == "one key")
             userControl = UserControl.PARTIAL;
         else if (str == "auto")
@@ -53,7 +53,7 @@ public class Experiment
 
     public void SetChoiceMethod(string str)
     {
-        mouseClickToChoose = (str.ToLower() == "click");
+        mouseClickToChoose = (str.ToLower().Trim() == "click");
     }
 
     public float angle = 30f;
@@ -68,6 +68,7 @@ public class Experiment
 public class TunnelConfigReader {
 
     public static string instructions = "";
+    public static int breakAfter = -1;
 
     public static List<Experiment> Read(string filePath)
     {
@@ -86,28 +87,24 @@ public class TunnelConfigReader {
                 }
                 for (int i = 0; i < arr.Length; ++i )
                 {
-                    Debug.LogError("json obj: " + arr[i].ToString());
+                    Debug.Log("json obj: " + arr[i].ToString());
                     if( arr[i].Obj.GetString("type").Trim() == "trial")
                         experiments.Add(new Experiment(arr[i].Obj));
 
                     if (arr[i].Obj.GetString("instructions") != "")
-                    {
-                        Debug.LogError("Got instructions");
                         instructions = arr[i].Obj.GetString("instructions");
-                    }
+
+                    if (arr[i].Obj.GetValue("breakAfter") != null)
+                        breakAfter = (int)arr[i].Obj.GetNumber("breakAfter");
 
                     if (arr[i].Obj.GetString("type").Trim() == "constants")
                     {
                         foreach(KeyValuePair<string,JSONValue> v in arr[i].Obj)
-                        {
-                            Debug.LogError("Setting constant:" + v.Key + " " + v.Value);
                             constants.Add(v.Key, v.Value);
-                        }
                     }
                 }
                 if( constants.Count != 0)
                 {
-                    Debug.LogError("Hello - setting constants");
                     for (int i = 0; i < experiments.Count; ++i)
                         foreach (KeyValuePair<string, JSONValue> v in constants)
                             experiments[i].SetValue(v.Key, v.Value);
