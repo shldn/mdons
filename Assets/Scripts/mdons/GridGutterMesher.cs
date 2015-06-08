@@ -88,15 +88,17 @@ public class GridGutterMesher{
 
     static GameObject CreatePlane(Vector3 btmLt, Vector3 btmRt, Vector3 topLt, Vector3 topRt, Texture2D texture, string name)
     {
+        Vector3 pos = 0.25f * (btmLt + btmRt + topLt + topRt);
         Mesh m = new Mesh();
         m.name = name;
-        m.vertices = new Vector3[4] { topLt, topRt, btmRt, btmLt, };
+        m.vertices = new Vector3[4] { topLt - pos, topRt - pos, btmRt - pos, btmLt - pos, };
         m.uv = new Vector2[4] { new Vector2(1, 0), new Vector2(0, 0), new Vector2(0, 1), new Vector2(1, 1) };
         m.triangles = new int[6] { 0, 1, 2, 0, 2, 3 };
         m.RecalculateNormals();
         GameObject obj = new GameObject(name + "GO", typeof(MeshRenderer), typeof(MeshFilter), typeof(MeshCollider));
         obj.GetComponent<MeshCollider>().sharedMesh = m;
         obj.GetComponent<MeshFilter>().mesh = m;
+        obj.transform.position = pos;
         obj.renderer.material = new Material(Shader.Find("Diffuse"));
         if( texture != null )
             obj.renderer.material.SetTexture("_MainTex", texture);

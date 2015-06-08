@@ -42,7 +42,7 @@ public class CityBlockGenerator : MonoBehaviour {
         blockGrid = new Grid2D(To2D(transform.position), rows, cols, new Vector2(blockWidth, blockWidth), streetWidth);
 
         if (IgnoreCenter)
-            ignoreBounds = new Bounds(To3D(blockGrid.GridCenter), new Vector3(blockGrid.GridSize.x - 2f * (blockWidth + 0.5f * streetWidth), 10f, blockGrid.GridSize.y - 2f * (blockWidth + 0.5f * streetWidth)));
+            ignoreBounds = GetIgnoreBounds();
 
         GameObject meshContainer = new GameObject("city_meshes");
         meshContainer.transform.parent = transform;
@@ -104,52 +104,73 @@ public class CityBlockGenerator : MonoBehaviour {
     {
         if (higherLevel == null && Input.GetKeyUp(KeyCode.R))
             CreateNextHigherLevel(transform);
+        if (lowerLevel == null && Input.GetKeyUp(KeyCode.Y))
+        {
+            RemoveCityCenter();
+            Transform parent = gameObject.transform.FindChild("city_meshes");
+            CreateNextLowerLevel(parent);
+        }
     }
 
-    void CreateNextLowerLevel(Transform parent)
+    Bounds GetIgnoreBounds()
+    {
+        return new Bounds(To3D(blockGrid.GridCenter), new Vector3(blockGrid.GridSize.x - 2f * (blockWidth + 0.75f * streetWidth), 10f, blockGrid.GridSize.y - 2f * (blockWidth + 0.75f * streetWidth)));
+    }
+
+    public void RemoveCityCenter()
+    {
+        ignoreBounds = GetIgnoreBounds();
+        Transform city_meshes = transform.FindChild("city_meshes");
+        for(int i=0; i < city_meshes.childCount; ++i)
+        {
+            Transform child = city_meshes.GetChild(i);
+            if (ignoreBounds.Contains(child.transform.position))// || (child.renderer != null && ignoreBounds.Intersects(child.renderer.bounds)))
+                Destroy(child.gameObject);
+        }
+    }
+
+    public void CreateNextLowerLevel(Transform parent)
     {
         GameObject nextLevel = new GameObject("Next Level");
         nextLevel.transform.position = To3D(blockGrid.BottomLeft(1, 1));
         nextLevel.transform.parent = parent;
-        CityBlockGenerator blockGen = nextLevel.AddComponent<CityBlockGenerator>();
-        blockGen.streetWidth = streetWidth;
-        blockGen.blockWidth = blockWidth;
-        blockGen.rows = rows;
-        blockGen.cols = cols;
+
+        CityBlockGenerator blockGen = AddCityBlockGenCopy(nextLevel);
         blockGen.roadScale = (blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y;
         blockGen.objScale = blockGen.roadScale * objScale;
         blockGen.innerRecursionLevel = innerRecursionLevel - 1;
-        blockGen.building = building;
-        blockGen.roadTexture = roadTexture;
-        blockGen.intersectionTexture = intersectionTexture;
-        blockGen.blockTexture = blockTexture;
         blockGen.higherLevel = gameObject;
         lowerLevel = nextLevel;
     }
 
-    void CreateNextHigherLevel(Transform parent)
+    public void CreateNextHigherLevel(Transform parent)
     {
         GameObject nextLevel = new GameObject("Higher Level");
 
-        CityBlockGenerator blockGen = nextLevel.AddComponent<CityBlockGenerator>();
-        blockGen.streetWidth = streetWidth;
-        blockGen.blockWidth = blockWidth;
-        blockGen.rows = rows;
-        blockGen.cols = cols;
-
+        CityBlockGenerator blockGen = AddCityBlockGenCopy(nextLevel);
         blockGen.roadScale = 1f / ((blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y);
         blockGen.objScale = blockGen.roadScale * objScale;
         blockGen.innerRecursionLevel = innerRecursionLevel + 1;
-        blockGen.building = building;
-        blockGen.roadTexture = roadTexture;
-        blockGen.intersectionTexture = intersectionTexture;
-        blockGen.blockTexture = blockTexture;
         blockGen.lowerLevel = gameObject;
         higherLevel = nextLevel;
 
         nextLevel.transform.position = To3D(blockGrid.BottomLeft(0, 0)) + (blockGen.roadScale * (To3D(blockGrid.BottomLeft(0, 0)) - To3D(blockGrid.BottomLeft(1, 1))));
         nextLevel.transform.parent = parent;
         
+    }
+
+    CityBlockGenerator AddCityBlockGenCopy(GameObject go)
+    {
+        CityBlockGenerator blockGen = go.AddComponent<CityBlockGenerator>();
+        blockGen.streetWidth = streetWidth;
+        blockGen.blockWidth = blockWidth;
+        blockGen.rows = rows;
+        blockGen.cols = cols;
+        blockGen.building = building;
+        blockGen.roadTexture = roadTexture;
+        blockGen.intersectionTexture = intersectionTexture;
+        blockGen.blockTexture = blockTexture;
+        return blockGen;
     }
 
     Vector3 To3D(Vector2 v)
