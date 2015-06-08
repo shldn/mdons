@@ -22,6 +22,10 @@ public class CityBlockGenerator : MonoBehaviour {
     int buildingCounter = 0;
     Bounds ignoreBounds = new Bounds();
 
+    public GameObject lowerLevel = null;
+    public GameObject higherLevel = null;
+
+    public Bounds IgnoreBounds { get { return ignoreBounds; } }
     bool IgnoreCenter { get { return innerRecursionLevel > 0; } }
 
 	// Use this for initialization
@@ -92,28 +96,61 @@ public class CityBlockGenerator : MonoBehaviour {
         }
         GridGutterMesher.CreateMeshes(blockGrid, parent, roadTexture, intersectionTexture, blockTexture, ignoreBounds);
 
-        if(innerRecursionLevel > 0)
-        {
-            GameObject nextLevel = new GameObject("Next Level");
-            nextLevel.transform.position = To3D(blockGrid.BottomLeft(1, 1));
-            nextLevel.transform.parent = parent;
-            CityBlockGenerator blockGen = nextLevel.AddComponent<CityBlockGenerator>();
-            blockGen.streetWidth = streetWidth;
-            blockGen.blockWidth = blockWidth;
-            blockGen.rows = rows;
-            blockGen.cols = cols;
-            Debug.LogError("Scale: " + blockGrid.TopLeft(rows - 2, 1).ToString() + " " + blockGrid.BottomLeft(1, 1).ToString() + " : " + blockGrid.GridSize.x + " " + (blockGrid.BottomRight(rows - 2, 1).x - blockGrid.BottomLeft(1, 1).x) / blockGrid.GridSize.x);
-            blockGen.roadScale = (blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y;
-            blockGen.objScale = blockGen.roadScale * objScale;
-            blockGen.innerRecursionLevel = innerRecursionLevel - 1;
-            blockGen.building = building;
-            blockGen.roadTexture = roadTexture;
-            blockGen.intersectionTexture = intersectionTexture;
-            blockGen.blockTexture = blockTexture;
-
-        }
-
+        if (innerRecursionLevel > 0 && lowerLevel == null)
+            CreateNextLowerLevel(parent);
 	}
+
+    void Update()
+    {
+        if (higherLevel == null && Input.GetKeyUp(KeyCode.R))
+            CreateNextHigherLevel(transform);
+    }
+
+    void CreateNextLowerLevel(Transform parent)
+    {
+        GameObject nextLevel = new GameObject("Next Level");
+        nextLevel.transform.position = To3D(blockGrid.BottomLeft(1, 1));
+        nextLevel.transform.parent = parent;
+        CityBlockGenerator blockGen = nextLevel.AddComponent<CityBlockGenerator>();
+        blockGen.streetWidth = streetWidth;
+        blockGen.blockWidth = blockWidth;
+        blockGen.rows = rows;
+        blockGen.cols = cols;
+        blockGen.roadScale = (blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y;
+        blockGen.objScale = blockGen.roadScale * objScale;
+        blockGen.innerRecursionLevel = innerRecursionLevel - 1;
+        blockGen.building = building;
+        blockGen.roadTexture = roadTexture;
+        blockGen.intersectionTexture = intersectionTexture;
+        blockGen.blockTexture = blockTexture;
+        blockGen.higherLevel = gameObject;
+        lowerLevel = nextLevel;
+    }
+
+    void CreateNextHigherLevel(Transform parent)
+    {
+        GameObject nextLevel = new GameObject("Higher Level");
+
+        CityBlockGenerator blockGen = nextLevel.AddComponent<CityBlockGenerator>();
+        blockGen.streetWidth = streetWidth;
+        blockGen.blockWidth = blockWidth;
+        blockGen.rows = rows;
+        blockGen.cols = cols;
+
+        blockGen.roadScale = 1f / ((blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y);
+        blockGen.objScale = blockGen.roadScale * objScale;
+        blockGen.innerRecursionLevel = innerRecursionLevel + 1;
+        blockGen.building = building;
+        blockGen.roadTexture = roadTexture;
+        blockGen.intersectionTexture = intersectionTexture;
+        blockGen.blockTexture = blockTexture;
+        blockGen.lowerLevel = gameObject;
+        higherLevel = nextLevel;
+
+        nextLevel.transform.position = To3D(blockGrid.BottomLeft(0, 0)) + (blockGen.roadScale * (To3D(blockGrid.BottomLeft(0, 0)) - To3D(blockGrid.BottomLeft(1, 1))));
+        nextLevel.transform.parent = parent;
+        
+    }
 
     Vector3 To3D(Vector2 v)
     {
