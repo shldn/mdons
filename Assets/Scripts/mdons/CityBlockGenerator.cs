@@ -135,11 +135,12 @@ public class CityBlockGenerator : MonoBehaviour {
     public void RemoveCityCenter()
     {
         ignoreBounds = GetIgnoreBounds();
+        ignoreBounds.center = Vector3.zero;
         Transform city_meshes = transform.FindChild("city_meshes");
         for(int i=0; i < city_meshes.childCount; ++i)
         {
             Transform child = city_meshes.GetChild(i);
-            if (ignoreBounds.Contains(child.transform.position))// || (child.renderer != null && ignoreBounds.Intersects(child.renderer.bounds)))
+            if (ignoreBounds.Contains(child.transform.localPosition))// || (child.renderer != null && ignoreBounds.Intersects(child.renderer.bounds)))
                 Destroy(child.gameObject);
         }
     }
