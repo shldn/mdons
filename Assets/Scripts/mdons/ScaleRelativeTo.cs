@@ -5,13 +5,14 @@ public class ScaleRelativeTo : MonoBehaviour {
 
     public GameObject relativeToObj = null;
     public float speed = 0.01f;
-	// Use this for initialization
+    public bool keepYFixed = false;
+
 	void Start () {
         if (relativeToObj == null)
             relativeToObj = GameManager.Inst.LocalPlayer.gameObject;
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 	    if(Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.Comma))
         {
@@ -19,7 +20,11 @@ public class ScaleRelativeTo : MonoBehaviour {
             float scaleFactor = 1f + dir * speed;
             transform.localScale *= scaleFactor;
             Vector3 offset = scaleFactor * (transform.position - relativeToObj.transform.position);
-            transform.position = relativeToObj.transform.position + offset;
+
+            Vector3 newPos = relativeToObj.transform.position + offset;
+            if (keepYFixed)
+                newPos.y = transform.position.y;
+            transform.position = newPos;
         }
 	}
 }
