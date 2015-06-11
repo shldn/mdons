@@ -104,7 +104,7 @@ public class CityBlockGenerator : MonoBehaviour {
             parent.localScale = Vector3.one;
 
         if (innerRecursionLevel > 0 && lowerLevel == null)
-            CreateNextLowerLevelImpl(parent);
+            CreateNextLowerLevelImpl(GetTransformRoot());
 	}
 
     void Update()
@@ -144,13 +144,12 @@ public class CityBlockGenerator : MonoBehaviour {
     public void CreateNextLowerLevel()
     {
         RemoveCityCenter();
-        Transform parent = gameObject.transform.FindChild("city_meshes");
-        CreateNextLowerLevelImpl(parent);
+        CreateNextLowerLevelImpl(GetTransformRoot());
     }
 
     void CreateNextLowerLevelImpl(Transform parent)
     {
-        GameObject nextLevel = new GameObject("Next Level");
+        GameObject nextLevel = new GameObject("Lower Level");
         nextLevel.transform.position = parent.position;
         nextLevel.transform.localScale = parent.transform.lossyScale;
         nextLevel.transform.parent = parent;
