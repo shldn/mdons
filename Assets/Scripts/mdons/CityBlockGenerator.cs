@@ -153,10 +153,20 @@ public class CityBlockGenerator : MonoBehaviour {
         nextLevel.transform.parent = parent;
 
         CityBlockGenerator blockGen = AddCityBlockGenCopy(nextLevel);
-        blockGen.blockScale = blockScale * (blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y;
+        blockGen.blockScale = GetNextLowerLevelScale();
         blockGen.innerRecursionLevel = innerRecursionLevel - 1;
         blockGen.higherLevel = gameObject;
         lowerLevel = nextLevel;
+    }
+
+    public float GetNextHigherLevelScale()
+    {
+        return blockScale / ((blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y);
+    }
+
+    public float GetNextLowerLevelScale()
+    {
+        return blockScale * (blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y;
     }
 
     public void CreateNextHigherLevel(Transform parent)
@@ -164,7 +174,7 @@ public class CityBlockGenerator : MonoBehaviour {
         GameObject nextLevel = new GameObject("Higher Level");
 
         CityBlockGenerator blockGen = AddCityBlockGenCopy(nextLevel);
-        blockGen.blockScale = blockScale / ((blockGrid.TopLeft(rows - 2, 1).y - blockGrid.BottomLeft(1, 1).y) / blockGrid.GridSize.y);
+        blockGen.blockScale = GetNextHigherLevelScale();
         blockGen.innerRecursionLevel = innerRecursionLevel + 1;
         blockGen.lowerLevel = gameObject;
         higherLevel = nextLevel;
