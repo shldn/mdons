@@ -5,6 +5,7 @@ public class CityBlockController : MonoBehaviour {
 
     CityBlockGenerator cityGenOut = null;
     CityBlockGenerator cityGenIn = null;
+    public float scaleDiffMax = 4f;
     public bool autoPopulate = true;
     public bool autoCycle = true;
 
@@ -26,7 +27,7 @@ public class CityBlockController : MonoBehaviour {
             float invScale = 1f / transform.lossyScale.x;
             float invBlockScale = 1f / cityGenOut.BlockScale;
             //Debug.LogError("bounds: " + cityGenOut.IgnoreBounds + " inv s: " + invScale + " inv bs: " + invBlockScale + " playerPos: " + playerXZPos + " scaled: " + (invBlockScale * (invScale * playerXZPos)));
-            if (Time.frameCount > 10 && cityGenIn.Initialized && !cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)))
+            if (Time.frameCount > 10 && CityLevelsInitialized() && !cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)))
             {
                 if( autoCycle )
                     CycleUp();
@@ -38,7 +39,7 @@ public class CityBlockController : MonoBehaviour {
             }
 
             //Debug.LogError(cityGenIn.blockScale + " scale diff: " + (Mathf.Log10(cityGenIn.blockScale * transform.lossyScale.x)) + " " + Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x));
-            if (Time.frameCount > 10 && cityGenIn.Initialized && Mathf.Abs((Mathf.Log10(cityGenIn.BlockScale * transform.lossyScale.x) - Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x))) < 4f)
+            if (Time.frameCount > 10 && CityLevelsInitialized() && Mathf.Abs((Mathf.Log10(cityGenIn.BlockScale * transform.lossyScale.x) - Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x))) < scaleDiffMax)
             {
                 if (autoCycle)
                     CycleDown();
@@ -131,10 +132,16 @@ public class CityBlockController : MonoBehaviour {
 
     void FindHighestAndLowestCityLevels()
     {
-        while (cityGenOut.higherLevel != null && cityGenOut.higherLevel.GetComponent<CityBlockGenerator>().higherLevel != null)
-            cityGenOut = cityGenOut.higherLevel.GetComponent<CityBlockGenerator>().higherLevel.GetComponent<CityBlockGenerator>();
+        while (cityGenOut.higherLevel != null)
+            cityGenOut = cityGenOut.higherLevel.GetComponent<CityBlockGenerator>();
 
-        while (cityGenIn.lowerLevel != null && cityGenIn.lowerLevel.GetComponent<CityBlockGenerator>().lowerLevel != null)
-            cityGenIn = cityGenIn.lowerLevel.GetComponent<CityBlockGenerator>().lowerLevel.GetComponent<CityBlockGenerator>();
+        while (cityGenIn.lowerLevel != null)
+            cityGenIn = cityGenIn.lowerLevel.GetComponent<CityBlockGenerator>();
+    }
+
+    bool CityLevelsInitialized()
+    {
+        FindHighestAndLowestCityLevels();
+        return cityGenIn.Initialized && cityGenOut.Initialized;
     }
 }

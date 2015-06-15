@@ -9,6 +9,7 @@ public class CityBlockGenerator : MonoBehaviour {
     public int rows = 3;
     public int cols = 3;
     public int innerRecursionLevel = 0;
+    public int outerRecursionLevel = 0;
     public GameObject[] building;
 
     public Texture2D roadTexture;
@@ -114,6 +115,10 @@ public class CityBlockGenerator : MonoBehaviour {
 
         if (innerRecursionLevel > 0 && lowerLevel == null)
             CreateNextLowerLevelImpl(GetTransformRoot());
+
+        if (outerRecursionLevel > 0 && higherLevel == null)
+            CreateNextHigherLevel(GetTransformRoot());
+
 	}
 
     void Update()
@@ -187,6 +192,7 @@ public class CityBlockGenerator : MonoBehaviour {
         CityBlockGenerator blockGen = AddCityBlockGenCopy(nextLevel);
         blockGen.blockScale = GetNextHigherLevelScale();
         blockGen.innerRecursionLevel = innerRecursionLevel + 1;
+        blockGen.outerRecursionLevel = outerRecursionLevel - 1;
         blockGen.lowerLevel = gameObject;
         higherLevel = nextLevel;
 
