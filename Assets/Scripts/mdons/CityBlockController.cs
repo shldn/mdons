@@ -99,6 +99,9 @@ public class CityBlockController : MonoBehaviour {
         cityGenOut.higherLevel = cityToMove;
 
         cityGenOut = cityToMove.GetComponent<CityBlockGenerator>();
+
+        if (transform.localScale.x < 0.01f)
+            RebalanceCityScale();
     }
 
     // Take highest position block and move it down to the second smallest
@@ -121,6 +124,8 @@ public class CityBlockController : MonoBehaviour {
         cityGenIn.higherLevel.GetComponent<CityBlockGenerator>().lowerLevel = cityToMove.gameObject;
         cityGenIn.higherLevel = cityToMove;
 
+        if (transform.localScale.x > 100f)
+            RebalanceCityScale();
         
     }
 
