@@ -15,7 +15,14 @@ public class CityBlockGenerator : MonoBehaviour {
     public Texture2D intersectionTexture;
     public Texture2D blockTexture;
 
-    public float blockScale = 1f;
+    private float blockScale = 1f;
+    public float BlockScale { 
+        get { return blockScale; } 
+        set { 
+            blockScale = value;  
+            transform.FindChild("city_meshes").localScale = blockScale * Vector3.one;
+        }
+    }
 
     Grid2D blockGrid = null;
     int buildingCounter = 0;
@@ -24,6 +31,8 @@ public class CityBlockGenerator : MonoBehaviour {
     public GameObject lowerLevel = null;
     public GameObject higherLevel = null;
 
+    private bool initialized = false;
+    public bool Initialized { get { return initialized; } }
     public Bounds IgnoreBounds { get { return ignoreBounds; } }
     bool IgnoreCenter { get { return innerRecursionLevel > 0; } }
 
@@ -100,6 +109,8 @@ public class CityBlockGenerator : MonoBehaviour {
 
         // Map to origin for consistency of containment tests -- could be refactored since all ignoreBounds are the same dimensions
         ignoreBounds.center = Vector3.zero;
+
+        initialized = true;
 
         if (innerRecursionLevel > 0 && lowerLevel == null)
             CreateNextLowerLevelImpl(GetTransformRoot());

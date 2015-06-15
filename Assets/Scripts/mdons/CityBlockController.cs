@@ -6,6 +6,7 @@ public class CityBlockController : MonoBehaviour {
     CityBlockGenerator cityGenOut = null;
     CityBlockGenerator cityGenIn = null;
     public bool autoPopulate = true;
+    public bool autoCycle = true;
 
 	void Start () {
         cityGenOut = GetComponent<CityBlockGenerator>();
@@ -23,19 +24,29 @@ public class CityBlockController : MonoBehaviour {
             Vector3 playerXZPos = GameManager.Inst.LocalPlayer.gameObject.transform.position - transform.position;
             playerXZPos.y = 0f;
             float invScale = 1f / transform.lossyScale.x;
-            float invBlockScale = 1f / cityGenOut.blockScale;
+            float invBlockScale = 1f / cityGenOut.BlockScale;
             //Debug.LogError("bounds: " + cityGenOut.IgnoreBounds + " inv s: " + invScale + " inv bs: " + invBlockScale + " playerPos: " + playerXZPos + " scaled: " + (invBlockScale * (invScale * playerXZPos)));
-            if (!cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)))
+            if (Time.frameCount > 10 && cityGenIn.Initialized && !cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)))
             {
-                cityGenOut.CreateNextHigherLevel(transform);
-                cityGenOut = cityGenOut.higherLevel.GetComponent<CityBlockGenerator>();
+                if( autoCycle )
+                    CycleUp();
+                else
+                {
+                    cityGenOut.CreateNextHigherLevel(transform);
+                    cityGenOut = cityGenOut.higherLevel.GetComponent<CityBlockGenerator>();
+                }
             }
 
             //Debug.LogError(cityGenIn.blockScale + " scale diff: " + (Mathf.Log10(cityGenIn.blockScale * transform.lossyScale.x)) + " " + Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x));
-            if (Time.frameCount > 10 && Mathf.Abs((Mathf.Log10(cityGenIn.blockScale * transform.lossyScale.x) - Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x))) < 4f)
+            if (Time.frameCount > 10 && cityGenIn.Initialized && Mathf.Abs((Mathf.Log10(cityGenIn.BlockScale * transform.lossyScale.x) - Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x))) < 4f)
             {
-                cityGenIn.CreateNextLowerLevel();
-                cityGenIn = cityGenIn.lowerLevel.GetComponent<CityBlockGenerator>();
+                if (autoCycle)
+                    CycleDown();
+                else
+                {
+                    cityGenIn.CreateNextLowerLevel();
+                    cityGenIn = cityGenIn.lowerLevel.GetComponent<CityBlockGenerator>();
+                }
             }
         }
 
@@ -43,7 +54,31 @@ public class CityBlockController : MonoBehaviour {
             CycleUp();
         if (Input.GetKeyUp(KeyCode.Alpha8))
             CycleDown();
+        if (Input.GetKeyUp(KeyCode.Alpha5))
+            RebalanceCityScale();
 	}
+
+    // Try to stay within a good floating point range.
+    // 
+    void RebalanceCityScale()
+    {
+        FindHighestAndLowestCityLevels();
+
+        // Set everything back to how it was originally - Controller has a scale of 1.
+        Vector3 currScale = transform.localScale;
+
+        // Multiply all levels
+        GameObject walker = cityGenIn.gameObject;
+        while(walker != null)
+        {
+            walker.GetComponent<CityBlockGenerator>().BlockScale *= currScale.x;
+            walker = walker.GetComponent<CityBlockGenerator>().higherLevel;
+        }
+
+        // Adjust top level for multiplication
+        transform.localScale = Vector3.one;
+
+    }
 
     // Take second smallest piece and move it to the new highest position
     void CycleUp()
@@ -51,13 +86,11 @@ public class CityBlockController : MonoBehaviour {
         GameObject cityToMove = cityGenIn.higherLevel;
         Transform meshContainer = cityToMove.transform.FindChild("city_meshes");
         Vector3 currScale = meshContainer.localScale;
-        cityToMove.GetComponent<CityBlockGenerator>().blockScale = cityGenOut.GetNextHigherLevelScale();
-        meshContainer.localScale = cityGenOut.GetNextHigherLevelScale() * Vector3.one;
+        cityToMove.GetComponent<CityBlockGenerator>().BlockScale = cityGenOut.GetNextHigherLevelScale();
 
         // grow center piece to fill hole
-        cityGenIn.blockScale = currScale.x;
-        cityGenIn.transform.FindChild("city_meshes").localScale = currScale;
-
+        cityGenIn.BlockScale = currScale.x;
+ 
         // Remap all the pointers
         cityGenIn.higherLevel = cityToMove.GetComponent<CityBlockGenerator>().higherLevel;
         cityGenIn.higherLevel.GetComponent<CityBlockGenerator>().lowerLevel = cityGenIn.gameObject;
@@ -74,12 +107,10 @@ public class CityBlockController : MonoBehaviour {
         GameObject cityToMove = cityGenOut.gameObject;
         Transform meshContainer = cityToMove.transform.FindChild("city_meshes");
         Vector3 currScale = meshContainer.localScale;
-        cityToMove.GetComponent<CityBlockGenerator>().blockScale = cityGenIn.blockScale;
-        meshContainer.localScale = cityGenIn.blockScale * Vector3.one;
+        cityToMove.GetComponent<CityBlockGenerator>().BlockScale = cityGenIn.BlockScale;
 
         // shrink center piece
-        cityGenIn.blockScale = cityGenIn.GetNextLowerLevelScale();
-        cityGenIn.transform.FindChild("city_meshes").localScale = cityGenIn.blockScale * Vector3.one;
+        cityGenIn.BlockScale = cityGenIn.GetNextLowerLevelScale();
 
         // Remap all the pointers
         cityGenOut = cityToMove.GetComponent<CityBlockGenerator>().lowerLevel.GetComponent<CityBlockGenerator>();
