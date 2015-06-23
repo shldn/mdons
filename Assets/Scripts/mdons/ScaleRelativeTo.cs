@@ -26,5 +26,13 @@ public class ScaleRelativeTo : MonoBehaviour {
                 newPos.y = transform.position.y;
             transform.position = newPos;
         }
+
+        if (Input.GetKeyUp(KeyCode.Alpha0))
+        {
+            if(relativeToObj != gameObject)
+                relativeToObj = gameObject;
+            else
+                relativeToObj = GameManager.Inst.LocalPlayer.gameObject;
+        }
 	}
 }

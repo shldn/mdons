@@ -27,7 +27,8 @@ public class CityBlockController : MonoBehaviour {
             float invScale = 1f / transform.lossyScale.x;
             float invBlockScale = 1f / cityGenOut.BlockScale;
             //Debug.LogError("bounds: " + cityGenOut.IgnoreBounds + " inv s: " + invScale + " inv bs: " + invBlockScale + " playerPos: " + playerXZPos + " scaled: " + (invBlockScale * (invScale * playerXZPos)));
-            if (Time.frameCount > 10 && CityLevelsInitialized() && !cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)))
+            //Debug.LogError("city out scale: " + Mathf.Log10(cityGenOut.BlockScale * transform.lossyScale.x) + " player scale: " + Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x));
+            if (Time.frameCount > 10 && CityLevelsInitialized() && (!cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)) || (Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x) > 2f * (Mathf.Log10(cityGenOut.BlockScale * transform.lossyScale.x)))))
             {
                 if( autoCycle )
                     CycleUp();
@@ -50,13 +51,6 @@ public class CityBlockController : MonoBehaviour {
                 }
             }
         }
-
-        if(Input.GetKeyUp(KeyCode.Alpha9))
-            CycleUp();
-        if (Input.GetKeyUp(KeyCode.Alpha8))
-            CycleDown();
-        if (Input.GetKeyUp(KeyCode.Alpha5))
-            RebalanceCityScale();
 	}
 
     // Try to stay within a good floating point range.
