@@ -25,7 +25,13 @@ public class ScaleRelativeTo : MonoBehaviour {
             if (keepYFixed)
                 newPos.y = transform.position.y;
             transform.position = newPos;
-        }
+
+			if(ShepardEngine.Inst)
+				ShepardEngine.Inst.velocity = -dir;
+        }else{
+			if(ShepardEngine.Inst)
+				ShepardEngine.Inst.velocity = 0f;
+		}
 
         if (Input.GetKeyUp(KeyCode.Alpha0))
         {
