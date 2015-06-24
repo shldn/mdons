@@ -6,6 +6,7 @@ public class CityBlockGenerator : MonoBehaviour {
     // Portland has streets 60 ft in width and blocks 260 ft to street center lines (http://www.strongtowns.org/journal/2013/11/27/optimizing-the-street-grid.html) (http://en.wikipedia.org/wiki/City_block)
     public float streetWidth = 60.0f;
     public float blockWidth = 200.0f;
+    public float buildingOffsetFromStreet = 16f;
     public int rows = 3;
     public int cols = 3;
     public int innerRecursionLevel = 0;
@@ -67,7 +68,7 @@ public class CityBlockGenerator : MonoBehaviour {
                 if( !ignoreBounds.Contains(pos) )
                 {
                     GameObject obj = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                    obj.transform.position = pos;
+                    obj.transform.position = pos - buildingOffsetFromStreet * -Vector3.right;
                     obj.transform.forward = -Vector3.right;
                     obj.transform.parent = parent;
                     obj.transform.localScale = Vector3.one;
@@ -77,7 +78,7 @@ public class CityBlockGenerator : MonoBehaviour {
                 if (!ignoreBounds.Contains(pos))
                 {
                     GameObject obj2 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                    obj2.transform.position = pos;
+                    obj2.transform.position = pos - buildingOffsetFromStreet * Vector3.right;
                     obj2.transform.forward = Vector3.right;
                     obj2.transform.parent = parent;
                     obj2.transform.localScale = Vector3.one;
@@ -87,17 +88,17 @@ public class CityBlockGenerator : MonoBehaviour {
                 if (!ignoreBounds.Contains(pos))
                 {
                     GameObject obj3 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                    obj3.transform.position = pos;
+                    obj3.transform.position = pos - buildingOffsetFromStreet * Vector3.forward;
                     obj3.transform.forward = Vector3.forward;
                     obj3.transform.parent = parent;
                     obj3.transform.localScale = Vector3.one;
                 }
 
-                pos = To3D(blockGrid.TopEdgeLerp(r, c, 0.5f));
+                pos = To3D(blockGrid.BottomEdgeLerp(r, c, 0.5f));
                 if (!ignoreBounds.Contains(pos))
                 {
                     GameObject obj4 = GameObject.Instantiate(building[buildingCounter++ % building.Length]) as GameObject;
-                    obj4.transform.position = To3D(blockGrid.BottomEdgeLerp(r, c, 0.5f));
+                    obj4.transform.position = pos - buildingOffsetFromStreet * -Vector3.forward;
                     obj4.transform.forward = -Vector3.forward;
                     obj4.transform.parent = parent;
                     obj4.transform.localScale = Vector3.one;
@@ -207,6 +208,7 @@ public class CityBlockGenerator : MonoBehaviour {
         CityBlockGenerator blockGen = go.AddComponent<CityBlockGenerator>();
         blockGen.streetWidth = streetWidth;
         blockGen.blockWidth = blockWidth;
+        blockGen.buildingOffsetFromStreet = buildingOffsetFromStreet;
         blockGen.rows = rows;
         blockGen.cols = cols;
         blockGen.building = building;
