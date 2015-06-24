@@ -696,6 +696,7 @@ public class PlayerManager : MonoBehaviour {
             localPlayerGO.transform.rotation = transform.rotation;
             PlayerController playerController = localPlayerGO.GetComponent<PlayerController>();
             playerController.forwardAngle = transform.eulerAngles.y;
+            playerController.StopMomentum();
             playerController.SetNavDestination(transform.position, transform.eulerAngles.y);
             if (snapCamera)
                 MainCameraController.Inst.CameraToInitialPos();              
