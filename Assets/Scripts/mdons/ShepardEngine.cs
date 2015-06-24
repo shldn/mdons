@@ -49,4 +49,9 @@ public class ShepardEngine : MonoBehaviour {
 		}
 	} // End of FixedUpdate().
 
+    void OnDestroy()
+    {
+        Inst = null;
+    }
+
 } // End of ShepardEngine.
