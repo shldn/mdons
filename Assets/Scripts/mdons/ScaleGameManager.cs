@@ -104,6 +104,11 @@ public class ScaleGameManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Alpha3))
             GameManager.Inst.LoadLevel(GameManager.Level.MDONS_TEST);
+
+        // Initialize focal length
+        if (Time.timeSinceLevelLoad < 1f)
+            UpdateFocalLength();
+
     }
 
     void SetToTargetScale(Vector3 scale)
