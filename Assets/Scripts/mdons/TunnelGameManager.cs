@@ -29,6 +29,8 @@ public enum AdminEvent
 {
     BREAK_START = 777,
     BREAK_END = 778,
+    EXPERIMENT_START = 998,
+    EXPERIMENT_END = 999,
 }
 
 public class TunnelGameManager : MonoBehaviour {
@@ -53,6 +55,7 @@ public class TunnelGameManager : MonoBehaviour {
     // Experiment variables
     int expCount = 0;
     int breakCount = 0;
+    bool instructionScreenEventSent = false;
     bool allowUserControls = true;
     bool chooseArrow = true;
     bool useMouseButtonsToChoose = true;
@@ -84,17 +87,20 @@ public class TunnelGameManager : MonoBehaviour {
 
     public void Touch() { }
 
-	void Start () {
-        RenderSettings.ambientLight = Color.black;
-        GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.locked;
-        GameManager.Inst.LocalPlayer.Visible = false;
-
+    void Awake()
+    {
 #if UNITY_WEBPLAYER
         sendLSLData = false;
 #endif
 
         if (sendLSLData)
             lslSender = gameObject.AddComponent<LSLSender>();
+    }
+
+	void Start () {
+        RenderSettings.ambientLight = Color.black;
+        GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.locked;
+        GameManager.Inst.LocalPlayer.Visible = false;
 
         // Read Config file if it exists
         experiments = TunnelConfigReader.Read("config.txt");
@@ -152,6 +158,11 @@ public class TunnelGameManager : MonoBehaviour {
         // Show Start/End Button
         if (expCount == 0)
         {
+            if (!instructionScreenEventSent && lslSender != null && Time.timeSinceLevelLoad> 1.5f)
+            {
+                RegisterAdminEvent(showStartScreen ? AdminEvent.EXPERIMENT_START : AdminEvent.EXPERIMENT_END);
+                instructionScreenEventSent = true;
+            }
             GUI.skin = TunnelEnvironmentManager.Inst.guiSkin;
             float btnPercent = showStartScreen ? 0.75f : 0.5f;
             float btnWidth = btnPercent * Screen.width;
@@ -165,12 +176,19 @@ public class TunnelGameManager : MonoBehaviour {
             if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "<size=" + titleSize + "><b>" + titleText + "</b>\n</size>\n" + bodyText + "<size=" + (titleSize - 2) + ">\n\n<i>To Start: Click here or hit Spacebar</i></size>"))
             {
                 showStartScreen = false;
+
+                // backup if the experiment start event hasn't fired (hasn't reached the delay timeout...) The initial event isn't registering consistently
+                if (!instructionScreenEventSent)
+                    RegisterAdminEvent(showStartScreen ? AdminEvent.EXPERIMENT_START : AdminEvent.EXPERIMENT_END);
                 breakCount = breakAfter;
                 StartNextExperiment();
             }
         }
         else
+        {
             showStartScreen = false;
+            instructionScreenEventSent = false;
+        }
 
         // Break Screen
         if (showBreakScreen)
@@ -307,6 +325,7 @@ public class TunnelGameManager : MonoBehaviour {
         ++expCount;
         --breakCount;
         nextExperimentInQueue = false;
+        RegisterTrialStart();
         RegisterEvent(TunnelEvent.TUNNEL_ENTRANCE);
         Screen.showCursor = false;
     }
@@ -357,6 +376,12 @@ public class TunnelGameManager : MonoBehaviour {
         if (lslSender != null)
             lslSender.SendCode((int)aEvent);
 
+    }
+
+    public void RegisterTrialStart()
+    {
+        if (lslSender != null)
+            lslSender.SendCode(1000 + expCount);
     }
 
     public void RegisterAngleOffsets(float alloAngleOffset, float egoAngleOffset, float absoluteAngle)
