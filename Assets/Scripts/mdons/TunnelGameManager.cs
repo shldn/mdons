@@ -27,8 +27,8 @@ public enum TunnelChoice
 
 public enum AdminEvent
 {
-    BREAK_START = 77,
-    BREAK_END = 88,
+    BREAK_START = 777,
+    BREAK_END = 778,
 }
 
 public class TunnelGameManager : MonoBehaviour {
@@ -57,6 +57,7 @@ public class TunnelGameManager : MonoBehaviour {
     bool chooseArrow = true;
     bool useMouseButtonsToChoose = true;
     bool showAbstractPlayer = false;
+    bool playerVisible = false;
     List<Experiment> experiments = new List<Experiment>();
 
     public bool UseRotatableArrow { get { return !chooseArrow; } }
@@ -277,8 +278,9 @@ public class TunnelGameManager : MonoBehaviour {
     {
         Debug.LogError("Starting experiment: " + expCount);
         lastChoice = 0;
-        GameManager.Inst.LocalPlayer.Visible = playerVis;
+        playerVisible = playerVis;
         showAbstractPlayer = playerAbstract;
+        GameManager.Inst.LocalPlayer.Visible = playerVis;
         TunnelEnvironmentManager.Inst.SetTunnelAngle(tunnelAngle);
         MoveAlongPath moveScript = (MoveAlongPath)FindObjectOfType(typeof(MoveAlongPath));
         GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
@@ -315,7 +317,8 @@ public class TunnelGameManager : MonoBehaviour {
 
         int code = 2000;
         code += (int)Mathf.Abs(tunnelAngle);
-        code += GameManager.Inst.LocalPlayer.Visible ? 0 : 1000;
+        code += playerVisible ? 0 : 1000;
+        code += !showAbstractPlayer ? 0 : 1000;
         code += tunnelAngle > 0 ? 0 : 1000;
 
         return code;
