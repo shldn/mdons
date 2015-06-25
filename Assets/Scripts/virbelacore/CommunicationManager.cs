@@ -390,6 +390,9 @@ public class CommunicationManager : MonoBehaviour {
 
     public void OnConnectionLost(BaseEvent evt)
     {
+        if (GameManager.Inst.LevelLoaded == GameManager.Level.MOTION_TEST)
+            return;
+
         Debug.Log("---------------------CommunicationMgr---- OnConnectionLost---------------");
         serverConnectionStatusMessage = "Connection was lost, Reason: " + (string)evt.Params["reason"];
         Debug.Log(serverConnectionStatusMessage);
