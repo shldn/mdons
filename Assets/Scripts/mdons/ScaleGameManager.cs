@@ -25,6 +25,7 @@ public class ScaleGameManager : MonoBehaviour
     // Helpers
     float origNearClip = 1.0f;
     float origFarClip = 15000.0f;
+    bool adjustmentToggle = false;
 
     public void Touch() { }
 
@@ -45,6 +46,7 @@ public class ScaleGameManager : MonoBehaviour
     void Start()
     {
         SetToTargetScale(new Vector3(startScale,startScale,startScale));
+        PhysicsAdjustment();
     }
 
     void Update()
@@ -60,7 +62,6 @@ public class ScaleGameManager : MonoBehaviour
                 scaleFactor = 1.0f;
 
             GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
-            UpdateEnvironment();
 
 			if(ShepardEngine.Inst)
 				ShepardEngine.Inst.velocity = 1f;
@@ -68,7 +69,6 @@ public class ScaleGameManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Minus))
         {
             GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
-            UpdateEnvironment();
 
 			if(ShepardEngine.Inst)
 				ShepardEngine.Inst.velocity = -1f;
@@ -114,6 +114,14 @@ public class ScaleGameManager : MonoBehaviour
     void SetToTargetScale(Vector3 scale)
     {
         GameManager.Inst.LocalPlayer.Scale = scale;
+    }
+
+    // After scaling the world, this seems to be necessary for the avatar to properly collide with things.
+    public void PhysicsAdjustment()
+    {
+        float dir = adjustmentToggle ? 1f : -1f;
+        GameManager.Inst.LocalPlayer.Scale *= (1.0f + dir * 0.001f);
+        adjustmentToggle = !adjustmentToggle;
     }
 
     public void UpdateEnvironment()

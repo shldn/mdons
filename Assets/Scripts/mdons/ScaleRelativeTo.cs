@@ -29,6 +29,8 @@ public class ScaleRelativeTo : MonoBehaviour {
 			if(ShepardEngine.Inst)
 				ShepardEngine.Inst.velocity = -dir;
         }
+        if(Input.GetKeyUp(KeyCode.Period) || Input.GetKeyUp(KeyCode.Comma))
+            ScaleGameManager.Inst.PhysicsAdjustment();
 
         if (Input.GetKeyUp(KeyCode.Alpha0))
         {
