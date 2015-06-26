@@ -38,6 +38,10 @@ public class CityBlockGenerator : MonoBehaviour {
     public Bounds IgnoreBounds { get { return ignoreBounds; } }
     bool IgnoreCenter { get { return innerRecursionLevel > 0; } }
 
+    // Collider controller variables -- should be in controller class
+    bool usingMeshCollider = false;
+    bool autoAdjustColliderType = true;
+
 	// Use this for initialization
 	void Start () {
         if (building == null || building.Length == 0)
@@ -124,10 +128,19 @@ public class CityBlockGenerator : MonoBehaviour {
 
     void Update()
     {
-        if (higherLevel == null && Input.GetKeyUp(KeyCode.R))
-            CreateNextHigherLevel(GetTransformRoot());
-        if (lowerLevel == null && Input.GetKeyUp(KeyCode.Y))
-            CreateNextLowerLevel();
+        // This should be in a controller class
+        if(autoAdjustColliderType)
+        {
+            float scaleDiffFactor = 3f;
+            // both true or both false, will switch to mesh or to box
+            if (usingMeshCollider == (Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x) > (Mathf.Log10(BlockScale * transform.lossyScale.x)) + scaleDiffFactor))
+            {
+                usingMeshCollider = !usingMeshCollider;
+                ScaleSensitiveColliderController[] controllers = transform.FindChild("city_meshes").gameObject.GetComponentsInChildren<ScaleSensitiveColliderController>();
+                for (int i = 0; i < controllers.Length; ++i)
+                    controllers[i].AllowMeshCollisions = usingMeshCollider;
+            }
+        }
     }
 
     Transform GetTransformRoot()

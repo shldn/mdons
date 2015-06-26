@@ -15,11 +15,6 @@ public class ScaleSensitiveColliderController : MonoBehaviour {
         AllowMeshCollisions = allowMeshCollisions;
 	}
 
-	void Update () {
-        if (Input.GetKeyUp(KeyCode.Alpha1))
-            AllowMeshCollisions = !AllowMeshCollisions;
-	}
-
     public bool AllowMeshCollisions
     {
         get{
