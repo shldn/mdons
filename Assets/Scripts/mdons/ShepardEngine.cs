@@ -28,6 +28,7 @@ public class ShepardEngine : MonoBehaviour {
 			sources[i] = newSource;
 			newSource.clip = tone;
 			newSource.loop = true;
+            newSource.volume = 0f;
 			newSource.Play();
 		}
 	} // End of Start().
