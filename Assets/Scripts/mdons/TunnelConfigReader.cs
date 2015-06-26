@@ -69,6 +69,7 @@ public class TunnelConfigReader {
 
     public static string instructions = "";
     public static int breakAfter = -1;
+    public static int skipCount = 0;
 
     public static List<Experiment> Read(string filePath)
     {
@@ -96,6 +97,9 @@ public class TunnelConfigReader {
 
                     if (arr[i].Obj.GetValue("breakAfter") != null)
                         breakAfter = (int)arr[i].Obj.GetNumber("breakAfter");
+
+                    if (arr[i].Obj.GetValue("skip") != null)
+                        skipCount = (int)arr[i].Obj.GetNumber("skip");
 
                     if (arr[i].Obj.GetString("type").Trim() == "constants")
                     {

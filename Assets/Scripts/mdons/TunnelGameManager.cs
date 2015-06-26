@@ -56,6 +56,7 @@ public class TunnelGameManager : MonoBehaviour {
     // Experiment variables
     int expCount = 0;
     int breakCount = 0;
+    int skipCount = 0;
     bool instructionScreenEventSent = false;
     bool allowUserControls = true;
     bool chooseArrow = true;
@@ -109,6 +110,7 @@ public class TunnelGameManager : MonoBehaviour {
             ErrorMessage = "Sorry, No experiments configured";
 
         breakAfter = TunnelConfigReader.breakAfter;
+        skipCount = TunnelConfigReader.skipCount;
         breakCount = breakAfter == 0 ? -1 : breakAfter;
         abstractTexture = (Texture2D)Resources.Load("Textures/abstractPlayer");
 	}
@@ -242,6 +244,12 @@ public class TunnelGameManager : MonoBehaviour {
 
     void StartNextExperiment()
     {
+        if (skipCount > 0)
+        {
+            expCount += skipCount;
+            skipCount = 0;
+        }
+
         StartExperiment(expCount, expCount > 0 ? delayBetweenTrials : 0);
     }
 
