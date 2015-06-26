@@ -470,6 +470,7 @@ public class PlayerManager : MonoBehaviour {
     public static PlayerInit InitPlayerVariablesFromUserVariables(List<UserVariable> vars)
     {
         PlayerInit pInit = new PlayerInit();
+        pInit.scale = 1f;
 
         for (int i = 0; i < vars.Count; ++i)
         {
@@ -508,6 +509,9 @@ public class PlayerManager : MonoBehaviour {
                 case "sit":
                     pInit.sit = vars[i].GetBoolValue();
                     break;
+                case "scl":
+                    pInit.scale = (float)vars[i].GetDoubleValue();
+                    break;
             }
         }
 
@@ -543,6 +547,7 @@ public class PlayerManager : MonoBehaviour {
             SoundManager.Inst.PlayEnter();
 
         Player remotePlayer = CreateRemotePlayer(user, pInit.modelIndex, pInit.Pos, pInit.Rot, pInit.optionsStr, pInit.parseID, pInit.displayName, pInit.teamID, pInit.ptype, pInit.sit);
+        remotePlayer.UpdateScale(pInit.scale);
 
         if (CommunicationManager.IsPrivateRoom(room))
             GameGUI.Inst.ExecuteJavascriptOnGui(remotePlayer.GetUserEnterPrivateRoomJSCmd(room));
