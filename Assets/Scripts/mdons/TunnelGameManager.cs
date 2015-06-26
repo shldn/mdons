@@ -47,7 +47,8 @@ public class TunnelGameManager : MonoBehaviour {
     }
 
     // Trial variables
-    float delayAfterChoiceToStartNext = 2f;
+    float delayAfterChoiceToStartNext = 2f; // for auto advancing to next trial after a decision
+    float delayBetweenTrials = 2f;
     bool nextExperimentInQueue = false;
     int breakAfter = -1;
 
@@ -158,7 +159,7 @@ public class TunnelGameManager : MonoBehaviour {
         // Show Start/End Button
         if (expCount == 0)
         {
-            if (!instructionScreenEventSent && lslSender != null && Time.timeSinceLevelLoad> 1.5f)
+            if (!instructionScreenEventSent && lslSender != null && lslSender.HasConsumers)//Time.timeSinceLevelLoad> 1.5f)
             {
                 RegisterAdminEvent(showStartScreen ? AdminEvent.EXPERIMENT_START : AdminEvent.EXPERIMENT_END);
                 instructionScreenEventSent = true;
@@ -175,11 +176,10 @@ public class TunnelGameManager : MonoBehaviour {
             string bodyText = showStartScreen ? TunnelConfigReader.instructions : "";
             if (GUI.Button(new Rect(0.5f * (Screen.width - btnWidth), 0.5f * (Screen.height - btnHeight), btnWidth, btnHeight), "<size=" + titleSize + "><b>" + titleText + "</b>\n</size>\n" + bodyText + "<size=" + (titleSize - 2) + ">\n\n<i>To Start: Click here or hit Spacebar</i></size>"))
             {
-                showStartScreen = false;
-
                 // backup if the experiment start event hasn't fired (hasn't reached the delay timeout...) The initial event isn't registering consistently
                 if (!instructionScreenEventSent)
                     RegisterAdminEvent(showStartScreen ? AdminEvent.EXPERIMENT_START : AdminEvent.EXPERIMENT_END);
+                showStartScreen = false;
                 breakCount = breakAfter;
                 StartNextExperiment();
             }
@@ -242,36 +242,58 @@ public class TunnelGameManager : MonoBehaviour {
 
     void StartNextExperiment()
     {
-        StartExperiment(expCount);
+        StartExperiment(expCount, expCount > 0 ? delayBetweenTrials : 0);
     }
 
-    void StartExperiment(int idx)
+    void StartNextExperimentImpl()
+    {
+        GameGUI.Inst.fadeOut = false;
+        GameGUI.Inst.fadeAlpha = 0f;
+        StartExperiment(experiments[expCount % experiments.Count]);
+    }
+
+    void ShowDoneScreen()
+    {
+        GameGUI.Inst.fadeOut = false;
+        GameGUI.Inst.fadeAlpha = 0f;
+        expCount = 0;
+        GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
+        TunnelEnvironmentManager.Inst.Reset();
+    }
+
+    void ShowBreakScreen()
+    {
+        GameGUI.Inst.fadeOut = false;
+        GameGUI.Inst.fadeAlpha = 0f;
+        showBreakScreen = true;
+        GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
+        TunnelEnvironmentManager.Inst.Reset();
+        RegisterAdminEvent(AdminEvent.BREAK_START);
+    }
+
+    void StartExperiment(int idx, float delay = 0f)
     {
         if( experiments.Count > 0 )
         {
             if (expCount != 0 && lastEvent != TunnelEvent.TRIAL_DONE)
                 TunnelGameManager.Inst.RegisterEvent(TunnelEvent.TRIAL_DONE);
 
+            if( delay != 0f)
+                GameGUI.Inst.fadeOut = true;
+
             int nextExperiment = idx % experiments.Count;
             if (nextExperiment == 0 && idx != 0)
             {
-                // Show Done Screen
-                expCount = 0;
-                GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
-                TunnelEnvironmentManager.Inst.Reset();
+                Invoke("ShowDoneScreen", delay);
                 return;
             }
             if (breakCount == 0)
             {
-                // Show Break Screen
-                showBreakScreen = true;
-                GameManager.Inst.playerManager.SetLocalPlayerTransform(GameManager.Inst.playerManager.GetLocalSpawnTransform());
-                TunnelEnvironmentManager.Inst.Reset();
-                RegisterAdminEvent(AdminEvent.BREAK_START);
+                Invoke("ShowBreakScreen", delay);
                 return;
             }
 
-            StartExperiment(experiments[nextExperiment]);
+            Invoke("StartNextExperimentImpl", delay);
         }
         else
         {
@@ -294,7 +316,7 @@ public class TunnelGameManager : MonoBehaviour {
 
     void StartExperiment(float tunnelAngle, bool playerVis, UserControl uControl, bool playerAbstract = false)
     {
-        Debug.LogError("Starting experiment: " + expCount);
+        //Debug.LogError("Starting experiment: " + expCount);
         lastChoice = 0;
         playerVisible = playerVis;
         showAbstractPlayer = playerAbstract;
@@ -350,7 +372,6 @@ public class TunnelGameManager : MonoBehaviour {
 
     public void RegisterEvent(TunnelEvent tEvent, float metaData = 0f)
     {
-        Debug.LogError("Register Event");
         lastEvent = tEvent;
         lastCode = GetCurrentCodeBase() + (int)tEvent;
         if (lslSender != null)
@@ -359,7 +380,6 @@ public class TunnelGameManager : MonoBehaviour {
 
     public void RegisterChoice(TunnelChoice choice)
     {
-        Debug.LogError("Register Choice");
         lastChoice = (int)choice;
         if (lslSender != null)
             lslSender.SendChoice((int)choice);
@@ -381,7 +401,11 @@ public class TunnelGameManager : MonoBehaviour {
     public void RegisterTrialStart()
     {
         if (lslSender != null)
-            lslSender.SendCode(1000 + expCount);
+        {
+            int code = 1000 + expCount;
+            lslSender.SendCode(code);
+            lslSender.WriteLineToTextFile(code.ToString());
+        }
     }
 
     public void RegisterAngleOffsets(float alloAngleOffset, float egoAngleOffset, float absoluteAngle)
