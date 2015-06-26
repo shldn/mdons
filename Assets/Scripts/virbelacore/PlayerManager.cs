@@ -306,7 +306,7 @@ public class PlayerManager : MonoBehaviour {
             if (changedVars.Contains("x") || changedVars.Contains("y") || changedVars.Contains("z") || changedVars.Contains("rot"))
             {
                 float rotAngle = (float)user.GetVariable("rot").GetDoubleValue();
-                bool rotChanged = rotAngle != remotePlayer.gameObject.transform.rotation.eulerAngles.y;
+                bool rotChanged = Mathf.Abs(rotAngle - remotePlayer.playerController.forwardAngle) > 0.01f;
                 Vector3 newPos = new Vector3((float)user.GetVariable("x").GetDoubleValue(), (float)user.GetVariable("y").GetDoubleValue(), (float)user.GetVariable("z").GetDoubleValue());
                 remotePlayer.UpdateTransform(newPos, rotAngle);
                 if (rotChanged)
