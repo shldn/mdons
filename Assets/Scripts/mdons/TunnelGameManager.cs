@@ -404,6 +404,8 @@ public class TunnelGameManager : MonoBehaviour {
         {
             int code = 1000 + expCount;
             lslSender.SendCode(code);
+            if (expCount > 1)
+                lslSender.WriteLineToTextFile("");
             lslSender.WriteLineToTextFile(code.ToString());
         }
     }
