@@ -216,6 +216,15 @@ public class TunnelGameManager : MonoBehaviour {
             GUI.color = Color.white;
 
         }
+
+        if( skipCount > 0 )
+        {
+            GUI.skin.label.alignment = TextAnchor.LowerCenter;
+            GUI.color = Color.red;
+            GUI.Label(new Rect(0, 0, Screen.width, Screen.height), "Skipping first " + skipCount + " trials.");
+            GUI.color = Color.white;
+        }
+
         //int buttonWidth = 200;
         //if (GUI.Button(new Rect(Screen.width - buttonWidth - 30, 20, buttonWidth, 30), "Start Next Experiment"))
         //    StartExperiment(expCount);
