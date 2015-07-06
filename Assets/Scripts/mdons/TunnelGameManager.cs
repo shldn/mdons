@@ -62,7 +62,10 @@ public class TunnelGameManager : MonoBehaviour {
     bool chooseArrow = true;
     bool useMouseButtonsToChoose = true;
     bool showAbstractPlayer = false;
+
+    // bools for event codes
     bool playerVisible = false;
+    bool abstractVisible = false;
     List<Experiment> experiments = new List<Experiment>();
 
     public bool UseRotatableArrow { get { return !chooseArrow; } }
@@ -336,6 +339,7 @@ public class TunnelGameManager : MonoBehaviour {
         //Debug.LogError("Starting experiment: " + expCount);
         lastChoice = 0;
         playerVisible = playerVis;
+        abstractVisible = playerAbstract;
         showAbstractPlayer = playerAbstract;
         GameManager.Inst.LocalPlayer.Visible = playerVis;
         TunnelEnvironmentManager.Inst.SetTunnelAngle(tunnelAngle);
@@ -376,7 +380,7 @@ public class TunnelGameManager : MonoBehaviour {
         int code = 2000;
         code += (int)Mathf.Abs(tunnelAngle);
         code += playerVisible ? 0 : 1000;
-        code += !showAbstractPlayer ? 0 : 1000;
+        code += !abstractVisible ? 0 : 1000;
         code += tunnelAngle > 0 ? 0 : 1000;
 
         return code;
