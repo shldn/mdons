@@ -11,6 +11,8 @@ public class ShepardEngine : MonoBehaviour {
 	public float loopTime = 40f;
 	public float minPitch = 0f;
 	public float maxPitch = 1f;
+	float volume = 0f;
+	bool changing = false;
 
 	float timeElapsed = 0f;
 	public float velocity = 1f;
@@ -35,7 +37,16 @@ public class ShepardEngine : MonoBehaviour {
 	
 	void Update(){
 		velocity = Mathf.MoveTowards(velocity, 0f, Time.deltaTime);
+
+		volume = Mathf.Lerp(volume, changing? 1f : 0f, Time.deltaTime);
+		changing = false;
 	} // End of Update().
+
+
+	public void SetVelocity(float newVelocity){
+		velocity = newVelocity;
+		changing = true;
+	} // End of SetVelocity().
 
 
 	void FixedUpdate(){
@@ -45,7 +56,7 @@ public class ShepardEngine : MonoBehaviour {
 			AudioSource curSource = sources[i];
 			float runner = Mathf.Repeat((timeElapsed / loopTime) + ((1f / numVoices) * i), 1f);
 			curSource.pitch = minPitch + (runner * (maxPitch - minPitch));
-			curSource.volume = (1f - (0.5f + (Mathf.Cos(runner * Mathf.PI * 2f) * 0.5f))) / Mathf.Sqrt(numVoices * 0.5f);
+			curSource.volume = (1f - (0.5f + (Mathf.Cos(runner * Mathf.PI * 2f) * 0.5f))) / Mathf.Sqrt(numVoices * 0.5f) * volume;
 		}
 	} // End of FixedUpdate().
 
