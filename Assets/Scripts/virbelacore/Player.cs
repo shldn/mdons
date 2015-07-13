@@ -27,6 +27,7 @@ public struct PlayerInit
     public float posx;
     public float posy;
     public float posz;
+    public float scale;
     public string optionsStr;
     public string parseID;
     public string displayName;

@@ -5,6 +5,7 @@ public class CityBlockController : MonoBehaviour {
 
     CityBlockGenerator cityGenOut = null;
     CityBlockGenerator cityGenIn = null;
+    CityBlockGenerator cityGenBoundaryForCycleDown = null;
     public float scaleDiffMax = 4f;
     public bool autoPopulate = true;
     public bool autoCycle = true;
@@ -28,7 +29,8 @@ public class CityBlockController : MonoBehaviour {
             float invBlockScale = 1f / cityGenOut.BlockScale;
             //Debug.LogError("bounds: " + cityGenOut.IgnoreBounds + " inv s: " + invScale + " inv bs: " + invBlockScale + " playerPos: " + playerXZPos + " scaled: " + (invBlockScale * (invScale * playerXZPos)));
             //Debug.LogError("city out scale: " + Mathf.Log10(cityGenOut.BlockScale * transform.lossyScale.x) + " player scale: " + Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x));
-            if (Time.frameCount > 10 && CityLevelsInitialized() && (!cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)) || (Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x) > 2f * (Mathf.Log10(cityGenOut.BlockScale * transform.lossyScale.x)))))
+            if (Time.frameCount > 10 && CityLevelsInitialized() && 
+                (!cityGenOut.IgnoreBounds.Contains(invBlockScale * (invScale * playerXZPos)) || (Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x) > 2f * (Mathf.Log10(cityGenOut.BlockScale * transform.lossyScale.x)))))
             {
                 if( autoCycle )
                     CycleUp();
@@ -40,7 +42,8 @@ public class CityBlockController : MonoBehaviour {
             }
 
             //Debug.LogError(cityGenIn.blockScale + " scale diff: " + (Mathf.Log10(cityGenIn.blockScale * transform.lossyScale.x)) + " " + Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x));
-            if (Time.frameCount > 10 && CityLevelsInitialized() && Mathf.Abs((Mathf.Log10(cityGenIn.BlockScale * transform.lossyScale.x) - Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x))) < scaleDiffMax)
+            if (Time.frameCount > 10 && CityLevelsInitialized() &&
+                cityGenBoundaryForCycleDown.IgnoreBounds.Contains((invScale * playerXZPos) / cityGenBoundaryForCycleDown.BlockScale) && Mathf.Abs((Mathf.Log10(cityGenIn.BlockScale * transform.lossyScale.x) - Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x))) < scaleDiffMax)
             {
                 if (autoCycle)
                     CycleDown();
@@ -95,6 +98,8 @@ public class CityBlockController : MonoBehaviour {
 
         cityGenOut = cityToMove.GetComponent<CityBlockGenerator>();
 
+        FindCycleDownBoundary();
+
         if (transform.localScale.x < 0.01f)
             RebalanceCityScale();
     }
@@ -119,6 +124,8 @@ public class CityBlockController : MonoBehaviour {
         cityGenIn.higherLevel.GetComponent<CityBlockGenerator>().lowerLevel = cityToMove.gameObject;
         cityGenIn.higherLevel = cityToMove;
 
+        FindCycleDownBoundary();
+
         if (transform.localScale.x > 100f)
             RebalanceCityScale();
         
@@ -126,11 +133,28 @@ public class CityBlockController : MonoBehaviour {
 
     void FindHighestAndLowestCityLevels()
     {
+        bool findCycleDownBoundary = cityGenBoundaryForCycleDown == null || cityGenIn.lowerLevel != null;
+
+        // find highest
         while (cityGenOut.higherLevel != null)
             cityGenOut = cityGenOut.higherLevel.GetComponent<CityBlockGenerator>();
 
+        // find lowest
         while (cityGenIn.lowerLevel != null)
             cityGenIn = cityGenIn.lowerLevel.GetComponent<CityBlockGenerator>();
+
+
+        // find cycle down boundary
+        if (findCycleDownBoundary)
+            FindCycleDownBoundary();
+    }
+
+    void FindCycleDownBoundary()
+    {
+        cityGenBoundaryForCycleDown = cityGenIn;
+        int levelsUp = 5;
+        for (int i = 0; i < levelsUp && cityGenBoundaryForCycleDown.higherLevel != null; ++i)
+            cityGenBoundaryForCycleDown = cityGenBoundaryForCycleDown.higherLevel.GetComponent<CityBlockGenerator>();
     }
 
     bool CityLevelsInitialized()

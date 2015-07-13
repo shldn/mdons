@@ -30,6 +30,7 @@ public class ShepardEngine : MonoBehaviour {
 			sources[i] = newSource;
 			newSource.clip = tone;
 			newSource.loop = true;
+            newSource.volume = 0f;
 			newSource.Play();
 		}
 	} // End of Start().
@@ -59,5 +60,10 @@ public class ShepardEngine : MonoBehaviour {
 			curSource.volume = (1f - (0.5f + (Mathf.Cos(runner * Mathf.PI * 2f) * 0.5f))) / Mathf.Sqrt(numVoices * 0.5f) * volume;
 		}
 	} // End of FixedUpdate().
+
+    void OnDestroy()
+    {
+        Inst = null;
+    }
 
 } // End of ShepardEngine.

@@ -306,7 +306,7 @@ public class PlayerManager : MonoBehaviour {
             if (changedVars.Contains("x") || changedVars.Contains("y") || changedVars.Contains("z") || changedVars.Contains("rot"))
             {
                 float rotAngle = (float)user.GetVariable("rot").GetDoubleValue();
-                bool rotChanged = rotAngle != remotePlayer.gameObject.transform.rotation.eulerAngles.y;
+                bool rotChanged = Mathf.Abs(rotAngle - remotePlayer.playerController.forwardAngle) > 0.01f;
                 Vector3 newPos = new Vector3((float)user.GetVariable("x").GetDoubleValue(), (float)user.GetVariable("y").GetDoubleValue(), (float)user.GetVariable("z").GetDoubleValue());
                 remotePlayer.UpdateTransform(newPos, rotAngle);
                 if (rotChanged)
@@ -470,6 +470,7 @@ public class PlayerManager : MonoBehaviour {
     public static PlayerInit InitPlayerVariablesFromUserVariables(List<UserVariable> vars)
     {
         PlayerInit pInit = new PlayerInit();
+        pInit.scale = 1f;
 
         for (int i = 0; i < vars.Count; ++i)
         {
@@ -508,6 +509,9 @@ public class PlayerManager : MonoBehaviour {
                 case "sit":
                     pInit.sit = vars[i].GetBoolValue();
                     break;
+                case "scl":
+                    pInit.scale = (float)vars[i].GetDoubleValue();
+                    break;
             }
         }
 
@@ -543,6 +547,7 @@ public class PlayerManager : MonoBehaviour {
             SoundManager.Inst.PlayEnter();
 
         Player remotePlayer = CreateRemotePlayer(user, pInit.modelIndex, pInit.Pos, pInit.Rot, pInit.optionsStr, pInit.parseID, pInit.displayName, pInit.teamID, pInit.ptype, pInit.sit);
+        remotePlayer.UpdateScale(pInit.scale);
 
         if (CommunicationManager.IsPrivateRoom(room))
             GameGUI.Inst.ExecuteJavascriptOnGui(remotePlayer.GetUserEnterPrivateRoomJSCmd(room));
@@ -696,6 +701,7 @@ public class PlayerManager : MonoBehaviour {
             localPlayerGO.transform.rotation = transform.rotation;
             PlayerController playerController = localPlayerGO.GetComponent<PlayerController>();
             playerController.forwardAngle = transform.eulerAngles.y;
+            playerController.StopMomentum();
             playerController.SetNavDestination(transform.position, transform.eulerAngles.y);
             if (snapCamera)
                 MainCameraController.Inst.CameraToInitialPos();              

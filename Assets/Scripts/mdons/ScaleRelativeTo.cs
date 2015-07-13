@@ -17,7 +17,7 @@ public class ScaleRelativeTo : MonoBehaviour {
 	    if(Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.Comma))
         {
             float dir = ( Input.GetKey(KeyCode.Comma) ) ? -1f : 1f;
-            float scaleFactor = 1f + dir * speed;
+            float scaleFactor = 1f + dir * Time.deltaTime * speed;
             transform.localScale *= scaleFactor;
             Vector3 offset = scaleFactor * (transform.position - relativeToObj.transform.position);
 
@@ -29,6 +29,8 @@ public class ScaleRelativeTo : MonoBehaviour {
 			if(ShepardEngine.Inst)
 				ShepardEngine.Inst.SetVelocity(-dir);
         }
+        if(Input.GetKeyUp(KeyCode.Period) || Input.GetKeyUp(KeyCode.Comma))
+            ScaleGameManager.Inst.PhysicsAdjustment();
 
         if (Input.GetKeyUp(KeyCode.Alpha0))
         {
