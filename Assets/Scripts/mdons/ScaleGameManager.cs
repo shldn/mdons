@@ -64,14 +64,14 @@ public class ScaleGameManager : MonoBehaviour
             GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
 
 			if(ShepardEngine.Inst)
-				ShepardEngine.Inst.velocity = 1f;
+				ShepardEngine.Inst.SetVelocity(1f);
         }
         if (Input.GetKey(KeyCode.Minus))
         {
             GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
 
 			if(ShepardEngine.Inst)
-				ShepardEngine.Inst.velocity = -1f;
+				ShepardEngine.Inst.SetVelocity(-1f);
         }
         if (Input.GetKeyUp(KeyCode.T))
             Camera.main.gameObject.GetComponent<TiltShift>().enabled = !Camera.main.gameObject.GetComponent<TiltShift>().enabled;
