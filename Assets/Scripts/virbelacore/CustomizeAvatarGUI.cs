@@ -27,6 +27,15 @@ public class CustomizeAvatarGUI : MonoBehaviour {
 
     private void SaveState()
     {
+        // Guests can save a local copy to the registry
+        if (CommunicationManager.CurrentUserProfile.IsGuest())
+        {
+            PlayerPrefs.SetString("VirbelaAvatarOpt", AvatarOptionManager.Inst.AvatarOptionsToString(avatarOptions));
+
+            // clean slate next time
+            avatarOptions = new Dictionary<string, int>();
+            return;
+        }
         if( !CommunicationManager.CurrentUserProfile.CheckLogin() )
         {
             Debug.LogError("Current profile not logged in?");

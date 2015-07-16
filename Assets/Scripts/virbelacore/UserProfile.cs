@@ -311,4 +311,9 @@ public class UserProfile {
     {
         UpdateProfile(GetLocalHardwareInfoJSON());
     }
+
+    public bool IsGuest()
+    {
+        return userID == "tUtcWBqVbV" || userID == "v4ePKBP5YY";
+    }
 }

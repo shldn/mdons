@@ -222,7 +222,7 @@ public class CommunicationManager : MonoBehaviour {
         {
             try
             {
-                mCurrentUserProfile.Login("assemblyGuest", "assembly[123]");
+                mCurrentUserProfile.Login("facguest", "fac[123]guest");
             }
             catch (Exception e)
             {

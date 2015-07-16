@@ -346,8 +346,29 @@ public class AvatarOptionManager{
         return JSHelpers.DictionaryToJSON(avatarOptions);
     }
 
+    public string AvatarOptionsToString(Dictionary<string, int> avatarOptions)
+    {
+        string customizationStr = "";
+        int gender = GameManager.Inst.LocalPlayer.ModelIdx;
+        foreach (string option in AvatarOptionManager.Inst.OptionTypes[gender])
+        {
+            if (customizationStr != "")
+                customizationStr += ",";
+            customizationStr += (avatarOptions.ContainsKey(option) ? avatarOptions[option].ToString() : CommunicationManager.CurrentUserProfile.GetField(option));
+        }
+        return customizationStr;
+    }
+
     public void SaveStateToServer(Player player, Dictionary<string, int> avatarOptions)
     {
+        Debug.LogError("SaveStateToServer: " + PlayerPrefs.GetString("VirbelaAvatarOpt"));
+        // Guests can save a local copy to the registry
+        if( CommunicationManager.CurrentUserProfile.IsGuest())
+        {
+            PlayerPrefs.SetString("VirbelaAvatarOpt", AvatarOptionsToString(avatarOptions));
+            Debug.LogError("Saving avatar to registry: " + PlayerPrefs.GetString("VirbelaAvatarOpt"));
+            return;
+        }
         if (!CommunicationManager.CurrentUserProfile.CheckLogin())
         {
             Debug.LogError("Current profile not logged in?");

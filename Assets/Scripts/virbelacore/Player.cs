@@ -499,6 +499,13 @@ public class Player {
     {
         if (Type == PlayerType.STEALTH)
             return;
+
+        if( CommunicationManager.CurrentUserProfile.IsGuest())
+        {
+            ApplyAvatarOptions(GetAvatarOptionStr());
+            return;
+        }
+
         int numOptionsDefined = 0;
         if (AvatarOptionManager.Inst.OptionTypes.ContainsKey(ModelIdx))
         {
@@ -538,6 +545,9 @@ public class Player {
 
     public string GetAvatarOptionStr()
     {
+        if( CommunicationManager.CurrentUserProfile.IsGuest() && PlayerPrefs.HasKey("VirbelaAvatarOpt") )
+            return PlayerPrefs.GetString("VirbelaAvatarOpt");
+
         if (mOptionStr != "")
             return mOptionStr;
 
