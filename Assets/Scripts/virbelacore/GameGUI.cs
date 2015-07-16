@@ -233,10 +233,6 @@ public class GameGUI : MonoBehaviour
         // Fadeout texture
         whiteTex = Resources.Load("Textures/white") as Texture2D;
 
-        // Turn off all native gui for assembly
-        if (GameManager.Inst.ServerConfig == "Assembly" || GameManager.Inst.ServerConfig == "MDONS")
-            GameGUI.Inst.Visible = false;
-
     }
 
     void Update()

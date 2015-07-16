@@ -77,6 +77,13 @@ public class CommunicationManager : MonoBehaviour {
 		get{return Instance;}
 	}
 
+    void Awake()
+    {
+#if !UNITY_STANDALONE
+        nativeGUILevel = 39;
+#endif
+    }
+
     public bool SetServerConfig(string serverConfigName)
     {
         ParseObject serverconfig = string.IsNullOrEmpty(serverConfigName) ? null : ParseObjectFactory.FindByParseObjectByColumnValue("ServerConfig", "name", serverConfigName);

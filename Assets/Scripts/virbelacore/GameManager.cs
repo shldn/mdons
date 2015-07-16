@@ -154,6 +154,10 @@ public class GameManager : MonoBehaviour {
 
         ConsoleInterpreter.Inst.Touch(); // preload console instance
         RoomJoinEvt = null;
+
+        if (GameManager.Inst.ServerConfig == "Assembly" || GameManager.Inst.ServerConfig == "MDONS")
+            if(GameGUI.Inst.Visible != (LevelLoaded == Level.AVATARSELECT) )
+                GameGUI.Inst.Visible = LevelLoaded == Level.AVATARSELECT;
     }
 
     void UpdateLevelInGuiLayer()
