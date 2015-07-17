@@ -361,12 +361,10 @@ public class AvatarOptionManager{
 
     public void SaveStateToServer(Player player, Dictionary<string, int> avatarOptions)
     {
-        Debug.LogError("SaveStateToServer: " + PlayerPrefs.GetString("VirbelaAvatarOpt"));
         // Guests can save a local copy to the registry
         if( CommunicationManager.CurrentUserProfile.IsGuest())
         {
             PlayerPrefs.SetString("VirbelaAvatarOpt", AvatarOptionsToString(avatarOptions));
-            Debug.LogError("Saving avatar to registry: " + PlayerPrefs.GetString("VirbelaAvatarOpt"));
             return;
         }
         if (!CommunicationManager.CurrentUserProfile.CheckLogin())

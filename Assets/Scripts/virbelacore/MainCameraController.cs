@@ -317,7 +317,8 @@ public class MainCameraController : MonoBehaviour {
         Vector3 playerForwardVector = MathHelper.MoveAngleUnitVector(playerController.forwardAngle);
         Vector3 playerRightVector = MathHelper.MoveAngleUnitVector(playerController.forwardAngle + 90f);
         cameraTargetPos = playerTransform.position + playerTransform.localScale.x * ((playerForwardVector * -followPlayerDistance) + (Vector3.up * followPlayerHeight) + (playerRightVector * rightOffset));
-
+        if (mainCamera == null)
+            mainCamera = Camera.main;
         mainCamera.transform.position = cameraTargetPos;
         cameraPosVel = Vector3.zero;
 

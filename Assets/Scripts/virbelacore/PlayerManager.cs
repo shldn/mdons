@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour {
 
     public static PlayerController playerController = null;
     public List<GameObject> playerModels = new List<GameObject>();
-    private static string[] playerModelNames = { "Avatars/male", "Avatars/female", "Avatars/sketchy_guy" };
+    private static string[] playerModelNames = { "Avatars/male", "Avatars/female"}; //, "Avatars/sketchy_guy" };
     private static string[] playerMedModelNames = { "Avatars/male_med", "Avatars/female_med" };
     public static string[] playerModelDisplayNames = { "Male", "Female" };
     public static string[] PlayerModelNames { get { return (GameManager.Inst.ServerConfig == "Medical" ? playerMedModelNames : playerModelNames); } }
@@ -88,7 +88,11 @@ public class PlayerManager : MonoBehaviour {
             catch (System.Exception e) {
                 Debug.LogError("Exception caught PlayerManager::OnLevelWasLoaded: " + e.ToString());
             }
-            SpawnLocalPlayer(GetModelIdx(CommunicationManager.CurrentUserProfile.Model));
+            int modelIdx = GetModelIdx(CommunicationManager.CurrentUserProfile.Model);
+            if( CommunicationManager.CurrentUserProfile.IsGuest() && PlayerPrefs.HasKey("VirbelaAvatarModel") )
+                modelIdx = PlayerPrefs.GetInt("VirbelaAvatarModel");
+
+            SpawnLocalPlayer(modelIdx);
             roomEntrySoundFlag = true;
 		}
 		else

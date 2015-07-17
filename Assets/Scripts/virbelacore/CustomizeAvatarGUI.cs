@@ -27,25 +27,25 @@ public class CustomizeAvatarGUI : MonoBehaviour {
 
     private void SaveState()
     {
-        // Guests can save a local copy to the registry
+        AvatarOptionManager.Inst.SaveStateToServer(GameManager.Inst.LocalPlayer, avatarOptions);
+
         if (CommunicationManager.CurrentUserProfile.IsGuest())
         {
-            PlayerPrefs.SetString("VirbelaAvatarOpt", AvatarOptionManager.Inst.AvatarOptionsToString(avatarOptions));
+            PlayerPrefs.SetInt("VirbelaAvatarModel", currentModelIdx);
 
-            // clean slate next time
+            // clear avatar options, clean slate next time if they don't save
             avatarOptions = new Dictionary<string, int>();
             return;
         }
+
         if( !CommunicationManager.CurrentUserProfile.CheckLogin() )
         {
             Debug.LogError("Current profile not logged in?");
             return;
         }
-        string jsonStr = AvatarOptionManager.Inst.AvatarOptionsToJson(avatarOptions);
-        if (jsonStr != "")
-            CommunicationManager.CurrentUserProfile.UpdateProfile(jsonStr);
         if( originalModelIdx != currentModelIdx )
             CommunicationManager.CurrentUserProfile.UpdateProfile("model", currentModelIdx.ToString());
+
         // clear avatar options, clean slate next time if they don't save
         avatarOptions = new Dictionary<string, int>();
     }
