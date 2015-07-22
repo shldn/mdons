@@ -346,15 +346,18 @@ public class AvatarOptionManager{
         return JSHelpers.DictionaryToJSON(avatarOptions);
     }
 
-    public string AvatarOptionsToString(Dictionary<string, int> avatarOptions)
+    public string AvatarOptionsToString(string currOptionStr, Dictionary<string, int> avatarOptions)
     {
         string customizationStr = "";
         int gender = GameManager.Inst.LocalPlayer.ModelIdx;
+        string[] currOptions = (!string.IsNullOrEmpty(currOptionStr)) ? currOptionStr.Split(new string[]{","}, System.StringSplitOptions.None) : new string[]{};
+        int i=0; 
         foreach (string option in AvatarOptionManager.Inst.OptionTypes[gender])
         {
             if (customizationStr != "")
                 customizationStr += ",";
-            customizationStr += (avatarOptions.ContainsKey(option) ? avatarOptions[option].ToString() : CommunicationManager.CurrentUserProfile.GetField(option));
+            customizationStr += (avatarOptions.ContainsKey(option) ? avatarOptions[option].ToString() : ((currOptions.Length > i && currOptions[i] != "") ? currOptions[i] : CommunicationManager.CurrentUserProfile.GetField(option)));
+            ++i;
         }
         return customizationStr;
     }
@@ -364,7 +367,8 @@ public class AvatarOptionManager{
         // Guests can save a local copy to the registry
         if( CommunicationManager.CurrentUserProfile.IsGuest())
         {
-            PlayerPrefs.SetString("VirbelaAvatarOpt", AvatarOptionsToString(avatarOptions));
+            string prevOptStr = PlayerPrefs.GetString("VirbelaAvatarOpt");
+            PlayerPrefs.SetString("VirbelaAvatarOpt", AvatarOptionsToString(prevOptStr, avatarOptions));
             return;
         }
         if (!CommunicationManager.CurrentUserProfile.CheckLogin())
