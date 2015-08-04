@@ -45,6 +45,7 @@ public class ScaleGameManager : MonoBehaviour
 
     void Start()
     {
+        Screen.showCursor = true;
         SetToTargetScale(new Vector3(startScale,startScale,startScale));
         PhysicsAdjustment();
     }
@@ -52,37 +53,21 @@ public class ScaleGameManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKey(KeyCode.Equals))
-        {
-            float scaleFactor = 1.0f + scaleSpeed;
-
-            // Check if there is something above the avatar
-            RaycastHit hit = new RaycastHit();
-            Ray ray = new Ray(GameManager.Inst.LocalPlayer.HeadTopPosition, Vector3.up);
-            if (Physics.Raycast(ray, out hit) && hit.distance < 1.0f)
-                scaleFactor = 1.0f;
-
-            GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
-
-			if(ShepardEngine.Inst)
-				ShepardEngine.Inst.SetVelocity(1f);
-        }
+            ScaleUp();
         if (Input.GetKey(KeyCode.Minus))
-        {
-            GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
+            ScaleDown();
 
-			if(ShepardEngine.Inst)
-				ShepardEngine.Inst.SetVelocity(-1f);
-        }
         if (Input.GetKeyUp(KeyCode.T))
             Camera.main.gameObject.GetComponent<TiltShift>().enabled = !Camera.main.gameObject.GetComponent<TiltShift>().enabled;
 
         if (Input.GetKeyUp(KeyCode.P))
         {
-            Vector3 targetScale = GameManager.Inst.LocalPlayer.Scale;
-            GameGUI.Inst.customizeAvatarGui.ChangeCharacter((GameManager.Inst.LocalPlayer.ModelIdx + 1) % PlayerManager.PlayerModelNames.Length);
-            GameManager.Inst.LocalPlayer.playerController.enabled = true;
-            GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
-            SetToTargetScale(targetScale);
+            GameManager.Inst.LoadLevel(GameManager.Level.AVATARSELECT);
+            //Vector3 targetScale = GameManager.Inst.LocalPlayer.Scale;
+            //GameGUI.Inst.customizeAvatarGui.ChangeCharacter((GameManager.Inst.LocalPlayer.ModelIdx + 1) % PlayerManager.PlayerModelNames.Length);
+            //GameManager.Inst.LocalPlayer.playerController.enabled = true;
+            //GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
+            //SetToTargetScale(targetScale);
         }
 
         if( Input.GetKeyUp(KeyCode.O))
@@ -109,6 +94,30 @@ public class ScaleGameManager : MonoBehaviour
         if (Time.timeSinceLevelLoad < 1f)
             UpdateFocalLength();
 
+    }
+
+    public void ScaleUp()
+    {
+        float scaleFactor = 1.0f + scaleSpeed;
+
+        // Check if there is something above the avatar
+        RaycastHit hit = new RaycastHit();
+        Ray ray = new Ray(GameManager.Inst.LocalPlayer.HeadTopPosition, Vector3.up);
+        if (Physics.Raycast(ray, out hit) && hit.distance < 1.0f)
+            scaleFactor = 1.0f;
+
+        GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
+
+        if (ShepardEngine.Inst)
+            ShepardEngine.Inst.SetVelocity(1f);
+    }
+
+    public void ScaleDown()
+    {
+        GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
+
+        if (ShepardEngine.Inst)
+            ShepardEngine.Inst.SetVelocity(-1f);
     }
 
     void SetToTargetScale(Vector3 scale)
