@@ -58,6 +58,7 @@ public class CustomizeAvatarGUI : MonoBehaviour {
         GUI.enabled = true;
         GUILayout.BeginArea(new Rect(x, y, typeWidth + 2 * buttonWidth + 8, Screen.height));
 
+        GUI.skin.button.fontSize = 15;
         // Buttons for changing the active character.
         AddCharacterBtn();
 
@@ -202,6 +203,8 @@ public class CustomizeAvatarGUI : MonoBehaviour {
             GameManager.Inst.LocalPlayer.gameObject.transform.RotateAround(Vector3.up, -turnPlayerAngleDelta);
         if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
             rotateBtnDown = false;
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S))
+            HandleDoneBtn(true);
         if(!rotateBtnDown)
             turn = 0;
     }

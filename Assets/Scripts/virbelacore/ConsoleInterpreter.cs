@@ -1625,7 +1625,7 @@ public class ConsoleInterpreter : MonoBehaviour {
                                 p.BotGoto(pos);
                             else
                                 p.BotGoto(pos, rot);
-                            cmdStr = "/botcmd" + " name " + name + " walk pos" + StringConvert.ToString(pos) + ((posIdx != -1 && rotStr == "") ? "" : (" rot " + rot.ToString()));
+                            cmdStr = "/botcmd" + " name " + name + " walk pos " + StringConvert.ToString(pos) + ((posIdx != -1 && rotStr == "") ? "" : (" rot " + rot.ToString()));
                         }
                         if (nameCIdx != -1)
                         {
