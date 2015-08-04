@@ -32,6 +32,13 @@ public enum CameraType{
     SNAPCAM = 3,	      // camera not tied to player and cannot be moved
 }; // End of CameraType.
 
+public enum UpdateMethod
+{
+    UPDATE = 0,
+    FIXED_UPDATE = 1,
+    LATE_UPDATE = 2,
+}
+
 public class CameraChangeEventArgs : EventArgs
 {
     public CameraChangeEventArgs(CameraType old_, CameraType new_) { oldCameraType = old_; newCameraType = new_; }
@@ -57,6 +64,7 @@ public class MainCameraController : MonoBehaviour {
     private Vector3 cameraRotVel = Vector3.zero;
 
     public float cameraSmooth = 0.15f;
+    public UpdateMethod updateMethod = UpdateMethod.UPDATE;
 
     // Player camera options
     public float followPlayerHeight = 4f;
@@ -135,8 +143,25 @@ public class MainCameraController : MonoBehaviour {
         }
     } // End of Start().
 
-
     void Update()
+    {
+        if (updateMethod == UpdateMethod.UPDATE)
+            UpdateImpl();
+    }
+
+    void LateUpdate()
+    {
+        if (updateMethod == UpdateMethod.LATE_UPDATE)
+            UpdateImpl();
+    }
+
+    void FixedUpdate()
+    {
+        if(updateMethod == UpdateMethod.FIXED_UPDATE)
+            UpdateImpl();
+    }
+
+    void UpdateImpl()
     {
 
         if(Input.GetKey(KeyCode.T) && Input.GetKey(KeyCode.P) && !screenTaken){
@@ -295,7 +320,7 @@ public class MainCameraController : MonoBehaviour {
             cameraType = CameraType.FOLLOWPLAYER;
         */
 
-    } // End of Update().
+    } // End of UpdateImpl().
 
     void CameraSettings(float _fieldOfView, float _followPlayerHeight, float _followPlayerDist, float _rightOffset, float _tilt, float _maxGazePan, float _maxGazeTilt){
         mainCamera.fieldOfView = _fieldOfView;

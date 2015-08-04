@@ -61,12 +61,16 @@ public class PlayerController : MonoBehaviour {
                     collider.enabled = false;
                     if( navAgent != null )
                         navAgent.enabled = false;
+                    if (isLocalPlayer)
+                        MainCameraController.Inst.updateMethod = UpdateMethod.UPDATE;
                     break;
                 case NavMode.navmesh:
                     rigidbody.isKinematic = false;
                     collider.enabled = true;
                     if (navAgent != null)
                         navAgent.enabled = true;
+                    if (isLocalPlayer)
+                        MainCameraController.Inst.updateMethod = UpdateMethod.UPDATE;
                     break;
                 case NavMode.physics:
                 case NavMode.physicsSticky:
@@ -74,6 +78,8 @@ public class PlayerController : MonoBehaviour {
                     collider.enabled = true;
                     if (navAgent != null)
                         navAgent.enabled = false;
+                    if (isLocalPlayer)
+                        MainCameraController.Inst.updateMethod = UpdateMethod.FIXED_UPDATE;
                     break;
             }
             _navMode = value;
@@ -559,7 +565,8 @@ public class PlayerController : MonoBehaviour {
             if (Input.GetMouseButtonDown(0) && !GameGUI.Inst.IsMouseOverGuiLayerElement && (GameGUI.Inst.guiLayer == null || !GameGUI.Inst.guiLayer.ClickOffElementOpen) && !AnnouncementManager.Inst.IsAnnouncementDisplayed && MouseHelpers.GetCurrentGameObjectHit().GetComponent<CollabBrowserTexture>() == null) {
                 followedPlayer = null;
                 pathfindingDest.transform.position = goToIndicator.transform.position;
-                navAgent.SetDestination(pathfindingDest.transform.position);
+                if (navAgent && navAgent.enabled)
+                    navAgent.SetDestination(pathfindingDest.transform.position);
                 pathfindingActive = true;
             }
         }
