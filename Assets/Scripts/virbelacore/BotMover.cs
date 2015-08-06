@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 //------------------------------------------------------------------------------
 // BotMover
@@ -12,25 +13,39 @@ public class BotMover : MonoBehaviour {
     {
         TURN,
         WALK,
-        STOP,
+        END,
     }
 
     PlayerController playerController = null;
-    public Vector3 destination = Vector3.zero;
+    private Vector3 destination = Vector3.zero;
+    private List<Vector3> destinationSet = new List<Vector3>();
+    private int destinationSetIdx = 0;
     public MoverStage stage = MoverStage.TURN;
     Plane destTestPlane = new Plane();
+
+    public Vector3 Destination { set { destination = value; stage = MoverStage.TURN;  SetupEndTest(); } }
+
+    // if a destination set is set, the bot will loop between the positions.
+    public List<Vector3> DestinationSet{ set{destinationSet = value; destinationSetIdx = 0; Destination = destinationSet[destinationSetIdx];} }
 
     void Start()
     {
         if (playerController == null)
             playerController = GetComponent<PlayerController>();
 
+        SetupEndTest();
+    }
+
+    void SetupEndTest()
+    {
         // Setup plane for testing if the bot has reached the destination
         Vector3 planeNormal = destination - transform.position;
         planeNormal.y = 0;
-        destTestPlane = new Plane(planeNormal, destination);
-
+        if (planeNormal == Vector3.zero)
+            Debug.LogError("SetupEndTest Warning: plane normal is zero!");
+        destTestPlane = new Plane(planeNormal.normalized, destination);
     }
+
 	void Update () {
 
         switch(stage)
@@ -44,14 +59,24 @@ public class BotMover : MonoBehaviour {
             case MoverStage.WALK:
                 playerController.forwardThrottle = 1;
                 if (destTestPlane.GetSide(transform.position))
-                    stage = MoverStage.STOP;
+                    stage = MoverStage.END;
                 break;
-            case MoverStage.STOP:
+            case MoverStage.END:
                 playerController.forwardThrottle = 0;
+                SetNextDestination();
                 break;
             default:
                 Debug.LogError("Unknown stage: " + stage.ToString());
                 break;
         }
 	}
+
+    void SetNextDestination()
+    {
+        if(destinationSet.Count > 1)
+        {
+            destinationSetIdx = (destinationSetIdx + 1) % destinationSet.Count;
+            Destination = destinationSet[destinationSetIdx];
+        }
+    }
 }

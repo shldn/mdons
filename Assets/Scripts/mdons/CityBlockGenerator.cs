@@ -124,6 +124,7 @@ public class CityBlockGenerator : MonoBehaviour {
         if (outerRecursionLevel > 0 && higherLevel == null)
             CreateNextHigherLevel(GetTransformRoot());
 
+        gameObject.AddComponent<CityBlockBotController>();
 	}
 
     void Update()
@@ -229,6 +230,21 @@ public class CityBlockGenerator : MonoBehaviour {
         blockGen.intersectionTexture = intersectionTexture;
         blockGen.blockTexture = blockTexture;
         return blockGen;
+    }
+
+    public Vector3 GetRoadIntersectionPosition(int r, int c)
+    {
+        if( r >= rows || c >= cols )
+        {
+            Debug.LogError("GetRoadIntersectionPosition: query outsize row/col limits: " + r + ", " + c);
+            return Vector3.zero;
+        }
+
+        Vector3 btmLt = To3D(blockGrid.TopRight(r, c));
+        Vector3 btmRt = To3D(blockGrid.TopLeft(r, c + 1));
+        Vector3 topLt = To3D(blockGrid.BottomRight(r + 1, c));
+        Vector3 topRt = To3D(blockGrid.BottomLeft(r + 1, c + 1));
+        return blockScale * 0.25f * (btmLt + btmRt + topLt + topRt);
     }
 
     Vector3 To3D(Vector2 v)
