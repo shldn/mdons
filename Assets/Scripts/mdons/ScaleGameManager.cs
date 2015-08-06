@@ -52,6 +52,18 @@ public class ScaleGameManager : MonoBehaviour
 
     void Update()
     {
+        if (MainCameraController.Inst.updateMethod == UpdateMethod.UPDATE)
+            UpdateImpl();
+    }
+
+    void FixedUpdate()
+    {
+        if (MainCameraController.Inst.updateMethod == UpdateMethod.FIXED_UPDATE)
+            UpdateImpl();
+    }
+
+    void UpdateImpl()
+    {
         if (Input.GetKey(KeyCode.Equals))
             ScaleUp();
         if (Input.GetKey(KeyCode.Minus))
