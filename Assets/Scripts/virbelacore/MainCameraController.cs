@@ -59,9 +59,11 @@ public class MainCameraController : MonoBehaviour {
 
     private Vector3 cameraTargetPos = Vector3.zero;
     private Vector3 cameraPosVel = Vector3.zero;
+    public Vector3 CameraTargetPos { get { return cameraTargetPos; } set { cameraTargetPos = value; } }
 
     private Vector3 cameraTargetEulers = Vector3.zero;
     private Vector3 cameraRotVel = Vector3.zero;
+    public Vector3 CameraTargetEulers { get { return cameraTargetEulers; } set { cameraTargetEulers = value; } }
 
     public float cameraSmooth = 0.15f;
     public UpdateMethod updateMethod = UpdateMethod.UPDATE;

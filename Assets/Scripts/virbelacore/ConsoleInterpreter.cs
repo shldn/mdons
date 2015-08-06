@@ -152,7 +152,7 @@ public class ConsoleInterpreter : MonoBehaviour {
         new ConsoleCommand("broadcastroom", 3, PlayerType.LEADER, new string[]{"broadcastrm", "messagetoallrooms", "msgtoallrms"}, "", 3, true),
         new ConsoleCommand("broadcastroomurl", 3, PlayerType.LEADER, new string[]{"urltoallrooms", "websitetoallrooms", "urltoallrms"}, "", 3, true),
 		new ConsoleCommand("freelookcam", 2, PlayerType.LEADER, new string[]{"freelook"}, "args: on, off or snap. \"snap\" centers cam on the bizsim planes"),
-		new ConsoleCommand("changecam", 3, PlayerType.LEADER, new string[]{"switchcam", "sc", "cam", "camera"}),
+		new ConsoleCommand("changecam", 5, PlayerType.LEADER, new string[]{"switchcam", "sc", "cam", "camera"}),
 		new ConsoleCommand("camconfig", 3, PlayerType.LEADER, new string[]{"camsettings", "camcf", "cameraconfig", "camerasettings"}),
 		new ConsoleCommand("help", 2, PlayerType.NORMAL, new string[]{"?"}),
 		new ConsoleCommand("toggleconsole", 1, PlayerType.NORMAL, new string[]{"tc"}),
@@ -444,7 +444,25 @@ public class ConsoleInterpreter : MonoBehaviour {
                     }
                     else if( args.Length > 1 )
                     {
-                        if (args[1] == "record" || args[1] == "rec")
+                        if( args[1] == "free" || args[1] == "freelook")
+                            MainCameraController.Inst.cameraType = CameraType.FREELOOK;
+                        else if (args[1] == "follow" || args[1] == "followplayer" || args[1] == "normal" || args[1] == "default")
+                            MainCameraController.Inst.cameraType = CameraType.FOLLOWPLAYER;
+                        else if (args[1] == "fp" || args[1] == "firstperson")
+                            MainCameraController.Inst.cameraType = CameraType.FIRSTPERSON;
+                        else if(args[1] == "pos")
+                        {
+                            Vector3 newPos = Vector3.zero;
+                            if( float.TryParse(args[2], out newPos.x) && float.TryParse(args[3], out newPos.y) && float.TryParse(args[4], out newPos.z))
+                                MainCameraController.Inst.CameraTargetPos = newPos;
+                        }
+                        else if (args[1] == "rot")
+                        {
+                            Vector3 newRotAngles = Vector3.zero;
+                            if (float.TryParse(args[2], out newRotAngles.x) && float.TryParse(args[3], out newRotAngles.y) && float.TryParse(args[4], out newRotAngles.z))
+                                MainCameraController.Inst.CameraTargetEulers = newRotAngles;
+                        }
+                        else if (args[1] == "record" || args[1] == "rec")
                             CameraMoveManager.Enabled = true;
                         else if (args[1] == "exit" || args[1] == "quit" || args[1] == "back" || args[1] == "playercam")
                             CameraMoveManager.Enabled = false;
@@ -1487,8 +1505,10 @@ public class ConsoleInterpreter : MonoBehaviour {
                     Transform t = GameManager.Inst.LocalPlayer.gameObject.transform;
                     Vector3 pos = (posIdx != -1) ? StringConvert.ToVector3(args[posIdx + 1]) : t.position;
                     Quaternion rot = (rotIdx != -1) ? StringConvert.ToQuaternion(float.Parse(args[rotIdx + 1])) : t.rotation;
+                    PlayerController.NavMode navMode = GameManager.Inst.LocalPlayer.playerController.navMode;
 
                     Player p = LocalBotManager.Inst.Create(pos, rot, male, addToUserList, name);
+                    p.playerController.navMode = navMode;
 
                     string botCmdStr = "/bot " + (male ? "m" : "f") + " " + p.Name + " pos " + StringConvert.ToString(pos) + " rot " + rot.eulerAngles.y;
 
@@ -1527,6 +1547,7 @@ public class ConsoleInterpreter : MonoBehaviour {
                     int loopIdx = Array.IndexOf(args, "loop");
                     int posIdx = Array.IndexOf(args, "pos");
                     int rotIdx = Array.IndexOf(args, "rot");
+                    int scaleIdx = Array.IndexOf(args, "scale");
                     int nameCIdx = Array.IndexOf(args, "namec");
                     int randomIdx = Array.IndexOf(args, "random");
                     int followIdx = Array.IndexOf(args, "follow");
@@ -1540,6 +1561,7 @@ public class ConsoleInterpreter : MonoBehaviour {
                     string type = (typeIdx != -1 && (typeIdx + 1) < args.Length) ? args[typeIdx + 1] : "";
                     string loop = (loopIdx != -1 && (loopIdx + 1) < args.Length) ? args[loopIdx + 1] : "";
                     string look = (lookIdx != -1 && (lookIdx + 1) < args.Length) ? args[lookIdx + 1] : "";
+                    string sclStr = (scaleIdx != -1 && (scaleIdx + 1) < args.Length) ? args[scaleIdx + 1] : "";
                     string nameC = (nameCIdx != -1 && (nameCIdx + 1) < args.Length) ? args[nameCIdx + 1] : "";
                     string follow = (followIdx != -1 && (followIdx + 1) < args.Length) ? args[followIdx + 1] : "";
                     string posStr = (posIdx != -1 && (posIdx + 1) < args.Length) ? args[posIdx + 1] : "";
@@ -1570,9 +1592,9 @@ public class ConsoleInterpreter : MonoBehaviour {
                         {
                             if (talkIdx != -1)
                                 bot.Value.IsTalking = !(talk == "off");
-                            if (typeIdx != -1)
+                            else if (typeIdx != -1)
                                 bot.Value.IsTyping = !(type == "off");
-                            if (walkIdx != -1)
+                            else if (walkIdx != -1)
                             {
                                 if (posIdx != -1 && rotStr == "")
                                     bot.Value.BotGoto(pos);
@@ -1580,7 +1602,7 @@ public class ConsoleInterpreter : MonoBehaviour {
                                     bot.Value.BotGoto(pos, rot);
                                 cmdStr = "/botcmd" + " walk pos " + StringConvert.ToString(pos) + ((posIdx != -1 && rotStr == "") ? "" : (" rot " + rot.ToString()));
                             }
-                            if (followIdx != -1)
+                            else if (followIdx != -1)
                             {
                                 follow = follow == "me" ? GameManager.Inst.LocalPlayer.Name : follow;
                                 if (follow != "stop")
@@ -1588,11 +1610,17 @@ public class ConsoleInterpreter : MonoBehaviour {
                                 else
                                     bot.Value.BotStopFollow();
                             }
-                            if (lookIdx != -1)
+                            else if (lookIdx != -1)
                                 HandleLookAtOptions(bot.Value, look);
-                            if (randomIdx != -1)
+                            else if (scaleIdx != -1)
+                            {
+                                float scale = 1f;
+                                if (float.TryParse(sclStr, out scale))
+                                    bot.Value.Scale = scale * Vector3.one;
+                            }
+                            else if (randomIdx != -1)
                                 AvatarOptionManager.Inst.CreateRandomAvatar(bot.Value, false);
-                            if( anim == "unsit" )
+                            else if (anim == "unsit")
                                 LocalBotManager.Inst.StopAnimation(bot.Value.Name, "Sit");
                         }
                     }
@@ -1613,13 +1641,13 @@ public class ConsoleInterpreter : MonoBehaviour {
                             else
                                 LocalBotManager.Inst.StartAnimation(name, anim);
                         }
-                        if (talkIdx != -1)
+                        else if (talkIdx != -1)
                             p.IsTalking = !(talk == "off");
-                        if (typeIdx != -1)
+                        else if (typeIdx != -1)
                             p.IsTyping = !(type == "off");
-                        if (loopIdx != -1)
+                        else if (loopIdx != -1)
                             p.gameObject.GetComponent<AnimatorHelper>().EnableLooping(loop == "on");
-                        if (walkIdx != -1)
+                        else if (walkIdx != -1)
                         {
                             if (posIdx != -1 && rotStr == "")
                                 p.BotGoto(pos);
@@ -1627,13 +1655,13 @@ public class ConsoleInterpreter : MonoBehaviour {
                                 p.BotGoto(pos, rot);
                             cmdStr = "/botcmd" + " name " + name + " walk pos " + StringConvert.ToString(pos) + ((posIdx != -1 && rotStr == "") ? "" : (" rot " + rot.ToString()));
                         }
-                        if (nameCIdx != -1)
+                        else if (nameCIdx != -1)
                         {
                             int nameCID = -1;
                             if (int.TryParse(nameC, out nameCID))
                                 p.SetNameTextColor(nameCID);
                         }
-                        if (followIdx != -1)
+                        else if (followIdx != -1)
                         {
                             follow = follow == "me" ? GameManager.Inst.LocalPlayer.Name : follow;
                             if (follow != "stop")
@@ -1641,9 +1669,15 @@ public class ConsoleInterpreter : MonoBehaviour {
                             else
                                 p.BotStopFollow();
                         }
-                        if (lookIdx != -1)
+                        else if (lookIdx != -1)
                             HandleLookAtOptions(p, look);
-                        if (randomIdx != -1)
+                        else if (scaleIdx != -1)
+                        {
+                            float scale = 1f;
+                            if (float.TryParse(sclStr, out scale))
+                                p.Scale = scale * Vector3.one;
+                        }
+                        else if (randomIdx != -1)
                             AvatarOptionManager.Inst.CreateRandomAvatar(p, false);
 
                         // change avatar appearance, expects option names from the parse database.
