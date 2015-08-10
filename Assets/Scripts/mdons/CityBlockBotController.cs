@@ -26,6 +26,10 @@ public class CityBlockBotController : MonoBehaviour {
         walkPts.Add(new GridPt(2, 2));
         walkPts.Add(new GridPt(2, 0));
 
+        // reverse every other level's walk order/direction
+        if( cityBlockGen.innerRecursionLevel % 2 == 1 )
+            walkPts.Reverse();
+
         CreateBots();
 	}
 
