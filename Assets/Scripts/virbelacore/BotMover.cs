@@ -6,6 +6,8 @@ using System.Collections.Generic;
 //
 // Component to make bots move when there is no nav mesh in the scene
 // Component expects no obsticles in the way.
+//
+// Keep internal positions in local space so containers can be scaled without affecting bot movers 
 // 
 //------------------------------------------------------------------------------
 public class BotMover : MonoBehaviour {
@@ -17,49 +19,52 @@ public class BotMover : MonoBehaviour {
     }
 
     PlayerController playerController = null;
-    private Vector3 destination = Vector3.zero;
-    private List<Vector3> destinationSet = new List<Vector3>();
+    private Vector3 localDestination = Vector3.zero;
+    private List<Vector3> localDestinationSet = new List<Vector3>();
     private int destinationSetIdx = 0;
     public MoverStage stage = MoverStage.TURN;
-    Plane destTestPlane = new Plane();
 
-    public Vector3 Destination { set { destination = value; stage = MoverStage.TURN;  SetupEndTest(); } }
+    public Vector3 Destination { set { localDestination = transform.parent.InverseTransformPoint(value); stage = MoverStage.TURN; } get { return transform.parent.TransformPoint(localDestination); } }
+    public Vector3 LocalDestination { set { localDestination = value; stage = MoverStage.TURN;  } }
 
     // if a destination set is set, the bot will loop between the positions.
-    public List<Vector3> DestinationSet{ set{destinationSet = value; destinationSetIdx = 0; Destination = destinationSet[destinationSetIdx];} }
+    public List<Vector3> DestinationSet { set { SetLocalDestinationSet(value); destinationSetIdx = 0; LocalDestination = localDestinationSet[destinationSetIdx]; } }
+
+
+    // Implementation Helpers
+    float sqDistToTravel = 0f;
+    float lastSqDist = 999999999f;
 
     void Start()
     {
         if (playerController == null)
             playerController = GetComponent<PlayerController>();
-
-        SetupEndTest();
-    }
-
-    void SetupEndTest()
-    {
-        // Setup plane for testing if the bot has reached the destination
-        Vector3 planeNormal = destination - transform.position;
-        planeNormal.y = 0;
-        if (planeNormal == Vector3.zero)
-            Debug.LogError("SetupEndTest Warning: plane normal is zero!");
-        destTestPlane = new Plane(planeNormal.normalized, destination);
     }
 
 	void Update () {
 
+
         switch(stage)
         {
             case MoverStage.TURN:
-                float deltaAngle = Mathf.DeltaAngle(playerController.forwardAngle, Quaternion.LookRotation(destination - transform.position).eulerAngles.y);
+                float deltaAngle = Mathf.DeltaAngle(playerController.forwardAngle, Quaternion.LookRotation(localDestination - transform.localPosition).eulerAngles.y);
                 playerController.turnThrottle = Mathf.Clamp(deltaAngle * 0.05f, -1f, 1f);
                 if (Mathf.Abs(deltaAngle) <= 0.2f)
+                {
+                    sqDistToTravel = SqrMagnitude2D(transform.localPosition - localDestination);
+                    lastSqDist = SqrMagnitude2D(transform.localPosition - localDestination) + transform.parent.lossyScale.x * 100f;
                     stage = MoverStage.WALK;
+                }
                 break;
             case MoverStage.WALK:
                 playerController.forwardThrottle = 1;
-                if (destTestPlane.GetSide(transform.position))
+                float deltaAngle2 = Mathf.DeltaAngle(playerController.forwardAngle, Quaternion.LookRotation(localDestination - transform.localPosition).eulerAngles.y);
+                playerController.turnThrottle = Mathf.Clamp(deltaAngle2 * 0.05f, -1f, 1f);
+                float currSqDist = SqrMagnitude2D(transform.localPosition - localDestination);
+                // Had trouble at start if just checking curr > last.
+                if (currSqDist < 0.25f * sqDistToTravel && currSqDist > lastSqDist)
                     stage = MoverStage.END;
+                lastSqDist = currSqDist;
                 break;
             case MoverStage.END:
                 playerController.forwardThrottle = 0;
@@ -71,12 +76,24 @@ public class BotMover : MonoBehaviour {
         }
 	}
 
+    float SqrMagnitude2D(Vector3 diffVector)
+    {
+        diffVector.y = 0f;
+        return diffVector.sqrMagnitude;
+    }
+
     void SetNextDestination()
     {
-        if(destinationSet.Count > 1)
+        if(localDestinationSet.Count > 1)
         {
-            destinationSetIdx = (destinationSetIdx + 1) % destinationSet.Count;
-            Destination = destinationSet[destinationSetIdx];
+            destinationSetIdx = (destinationSetIdx + 1) % localDestinationSet.Count;
+            LocalDestination = localDestinationSet[destinationSetIdx];
         }
+    }
+
+    void SetLocalDestinationSet(List<Vector3> worldDestinationSet)
+    {
+        for(int i=0; i < worldDestinationSet.Count; ++i)
+            localDestinationSet.Add(transform.parent.InverseTransformPoint(worldDestinationSet[i]));
     }
 }

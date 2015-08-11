@@ -383,7 +383,7 @@ public class Player {
         //GameGUI.Inst.WriteToConsoleLog("Updating transform!");
 
         bool interpolate = (newPos - gameObject.transform.position).sqrMagnitude < maxSqDistToInterpolate;
-        interpolate = true;
+        interpolate = !isBot;
         gameObject.GetComponent<SimpleRemoteInterpolation>().SetTransform(newPos, Quaternion.Euler(0, rotAngle, 0), interpolate);
 
         playerController.forwardAngle = rotAngle;

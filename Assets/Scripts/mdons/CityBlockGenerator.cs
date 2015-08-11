@@ -21,8 +21,8 @@ public class CityBlockGenerator : MonoBehaviour {
     public float BlockScale { 
         get { return blockScale; } 
         set { 
-            blockScale = value;  
-            transform.FindChild("city_meshes").localScale = blockScale * Vector3.one;
+            blockScale = value;
+            meshContainer.localScale = blockScale * Vector3.one;
         }
     }
 
@@ -32,6 +32,9 @@ public class CityBlockGenerator : MonoBehaviour {
 
     public GameObject lowerLevel = null;
     public GameObject higherLevel = null;
+
+    // Containers
+    public Transform meshContainer = null;
 
     private bool initialized = false;
     public bool Initialized { get { return initialized; } }
@@ -58,7 +61,8 @@ public class CityBlockGenerator : MonoBehaviour {
         if (IgnoreCenter)
             ignoreBounds = GetIgnoreBounds();
 
-        GameObject meshContainer = new GameObject("city_meshes");
+        GameObject meshContainerGO = new GameObject("city_meshes");
+        meshContainer = meshContainerGO.transform;
         meshContainer.transform.position = transform.position;
         meshContainer.transform.parent = transform;
         Transform parent = meshContainer.transform;
@@ -137,7 +141,7 @@ public class CityBlockGenerator : MonoBehaviour {
             if (usingMeshCollider == (Mathf.Log10(GameManager.Inst.LocalPlayer.Scale.x) > (Mathf.Log10(BlockScale * transform.lossyScale.x)) + scaleDiffFactor))
             {
                 usingMeshCollider = !usingMeshCollider;
-                ScaleSensitiveColliderController[] controllers = transform.FindChild("city_meshes").gameObject.GetComponentsInChildren<ScaleSensitiveColliderController>();
+                ScaleSensitiveColliderController[] controllers = meshContainer.gameObject.GetComponentsInChildren<ScaleSensitiveColliderController>();
                 for (int i = 0; i < controllers.Length; ++i)
                     controllers[i].AllowMeshCollisions = usingMeshCollider;
             }
@@ -161,10 +165,9 @@ public class CityBlockGenerator : MonoBehaviour {
     {
         ignoreBounds = GetIgnoreBounds();
         ignoreBounds.center = Vector3.zero;
-        Transform city_meshes = transform.FindChild("city_meshes");
-        for(int i=0; i < city_meshes.childCount; ++i)
+        for (int i = 0; i < meshContainer.childCount; ++i)
         {
-            Transform child = city_meshes.GetChild(i);
+            Transform child = meshContainer.GetChild(i);
             if (ignoreBounds.Contains(child.transform.localPosition))// || (child.renderer != null && ignoreBounds.Intersects(child.renderer.bounds)))
                 Destroy(child.gameObject);
         }

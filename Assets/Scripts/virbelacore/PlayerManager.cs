@@ -26,7 +26,8 @@ public class PlayerManager : MonoBehaviour {
     private Dictionary<int, Player> players = new Dictionary<int, Player>(); // key == id
     private bool playerModelIsDirty = false;
     public bool playerTypeIsDirty = false;
-	private float respawnHeight = -75f;
+    private float respawnHeight = -75f;
+    public float RespawnHeight { get { return respawnHeight; } }
     private float maxPlayerSqDistToInterpolate = 100.0f;
     private bool avoidOtherUsersWhenSpawning = true;
     private static GameObject teleportLocationHelperGO = null;
@@ -69,7 +70,6 @@ public class PlayerManager : MonoBehaviour {
 
         TextAsset femaleNamesText = Resources.Load("Avatars/names_female") as TextAsset;
         femaleNames = femaleNamesText.text.Split(new string[] { lineEnding }, System.StringSplitOptions.RemoveEmptyEntries);
-
     }
 
     public void OnLevelWasLoaded_(int level) // not an override, called from GameManager so we can control ordering

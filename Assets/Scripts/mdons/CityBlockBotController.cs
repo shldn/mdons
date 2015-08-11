@@ -33,6 +33,20 @@ public class CityBlockBotController : MonoBehaviour {
         CreateBots();
 	}
 
+    void Update()
+    {
+        // keep bots above ground.
+        foreach(KeyValuePair<string,Player> bot in LocalBotManager.Inst.GetBots())
+        {
+            if( bot.Value.gameObject.transform.position.y < PlayerManager.Inst.RespawnHeight )
+            {
+                BotMover mover = bot.Value.gameObject.GetComponent<BotMover>();
+                if( mover != null )
+                    bot.Value.UpdateTransform(mover.Destination, transform.eulerAngles.y);
+            }
+        }
+    }
+
     void CreateBots()
     {
         int idx = 0;
@@ -45,8 +59,8 @@ public class CityBlockBotController : MonoBehaviour {
                 Vector3 pos = cityBlockGen.GetRoadIntersectionPosition(r, c);
                 Player p = LocalBotManager.Inst.Create(pos, Quaternion.identity, Random.Range(0, 2) > 0);
                 p.playerController.navMode = PlayerController.NavMode.physics;
-                p.gameObject.transform.parent = transform;
-                p.Scale = cityBlockGen.BlockScale * 200f * Vector3.one;
+                p.gameObject.transform.parent = cityBlockGen.meshContainer;
+                p.Scale = 200f * Vector3.one;
                 BotMover bMover = p.gameObject.AddComponent<BotMover>();
 
                 List<Vector3> destinationPts = GetWalkPath(r, c);

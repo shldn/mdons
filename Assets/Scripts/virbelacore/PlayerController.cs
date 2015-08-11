@@ -133,15 +133,13 @@ public class PlayerController : MonoBehaviour {
 
     NavMeshPath testNavPath = null;
 
-    public bool targetRotActive = false;
-    public float targetRot = 0f;
-
     public float shuffleTime = 0f;
 
     // Head Tilt helpers ------------------------------------------------------------ //
     Vector3 initHeadTiltMousePos = Vector3.zero;
     bool hasMovedMouseForHeadTilt = false;
     bool hasRecordedInitMousePosForHeadTilt = false;
+    int disableHeadLookAtFrame = -1;
     
     // Options ---------------------------------------------------------------------- //
     public bool clickToMove = true;
@@ -336,7 +334,7 @@ public class PlayerController : MonoBehaviour {
 
 
         // Propel the character.
-        moveVector = gameObject.transform.localScale.x * (MathHelper.MoveAngleUnitVector(forwardAngle) * moveSpeed) + (MathHelper.MoveAngleUnitVector(forwardAngle + 90) * strafeSpeed);
+        moveVector = gameObject.transform.lossyScale.x * (MathHelper.MoveAngleUnitVector(forwardAngle) * moveSpeed) + (MathHelper.MoveAngleUnitVector(forwardAngle + 90) * strafeSpeed);
         if(useNavMesh && navAgent && navAgent.enabled && (navAgent.pathStatus != NavMeshPathStatus.PathInvalid)){
             rigidbody.useGravity = false;
             rigidbody.isKinematic = true;
@@ -403,7 +401,7 @@ public class PlayerController : MonoBehaviour {
             if(lookAtOverride){
                 // Look at targetted player's head position.
                 if(lookAtOverridePlayer)
-                    lookAtOverridePos = lookAtOverridePlayer.gameObject.transform.position + (Vector3.up * 3f);
+                    lookAtOverridePos = lookAtOverridePlayer.HeadPosition;
             
                 // Look at center of targetted object.
                 if(lookAtOverrideTransform)
@@ -465,10 +463,10 @@ public class PlayerController : MonoBehaviour {
 
             // Smoothed lookat position...
             targetLookAtPos = playerHead + ((transform.rotation * gazeLook) * (Vector3.forward * 1000f));
-            smoothedLookAtPos = Vector3.SmoothDamp(smoothedLookAtPos, targetLookAtPos, ref lookAtSmoothVel, lookAtSpeed);
+            smoothedLookAtPos = Vector3.SmoothDamp(smoothedLookAtPos, targetLookAtPos, ref lookAtSmoothVel, lookAtSpeed / playerScript.Scale.x);
 
             // Look at weight values...
-            if (GameManager.Inst.LevelLoaded != GameManager.Level.SCALE_GAME && GameManager.Inst.LevelLoaded != GameManager.Level.MOTION_TEST)
+            if (disableHeadLookAtFrame < Time.frameCount && GameManager.Inst.LevelLoaded != GameManager.Level.SCALE_GAME && GameManager.Inst.LevelLoaded != GameManager.Level.MOTION_TEST)
             {
                 GetComponent<Animator>().SetLookAtPosition(smoothedLookAtPos);
                 GetComponent<Animator>().SetLookAtWeight(lookAtWeight, 0.1f, 1f, 0f, 0f);
@@ -513,9 +511,13 @@ public class PlayerController : MonoBehaviour {
 
     public void Jump(){
         if (grounded)
-            rigidbody.AddForce(gameObject.transform.localScale.x * Vector3.up * 8f, ForceMode.Impulse);
+            rigidbody.AddForce(gameObject.transform.lossyScale.x * Vector3.up * 8f, ForceMode.Impulse);
     } // End of Jump().
 
+    public void DisableHeadLookAt(int numFrames = 4)
+    {
+        disableHeadLookAtFrame = Time.frameCount + numFrames;
+    }
 
     public static void ClickToMoveInterrupt(){
         if( GameManager.Inst.LocalPlayer )
