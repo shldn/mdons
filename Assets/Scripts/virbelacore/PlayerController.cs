@@ -344,7 +344,7 @@ public class PlayerController : MonoBehaviour {
             navAgent.Move(moveVector * Time.deltaTime);
         }
         else if(usePhysics){
-            rigidbody.useGravity = true;
+            rigidbody.useGravity = !playerScript.isBot;
             rigidbody.isKinematic = false;
             navAgent.enabled = false;
 
