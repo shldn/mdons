@@ -6,6 +6,7 @@ public class ScaleRelativeTo : MonoBehaviour {
     public GameObject relativeToObj = null;
     public float speed = 0.01f;
     public bool keepYFixed = false;
+    public bool constantScaling = false;
 
 	void Start () {
         if (relativeToObj == null)
@@ -14,7 +15,7 @@ public class ScaleRelativeTo : MonoBehaviour {
 	
 
 	void Update () {
-	    if(Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.Comma))
+        if (Input.GetKey(KeyCode.Period) || Input.GetKey(KeyCode.Comma) || constantScaling)
         {
             float dir = ( Input.GetKey(KeyCode.Comma) ) ? -1f : 1f;
             float scaleFactor = 1f + dir * Time.deltaTime * speed;
@@ -29,7 +30,7 @@ public class ScaleRelativeTo : MonoBehaviour {
 			if(ShepardEngine.Inst)
 				ShepardEngine.Inst.SetVelocity(-dir);
         }
-        if(Input.GetKeyUp(KeyCode.Period) || Input.GetKeyUp(KeyCode.Comma))
+        if (Input.GetKeyUp(KeyCode.Period) || Input.GetKeyUp(KeyCode.Comma) || constantScaling)
             ScaleGameManager.Inst.PhysicsAdjustment();
 
         if (Input.GetKeyUp(KeyCode.Alpha0))
