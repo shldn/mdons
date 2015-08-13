@@ -379,8 +379,8 @@ public class TunnelGameManager : MonoBehaviour {
 
         int code = 2000;
         code += (int)Mathf.Abs(tunnelAngle);
-        code += playerVisible ? 0 : 1000;
-        code += !abstractVisible ? 0 : 1000;
+        code += (!playerVisible && !abstractVisible) ? 4000 : 0;
+        code += !abstractVisible ? 0 : 2000;
         code += tunnelAngle > 0 ? 0 : 1000;
 
         return code;
