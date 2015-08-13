@@ -120,10 +120,13 @@ public class TunnelGameManager : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Equals))
-            GameManager.Inst.LoadLevel(GameManager.Level.SCALE_GAME);
-        if (Input.GetKeyUp(KeyCode.Alpha3))
-            GameManager.Inst.LoadLevel(GameManager.Level.MDONS_TEST);
+        if( Application.levelCount > 2)
+        {
+            if (Input.GetKeyUp(KeyCode.Alpha2) || Input.GetKeyUp(KeyCode.Equals))
+                GameManager.Inst.LoadLevel(GameManager.Level.SCALE_GAME);
+            if (Input.GetKeyUp(KeyCode.Alpha3))
+                GameManager.Inst.LoadLevel(GameManager.Level.MDONS_TEST);
+        }
 
         if (Input.GetKeyUp(KeyCode.Space) && (!IsRunningTunnel() || showStartScreen || showBreakScreen))
         {
