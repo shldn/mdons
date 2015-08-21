@@ -160,7 +160,7 @@ public class Player {
     public int PlayerId { get { return (CommunicationManager.InASmartFoxRoom ? user.PlayerId : 0); } }
     public int ModelIdx { get; set; } // this needs to be refactored, should set this and spawn the new avatar gameObject based on it.
     public string ParseId { get { return parseId; } set { parseId = value; } }
-    public string DisplayName { get { return (displayName == "") ? user.Name : displayName; } set { displayName = (value.Length >= 5 && value.Substring(0, 5) == "guest") ? SFSName : value; nameTextMesh.text = displayName; } }
+    public string DisplayName { get { return (displayName == "") ? user.Name : displayName; } set { displayName = (value.Length >= 5 && value.Substring(0, 5) == "guest") ? SFSName : value; if (nameTextMesh != null) { nameTextMesh.text = displayName; } } }
     public int TeamID { get { return teamID; } set { teamID = value; } }
     public bool IsLocal { get { return CommunicationManager.MySelf == user; } } // is this the player I'm controlling
     public bool IsRemote { get { return !IsLocal; } }
