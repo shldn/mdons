@@ -107,6 +107,13 @@ public class PlayerInputManager : MonoBehaviour {
             playerController.StopFollowingPlayer();
         }
 
+        // bug fix for players stuck rotating
+        upKey.UpdateCheck();
+        downKey.UpdateCheck();
+        leftKey.UpdateCheck();
+        rightKey.UpdateCheck();
+        jumpKey.UpdateCheck();
+
     } // End of Update().
 
 }
@@ -116,6 +123,7 @@ public class CustomKey {
 
     KeyCode[] keyCodes;
     public bool down = false;
+    int upCount = 0;
 
     public CustomKey(KeyCode _keyCode){
         keyCodes = new KeyCode[]{_keyCode};
@@ -130,10 +138,29 @@ public class CustomKey {
         for(int i = 0; i < keyCodes.Length; i++){
             KeyCode keyCode = keyCodes[i];
             if((e.type == EventType.keyDown) && (Event.current.keyCode == keyCode))
+            {
                 down = true;
+                upCount = 0;
+            }
             else if((e.type == EventType.keyUp) && (Event.current.keyCode == keyCode))
                 down = false;
         }
     } // End of Check().
+
+    // some up events weren't getting called in OnGUI, leaving keys in the down state
+    public void UpdateCheck()
+    {
+        if( down )
+        {
+            for(int i = 0; i < keyCodes.Length; i++){
+                if (Input.GetKey(keyCodes[i]))
+                    return;
+            }
+
+            // none of the keys are still down - give a 3 frame buffer, then consider the key up
+            if (++upCount > 2)
+                down = false;
+        }
+    } // End of UpdateCheck().
 
 } // End of CustomKey.
