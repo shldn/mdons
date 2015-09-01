@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: ea02891bb8df1734e9c92c99d71e527c
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: Arm_Left
+    100002: Arm_Right
+    100004: Body
+    100006: BoxGuy_Head
+    100008: BoxGuy_MainC
+    100010: BoxGuy_MainHipC
+    100012: BoxGuy_MainHipCG
+    100014: BoxGuy_ROOTJ
+    100016: BoxGuy_SH_HeadTipJ
+    100018: BoxGuy_SH_JawJ
+    100020: BoxGuy_SH_JawTipJ
+    100022: BoxGuy_SH_lAnkleJ
+    100024: BoxGuy_SH_lBallJ
+    100026: BoxGuy_SH_lClavicleJ
+    100028: BoxGuy_SH_lElbowJ
+    100030: BoxGuy_SH_lEyeJ
+    100032: BoxGuy_SH_lFinger1J1
+    100034: BoxGuy_SH_lFinger1J2
+    100036: BoxGuy_SH_lFinger1J3
+    100038: BoxGuy_SH_lFinger1JTip
+    100040: BoxGuy_SH_lFinger2J1
+    100042: BoxGuy_SH_lFinger2J2
+    100044: BoxGuy_SH_lFinger2J3
+    100046: BoxGuy_SH_lFinger2JTip
+    100048: BoxGuy_SH_lFinger3J1
+    100050: BoxGuy_SH_lFinger3J2
+    100052: BoxGuy_SH_lFinger3J3
+    100054: BoxGuy_SH_lFinger3JTip
+    100056: BoxGuy_SH_lFinger4J1
+    100058: BoxGuy_SH_lFinger4J2
+    100060: BoxGuy_SH_lFinger4J3
+    100062: BoxGuy_SH_lFinger4JTip
+    100064: BoxGuy_SH_lForearmJ
+    100066: BoxGuy_SH_lHipJ
+    100068: BoxGuy_SH_lKneeJ
+    100070: BoxGuy_SH_lPalmJ
+    100072: BoxGuy_SH_lShoulderJ
+    100074: BoxGuy_SH_lThumbJ1
+    100076: BoxGuy_SH_lThumbJ2
+    100078: BoxGuy_SH_lThumbJ3
+    100080: BoxGuy_SH_lThumbJTip
+    100082: BoxGuy_SH_lToeJ
+    100084: BoxGuy_SH_lWristJ
+    100086: BoxGuy_SH_Neck01J
+    100088: BoxGuy_SH_rAnkleJ
+    100090: BoxGuy_SH_rBallJ
+    100092: BoxGuy_SH_rClavicleJ
+    100094: BoxGuy_SH_rElbowJ
+    100096: BoxGuy_SH_rEyeJ
+    100098: BoxGuy_SH_rFinger1J1
+    100100: BoxGuy_SH_rFinger1J2
+    100102: BoxGuy_SH_rFinger1J3
+    100104: BoxGuy_SH_rFinger1JTip
+    100106: BoxGuy_SH_rFinger2J1
+    100108: BoxGuy_SH_rFinger2J2
+    100110: BoxGuy_SH_rFinger2J3
+    100112: BoxGuy_SH_rFinger2JTip
+    100114: BoxGuy_SH_rFinger3J1
+    100116: BoxGuy_SH_rFinger3J2
+    100118: BoxGuy_SH_rFinger3J3
+    100120: BoxGuy_SH_rFinger3JTip
+    100122: BoxGuy_SH_rFinger4J1
+    100124: BoxGuy_SH_rFinger4J2
+    100126: BoxGuy_SH_rFinger4J3
+    100128: BoxGuy_SH_rFinger4JTip
+    100130: BoxGuy_SH_rForearmJ
+    100132: BoxGuy_SH_rHipJ
+    100134: BoxGuy_SH_rKneeJ
+    100136: BoxGuy_SH_ROOTJ
+    100138: BoxGuy_SH_rPalmJ
+    100140: BoxGuy_SH_rShoulderJ
+    100142: BoxGuy_SH_rThumbJ1
+    100144: BoxGuy_SH_rThumbJ2
+    100146: BoxGuy_SH_rThumbJ3
+    100148: BoxGuy_SH_rThumbJTip
+    100150: BoxGuy_SH_rToeJ
+    100152: BoxGuy_SH_rWristJ
+    100154: BoxGuy_SH_Spine01J
+    100156: BoxGuy_SH_Spine02J
+    100158: BoxGuy_SH_Spine03J
+    100160: BoxGuy_SH_SpineTopJ
+    100162: Head
+    100164: Leg_Left
+    100166: Leg_Right
+    100168: RibbonGuy
+    100170: //RootNode
+    100172: Arm_Left_Big
+    100174: Arm_Left_Med
+    100176: Arm_Right_Big
+    100178: Arm_Right_Med
+    100180: Body_Big
+    100182: Body_Med
+    100184: Head_Big
+    100186: Head_Med
+    100188: Leg_Left_Big
+    100190: Leg_Left_Med
+    100192: Leg_Right_Big
+    100194: Leg_Right_Med
+    100196: Arm_Left_Small
+    100198: Arm_Right_Small
+    100200: Body_Small
+    100202: Head_Small
+    100204: Leg_Left_Small
+    100206: Leg_Right_Small
+    100208: ribbonGuy_Controls_SH_HeadJ
+    100210: ribbonGuy_Controls_SH_HeadTipJ
+    100212: ribbonGuy_Controls_SH_JawJ
+    100214: ribbonGuy_Controls_SH_JawTipJ
+    100216: ribbonGuy_Controls_SH_lAnkleJ
+    100218: ribbonGuy_Controls_SH_lBallJ
+    100220: ribbonGuy_Controls_SH_lClavicleJ
+    100222: ribbonGuy_Controls_SH_lElbowJ
+    100224: ribbonGuy_Controls_SH_lEyeJ
+    100226: ribbonGuy_Controls_SH_lFinger1J1
+    100228: ribbonGuy_Controls_SH_lFinger1J2
+    100230: ribbonGuy_Controls_SH_lFinger1J3
+    100232: ribbonGuy_Controls_SH_lFinger1JTip
+    100234: ribbonGuy_Controls_SH_lForearmJ
+    100236: ribbonGuy_Controls_SH_lHipJ
+    100238: ribbonGuy_Controls_SH_lKneeJ
+    100240: ribbonGuy_Controls_SH_lPalmJ
+    100242: ribbonGuy_Controls_SH_lShoulderJ
+    100244: ribbonGuy_Controls_SH_lToeJ
+    100246: ribbonGuy_Controls_SH_lWristJ
+    100248: ribbonGuy_Controls_SH_Neck01J
+    100250: ribbonGuy_Controls_SH_rAnkleJ
+    100252: ribbonGuy_Controls_SH_rBallJ
+    100254: ribbonGuy_Controls_SH_rClavicleJ
+    100256: ribbonGuy_Controls_SH_rElbowJ
+    100258: ribbonGuy_Controls_SH_rEyeJ
+    100260: ribbonGuy_Controls_SH_rFinger1J1
+    100262: ribbonGuy_Controls_SH_rFinger1J2
+    100264: ribbonGuy_Controls_SH_rFinger1J3
+    100266: ribbonGuy_Controls_SH_rFinger1JTip
+    100268: ribbonGuy_Controls_SH_rForearmJ
+    100270: ribbonGuy_Controls_SH_rHipJ
+    100272: ribbonGuy_Controls_SH_rKneeJ
+    100274: ribbonGuy_Controls_SH_ROOTJ
+    100276: ribbonGuy_Controls_SH_rPalmJ
+    100278: ribbonGuy_Controls_SH_rShoulderJ
+    100280: ribbonGuy_Controls_SH_rToeJ
+    100282: ribbonGuy_Controls_SH_rWristJ
+    100284: ribbonGuy_Controls_SH_Spine01J
+    100286: ribbonGuy_Controls_SH_Spine02J
+    100288: ribbonGuy_Controls_SH_SpineTopJ
+    400000: Arm_Left
+    400002: Arm_Right
+    400004: Body
+    400006: BoxGuy_Head
+    400008: BoxGuy_MainC
+    400010: BoxGuy_MainHipC
+    400012: BoxGuy_MainHipCG
+    400014: BoxGuy_ROOTJ
+    400016: BoxGuy_SH_HeadTipJ
+    400018: BoxGuy_SH_JawJ
+    400020: BoxGuy_SH_JawTipJ
+    400022: BoxGuy_SH_lAnkleJ
+    400024: BoxGuy_SH_lBallJ
+    400026: BoxGuy_SH_lClavicleJ
+    400028: BoxGuy_SH_lElbowJ
+    400030: BoxGuy_SH_lEyeJ
+    400032: BoxGuy_SH_lFinger1J1
+    400034: BoxGuy_SH_lFinger1J2
+    400036: BoxGuy_SH_lFinger1J3
+    400038: BoxGuy_SH_lFinger1JTip
+    400040: BoxGuy_SH_lFinger2J1
+    400042: BoxGuy_SH_lFinger2J2
+    400044: BoxGuy_SH_lFinger2J3
+    400046: BoxGuy_SH_lFinger2JTip
+    400048: BoxGuy_SH_lFinger3J1
+    400050: BoxGuy_SH_lFinger3J2
+    400052: BoxGuy_SH_lFinger3J3
+    400054: BoxGuy_SH_lFinger3JTip
+    400056: BoxGuy_SH_lFinger4J1
+    400058: BoxGuy_SH_lFinger4J2
+    400060: BoxGuy_SH_lFinger4J3
+    400062: BoxGuy_SH_lFinger4JTip
+    400064: BoxGuy_SH_lForearmJ
+    400066: BoxGuy_SH_lHipJ
+    400068: BoxGuy_SH_lKneeJ
+    400070: BoxGuy_SH_lPalmJ
+    400072: BoxGuy_SH_lShoulderJ
+    400074: BoxGuy_SH_lThumbJ1
+    400076: BoxGuy_SH_lThumbJ2
+    400078: BoxGuy_SH_lThumbJ3
+    400080: BoxGuy_SH_lThumbJTip
+    400082: BoxGuy_SH_lToeJ
+    400084: BoxGuy_SH_lWristJ
+    400086: BoxGuy_SH_Neck01J
+    400088: BoxGuy_SH_rAnkleJ
+    400090: BoxGuy_SH_rBallJ
+    400092: BoxGuy_SH_rClavicleJ
+    400094: BoxGuy_SH_rElbowJ
+    400096: BoxGuy_SH_rEyeJ
+    400098: BoxGuy_SH_rFinger1J1
+    400100: BoxGuy_SH_rFinger1J2
+    400102: BoxGuy_SH_rFinger1J3
+    400104: BoxGuy_SH_rFinger1JTip
+    400106: BoxGuy_SH_rFinger2J1
+    400108: BoxGuy_SH_rFinger2J2
+    400110: BoxGuy_SH_rFinger2J3
+    400112: BoxGuy_SH_rFinger2JTip
+    400114: BoxGuy_SH_rFinger3J1
+    400116: BoxGuy_SH_rFinger3J2
+    400118: BoxGuy_SH_rFinger3J3
+    400120: BoxGuy_SH_rFinger3JTip
+    400122: BoxGuy_SH_rFinger4J1
+    400124: BoxGuy_SH_rFinger4J2
+    400126: BoxGuy_SH_rFinger4J3
+    400128: BoxGuy_SH_rFinger4JTip
+    400130: BoxGuy_SH_rForearmJ
+    400132: BoxGuy_SH_rHipJ
+    400134: BoxGuy_SH_rKneeJ
+    400136: BoxGuy_SH_ROOTJ
+    400138: BoxGuy_SH_rPalmJ
+    400140: BoxGuy_SH_rShoulderJ
+    400142: BoxGuy_SH_rThumbJ1
+    400144: BoxGuy_SH_rThumbJ2
+    400146: BoxGuy_SH_rThumbJ3
+    400148: BoxGuy_SH_rThumbJTip
+    400150: BoxGuy_SH_rToeJ
+    400152: BoxGuy_SH_rWristJ
+    400154: BoxGuy_SH_Spine01J
+    400156: BoxGuy_SH_Spine02J
+    400158: BoxGuy_SH_Spine03J
+    400160: BoxGuy_SH_SpineTopJ
+    400162: Head
+    400164: Leg_Left
+    400166: Leg_Right
+    400168: RibbonGuy
+    400170: //RootNode
+    400172: Arm_Left_Big
+    400174: Arm_Left_Med
+    400176: Arm_Right_Big
+    400178: Arm_Right_Med
+    400180: Body_Big
+    400182: Body_Med
+    400184: Head_Big
+    400186: Head_Med
+    400188: Leg_Left_Big
+    400190: Leg_Left_Med
+    400192: Leg_Right_Big
+    400194: Leg_Right_Med
+    400196: Arm_Left_Small
+    400198: Arm_Right_Small
+    400200: Body_Small
+    400202: Head_Small
+    400204: Leg_Left_Small
+    400206: Leg_Right_Small
+    400208: ribbonGuy_Controls_SH_HeadJ
+    400210: ribbonGuy_Controls_SH_HeadTipJ
+    400212: ribbonGuy_Controls_SH_JawJ
+    400214: ribbonGuy_Controls_SH_JawTipJ
+    400216: ribbonGuy_Controls_SH_lAnkleJ
+    400218: ribbonGuy_Controls_SH_lBallJ
+    400220: ribbonGuy_Controls_SH_lClavicleJ
+    400222: ribbonGuy_Controls_SH_lElbowJ
+    400224: ribbonGuy_Controls_SH_lEyeJ
+    400226: ribbonGuy_Controls_SH_lFinger1J1
+    400228: ribbonGuy_Controls_SH_lFinger1J2
+    400230: ribbonGuy_Controls_SH_lFinger1J3
+    400232: ribbonGuy_Controls_SH_lFinger1JTip
+    400234: ribbonGuy_Controls_SH_lForearmJ
+    400236: ribbonGuy_Controls_SH_lHipJ
+    400238: ribbonGuy_Controls_SH_lKneeJ
+    400240: ribbonGuy_Controls_SH_lPalmJ
+    400242: ribbonGuy_Controls_SH_lShoulderJ
+    400244: ribbonGuy_Controls_SH_lToeJ
+    400246: ribbonGuy_Controls_SH_lWristJ
+    400248: ribbonGuy_Controls_SH_Neck01J
+    400250: ribbonGuy_Controls_SH_rAnkleJ
+    400252: ribbonGuy_Controls_SH_rBallJ
+    400254: ribbonGuy_Controls_SH_rClavicleJ
+    400256: ribbonGuy_Controls_SH_rElbowJ
+    400258: ribbonGuy_Controls_SH_rEyeJ
+    400260: ribbonGuy_Controls_SH_rFinger1J1
+    400262: ribbonGuy_Controls_SH_rFinger1J2
+    400264: ribbonGuy_Controls_SH_rFinger1J3
+    400266: ribbonGuy_Controls_SH_rFinger1JTip
+    400268: ribbonGuy_Controls_SH_rForearmJ
+    400270: ribbonGuy_Controls_SH_rHipJ
+    400272: ribbonGuy_Controls_SH_rKneeJ
+    400274: ribbonGuy_Controls_SH_ROOTJ
+    400276: ribbonGuy_Controls_SH_rPalmJ
+    400278: ribbonGuy_Controls_SH_rShoulderJ
+    400280: ribbonGuy_Controls_SH_rToeJ
+    400282: ribbonGuy_Controls_SH_rWristJ
+    400284: ribbonGuy_Controls_SH_Spine01J
+    400286: ribbonGuy_Controls_SH_Spine02J
+    400288: ribbonGuy_Controls_SH_SpineTopJ
+    4300000: Body
+    4300002: Arm_Left
+    4300004: Leg_Right
+    4300006: Leg_Left
+    4300008: Arm_Right
+    4300010: Head
+    4300012: Body_Med
+    4300014: Body_Big
+    4300016: Arm_Left_Med
+    4300018: Arm_Left_Big
+    4300020: Arm_Right_Med
+    4300022: Arm_Right_Big
+    4300024: Leg_Right_Med
+    4300026: Leg_Right_Big
+    4300028: Leg_Left_Med
+    4300030: Leg_Left_Big
+    4300032: Head_Med
+    4300034: Head_Big
+    4300036: Body_Small
+    4300038: Arm_Left_Small
+    4300040: Arm_Right_Small
+    4300042: Leg_Right_Small
+    4300044: Leg_Left_Small
+    4300046: Head_Small
+    9500000: //RootNode
+    13700000: Arm_Left
+    13700002: Arm_Right
+    13700004: Body
+    13700006: Head
+    13700008: Leg_Left
+    13700010: Leg_Right
+    13700012: Arm_Left_Big
+    13700014: Arm_Left_Med
+    13700016: Arm_Right_Big
+    13700018: Arm_Right_Med
+    13700020: Body_Big
+    13700022: Body_Med
+    13700024: Head_Big
+    13700026: Head_Med
+    13700028: Leg_Left_Big
+    13700030: Leg_Left_Med
+    13700032: Leg_Right_Big
+    13700034: Leg_Right_Med
+    13700036: Arm_Left_Small
+    13700038: Arm_Right_Small
+    13700040: Body_Small
+    13700042: Head_Small
+    13700044: Leg_Left_Small
+    13700046: Leg_Right_Small
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: ribbonGuy_Controls_SH_ROOTJ
+      humanName: Hips
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .11614053, y: 0, z: .0580702648}
+        length: .145175695
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lHipJ
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: -60.0000038, y: -60.0000038, z: -90}
+        max: {x: 60.0000038, y: 60.0000038, z: 50}
+        value: {x: .339360684, y: 0, z: .169680342}
+        length: .424200982
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rHipJ
+      humanName: RightUpperLeg
+      limit:
+        min: {x: -60.0000038, y: -60.0000038, z: -90}
+        max: {x: 60.0000038, y: 60.0000038, z: 50}
+        value: {x: .339360684, y: 0, z: .169680342}
+        length: .424200982
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lKneeJ
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .344865501, y: 0, z: .17243275}
+        length: .43108201
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rKneeJ
+      humanName: RightLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .344865173, y: 0, z: .172432587}
+        length: .431081623
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lAnkleJ
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: -30.0000019, z: -50}
+        max: {x: 0, y: 30.0000019, z: 50}
+        value: {x: .109849595, y: 0, z: .0549247973}
+        length: .137312025
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rAnkleJ
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: -30.0000019, z: -50}
+        max: {x: 0, y: 30.0000019, z: 50}
+        value: {x: .1098499, y: 0, z: .05492495}
+        length: .137312412
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_Spine01J
+      humanName: Spine
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .23200649, y: 0, z: .116003245}
+        length: .290008187
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_SpineTopJ
+      humanName: Chest
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .0682642385, y: 0, z: .0341321193}
+        length: .0853303298
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_Neck01J
+      humanName: Neck
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .0682643279, y: 0, z: .034132164}
+        length: .085330449
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_HeadJ
+      humanName: Head
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .0682643279, y: 0, z: .034132164}
+        length: .085330449
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lClavicleJ
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0896299407, y: 0, z: .0448149703}
+        length: .112037465
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rClavicleJ
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0896299407, y: 0, z: .0448149703}
+        length: .112037458
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lShoulderJ
+      humanName: LeftUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60.0000038}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: .237119362, y: 0, z: .118559681}
+        length: .296399266
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rShoulderJ
+      humanName: RightUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60.0000038}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: .237119377, y: 0, z: .118559688}
+        length: .296399295
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lElbowJ
+      humanName: LeftLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .180041686, y: 0, z: .0900208429}
+        length: .225052178
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rElbowJ
+      humanName: RightLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .180041611, y: 0, z: .0900208056}
+        length: .225052088
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lWristJ
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: .0900208429, y: 0, z: .0450104214}
+        length: .112526089
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rWristJ
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: .0900208056, y: 0, z: .0450104028}
+        length: .112526044
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lBallJ
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: .0564535893, y: 0, z: .0282267947}
+        length: .0705670044
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rBallJ
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: .0564535186, y: 0, z: .0282267593}
+        length: .070566915
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_JawJ
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0799999759, y: 0, z: .0399999879}
+        length: .100000001
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lFinger1J1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0321613662, y: 0, z: .0160806831}
+        length: .0402017273
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lFinger1J2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0321613215, y: 0, z: .0160806607}
+        length: .0402016714
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_lFinger1J3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0241209958, y: 0, z: .0120604979}
+        length: .0301512536
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rFinger1J1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0321612954, y: 0, z: .0160806477}
+        length: .0402016379
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rFinger1J2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0321613438, y: 0, z: .0160806719}
+        length: .0402016975
+        modified: 1
+    - boneName: ribbonGuy_Controls_SH_rFinger1J3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15.000001}
+        value: {x: .0241210125, y: 0, z: .0120605063}
+        length: .0301512741
+        modified: 1
+    skeleton:
+    - name: RibbonHumanoid_Rig
+      position: {x: -4.52439508e-07, y: 7.58219812e-07, z: -1.1965559e-06}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_ROOTJ
+      position: {x: 4.52439508e-07, y: 1.03361154, z: -.0167377219}
+      rotation: {x: 0, y: 0, z: 0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lHipJ
+      position: {x: -.113355622, y: -.0527235456, z: 0}
+      rotation: {x: .465490192, y: .532277048, z: .465490192, w: .532276988}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lKneeJ
+      position: {x: -.424201012, y: 7.39848183e-10, z: 2.84217088e-16}
+      rotation: {x: -3.25218359e-08, y: -2.68083244e-08, z: .162122101, w: .98677057}
+      scale: {x: .99999994, y: .999999821, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lAnkleJ
+      position: {x: -.43108207, y: 7.5187423e-10, z: 3.55271347e-16}
+      rotation: {x: 0, y: 0, z: -.427384406, w: .904069901}
+      scale: {x: 1.00000012, y: 1.00000036, z: 1.00000024}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lBallJ
+      position: {x: -.141134009, y: 2.46159593e-10, z: 1.24344979e-16}
+      rotation: {x: 1.11022289e-16, y: -5.90866758e-17, z: -.425762743, w: .904834807}
+      scale: {x: 1.00000024, y: .999999762, z: .999999881}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lToeJ
+      position: {x: -.112037539, y: 1.95410854e-10, z: 8.88178367e-17}
+      rotation: {x: 3.50736542e-08, y: -.707106709, z: 3.50736542e-08, w: .707106709}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rHipJ
+      position: {x: .113355622, y: -.0527235456, z: 0}
+      rotation: {x: .532277048, y: -.465490192, z: .532276988, w: -.465490192}
+      scale: {x: 1, y: .999999702, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rKneeJ
+      position: {x: .424201012, y: -7.1054272e-17, z: 5.3290704e-17}
+      rotation: {x: -3.25218359e-08, y: -2.68083244e-08, z: -.162122101, w: -.98677057}
+      scale: {x: .999999106, y: .999999881, z: .999999762}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rAnkleJ
+      position: {x: .43108207, y: 1.06581408e-16, z: 1.24344979e-16}
+      rotation: {x: 0, y: 0, z: .427384436, w: -.904069841}
+      scale: {x: .999999821, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rBallJ
+      position: {x: .141134009, y: -1.37667656e-16, z: 7.1054272e-17}
+      rotation: {x: -4.7917888e-17, y: 0, z: -.425762713, w: .904834807}
+      scale: {x: .999999821, y: 1.00000095, z: 1.00000024}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rToeJ
+      position: {x: .112037539, y: -2.15430671e-17, z: 7.1054272e-17}
+      rotation: {x: -7.01639919e-08, y: .707106709, z: 7.01639777e-08, w: .707106709}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_Spine01J
+      position: {x: -0, y: .144989759, z: -.00734581798}
+      rotation: {x: -.0217888951, y: 0, z: -0, w: .999762475}
+      scale: {x: 1, y: 1.00000072, z: .999999642}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_Spine02J
+      position: {x: -0, y: .145549491, z: -.00967543479}
+      rotation: {x: .0182990972, y: 0, z: 0, w: .999832451}
+      scale: {x: 1, y: .99999994, z: 1.00000036}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_SpineTopJ
+      position: {x: 2.8677303e-17, y: .144902855, z: .0129542192}
+      rotation: {x: -.477219909, y: .521786332, z: -.477219909, w: .521786392}
+      scale: {x: .999999523, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lClavicleJ
+      position: {x: -.0328410044, y: .00270500896, z: -.0823805407}
+      rotation: {x: .479038358, y: -.520117462, z: .479038358, w: .520117521}
+      scale: {x: 1, y: 1.00000036, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lShoulderJ
+      position: {x: -.112037539, y: -5.68434176e-16, z: 4.88498128e-17}
+      rotation: {x: -.151843414, y: -.00518111745, z: .0132849775, w: .988301575}
+      scale: {x: .99999994, y: 1.00000024, z: 1.00000012}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lElbowJ
+      position: {x: -.296399474, y: 4.26325632e-16, z: 1.59872109e-16}
+      rotation: {x: .108607017, y: .0349380933, z: -.00831572525, w: .99343574}
+      scale: {x: 1.00000024, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lForearmJ
+      position: {x: -.112526111, y: -2.84217088e-16, z: 1.42108544e-16}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lWristJ
+      position: {x: -.225052223, y: -8.52651264e-16, z: 3.55271347e-16}
+      rotation: {x: .172301069, y: -.0505446084, z: .0154812988, w: .983624816}
+      scale: {x: .999999821, y: .999999821, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lPalmJ
+      position: {x: -.0664910227, y: -.0106205232, z: -.00370226335}
+      rotation: {x: -4.74737405e-08, y: -2.86096231e-08, z: 4.78576609e-08, w: .99999994}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1.00000036}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lFinger1J1
+      position: {x: -.0507464148, y: -2.84217088e-16, z: 1.95399251e-16}
+      rotation: {x: .000772409432, y: -.00475351, z: .12556608, w: .992073536}
+      scale: {x: 1.00000012, y: 1.00000024, z: .999999702}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lFinger1J2
+      position: {x: -.0402017049, y: 4.97379917e-16, z: -3.5527136e-17}
+      rotation: {x: 3.14379101e-08, y: 7.95413779e-09, z: -5.52188384e-09, w: .99999994}
+      scale: {x: .999999702, y: 1, z: .99999994}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lFinger1J3
+      position: {x: -.0402017049, y: 1.42108544e-16, z: -2.6645352e-17}
+      rotation: {x: -1.13299219e-08, y: -8.18036572e-09, z: -5.42481722e-08, w: .99999994}
+      scale: {x: 1.00000012, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lFinger1JTip
+      position: {x: -.0402017049, y: -1.42108544e-16, z: -4.44089183e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_Neck01J
+      position: {x: -.0850329399, y: -.00711870193, z: -1.84464139e-17}
+      rotation: {x: .500938714, y: -.499059379, z: .500938714, w: .499059379}
+      scale: {x: .999999881, y: .999999642, z: .999999523}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_HeadJ
+      position: {x: 6.34186075e-17, y: .0850590914, z: .00679902965}
+      rotation: {x: -.49793306, y: .502058387, z: -.49793306, w: .502058327}
+      scale: {x: 1.00000024, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_HeadTipJ
+      position: {x: -.269010723, y: 2.48689959e-16, z: 1.36789918e-16}
+      rotation: {x: .47590664, y: -.522984505, z: .47590661, w: .522984445}
+      scale: {x: .999999762, y: 1, z: .999999881}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_JawJ
+      position: {x: -.0568136051, y: -.0197879933, z: 2.99994387e-17}
+      rotation: {x: .475906581, y: -.522984505, z: .475906581, w: .522984505}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_JawTipJ
+      position: {x: 2.66897617e-17, y: -.0547006801, z: .10017474}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_lEyeJ
+      position: {x: -.110552214, y: -.0981206, z: -.0375655256}
+      rotation: {x: .475906581, y: -.522984505, z: .475906581, w: .522984505}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rEyeJ
+      position: {x: -.110552214, y: -.0981206, z: .0375655256}
+      rotation: {x: .475906581, y: -.522984505, z: .475906581, w: .522984505}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rClavicleJ
+      position: {x: -.0328410044, y: .00270500896, z: .0823805407}
+      rotation: {x: .520117521, y: .479038358, z: .520117462, w: -.479038358}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rShoulderJ
+      position: {x: .112037539, y: 5.68434176e-16, z: 8.881784e-18}
+      rotation: {x: -.151843354, y: -.00518115191, z: .0132849282, w: .988301635}
+      scale: {x: 1.00000012, y: .999999642, z: .999999642}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rElbowJ
+      position: {x: .296399474, y: 1.42108544e-16, z: 3.5527136e-17}
+      rotation: {x: .108606979, y: .0349382162, z: -.00831544958, w: .993435681}
+      scale: {x: .99999994, y: .999999762, z: .999999642}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rForearmJ
+      position: {x: .112526111, y: -1.42108544e-16, z: -2.84217088e-16}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rWristJ
+      position: {x: .225052223, y: -5.68434176e-16, z: -4.26325632e-16}
+      rotation: {x: .172301054, y: -.0505446307, z: .0154812597, w: .983624816}
+      scale: {x: 1.00000012, y: 1.00000024, z: 1.00000048}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rPalmJ
+      position: {x: .0664910227, y: .0106205232, z: .00370226335}
+      rotation: {x: -3.26449232e-08, y: -3.16638946e-08, z: -1.3808207e-08, w: .99999994}
+      scale: {x: .999999821, y: 1.00000024, z: 1.00000048}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rFinger1J1
+      position: {x: .0507464148, y: -1.42108544e-16, z: 6.21724896e-17}
+      rotation: {x: -.992073655, y: -.125564605, z: -.00475376006, w: .000772501924}
+      scale: {x: .999999642, y: 1.00000012, z: .999999642}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rFinger1J2
+      position: {x: .0402017049, y: 7.1054272e-17, z: 5.3290704e-17}
+      rotation: {x: 1.68564114e-08, y: -1.15526246e-08, z: 2.27731771e-08, w: .99999994}
+      scale: {x: 1.00000024, y: 1.00000012, z: .99999994}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rFinger1J3
+      position: {x: .0402017049, y: 3.55271347e-16, z: -7.1054272e-17}
+      rotation: {x: -3.29863639e-08, y: 3.86819003e-08, z: 1.46986867e-08, w: .99999994}
+      scale: {x: .999999583, y: 1.00000012, z: .99999994}
+      transformModified: 1
+    - name: ribbonGuy_Controls_SH_rFinger1JTip
+      position: {x: .0402017049, y: -3.55271347e-16, z: 9.76996256e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 1
+  userData: 

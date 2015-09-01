@@ -4,7 +4,7 @@ labels:
 - Architecture
 - Character
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
     100002: vincent:Head
@@ -149,13 +149,17 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
+    extraExposedTransformPaths: []
     clipAnimations:
-    - name: backflip
+    - serializedVersion: 16
+      name: backflip
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 94
@@ -164,6 +168,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 1
@@ -175,7 +180,10 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
+      events: []
       transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -207,8 +215,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0748809725, y: 0, z: .0374404863}
-        preQ: {x: .452358305, y: .544751167, z: -.459872633, w: -.535849929}
-        postQ: {x: .446148008, y: .532202303, z: -.465575665, w: -.548590779}
         length: .0936012492
         modified: 1
     - boneName: vincent:LeftUpLeg
@@ -217,8 +223,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .334126502, y: 0, z: .167063251}
-        preQ: {x: .628613353, y: -.341071367, z: .624711037, w: -.313451082}
-        postQ: {x: .544975519, y: -.563170433, z: .427596778, w: -.450557113}
         length: .417658269
         modified: 1
     - boneName: vincent:RightUpLeg
@@ -227,8 +231,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .334126621, y: 0, z: .167063311}
-        preQ: {x: .622546732, y: -.358455628, z: .609762728, w: -.334864616}
-        postQ: {x: .502340794, y: -.522522986, z: .476413369, w: -.49764809}
         length: .417658418
         modified: 1
     - boneName: vincent:LeftLeg
@@ -237,8 +239,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .313625276, y: 0, z: .156812638}
-        preQ: {x: .00357875251, y: .778551161, z: .0256957654, w: .627044559}
-        postQ: {x: -.536600351, y: .546604097, z: -.448758841, w: .46032533}
         length: .392031729
         modified: 1
     - boneName: vincent:RightLeg
@@ -247,8 +247,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .313625216, y: 0, z: .156812608}
-        preQ: {x: -.0349896848, y: .72812885, z: -.0241091829, w: .684121788}
-        postQ: {x: -.484121203, y: .49530828, z: -.504807353, w: .515233755}
         length: .39203167
         modified: 1
     - boneName: vincent:LeftFoot
@@ -257,8 +255,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .0988214687, y: 0, z: .0494107343}
-        preQ: {x: -.556610584, y: .526360214, z: -.472253144, w: .43601197}
-        postQ: {x: -.566634595, y: .563810289, z: -.425796449, w: .423958063}
         length: .123526871
         modified: 1
     - boneName: vincent:RightFoot
@@ -267,8 +263,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .0981047377, y: 0, z: .0490523688}
-        preQ: {x: -.493897051, y: .485422254, z: -.508710623, w: .511511803}
-        postQ: {x: -.502278566, y: .501958251, z: -.49823603, w: .497508615}
         length: .122630954
         modified: 1
     - boneName: vincent:Spine
@@ -277,8 +271,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .130038723, y: 0, z: .0650193617}
-        preQ: {x: -.48976025, y: -.490792394, z: .516369879, w: .502612948}
-        postQ: {x: -.490351021, y: -.485135227, z: .514435351, w: .509466231}
         length: .162548468
         modified: 1
     - boneName: vincent:Spine1
@@ -287,8 +279,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .22464031, y: 0, z: .112320155}
-        preQ: {x: .542123735, y: .426996082, z: -.555786967, w: -.463548154}
-        postQ: {x: .537112951, y: .422391266, z: -.558581471, w: -.470193535}
         length: .280800462
         modified: 1
     - boneName: vincent:Neck
@@ -297,8 +287,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0684398636, y: 0, z: .0342199318}
-        preQ: {x: -.389104128, y: -.545279682, z: .413920462, w: .616391003}
-        postQ: {x: -.413908869, y: -.524441838, z: .474300206, w: .573305726}
         length: .0855498612
         modified: 1
     - boneName: vincent:Head
@@ -307,8 +295,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0684398636, y: 0, z: .0342199318}
-        preQ: {x: -.493781209, y: -.453644693, z: .572348177, w: .472021252}
-        postQ: {x: -.499764979, y: -.474360883, z: .509530365, w: .515359402}
         length: .0855498612
         modified: 1
     - boneName: vincent:LeftShoulder
@@ -317,8 +303,6 @@ ModelImporter:
         min: {x: 0, y: -15.000001, z: -15.000001}
         max: {x: 0, y: 15.000001, z: 30.0000019}
         value: {x: .0999889597, y: 0, z: .0499944799}
-        preQ: {x: .0313379504, y: -.0135103548, z: .988590479, w: -.146711573}
-        postQ: {x: -.070450604, y: -.0337800533, z: .99582988, w: -.0471013375}
         length: .124986239
         modified: 1
     - boneName: vincent:RightShoulder
@@ -327,8 +311,6 @@ ModelImporter:
         min: {x: 0, y: -15.000001, z: -15.000001}
         max: {x: 0, y: 15.000001, z: 30.0000019}
         value: {x: .100020513, y: 0, z: .0500102565}
-        preQ: {x: .00116441341, y: .0674805492, z: -.149206251, w: .986500144}
-        postQ: {x: .0127953803, y: .0714044422, z: -.0455919355, w: .996322691}
         length: .125025675
         modified: 1
     - boneName: vincent:LeftArm
@@ -337,8 +319,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .221495852, y: 0, z: .110747926}
-        preQ: {x: .166524202, y: -.0501400232, z: .951067269, w: -.255395025}
-        postQ: {x: 1.21071944e-08, y: .322396636, z: .946604609, w: -5.33765423e-08}
         length: .276869893
         modified: 1
     - boneName: vincent:RightArm
@@ -347,8 +327,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .221495852, y: 0, z: .110747926}
-        preQ: {x: .0245897137, y: -.20805496, z: -.247792348, w: .945889711}
-        postQ: {x: -.378664315, y: -7.2889752e-09, z: -1.44355008e-08, w: .925534129}
         length: .276869893
         modified: 1
     - boneName: vincent:LeftForeArm
@@ -357,8 +335,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .222990364, y: 0, z: .111495182}
-        preQ: {x: .590299368, y: .660280168, z: .349675357, w: -.30545634}
-        postQ: {x: 1.95577723e-08, y: .896870971, z: .442291945, w: 5.21540606e-08}
         length: .278738022
         modified: 1
     - boneName: vincent:RightForeArm
@@ -367,8 +343,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .22299026, y: 0, z: .11149513}
-        preQ: {x: -.681345224, y: -.604385853, z: -.270137072, w: .312269419}
-        postQ: {x: -.921609521, y: 2.18860805e-08, z: -7.07805157e-08, w: .388118356}
         length: .278737903
         modified: 1
     - boneName: vincent:LeftHand
@@ -377,8 +351,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .111495182, y: 0, z: .055747591}
-        preQ: {x: -2.42143852e-08, y: .322102815, z: .946704626, w: 5.01613577e-08}
-        postQ: {x: -2.23517418e-08, y: .322102815, z: .946704626, w: 4.82978066e-08}
         length: .139369011
         modified: 1
     - boneName: vincent:RightHand
@@ -387,8 +359,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .11149513, y: 0, z: .0557475649}
-        preQ: {x: -.379454046, y: -3.30774128e-08, z: -6.51925802e-08, w: .925210536}
-        postQ: {x: -.379454046, y: -3.30774128e-08, z: -6.33299351e-08, w: .925210536}
         length: .139368951
         modified: 1
     - boneName: vincent:LeftToeBase
@@ -397,8 +367,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .0589646325, y: 0, z: .0294823162}
-        preQ: {x: .799345255, y: .00199711765, z: .600867152, w: .00129993539}
-        postQ: {x: .799345374, y: .00197468465, z: .600867212, w: .00127008976}
         length: .0737058073
         modified: 1
     - boneName: vincent:RightToeBase
@@ -407,8 +375,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .0589646138, y: 0, z: .0294823069}
-        preQ: {x: .710102677, y: .000226485965, z: .704097748, w: .000514348911}
-        postQ: {x: .710102737, y: .000193049593, z: .704097807, w: .000480626884}
         length: .073705785
         modified: 1
     - boneName: vincent:LeftHandThumb1
@@ -417,8 +383,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0361118205, y: 0, z: .0180559102}
-        preQ: {x: .368380368, y: .779283345, z: .375968874, w: -.340089172}
-        postQ: {x: .0780902505, y: .791417658, z: .496085703, w: -.34850955}
         length: .0451397933
         modified: 1
     - boneName: vincent:LeftHandThumb2
@@ -427,8 +391,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0414295159, y: 0, z: .020714758}
-        preQ: {x: -.104543671, y: .804088175, z: .541121423, w: -.222935632}
-        postQ: {x: .006765828, y: .808955729, z: .529374123, w: -.255554199}
         length: .0517869145
         modified: 1
     - boneName: vincent:LeftHandThumb3
@@ -437,8 +399,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0310721416, y: 0, z: .0155360708}
-        preQ: {x: -.156197876, y: .804847002, z: .553256273, w: -.147414356}
-        postQ: {x: .0895616412, y: .811934948, z: .551878929, w: -.167839408}
         length: .0388401859
         modified: 1
     - boneName: vincent:LeftHandIndex1
@@ -447,8 +407,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0443943702, y: 0, z: .0221971851}
-        preQ: {x: .156123817, y: .298058182, z: .895220578, w: -.29217577}
-        postQ: {x: -1.13621354e-07, y: .322059512, z: .946719348, w: 3.48940375e-07}
         length: .0554929823
         modified: 1
     - boneName: vincent:LeftHandIndex2
@@ -457,8 +415,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .027128797, y: 0, z: .0135643985}
-        preQ: {x: .0898416787, y: .288903773, z: .894512177, w: -.329106212}
-        postQ: {x: 1.30385146e-07, y: .320882946, z: .9471187, w: -3.55744049e-07}
         length: .0339110047
         modified: 1
     - boneName: vincent:LeftHandIndex3
@@ -467,8 +423,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .020346595, y: 0, z: .0101732975}
-        preQ: {x: .100344941, y: .285425663, z: .905947685, w: -.296178192}
-        postQ: {x: .0130739575, y: .320616573, z: .946332335, w: .0385890491}
         length: .0254332535
         modified: 1
     - boneName: vincent:LeftHandMiddle1
@@ -477,8 +431,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0463367999, y: 0, z: .0231683999}
-        preQ: {x: .124167964, y: .302458674, z: .893918097, w: -.306613088}
-        postQ: {x: -1.49011598e-07, y: .320819348, z: .947140396, w: 4.08905152e-07}
         length: .0579210185
         modified: 1
     - boneName: vincent:LeftHandMiddle2
@@ -487,8 +439,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0297055952, y: 0, z: .0148527976}
-        preQ: {x: .089648664, y: .289987147, z: .894245565, w: -.328930676}
-        postQ: {x: 1.89989805e-07, y: .319841295, z: .947471082, w: -5.09560778e-07}
         length: .0371320024
         modified: 1
     - boneName: vincent:LeftHandMiddle3
@@ -497,8 +447,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0222791936, y: 0, z: .0111395968}
-        preQ: {x: .100063503, y: .286560178, z: .905541837, w: -.29641968}
-        postQ: {x: .0130322119, y: .319575638, z: .946684182, w: .0386050083}
         length: .0278490018
         modified: 1
     - boneName: vincent:LeftHandRing1
@@ -507,8 +455,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0435615741, y: 0, z: .021780787}
-        preQ: {x: .0671207085, y: .313151717, z: .886323988, w: -.33445549}
-        postQ: {x: -5.40167164e-08, y: .313036352, z: .949741125, w: 1.33653899e-07}
         length: .0544519871
         modified: 1
     - boneName: vincent:LeftHandRing2
@@ -517,8 +463,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0297056045, y: 0, z: .0148528023}
-        preQ: {x: .0880437121, y: .292310804, z: .893857718, w: -.328361034}
-        postQ: {x: 7.07805086e-08, y: .312867314, z: .949796796, w: -2.73952509e-07}
         length: .0371320136
         modified: 1
     - boneName: vincent:LeftHandRing3
@@ -527,8 +471,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0222792011, y: 0, z: .0111396005}
-        preQ: {x: .0980103388, y: .289121449, z: .904584885, w: -.297538042}
-        postQ: {x: .012748206, y: .312607437, z: .949007988, w: .0387013443}
         length: .0278490111
         modified: 1
     - boneName: vincent:LeftHandPinky1
@@ -537,8 +479,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0294104051, y: 0, z: .0147052025}
-        preQ: {x: .0437044241, y: .320453376, z: .880376756, w: -.346894801}
-        postQ: {x: 1.19209282e-07, y: .305171043, z: .952297568, w: -2.95745821e-07}
         length: .0367630161
         modified: 1
     - boneName: vincent:LeftHandPinky2
@@ -547,8 +487,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0224903896, y: 0, z: .0112451948}
-        preQ: {x: .0859299675, y: .293193698, z: .893622935, w: -.328772396}
-        postQ: {x: -8.56816769e-08, y: .305672854, z: .952136576, w: 2.73193109e-07}
         length: .0281129964
         modified: 1
     - boneName: vincent:LeftHandPinky3
@@ -557,8 +495,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0168677922, y: 0, z: .00843389612}
-        preQ: {x: .0957908779, y: .290121734, z: .904225528, w: -.298377842}
-        postQ: {x: .0124543328, y: .305418968, z: .951345921, w: .0387940556}
         length: .0210847482
         modified: 1
     - boneName: vincent:RightHandThumb1
@@ -567,8 +503,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0363418646, y: 0, z: .0181709323}
-        preQ: {x: .807681739, y: .379586041, z: .310458541, w: -.327383667}
-        postQ: {x: -.821303606, y: -.0489709675, z: -.371980309, w: .429759026}
         length: .0454273485
         modified: 1
     - boneName: vincent:RightHandThumb2
@@ -577,8 +511,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0407461561, y: 0, z: .0203730781}
-        preQ: {x: .82358861, y: -.148185, z: .261354238, w: -.481078953}
-        postQ: {x: -.84523809, y: .0166982543, z: -.25721392, w: .468118191}
         length: .0509327129
         modified: 1
     - boneName: vincent:RightHandThumb3
@@ -587,8 +519,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0305596218, y: 0, z: .0152798109}
-        preQ: {x: .835819483, y: -.186734319, z: .160621777, w: -.490649164}
-        postQ: {x: -.866370499, y: -.03988773, z: -.145948812, w: .475930601}
         length: .0381995365
         modified: 1
     - boneName: vincent:RightHandIndex1
@@ -597,8 +527,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0430143885, y: 0, z: .0215071943}
-        preQ: {x: .365483582, y: .155620694, z: .281133294, w: -.873594701}
-        postQ: {x: -.382892102, y: 6.03276931e-08, z: 1.45286322e-07, w: .923793018}
         length: .0537680052
         modified: 1
     - boneName: vincent:RightHandIndex2
@@ -607,8 +535,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0270839538, y: 0, z: .0135419769}
-        preQ: {x: .352380455, y: .106451869, z: .322248638, w: -.872153521}
-        postQ: {x: -.38228029, y: 5.81931126e-08, z: 2.98023224e-08, w: .924046338}
         length: .0338549502
         modified: 1
     - boneName: vincent:RightHandIndex3
@@ -617,8 +543,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0203129631, y: 0, z: .0101564815}
-        preQ: {x: .348124325, y: .119639285, z: .289191663, w: -.883665025}
-        postQ: {x: -.381958753, y: -.0156773496, z: .0378945172, w: .923269033}
         length: .0253912136
         modified: 1
     - boneName: vincent:RightHandMiddle1
@@ -627,8 +551,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .044934392, y: 0, z: .022467196}
-        preQ: {x: .370440125, y: .130866364, z: .300140768, w: -.869231641}
-        postQ: {x: -.382101268, y: 1.52529523e-07, z: 3.65078421e-07, w: .924120426}
         length: .0561680086
         modified: 1
     - boneName: vincent:RightHandMiddle2
@@ -637,8 +559,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .029891219, y: 0, z: .0149456095}
-        preQ: {x: .357769489, y: .107295379, z: .319877774, w: -.870727658}
-        postQ: {x: -.38196072, y: -9.16916179e-08, z: -1.86264515e-07, w: .924178481}
         length: .0373640321
         modified: 1
     - boneName: vincent:RightHandMiddle3
@@ -647,8 +567,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0224184114, y: 0, z: .0112092057}
-        preQ: {x: .353832275, y: .119641609, z: .289480478, w: -.881299913}
-        postQ: {x: -.381639451, y: -.015664259, z: .0378989317, w: .923401058}
         length: .0280230232
         modified: 1
     - boneName: vincent:RightHandRing1
@@ -657,8 +575,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0432103351, y: 0, z: .0216051675}
-        preQ: {x: .380257905, y: .0754373521, z: .333899498, w: -.859199703}
-        postQ: {x: -.373334169, y: 5.03350819e-08, z: 1.86264543e-07, w: .927696884}
         length: .0540129356
         modified: 1
     - boneName: vincent:RightHandRing2
@@ -667,8 +583,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0271327812, y: 0, z: .0135663906}
-        preQ: {x: .358075023, y: .105447844, z: .319403946, w: -.871001661}
-        postQ: {x: -.373792499, y: 1.22048732e-07, z: 2.98023224e-07, w: .927512407}
         length: .0339159854
         modified: 1
     - boneName: vincent:RightHandRing3
@@ -677,8 +591,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0203495845, y: 0, z: .0101747923}
-        preQ: {x: .354422987, y: .117137812, z: .290660679, w: -.881010413}
-        postQ: {x: -.373477906, y: -.0153291542, z: .0380375236, w: .926732063}
         length: .02543699
         modified: 1
     - boneName: vincent:RightHandPinky1
@@ -687,8 +599,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0292223897, y: 0, z: .0146111948}
-        preQ: {x: .385034114, y: .0453648902, z: .346148223, w: -.854325533}
-        postQ: {x: -.365639776, y: 2.77243089e-07, z: 7.15255794e-07, w: .93075639}
         length: .036527995
         modified: 1
     - boneName: vincent:RightHandPinky2
@@ -697,8 +607,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .022256, y: 0, z: .011128}
-        preQ: {x: .355265826, y: .104133084, z: .31801337, w: -.872817218}
-        postQ: {x: -.366348952, y: 2.60464731e-07, z: 6.1839819e-07, w: .9304775}
         length: .0278200079
         modified: 1
     - boneName: vincent:RightHandPinky3
@@ -707,8 +615,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0166919976, y: 0, z: .00834599882}
-        preQ: {x: .351965845, y: .114794105, z: .291561663, w: -.882005811}
-        postQ: {x: -.366040736, y: -.0150238443, z: .0381594636, w: .929694712}
         length: .0208650064
         modified: 1
     skeleton:
@@ -1047,7 +953,6 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: .99999994}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    handles: []
     armTwist: .5
     foreArmTwist: .5
     upperLegTwist: .5
@@ -1057,6 +962,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  additionalBone: 1
   animationType: 3
+  additionalBone: 1
   userData: 

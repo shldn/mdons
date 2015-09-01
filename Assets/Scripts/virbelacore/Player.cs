@@ -470,6 +470,7 @@ public class Player {
 
     public void ApplyAvatarOptions(string optionStr)
     {
+        return;
         mOptionStr = optionStr;
         if (optionStr == null)
         {

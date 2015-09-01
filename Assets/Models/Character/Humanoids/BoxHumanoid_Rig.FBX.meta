@@ -1,0 +1,1379 @@
+fileFormatVersion: 2
+guid: 12c791189e1ff614ca1e47226aa0c2f1
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: BoxGuy
+    100002: BoxGuy_Head
+    100004: BoxGuy_MainC
+    100006: BoxGuy_MainHipC
+    100008: BoxGuy_MainHipCG
+    100010: BoxGuy_ROOTJ
+    100012: BoxGuy_SH_HeadTipJ
+    100014: BoxGuy_SH_JawJ
+    100016: BoxGuy_SH_JawTipJ
+    100018: BoxGuy_SH_lAnkleJ
+    100020: BoxGuy_SH_lBallJ
+    100022: BoxGuy_SH_lClavicleJ
+    100024: BoxGuy_SH_lElbowJ
+    100026: BoxGuy_SH_lEyeJ
+    100028: BoxGuy_SH_lFinger1J1
+    100030: BoxGuy_SH_lFinger1J2
+    100032: BoxGuy_SH_lFinger1J3
+    100034: BoxGuy_SH_lFinger1JTip
+    100036: BoxGuy_SH_lFinger2J1
+    100038: BoxGuy_SH_lFinger2J2
+    100040: BoxGuy_SH_lFinger2J3
+    100042: BoxGuy_SH_lFinger2JTip
+    100044: BoxGuy_SH_lFinger3J1
+    100046: BoxGuy_SH_lFinger3J2
+    100048: BoxGuy_SH_lFinger3J3
+    100050: BoxGuy_SH_lFinger3JTip
+    100052: BoxGuy_SH_lFinger4J1
+    100054: BoxGuy_SH_lFinger4J2
+    100056: BoxGuy_SH_lFinger4J3
+    100058: BoxGuy_SH_lFinger4JTip
+    100060: BoxGuy_SH_lForearmJ
+    100062: BoxGuy_SH_lHipJ
+    100064: BoxGuy_SH_lKneeJ
+    100066: BoxGuy_SH_lPalmJ
+    100068: BoxGuy_SH_lShoulderJ
+    100070: BoxGuy_SH_lThumbJ1
+    100072: BoxGuy_SH_lThumbJ2
+    100074: BoxGuy_SH_lThumbJ3
+    100076: BoxGuy_SH_lThumbJTip
+    100078: BoxGuy_SH_lToeJ
+    100080: BoxGuy_SH_lWristJ
+    100082: BoxGuy_SH_Neck01J
+    100084: BoxGuy_SH_rAnkleJ
+    100086: BoxGuy_SH_rBallJ
+    100088: BoxGuy_SH_rClavicleJ
+    100090: BoxGuy_SH_rElbowJ
+    100092: BoxGuy_SH_rEyeJ
+    100094: BoxGuy_SH_rFinger1J1
+    100096: BoxGuy_SH_rFinger1J2
+    100098: BoxGuy_SH_rFinger1J3
+    100100: BoxGuy_SH_rFinger1JTip
+    100102: BoxGuy_SH_rFinger2J1
+    100104: BoxGuy_SH_rFinger2J2
+    100106: BoxGuy_SH_rFinger2J3
+    100108: BoxGuy_SH_rFinger2JTip
+    100110: BoxGuy_SH_rFinger3J1
+    100112: BoxGuy_SH_rFinger3J2
+    100114: BoxGuy_SH_rFinger3J3
+    100116: BoxGuy_SH_rFinger3JTip
+    100118: BoxGuy_SH_rFinger4J1
+    100120: BoxGuy_SH_rFinger4J2
+    100122: BoxGuy_SH_rFinger4J3
+    100124: BoxGuy_SH_rFinger4JTip
+    100126: BoxGuy_SH_rForearmJ
+    100128: BoxGuy_SH_rHipJ
+    100130: BoxGuy_SH_rKneeJ
+    100132: BoxGuy_SH_ROOTJ
+    100134: BoxGuy_SH_rPalmJ
+    100136: BoxGuy_SH_rShoulderJ
+    100138: BoxGuy_SH_rThumbJ1
+    100140: BoxGuy_SH_rThumbJ2
+    100142: BoxGuy_SH_rThumbJ3
+    100144: BoxGuy_SH_rThumbJTip
+    100146: BoxGuy_SH_rToeJ
+    100148: BoxGuy_SH_rWristJ
+    100150: BoxGuy_SH_Spine01J
+    100152: BoxGuy_SH_Spine02J
+    100154: BoxGuy_SH_Spine03J
+    100156: BoxGuy_SH_SpineTopJ
+    100158: //RootNode
+    100160: Chest
+    100162: Head
+    100164: Hips
+    100166: L_Arm
+    100168: L_Calf
+    100170: L_Foot
+    100172: L_Forearm
+    100174: L_Leg
+    100176: L_Mid1
+    100178: L_Mid2
+    100180: L_Mid3
+    100182: L_Palm
+    100184: L_Pinky1
+    100186: L_Pinky2
+    100188: L_Pinky3
+    100190: L_Point1
+    100192: L_Point2
+    100194: L_Point3
+    100196: L_Ring1
+    100198: L_Ring2
+    100200: L_Ring3
+    100202: L_Thumb1
+    100204: L_Thumb2
+    100206: L_Thumb3
+    100208: Nut
+    100210: Nut001
+    100212: Nut002
+    100214: Nut003
+    100216: R_Arm
+    100218: R_Calf
+    100220: R_Foot
+    100222: R_Forearm
+    100224: R_Leg
+    100226: R_Mid1
+    100228: R_Mid2
+    100230: R_Mid3
+    100232: R_Palm
+    100234: R_Pinky1
+    100236: R_Pinky2
+    100238: R_Pinky3
+    100240: R_Point1
+    100242: R_Point2
+    100244: R_Point3
+    100246: R_Ring1
+    100248: R_Ring2
+    100250: R_Ring3
+    100252: R_Thumb1
+    100254: R_Thumb2
+    100256: R_Thumb3
+    100258: Sphere001
+    100260: Sphere002
+    100262: Spine1
+    100264: Spine2
+    100266: Spiral_Spine
+    100268: HandHelper_Left
+    100270: HandHelper_Right
+    100272: box_man
+    100274: box_man_MainC
+    100276: box_man_MainHipC
+    100278: box_man_MainHipCG
+    100280: box_man_ROOTJ
+    100282: box_man_SH_HeadJ
+    100284: box_man_SH_HeadTipJ
+    100286: box_man_SH_JawJ
+    100288: box_man_SH_JawTipJ
+    100290: box_man_SH_lAnkleJ
+    100292: box_man_SH_lBallJ
+    100294: box_man_SH_lClavicleJ
+    100296: box_man_SH_lElbowJ
+    100298: box_man_SH_lEyeJ
+    100300: box_man_SH_lFinger1J1
+    100302: box_man_SH_lFinger1J2
+    100304: box_man_SH_lFinger1J3
+    100306: box_man_SH_lFinger1JTip
+    100308: box_man_SH_lFinger2J1
+    100310: box_man_SH_lFinger2J2
+    100312: box_man_SH_lFinger2J3
+    100314: box_man_SH_lFinger2JTip
+    100316: box_man_SH_lFinger3J1
+    100318: box_man_SH_lFinger3J2
+    100320: box_man_SH_lFinger3J3
+    100322: box_man_SH_lFinger3JTip
+    100324: box_man_SH_lFinger4J1
+    100326: box_man_SH_lFinger4J2
+    100328: box_man_SH_lFinger4J3
+    100330: box_man_SH_lFinger4JTip
+    100332: box_man_SH_lForearmJ
+    100334: box_man_SH_lHipJ
+    100336: box_man_SH_lKneeJ
+    100338: box_man_SH_lPalmJ
+    100340: box_man_SH_lShoulderJ
+    100342: box_man_SH_lThumbJ1
+    100344: box_man_SH_lThumbJ2
+    100346: box_man_SH_lThumbJ3
+    100348: box_man_SH_lThumbJTip
+    100350: box_man_SH_lToeJ
+    100352: box_man_SH_lWristJ
+    100354: box_man_SH_Neck01J
+    100356: box_man_SH_rAnkleJ
+    100358: box_man_SH_rBallJ
+    100360: box_man_SH_rClavicleJ
+    100362: box_man_SH_rElbowJ
+    100364: box_man_SH_rEyeJ
+    100366: box_man_SH_rFinger1J1
+    100368: box_man_SH_rFinger1J2
+    100370: box_man_SH_rFinger1J3
+    100372: box_man_SH_rFinger1JTip
+    100374: box_man_SH_rFinger2J1
+    100376: box_man_SH_rFinger2J2
+    100378: box_man_SH_rFinger2J3
+    100380: box_man_SH_rFinger2JTip
+    100382: box_man_SH_rFinger3J1
+    100384: box_man_SH_rFinger3J2
+    100386: box_man_SH_rFinger3J3
+    100388: box_man_SH_rFinger3JTip
+    100390: box_man_SH_rFinger4J1
+    100392: box_man_SH_rFinger4J2
+    100394: box_man_SH_rFinger4J3
+    100396: box_man_SH_rFinger4JTip
+    100398: box_man_SH_rForearmJ
+    100400: box_man_SH_rHipJ
+    100402: box_man_SH_rKneeJ
+    100404: box_man_SH_ROOTJ
+    100406: box_man_SH_rPalmJ
+    100408: box_man_SH_rShoulderJ
+    100410: box_man_SH_rThumbJ1
+    100412: box_man_SH_rThumbJ2
+    100414: box_man_SH_rThumbJ3
+    100416: box_man_SH_rThumbJTip
+    100418: box_man_SH_rToeJ
+    100420: box_man_SH_rWristJ
+    100422: box_man_SH_Spine01J
+    100424: box_man_SH_Spine02J
+    100426: box_man_SH_SpineTopJ
+    100428: Head1
+    400000: BoxGuy
+    400002: BoxGuy_Head
+    400004: BoxGuy_MainC
+    400006: BoxGuy_MainHipC
+    400008: BoxGuy_MainHipCG
+    400010: BoxGuy_ROOTJ
+    400012: BoxGuy_SH_HeadTipJ
+    400014: BoxGuy_SH_JawJ
+    400016: BoxGuy_SH_JawTipJ
+    400018: BoxGuy_SH_lAnkleJ
+    400020: BoxGuy_SH_lBallJ
+    400022: BoxGuy_SH_lClavicleJ
+    400024: BoxGuy_SH_lElbowJ
+    400026: BoxGuy_SH_lEyeJ
+    400028: BoxGuy_SH_lFinger1J1
+    400030: BoxGuy_SH_lFinger1J2
+    400032: BoxGuy_SH_lFinger1J3
+    400034: BoxGuy_SH_lFinger1JTip
+    400036: BoxGuy_SH_lFinger2J1
+    400038: BoxGuy_SH_lFinger2J2
+    400040: BoxGuy_SH_lFinger2J3
+    400042: BoxGuy_SH_lFinger2JTip
+    400044: BoxGuy_SH_lFinger3J1
+    400046: BoxGuy_SH_lFinger3J2
+    400048: BoxGuy_SH_lFinger3J3
+    400050: BoxGuy_SH_lFinger3JTip
+    400052: BoxGuy_SH_lFinger4J1
+    400054: BoxGuy_SH_lFinger4J2
+    400056: BoxGuy_SH_lFinger4J3
+    400058: BoxGuy_SH_lFinger4JTip
+    400060: BoxGuy_SH_lForearmJ
+    400062: BoxGuy_SH_lHipJ
+    400064: BoxGuy_SH_lKneeJ
+    400066: BoxGuy_SH_lPalmJ
+    400068: BoxGuy_SH_lShoulderJ
+    400070: BoxGuy_SH_lThumbJ1
+    400072: BoxGuy_SH_lThumbJ2
+    400074: BoxGuy_SH_lThumbJ3
+    400076: BoxGuy_SH_lThumbJTip
+    400078: BoxGuy_SH_lToeJ
+    400080: BoxGuy_SH_lWristJ
+    400082: BoxGuy_SH_Neck01J
+    400084: BoxGuy_SH_rAnkleJ
+    400086: BoxGuy_SH_rBallJ
+    400088: BoxGuy_SH_rClavicleJ
+    400090: BoxGuy_SH_rElbowJ
+    400092: BoxGuy_SH_rEyeJ
+    400094: BoxGuy_SH_rFinger1J1
+    400096: BoxGuy_SH_rFinger1J2
+    400098: BoxGuy_SH_rFinger1J3
+    400100: BoxGuy_SH_rFinger1JTip
+    400102: BoxGuy_SH_rFinger2J1
+    400104: BoxGuy_SH_rFinger2J2
+    400106: BoxGuy_SH_rFinger2J3
+    400108: BoxGuy_SH_rFinger2JTip
+    400110: BoxGuy_SH_rFinger3J1
+    400112: BoxGuy_SH_rFinger3J2
+    400114: BoxGuy_SH_rFinger3J3
+    400116: BoxGuy_SH_rFinger3JTip
+    400118: BoxGuy_SH_rFinger4J1
+    400120: BoxGuy_SH_rFinger4J2
+    400122: BoxGuy_SH_rFinger4J3
+    400124: BoxGuy_SH_rFinger4JTip
+    400126: BoxGuy_SH_rForearmJ
+    400128: BoxGuy_SH_rHipJ
+    400130: BoxGuy_SH_rKneeJ
+    400132: BoxGuy_SH_ROOTJ
+    400134: BoxGuy_SH_rPalmJ
+    400136: BoxGuy_SH_rShoulderJ
+    400138: BoxGuy_SH_rThumbJ1
+    400140: BoxGuy_SH_rThumbJ2
+    400142: BoxGuy_SH_rThumbJ3
+    400144: BoxGuy_SH_rThumbJTip
+    400146: BoxGuy_SH_rToeJ
+    400148: BoxGuy_SH_rWristJ
+    400150: BoxGuy_SH_Spine01J
+    400152: BoxGuy_SH_Spine02J
+    400154: BoxGuy_SH_Spine03J
+    400156: BoxGuy_SH_SpineTopJ
+    400158: //RootNode
+    400160: Chest
+    400162: Head
+    400164: Hips
+    400166: L_Arm
+    400168: L_Calf
+    400170: L_Foot
+    400172: L_Forearm
+    400174: L_Leg
+    400176: L_Mid1
+    400178: L_Mid2
+    400180: L_Mid3
+    400182: L_Palm
+    400184: L_Pinky1
+    400186: L_Pinky2
+    400188: L_Pinky3
+    400190: L_Point1
+    400192: L_Point2
+    400194: L_Point3
+    400196: L_Ring1
+    400198: L_Ring2
+    400200: L_Ring3
+    400202: L_Thumb1
+    400204: L_Thumb2
+    400206: L_Thumb3
+    400208: Nut
+    400210: Nut001
+    400212: Nut002
+    400214: Nut003
+    400216: R_Arm
+    400218: R_Calf
+    400220: R_Foot
+    400222: R_Forearm
+    400224: R_Leg
+    400226: R_Mid1
+    400228: R_Mid2
+    400230: R_Mid3
+    400232: R_Palm
+    400234: R_Pinky1
+    400236: R_Pinky2
+    400238: R_Pinky3
+    400240: R_Point1
+    400242: R_Point2
+    400244: R_Point3
+    400246: R_Ring1
+    400248: R_Ring2
+    400250: R_Ring3
+    400252: R_Thumb1
+    400254: R_Thumb2
+    400256: R_Thumb3
+    400258: Sphere001
+    400260: Sphere002
+    400262: Spine1
+    400264: Spine2
+    400266: Spiral_Spine
+    400268: HandHelper_Left
+    400270: HandHelper_Right
+    400272: box_man
+    400274: box_man_MainC
+    400276: box_man_MainHipC
+    400278: box_man_MainHipCG
+    400280: box_man_ROOTJ
+    400282: box_man_SH_HeadJ
+    400284: box_man_SH_HeadTipJ
+    400286: box_man_SH_JawJ
+    400288: box_man_SH_JawTipJ
+    400290: box_man_SH_lAnkleJ
+    400292: box_man_SH_lBallJ
+    400294: box_man_SH_lClavicleJ
+    400296: box_man_SH_lElbowJ
+    400298: box_man_SH_lEyeJ
+    400300: box_man_SH_lFinger1J1
+    400302: box_man_SH_lFinger1J2
+    400304: box_man_SH_lFinger1J3
+    400306: box_man_SH_lFinger1JTip
+    400308: box_man_SH_lFinger2J1
+    400310: box_man_SH_lFinger2J2
+    400312: box_man_SH_lFinger2J3
+    400314: box_man_SH_lFinger2JTip
+    400316: box_man_SH_lFinger3J1
+    400318: box_man_SH_lFinger3J2
+    400320: box_man_SH_lFinger3J3
+    400322: box_man_SH_lFinger3JTip
+    400324: box_man_SH_lFinger4J1
+    400326: box_man_SH_lFinger4J2
+    400328: box_man_SH_lFinger4J3
+    400330: box_man_SH_lFinger4JTip
+    400332: box_man_SH_lForearmJ
+    400334: box_man_SH_lHipJ
+    400336: box_man_SH_lKneeJ
+    400338: box_man_SH_lPalmJ
+    400340: box_man_SH_lShoulderJ
+    400342: box_man_SH_lThumbJ1
+    400344: box_man_SH_lThumbJ2
+    400346: box_man_SH_lThumbJ3
+    400348: box_man_SH_lThumbJTip
+    400350: box_man_SH_lToeJ
+    400352: box_man_SH_lWristJ
+    400354: box_man_SH_Neck01J
+    400356: box_man_SH_rAnkleJ
+    400358: box_man_SH_rBallJ
+    400360: box_man_SH_rClavicleJ
+    400362: box_man_SH_rElbowJ
+    400364: box_man_SH_rEyeJ
+    400366: box_man_SH_rFinger1J1
+    400368: box_man_SH_rFinger1J2
+    400370: box_man_SH_rFinger1J3
+    400372: box_man_SH_rFinger1JTip
+    400374: box_man_SH_rFinger2J1
+    400376: box_man_SH_rFinger2J2
+    400378: box_man_SH_rFinger2J3
+    400380: box_man_SH_rFinger2JTip
+    400382: box_man_SH_rFinger3J1
+    400384: box_man_SH_rFinger3J2
+    400386: box_man_SH_rFinger3J3
+    400388: box_man_SH_rFinger3JTip
+    400390: box_man_SH_rFinger4J1
+    400392: box_man_SH_rFinger4J2
+    400394: box_man_SH_rFinger4J3
+    400396: box_man_SH_rFinger4JTip
+    400398: box_man_SH_rForearmJ
+    400400: box_man_SH_rHipJ
+    400402: box_man_SH_rKneeJ
+    400404: box_man_SH_ROOTJ
+    400406: box_man_SH_rPalmJ
+    400408: box_man_SH_rShoulderJ
+    400410: box_man_SH_rThumbJ1
+    400412: box_man_SH_rThumbJ2
+    400414: box_man_SH_rThumbJ3
+    400416: box_man_SH_rThumbJTip
+    400418: box_man_SH_rToeJ
+    400420: box_man_SH_rWristJ
+    400422: box_man_SH_Spine01J
+    400424: box_man_SH_Spine02J
+    400426: box_man_SH_SpineTopJ
+    400428: Head1
+    4300000: Head
+    4300002: Sphere002
+    4300004: Nut003
+    4300006: Nut
+    4300008: L_Point3
+    4300010: L_Point2
+    4300012: L_Point1
+    4300014: L_Mid3
+    4300016: L_Mid2
+    4300018: L_Mid1
+    4300020: L_Ring3
+    4300022: L_Ring2
+    4300024: L_Ring1
+    4300026: L_Pinky3
+    4300028: L_Pinky2
+    4300030: L_Pinky1
+    4300032: L_Thumb3
+    4300034: L_Thumb2
+    4300036: L_Thumb1
+    4300038: L_Palm
+    4300040: L_Forearm
+    4300042: L_Arm
+    4300044: R_Point3
+    4300046: R_Point2
+    4300048: R_Point1
+    4300050: R_Mid3
+    4300052: R_Mid2
+    4300054: R_Mid1
+    4300056: R_Ring3
+    4300058: R_Ring2
+    4300060: R_Ring1
+    4300062: R_Pinky3
+    4300064: R_Pinky2
+    4300066: R_Pinky1
+    4300068: R_Thumb3
+    4300070: R_Thumb2
+    4300072: R_Thumb1
+    4300074: R_Palm
+    4300076: R_Forearm
+    4300078: R_Arm
+    4300080: Chest
+    4300082: Spine2
+    4300084: Spine1
+    4300086: L_Foot
+    4300088: L_Calf
+    4300090: L_Leg
+    4300092: R_Foot
+    4300094: R_Calf
+    4300096: R_Leg
+    4300098: Hips
+    4300100: Nut001
+    4300102: Nut002
+    4300104: Sphere001
+    4300106: Spiral_Spine
+    4300108: Head1
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Chest
+    13700002: Head
+    13700004: Hips
+    13700006: L_Arm
+    13700008: L_Calf
+    13700010: L_Foot
+    13700012: L_Forearm
+    13700014: L_Leg
+    13700016: L_Mid1
+    13700018: L_Mid2
+    13700020: L_Mid3
+    13700022: L_Palm
+    13700024: L_Pinky1
+    13700026: L_Pinky2
+    13700028: L_Pinky3
+    13700030: L_Point1
+    13700032: L_Point2
+    13700034: L_Point3
+    13700036: L_Ring1
+    13700038: L_Ring2
+    13700040: L_Ring3
+    13700042: L_Thumb1
+    13700044: L_Thumb2
+    13700046: L_Thumb3
+    13700048: Nut
+    13700050: Nut001
+    13700052: Nut002
+    13700054: Nut003
+    13700056: R_Arm
+    13700058: R_Calf
+    13700060: R_Foot
+    13700062: R_Forearm
+    13700064: R_Leg
+    13700066: R_Mid1
+    13700068: R_Mid2
+    13700070: R_Mid3
+    13700072: R_Palm
+    13700074: R_Pinky1
+    13700076: R_Pinky2
+    13700078: R_Pinky3
+    13700080: R_Point1
+    13700082: R_Point2
+    13700084: R_Point3
+    13700086: R_Ring1
+    13700088: R_Ring2
+    13700090: R_Ring3
+    13700092: R_Thumb1
+    13700094: R_Thumb2
+    13700096: R_Thumb3
+    13700098: Sphere001
+    13700100: Sphere002
+    13700102: Spine1
+    13700104: Spine2
+    13700106: Spiral_Spine
+    13700108: Head1
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: box_man_SH_ROOTJ
+      humanName: Hips
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .122298211, y: 0, z: .0611491054}
+        length: .152872801
+        modified: 1
+    - boneName: box_man_SH_lHipJ
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: -60.0000038, y: -60.0000038, z: -90}
+        max: {x: 60.0000038, y: 60.0000038, z: 50}
+        value: {x: .312336057, y: 0, z: .156168029}
+        length: .390420228
+        modified: 1
+    - boneName: box_man_SH_rHipJ
+      humanName: RightUpperLeg
+      limit:
+        min: {x: -60.0000038, y: -60.0000038, z: -90}
+        max: {x: 60.0000038, y: 60.0000038, z: 50}
+        value: {x: .312336087, y: 0, z: .156168044}
+        length: .390420258
+        modified: 1
+    - boneName: box_man_SH_lKneeJ
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .330512643, y: 0, z: .165256321}
+        length: .413140953
+        modified: 1
+    - boneName: box_man_SH_rKneeJ
+      humanName: RightLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .330512643, y: 0, z: .165256321}
+        length: .413140953
+        modified: 1
+    - boneName: box_man_SH_lAnkleJ
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: -30.0000019, z: -50}
+        max: {x: 0, y: 30.0000019, z: 50}
+        value: {x: .0857820213, y: 0, z: .0428910106}
+        length: .107227564
+        modified: 1
+    - boneName: box_man_SH_rAnkleJ
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: -30.0000019, z: -50}
+        max: {x: 0, y: 30.0000019, z: 50}
+        value: {x: .0857820213, y: 0, z: .0428910106}
+        length: .107227564
+        modified: 1
+    - boneName: box_man_SH_Spine01J
+      humanName: Spine
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .122298211, y: 0, z: .0611491054}
+        length: .152872801
+        modified: 1
+    - boneName: box_man_SH_Spine02J
+      humanName: Chest
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .207079455, y: 0, z: .103539728}
+        length: .258849382
+        modified: 1
+    - boneName: box_man_SH_Neck01J
+      humanName: Neck
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .0847812369, y: 0, z: .0423906185}
+        length: .105976582
+        modified: 1
+    - boneName: box_man_SH_HeadJ
+      humanName: Head
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: .0847812369, y: 0, z: .0423906185}
+        length: .105976582
+        modified: 1
+    - boneName: box_man_SH_lClavicleJ
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: -15.000001, z: -15.000001}
+        max: {x: 0, y: 15.000001, z: 30.0000019}
+        value: {x: .122468702, y: 0, z: .0612343512}
+        length: .153085917
+        modified: 1
+    - boneName: box_man_SH_rClavicleJ
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: -15.000001, z: -15.000001}
+        max: {x: 0, y: 15.000001, z: 30.0000019}
+        value: {x: .12246868, y: 0, z: .0612343401}
+        length: .153085887
+        modified: 1
+    - boneName: box_man_SH_lShoulderJ
+      humanName: LeftUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60.0000038}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: .25103727, y: 0, z: .125518635}
+        length: .313796729
+        modified: 1
+    - boneName: box_man_SH_rShoulderJ
+      humanName: RightUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60.0000038}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: .25103721, y: 0, z: .125518605}
+        length: .313796669
+        modified: 1
+    - boneName: box_man_SH_lElbowJ
+      humanName: LeftLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .24841778, y: 0, z: .12420889}
+        length: .310522288
+        modified: 1
+    - boneName: box_man_SH_rElbowJ
+      humanName: RightLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: .24841772, y: 0, z: .12420886}
+        length: .310522228
+        modified: 1
+    - boneName: box_man_SH_lWristJ
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: .12420889, y: 0, z: .062104445}
+        length: .155261144
+        modified: 1
+    - boneName: box_man_SH_rWristJ
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: .12420886, y: 0, z: .06210443}
+        length: .155261114
+        modified: 1
+    - boneName: box_man_SH_lBallJ
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: .0628457367, y: 0, z: .0314228684}
+        length: .0785572082
+        modified: 1
+    - boneName: box_man_SH_rBallJ
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: .0628457293, y: 0, z: .0314228646}
+        length: .0785572007
+        modified: 1
+    - boneName: box_man_SH_lThumbJ1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: .0373286977, y: 0, z: .0186643489}
+        length: .0466608889
+        modified: 1
+    - boneName: box_man_SH_lThumbJ2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: .0373287015, y: 0, z: .0186643507}
+        length: .0466608927
+        modified: 1
+    - boneName: box_man_SH_lThumbJ3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: .027996527, y: 0, z: .0139982635}
+        length: .0349956676
+        modified: 1
+    - boneName: box_man_SH_lFinger1J1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .0359025262, y: 0, z: .0179512631}
+        length: .0448781773
+        modified: 1
+    - boneName: box_man_SH_lFinger1J2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .037212003, y: 0, z: .0186060015}
+        length: .0465150215
+        modified: 1
+    - boneName: box_man_SH_lFinger1J3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0279090069, y: 0, z: .0139545035}
+        length: .034886267
+        modified: 1
+    - boneName: box_man_SH_lFinger2J1
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .041343879, y: 0, z: .0206719395}
+        length: .0516798645
+        modified: 1
+    - boneName: box_man_SH_lFinger2J2
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0395093895, y: 0, z: .0197546948}
+        length: .0493867546
+        modified: 1
+    - boneName: box_man_SH_lFinger2J3
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .029632045, y: 0, z: .0148160225}
+        length: .037040066
+        modified: 1
+    - boneName: box_man_SH_lFinger3J1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .0370832458, y: 0, z: .0185416229}
+        length: .046354074
+        modified: 1
+    - boneName: box_man_SH_lFinger3J2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0351580009, y: 0, z: .0175790004}
+        length: .0439475179
+        modified: 1
+    - boneName: box_man_SH_lFinger3J3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0263685044, y: 0, z: .0131842522}
+        length: .0329606384
+        modified: 1
+    - boneName: box_man_SH_lFinger4J1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .0340317376, y: 0, z: .0170158688}
+        length: .0425396897
+        modified: 1
+    - boneName: box_man_SH_lFinger4J2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0283621866, y: 0, z: .0141810933}
+        length: .0354527421
+        modified: 1
+    - boneName: box_man_SH_lFinger4J3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0212716386, y: 0, z: .0106358193}
+        length: .0265895575
+        modified: 1
+    - boneName: box_man_SH_rThumbJ1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: .0373287015, y: 0, z: .0186643507}
+        length: .0466608964
+        modified: 1
+    - boneName: box_man_SH_rThumbJ2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: .0373287089, y: 0, z: .0186643545}
+        length: .0466609038
+        modified: 1
+    - boneName: box_man_SH_rThumbJ3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: .0279965363, y: 0, z: .0139982682}
+        length: .0349956788
+        modified: 1
+    - boneName: box_man_SH_rFinger1J1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .0359025262, y: 0, z: .0179512631}
+        length: .0448781773
+        modified: 1
+    - boneName: box_man_SH_rFinger1J2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .037212003, y: 0, z: .0186060015}
+        length: .0465150215
+        modified: 1
+    - boneName: box_man_SH_rFinger1J3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0279090069, y: 0, z: .0139545035}
+        length: .034886267
+        modified: 1
+    - boneName: box_man_SH_rFinger2J1
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .041343879, y: 0, z: .0206719395}
+        length: .0516798683
+        modified: 1
+    - boneName: box_man_SH_rFinger2J2
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0395092927, y: 0, z: .0197546463}
+        length: .0493866354
+        modified: 1
+    - boneName: box_man_SH_rFinger2J3
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0296319742, y: 0, z: .0148159871}
+        length: .0370399766
+        modified: 1
+    - boneName: box_man_SH_rFinger3J1
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: -7.50000048, z: -50}
+        max: {x: 0, y: 7.50000048, z: 50}
+        value: {x: .0370832458, y: 0, z: .0185416229}
+        length: .046354074
+        modified: 1
+    - boneName: box_man_SH_rFinger3J2
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0351580009, y: 0, z: .0175790004}
+        length: .0439475179
+        modified: 1
+    - boneName: box_man_SH_rFinger3J3
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0263685044, y: 0, z: .0131842522}
+        length: .0329606384
+        modified: 1
+    - boneName: box_man_SH_rFinger4J1
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: .0340317376, y: 0, z: .0170158688}
+        length: .0425396897
+        modified: 1
+    - boneName: box_man_SH_rFinger4J2
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0283621866, y: 0, z: .0141810933}
+        length: .0354527421
+        modified: 1
+    - boneName: box_man_SH_rFinger4J3
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: .0212716386, y: 0, z: .0106358193}
+        length: .0265895575
+        modified: 1
+    skeleton:
+    - name: BoxHumanoid_Rig
+      position: {x: -4.52439508e-07, y: 7.58219812e-07, z: -1.1965559e-06}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_ROOTJ
+      position: {x: -0, y: .948771775, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lHipJ
+      position: {x: -.133109868, y: -.0497716367, z: 0}
+      rotation: {x: .463487148, y: .534022093, z: .463487148, w: .534022093}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lKneeJ
+      position: {x: -.390420258, y: 1.7763568e-17, z: -5.3290704e-17}
+      rotation: {x: 0, y: 0, z: .167753354, w: .985828936}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lAnkleJ
+      position: {x: -.413141012, y: -1.42108544e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -.486240208, w: .873825133}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lBallJ
+      position: {x: -.157114446, y: -4.99272068e-10, z: -1.95399251e-16}
+      rotation: {x: 0, y: -0, z: -.366805494, w: .930297613}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lToeJ
+      position: {x: -.105764717, y: -3.36094985e-10, z: 7.1054272e-17}
+      rotation: {x: -0, y: -.707106769, z: 0, w: .707106769}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rHipJ
+      position: {x: .133109868, y: -.0497716367, z: 0}
+      rotation: {x: .534022152, y: -.463487118, z: .534022152, w: -.463487118}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rKneeJ
+      position: {x: .390420258, y: -1.06581408e-16, z: -7.1054272e-17}
+      rotation: {x: 0, y: 0, z: .167753473, w: .985828936}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rAnkleJ
+      position: {x: .413141012, y: -8.881784e-18, z: 0}
+      rotation: {x: 0, y: -0, z: -.486240208, w: .873825014}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rBallJ
+      position: {x: .157114446, y: -5.3290704e-17, z: 3.5527136e-17}
+      rotation: {x: 0, y: -0, z: -.366805494, w: .930297613}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rToeJ
+      position: {x: .105764717, y: 4.30044616e-17, z: 5.3290704e-17}
+      rotation: {x: 0, y: .707106769, z: 0, w: .707106769}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_Spine01J
+      position: {x: -0, y: .152872831, z: -8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_Spine02J
+      position: {x: -0, y: .152872831, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_SpineTopJ
+      position: {x: 5.09168809e-17, y: .152872831, z: 2.58540793e-17}
+      rotation: {x: -.49999997, y: .49999997, z: -.49999997, w: .49999997}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lClavicleJ
+      position: {x: -.0774545372, y: -1.6303629e-17, z: -.0777681842}
+      rotation: {x: .49438116, y: -.390272558, z: .468526512, w: .619481564}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lShoulderJ
+      position: {x: -.153085947, y: -1.13686835e-15, z: 6.21724896e-17}
+      rotation: {x: -.0462505408, y: -.113565005, z: .134487078, w: .983299017}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lElbowJ
+      position: {x: -.313796729, y: 5.68434176e-16, z: -1.06581408e-16}
+      rotation: {x: -.000940145925, y: .0438896865, z: -4.13025264e-05, w: .999035895}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lForearmJ
+      position: {x: -.155261129, y: -2.84217088e-16, z: -3.5527136e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lWristJ
+      position: {x: -.310522258, y: -4.26325632e-16, z: 7.1054272e-17}
+      rotation: {x: .08000049, y: .0017634395, z: .00580261182, w: .996776342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lPalmJ
+      position: {x: -.070234783, y: -.00443771249, z: -.00574856484}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger1J1
+      position: {x: -.0624572597, y: .00900947955, z: .0417868644}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger1J2
+      position: {x: -.0448750146, y: -.000532259757, z: 8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger1J3
+      position: {x: -.046513848, y: -.000327318034, z: -6.21724896e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger1JTip
+      position: {x: -.0379508734, y: -2.84217088e-16, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger2J1
+      position: {x: -.0624572597, y: .00900947955, z: .00986238196}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger2J2
+      position: {x: -.0516762212, y: -.000613844022, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger2J3
+      position: {x: -.0493817702, y: .000697110139, z: 1.11022296e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger2JTip
+      position: {x: -.0379508734, y: 4.26325632e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger3J1
+      position: {x: -.0624572597, y: .00900947955, z: -.0219011735}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger3J2
+      position: {x: -.0463499762, y: -.000614124292, z: 2.220446e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger3J3
+      position: {x: -.0439325906, y: .00114750536, z: 6.661338e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger3JTip
+      position: {x: -.0379508734, y: -1.42108544e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger4J1
+      position: {x: -.0624572597, y: .00900947955, z: -.0541590303}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger4J2
+      position: {x: -.0425396338, y: 4.12125919e-05, z: 5.3290704e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger4J3
+      position: {x: -.0354516208, y: .000286666094, z: -6.21724896e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lFinger4JTip
+      position: {x: -.0379508734, y: -5.68434176e-16, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lThumbJ1
+      position: {x: -.0310558937, y: -.00176161982, z: .0582481101}
+      rotation: {x: .237962916, y: .321089476, z: -.0767071396, w: .913450122}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lThumbJ2
+      position: {x: -.0466609076, y: -2.84217088e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lThumbJ3
+      position: {x: -.0466609076, y: 5.68434176e-16, z: -2.13162816e-16}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lThumbJTip
+      position: {x: -.0466609076, y: 1.42108544e-16, z: -3.5527136e-17}
+      rotation: {x: -0, y: -.707106769, z: 0, w: .707106769}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_Neck01J
+      position: {x: -.105976626, y: 7.42697182e-18, z: -5.09168809e-17}
+      rotation: {x: .49999997, y: -.49999997, z: .49999997, w: .49999997}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_HeadJ
+      position: {x: 8.62141897e-17, y: .105976626, z: 3.09585083e-17}
+      rotation: {x: -.49999997, y: .49999997, z: -.49999997, w: .49999997}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_HeadTipJ
+      position: {x: -.1695306, y: -1.88216776e-17, z: 0}
+      rotation: {x: .49999997, y: -.49999997, z: .49999997, w: .49999997}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_JawJ
+      position: {x: -.0516380742, y: -.0236415267, z: 7.87421018e-18}
+      rotation: {x: .49999997, y: -.49999997, z: .49999997, w: .49999997}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_JawTipJ
+      position: {x: 4.86957752e-17, y: -.0516380742, z: .0945661068}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_lEyeJ
+      position: {x: -.0951882526, y: -.102031849, z: -.03546229}
+      rotation: {x: .49999997, y: -.49999997, z: .49999997, w: .49999997}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rEyeJ
+      position: {x: -.0951882526, y: -.102031849, z: .03546229}
+      rotation: {x: .49999997, y: -.49999997, z: .49999997, w: .49999997}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rClavicleJ
+      position: {x: -.0774545372, y: 3.36114357e-18, z: .0777681842}
+      rotation: {x: .390272498, y: .494381219, z: .619481504, w: -.468526572}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rShoulderJ
+      position: {x: .153085947, y: 0, z: 5.28466132e-16}
+      rotation: {x: -.0462506004, y: -.11356502, z: .134487167, w: .983299017}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rElbowJ
+      position: {x: .313796729, y: -2.84217088e-16, z: -7.99360543e-17}
+      rotation: {x: -.000940145925, y: .0438896865, z: -4.13025264e-05, w: .999035895}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rForearmJ
+      position: {x: .155261129, y: 2.84217088e-16, z: 7.1054272e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rWristJ
+      position: {x: .310522258, y: 1.42108544e-16, z: 7.46069849e-16}
+      rotation: {x: .08000049, y: .0017634395, z: .00580261182, w: .996776342}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rPalmJ
+      position: {x: .070234783, y: .00443771249, z: .00574856484}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger1J1
+      position: {x: .0624572597, y: -.00900947955, z: -.0417868644}
+      rotation: {x: .99999994, y: -0, z: 0, w: 6.1232336e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger1J2
+      position: {x: .0448750146, y: -.000532259757, z: -8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger1J3
+      position: {x: .046513848, y: -.000327318034, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger1JTip
+      position: {x: .0379508734, y: 1.42108544e-16, z: 3.5527136e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger2J1
+      position: {x: .0624572597, y: -.00900947955, z: -.00986238196}
+      rotation: {x: .99999994, y: -0, z: 0, w: 6.1232336e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger2J2
+      position: {x: .0516762212, y: -.000613844022, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger2J3
+      position: {x: .0493817702, y: .000697110139, z: 2.220446e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger2JTip
+      position: {x: .0379508734, y: 5.68434176e-16, z: 8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger3J1
+      position: {x: .0624572597, y: -.00900947955, z: .0219011735}
+      rotation: {x: .99999994, y: -0, z: 0, w: 6.1232336e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger3J2
+      position: {x: .0463499762, y: -.000614124292, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger3J3
+      position: {x: .0439325906, y: .00114750536, z: 2.220446e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger3JTip
+      position: {x: .0379508734, y: -2.84217088e-16, z: 2.220446e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger4J1
+      position: {x: .0624572597, y: -.00900947955, z: .0541590303}
+      rotation: {x: .99999994, y: -0, z: 0, w: 6.1232336e-17}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger4J2
+      position: {x: .0425396338, y: 4.12125919e-05, z: -2.6645352e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger4J3
+      position: {x: .0354516208, y: .000286666094, z: 8.881784e-18}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rFinger4JTip
+      position: {x: .0379508734, y: -2.84217088e-16, z: 1.7763568e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rThumbJ1
+      position: {x: .0310558937, y: .00176161982, z: -.0582481101}
+      rotation: {x: .31393066, y: -.310217083, z: .891505897, w: .102127649}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rThumbJ2
+      position: {x: -.0466609076, y: 1.42108544e-16, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rThumbJ3
+      position: {x: -.0466609076, y: 2.84217088e-16, z: 7.1054272e-17}
+      rotation: {x: 0, y: -0, z: -0, w: .99999994}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: box_man_SH_rThumbJTip
+      position: {x: -.0466609076, y: 4.26325632e-16, z: 7.10542693e-16}
+      rotation: {x: .0565217547, y: -.704844117, z: -.0565217547, w: .704844117}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 1
+  userData: 

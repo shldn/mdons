@@ -66,7 +66,7 @@ public class PostEffectsBase : MonoBehaviour {
 	}
 	
 	bool CheckResources (){
-		 Debug.LogWarning ("CheckResources () for " + this.ToString() + " should be overwritten.");
+		Debug.LogWarning ("CheckResources () for " + this.ToString() + " should be overwritten.");
 		return isSupported;
 	}
 	

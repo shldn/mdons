@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: 542f85f0a8d739b4bab8417cb7f691c8
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _Hatch0: {fileID: 2800000, guid: dcbd6503b959e4743b038330812c33c1, type: 3}
+  - _Hatch1: {fileID: 2800000, guid: 821d75a4b3a1dc249a649c1481690da2, type: 3}
+  - _Hatch2: {fileID: 2800000, guid: 33e9963f54cb43e4db099a08ff1f4372, type: 3}
+  - _Hatch3: {fileID: 2800000, guid: 43537cb38aa6c8a4fb85e78970bf960f, type: 3}
+  - _Hatch4: {fileID: 2800000, guid: a353d3231516f174a95184f7b0fb5129, type: 3}
+  - _Hatch5: {fileID: 2800000, guid: 12ec0af53e707cb4d85987810e8b73c7, type: 3}
+  userData: 

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: ffc34e50c7368d94f9a2347482a52e33
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Char_Male_Mesh_RiggedAllMesh:Belt
     100002: Char_Male_Mesh_RiggedAllMesh:Belt 1
@@ -710,13 +710,17 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
+    extraExposedTransformPaths: []
     clipAnimations:
-    - name: PowerPose
+    - serializedVersion: 16
+      name: PowerPose
       takeName: Take 001
       firstFrame: 1
       lastFrame: 180
@@ -725,6 +729,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 1
@@ -736,7 +741,10 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
+      events: []
       transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -768,8 +776,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .138475284, y: 0, z: .069237642}
-        preQ: {x: .499398559, y: .500600696, z: -.5006001, w: -.499399126}
-        postQ: {x: .499398559, y: .500600636, z: -.50060004, w: -.499399126}
         length: .173094168
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Thigh_L
@@ -778,8 +784,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .515119791, y: 0, z: .257559896}
-        preQ: {x: -.618376434, y: .344320714, z: -.606263459, w: .362626761}
-        postQ: {x: -2.98023259e-08, y: -.707106769, z: -.707106769, w: 2.98023259e-08}
         length: .643900037
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Thigh_R
@@ -788,8 +792,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .515118837, y: 0, z: .257559419}
-        preQ: {x: .61607784, y: -.345690072, z: .608599961, w: -.361320376}
-        postQ: {x: .707106709, y: 2.98023224e-08, z: -5.96046448e-08, w: -.707106769}
         length: .643898845
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Knee_L
@@ -798,8 +800,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .512494564, y: 0, z: .256247282}
-        preQ: {x: -.479926318, y: -.521103323, z: -.517478585, w: .479935199}
-        postQ: {x: 2.98023224e-08, y: .99980849, z: .0195674449, w: 8.94069743e-08}
         length: .640618503
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Knee_R
@@ -808,8 +808,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .512494087, y: 0, z: .256247044}
-        preQ: {x: -.521102548, y: .47992751, z: .479936123, w: .517477393}
-        postQ: {x: .99980849, y: -5.96046412e-08, z: 4.7683713e-07, w: -.0195672344}
         length: .640617907
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Ankle_L
@@ -818,8 +816,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .221942514, y: 0, z: .110971257}
-        preQ: {x: -.0479671136, y: .998655438, z: .0196351428, w: -.000943213818}
-        postQ: {x: .0011369288, y: .000594474375, z: -.886205494, w: .463290483}
         length: .27742821
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Ankle_R
@@ -828,8 +824,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .22194232, y: 0, z: .11097116}
-        preQ: {x: .998655379, y: .0479681529, z: -.000943139254, w: -.0196350366}
-        postQ: {x: -.000594437122, y: .0011370182, z: -.463290751, w: -.886205316}
         length: .277427971
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Spine1
@@ -838,8 +832,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .265791982, y: 0, z: .132895991}
-        preQ: {x: .497562289, y: .50242579, z: -.50242573, w: -.497562349}
-        postQ: {x: -2.98023224e-08, y: -2.98023224e-08, z: -.99999994, w: -2.98023224e-08}
         length: .332240105
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Spine2
@@ -848,8 +840,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .399970174, y: 0, z: .199985087}
-        preQ: {x: .00848776009, y: -9.03308319e-05, z: -.997197568, w: .0743290111}
-        postQ: {x: .00844760146, y: -.000829771103, z: -.999881208, w: -.0128653347}
         length: .499962866
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Neck
@@ -858,8 +848,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .126054958, y: 0, z: .0630274788}
-        preQ: {x: -.00474813487, y: -.00105348206, z: .976244152, w: .216618642}
-        postQ: {x: -1.41412029e-05, y: -.99999994, z: -1.49011612e-08, w: 8.94069743e-08}
         length: .157568768
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Head
@@ -868,8 +856,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .126054958, y: 0, z: .0630274788}
-        preQ: {x: -.216635019, y: -.976252615, z: 2.98023259e-08, w: 2.98023259e-08}
-        postQ: {x: -.50000006, y: -.49999994, z: .5, w: .5}
         length: .157568768
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Arm_L
@@ -878,8 +864,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .337781161, y: 0, z: .168890581}
-        preQ: {x: .755474925, y: .387605429, z: .15752238, w: -.504188716}
-        postQ: {x: 7.80448431e-07, y: .710213721, z: .703986049, w: -6.50933828e-07}
         length: .422226578
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Arm_R
@@ -888,8 +872,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .337781549, y: 0, z: .168890774}
-        preQ: {x: -.507934988, y: .150166169, z: .38268286, w: .756971538}
-        postQ: {x: .703985989, y: -1.35494383e-06, z: 2.03214586e-06, w: .71021378}
         length: .422227085
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Elbow_L
@@ -898,8 +880,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .372424006, y: 0, z: .186212003}
-        preQ: {x: .671874344, y: .739849865, z: .0158532206, w: .0309105814}
-        postQ: {x: 2.38418579e-07, y: .999983191, z: -.00579082966, w: -3.31737101e-06}
         length: .465530157
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Elbow_R
@@ -908,8 +888,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .372422695, y: 0, z: .186211348}
-        preQ: {x: -.0158566013, y: .0309123192, z: .671874404, w: -.739849806}
-        postQ: {x: .00579056097, y: -5.85708722e-06, z: 1.29267562e-06, w: -.999983191}
         length: .465528518
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Wrist_L
@@ -918,8 +896,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .186212003, y: 0, z: .0931060016}
-        preQ: {x: 2.51410529e-06, y: .710968554, z: .703223765, w: -2.17803267e-06}
-        postQ: {x: -.0150408875, y: .710809529, z: .703066528, w: .0148680033}
         length: .232765079
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Wrist_R
@@ -928,8 +904,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .186211348, y: 0, z: .0931056738}
-        preQ: {x: .703223884, y: 3.22568189e-06, z: -5.05661592e-06, w: .710968375}
-        postQ: {x: .703066289, y: -.0148794837, z: .0150509728, w: .710809231}
         length: .232764259
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Ball_L
@@ -938,8 +912,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .162243947, y: 0, z: .0811219737}
-        preQ: {x: -.000383526116, y: -.00122430921, z: .954237759, w: .29904604}
-        postQ: {x: 2.98023259e-08, y: -5.21540713e-08, z: .999526501, w: .0307686012}
         length: .202804998
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Ball_R
@@ -948,8 +920,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .162243664, y: 0, z: .0811218321}
-        preQ: {x: .00122430921, y: -.00038370493, z: -.299045742, w: .954237878}
-        postQ: {x: -8.86619205e-07, y: -0, z: -.0307689682, w: .999526501}
         length: .202804655
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Thumb_L
@@ -958,8 +928,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0560107976, y: 0, z: .0280053988}
-        preQ: {x: .470301002, y: .876051068, z: -.0493078046, w: -.0944472402}
-        postQ: {x: 5.28991222e-06, y: .996219873, z: -.086866796, w: -1.7568469e-05}
         length: .0700135157
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Thumb1_L
@@ -968,8 +936,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0420080945, y: 0, z: .0210040472}
-        preQ: {x: -.195369527, y: .976860106, z: -.085348025, w: -.0170531869}
-        postQ: {x: -.00754097058, y: .992452085, z: -.0865388736, w: -.0865615532}
         length: .0525101349
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Index_L
@@ -978,8 +944,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0560512505, y: 0, z: .0280256253}
-        preQ: {x: .185004175, y: .70221591, z: .676836371, w: -.120659225}
-        postQ: {x: 3.39699909e-07, y: .0214960836, z: .999768913, w: -8.16590364e-06}
         length: .0700640827
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Index1_L
@@ -988,8 +952,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0470773652, y: 0, z: .0235386826}
-        preQ: {x: .00594090903, y: .0211211164, z: .93626374, w: -.350611985}
-        postQ: {x: 3.78262456e-07, y: .0216076877, z: .999766469, w: -1.00586601e-06}
         length: .0588467233
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Index2_L
@@ -998,8 +960,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0353080183, y: 0, z: .0176540092}
-        preQ: {x: .00677171908, y: .0208695848, z: .949399054, w: -.31330511}
-        postQ: {x: .00154163293, y: .0215526298, z: .99721992, w: .071311973}
         length: .0441350415
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Middle_L
@@ -1008,8 +968,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0665272698, y: 0, z: .0332636349}
-        preQ: {x: .15472278, y: .696889997, z: .679538846, w: -.16921021}
-        postQ: {x: 1.05705101e-06, y: .0336327255, z: .999434233, w: -1.45665617e-05}
         length: .0831591189
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Middle1_L
@@ -1018,8 +976,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0470779948, y: 0, z: .0235389974}
-        preQ: {x: .00932750758, y: .0193143133, z: .936158657, w: -.350922912}
-        postQ: {x: -5.40901908e-07, y: .0322404616, z: .999480128, w: 7.24947995e-06}
         length: .0588475093
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Middle2_L
@@ -1028,8 +984,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0353084914, y: 0, z: .0176542457}
-        preQ: {x: .0100957928, y: .0189239606, z: .949514329, w: -.312989324}
-        postQ: {x: .00166082231, y: .0321976505, z: .998151898, w: .0515104234}
         length: .0441356301
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Fore_L
@@ -1038,8 +992,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0577544197, y: 0, z: .0288772099}
-        preQ: {x: .0852591768, y: .691452205, z: .681496382, w: -.224025205}
-        postQ: {x: -3.50060873e-07, y: .0339568369, z: .999423265, w: 1.95117173e-06}
         length: .0721930414
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Fore1_L
@@ -1048,8 +1000,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0426968113, y: 0, z: .0213484056}
-        preQ: {x: .0103830239, y: .0118953576, z: .936596215, w: -.350054383}
-        postQ: {x: -6.23986125e-08, y: .0321927555, z: .999481618, w: -1.59846343e-06}
         length: .0533710308
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Fore2_L
@@ -1058,8 +1008,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0320226066, y: 0, z: .0160113033}
-        preQ: {x: .0100712478, y: .0122841066, z: .949724793, w: -.312682271}
-        postQ: {x: .00116727897, y: .0321715921, z: .998824358, w: .0362415724}
         length: .0400282741
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Little_L
@@ -1068,8 +1016,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0451545492, y: 0, z: .0225772746}
-        preQ: {x: .0430892222, y: .689439118, z: .683955431, w: -.234567165}
-        postQ: {x: -1.03539787e-06, y: .0332701728, z: .999446332, w: 8.70562508e-06}
         length: .0564432032
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Little1_L
@@ -1078,8 +1024,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0336325876, y: 0, z: .0168162938}
-        preQ: {x: .010058566, y: .0120230084, z: .937051773, w: -.3488383}
-        postQ: {x: 2.63669062e-06, y: .0316743404, z: .999498188, w: -2.30142832e-05}
         length: .0420407504
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Little2_L
@@ -1088,8 +1032,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0252244435, y: 0, z: .0126122218}
-        preQ: {x: .00991309807, y: .0123897335, z: .949705362, w: -.312742144}
-        postQ: {x: -.000163413803, y: .0315507576, z: .999353051, w: -.0172541998}
         length: .0315305628
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Thumb_R
@@ -1098,8 +1040,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0560115725, y: 0, z: .0280057862}
-        preQ: {x: .0492984429, y: -.0944356397, z: .470303535, w: -.876051366}
-        postQ: {x: -.0868561268, y: -8.29994678e-06, z: -2.06232071e-05, w: .996220827}
         length: .0700144842
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Thumb1_R
@@ -1108,8 +1048,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0420086794, y: 0, z: .0210043397}
-        preQ: {x: .0853440538, y: -.0170257762, z: -.195354685, w: -.976863801}
-        postQ: {x: -.0865295529, y: .0865358859, z: .00752492296, w: .992455244}
         length: .052510865
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Index_R
@@ -1118,8 +1056,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0560544692, y: 0, z: .0280272346}
-        preQ: {x: -.676837981, y: -.120663501, z: .185002923, w: -.702213943}
-        postQ: {x: -.999768853, y: -1.03710172e-05, z: -4.15334898e-06, w: -.0214971807}
         length: .0700681061
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Index1_R
@@ -1128,8 +1064,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0470745452, y: 0, z: .0235372726}
-        preQ: {x: .936263442, y: .350612581, z: -.00594266225, w: .0211227071}
-        postQ: {x: -.999766469, y: -2.82749443e-05, z: 7.64490596e-06, w: -.0216083918}
         length: .0588431992
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Index2_R
@@ -1138,8 +1072,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0353059061, y: 0, z: .017652953}
-        preQ: {x: .949390411, y: .313330919, z: -.0067788288, w: .0208689459}
-        postQ: {x: -.997221887, y: .0712848008, z: .00154891331, w: -.0215528328}
         length: .0441324003
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Middle_R
@@ -1148,8 +1080,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0665296912, y: 0, z: .0332648456}
-        preQ: {x: -.679539621, y: -.169209957, z: .154720291, w: -.696889758}
-        postQ: {x: -.999434233, y: -1.26860004e-05, z: -1.02992624e-06, w: -.0336339138}
         length: .0831621513
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Middle1_R
@@ -1158,8 +1088,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0470778942, y: 0, z: .0235389471}
-        preQ: {x: .936160147, y: .350918829, z: -.00932691898, w: .0193153098}
-        postQ: {x: -.999480069, y: -2.64883147e-05, z: -1.68585393e-06, w: -.0322416835}
         length: .0588473864
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Middle2_R
@@ -1168,8 +1096,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0353084169, y: 0, z: .0176542085}
-        preQ: {x: .949503779, y: .313021332, z: -.0100954808, w: .0189249758}
-        postQ: {x: -.998153567, y: .0514767505, z: .00165973522, w: -.0321989432}
         length: .0441355407
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Fore_R
@@ -1178,8 +1104,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0577553175, y: 0, z: .0288776588}
-        preQ: {x: -.681484222, y: -.224065334, z: .0852985233, w: -.691446424}
-        postQ: {x: -.999423385, y: -5.56027117e-05, z: -4.59607662e-07, w: -.0339547992}
         length: .0721941665
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Fore1_R
@@ -1188,8 +1112,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0426945165, y: 0, z: .0213472582}
-        preQ: {x: .936574936, y: .350111485, z: -.0103839487, w: .0118919928}
-        postQ: {x: -.999481678, y: 7.00053715e-05, z: 1.92920561e-06, w: -.0321902484}
         length: .0533681624
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Fore2_R
@@ -1198,8 +1120,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0320208818, y: 0, z: .0160104409}
-        preQ: {x: .949747324, y: .312614173, z: -.0100710373, w: .0122802025}
-        postQ: {x: -.998821855, y: .0363131501, z: .00116921403, w: -.0321690068}
         length: .0400261208
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Little_R
@@ -1208,8 +1128,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0451572351, y: 0, z: .0225786176}
-        preQ: {x: -.683951795, y: -.234576136, z: .0430905297, w: -.689439654}
-        postQ: {x: -.999446332, y: 1.10513793e-06, z: -6.77560456e-06, w: -.0332708247}
         length: .0564465635
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Little1_R
@@ -1218,8 +1136,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0336349495, y: 0, z: .0168174747}
-        preQ: {x: .93704766, y: .348849505, z: -.0100536933, w: .012021278}
-        postQ: {x: -.999498188, y: 4.31416956e-05, z: -2.55939085e-06, w: -.0316755511}
         length: .0420437045
         modified: 1
     - boneName: Char_Male_Mesh_RiggedAllMesh:man_Little2_R
@@ -1228,8 +1144,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0252262168, y: 0, z: .0126131084}
-        preQ: {x: .949726224, y: .312679231, z: -.00990735833, w: .012388872}
-        postQ: {x: -.999354243, y: -.0171879977, z: -.000168598606, w: -.0315519124}
         length: .0315327793
         modified: 1
     skeleton:
@@ -1498,7 +1412,6 @@ ModelImporter:
       rotation: {x: .379808873, y: -.596443832, z: .379808873, w: .596443832}
       scale: {x: 1.00000012, y: .999999285, z: 1.00000036}
       transformModified: 1
-    handles: []
     armTwist: .5
     foreArmTwist: .5
     upperLegTwist: .5
@@ -1508,6 +1421,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  additionalBone: 1
   animationType: 3
+  additionalBone: 1
   userData: 

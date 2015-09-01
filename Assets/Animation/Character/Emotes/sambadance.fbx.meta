@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: a28cc15ec0fa25640af61445ef120e60
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: //RootNode
     100002: Sophia:Head
@@ -146,13 +146,17 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
+    extraExposedTransformPaths: []
     clipAnimations:
-    - name: Samba
+    - serializedVersion: 16
+      name: Samba
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 716
@@ -161,6 +165,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
@@ -172,7 +177,10 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
+      events: []
       transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -204,8 +212,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0748809725, y: 0, z: .0374404863}
-        preQ: {x: -.455935538, y: -.540483892, z: .455935478, w: .540483892}
-        postQ: {x: -.455935538, y: -.540483892, z: .455935478, w: .540483892}
         length: .0936012492
         modified: 1
     - boneName: Sophia:LeftUpLeg
@@ -214,8 +220,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .330927074, y: 0, z: .165463537}
-        preQ: {x: -.608771801, y: .359717548, z: -.608771861, w: .359717578}
-        postQ: {x: -.49490279, y: .505045712, z: -.494902849, w: .505045712}
         length: .413658977
         modified: 1
     - boneName: Sophia:RightUpLeg
@@ -224,8 +228,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .330927074, y: 0, z: .165463537}
-        preQ: {x: -.608771801, y: .359717548, z: -.608771861, w: .359717578}
-        postQ: {x: -.49490279, y: .505045712, z: -.494902849, w: .505045712}
         length: .413658977
         modified: 1
     - boneName: Sophia:LeftLeg
@@ -234,8 +236,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .316802114, y: 0, z: .158401057}
-        preQ: {x: -.0461813584, y: .705708802, z: -.0461960621, w: .705484331}
-        postQ: {x: -.488823712, y: .510938644, z: -.48897925, w: .510776162}
         length: .396002799
         modified: 1
     - boneName: Sophia:RightLeg
@@ -244,8 +244,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .316802114, y: 0, z: .158401057}
-        preQ: {x: -.0461813584, y: .705708802, z: -.0461960621, w: .705484331}
-        postQ: {x: -.488823712, y: .510938644, z: -.48897925, w: .510776162}
         length: .396002799
         modified: 1
     - boneName: Sophia:LeftFoot
@@ -254,8 +252,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .119891688, y: 0, z: .0599458441}
-        preQ: {x: -.49999997, y: .49999997, z: -.5, w: .5}
-        postQ: {x: -.49999997, y: .49999997, z: -.49999997, w: .49999997}
         length: .149864644
         modified: 1
     - boneName: Sophia:RightFoot
@@ -264,8 +260,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .119891688, y: 0, z: .0599458441}
-        preQ: {x: -.49999997, y: .49999997, z: -.5, w: .5}
-        postQ: {x: -.49999997, y: .49999997, z: -.49999997, w: .49999997}
         length: .149864644
         modified: 1
     - boneName: Sophia:Spine
@@ -274,8 +268,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .130038664, y: 0, z: .0650193319}
-        preQ: {x: .502540469, y: .497446567, z: -.50254041, w: -.497446477}
-        postQ: {x: .502540469, y: .497446567, z: -.50254041, w: -.497446477}
         length: .162548393
         modified: 1
     - boneName: Sophia:Spine1
@@ -284,8 +276,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .224722803, y: 0, z: .112361401}
-        preQ: {x: .547953427, y: .446930647, z: -.547953367, w: -.446930647}
-        postQ: {x: .547953486, y: .446930647, z: -.547953427, w: -.446930647}
         length: .280903578
         modified: 1
     - boneName: Sophia:Neck
@@ -294,8 +284,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0684398636, y: 0, z: .0342199318}
-        preQ: {x: -.444776028, y: -.549703717, z: .444776058, w: .549703717}
-        postQ: {x: -.444776028, y: -.549703777, z: .444776058, w: .549703777}
         length: .0855498612
         modified: 1
     - boneName: Sophia:Head
@@ -304,8 +292,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0684398636, y: 0, z: .0342199318}
-        preQ: {x: -.49999997, y: -.49999997, z: .49999997, w: .49999997}
-        postQ: {x: -.49999997, y: -.49999997, z: .5, w: .5}
         length: .0855498612
         modified: 1
     - boneName: Sophia:LeftShoulder
@@ -314,8 +300,6 @@ ModelImporter:
         min: {x: 0, y: -15.000001, z: -15.000001}
         max: {x: 0, y: 15.000001, z: 30.0000019}
         value: {x: .0741024092, y: 0, z: .0370512046}
-        preQ: {x: -.0970899612, y: -.00596803427, z: .993382692, w: -.0610623583}
-        postQ: {x: -.0970899612, y: -.00596803427, z: .993382692, w: -.0610623583}
         length: .0926280469
         modified: 1
     - boneName: Sophia:RightShoulder
@@ -324,8 +308,6 @@ ModelImporter:
         min: {x: 0, y: -15.000001, z: -15.000001}
         max: {x: 0, y: 15.000001, z: 30.0000019}
         value: {x: .0741335675, y: 0, z: .0370667838}
-        preQ: {x: .00596288731, y: .0970489308, z: -.0610358454, w: .993388414}
-        postQ: {x: .00596288824, y: .0970489457, z: -.0610358492, w: .993388474}
         length: .0926669985
         modified: 1
     - boneName: Sophia:LeftArm
@@ -334,8 +316,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .221495852, y: 0, z: .110747926}
-        preQ: {x: .244210228, y: -0, z: .911232233, w: -.331688493}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .276869893
         modified: 1
     - boneName: Sophia:RightArm
@@ -344,8 +324,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .221495852, y: 0, z: .110747926}
-        preQ: {x: -0, y: -.244210228, z: -.331688493, w: .911232233}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .276869893
         modified: 1
     - boneName: Sophia:LeftForeArm
@@ -354,8 +332,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .222990319, y: 0, z: .11149516}
-        preQ: {x: .454487741, y: .541701794, z: .541701734, w: -.454487801}
-        postQ: {x: -0, y: .707106769, z: .707106709, w: 0}
         length: .278737962
         modified: 1
     - boneName: Sophia:RightForeArm
@@ -364,8 +340,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .222990319, y: 0, z: .11149516}
-        preQ: {x: -.541701734, y: -.454487801, z: -.454487741, w: .541701794}
-        postQ: {x: -.707106709, y: -0, z: -0, w: .707106769}
         length: .278737962
         modified: 1
     - boneName: Sophia:LeftHand
@@ -374,8 +348,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .11149516, y: 0, z: .0557475798}
-        preQ: {x: -0, y: -0, z: .99999994, w: 0}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .139368981
         modified: 1
     - boneName: Sophia:RightHand
@@ -384,8 +356,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .11149516, y: 0, z: .0557475798}
-        preQ: {x: -0, y: -0, z: -0, w: .99999994}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .139368981
         modified: 1
     - boneName: Sophia:LeftToeBase
@@ -394,8 +364,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .0589646064, y: 0, z: .0294823032}
-        preQ: {x: .707106769, y: -0, z: .707106769, w: 0}
-        postQ: {x: .707106769, y: -0, z: .707106769, w: 0}
         length: .0737057775
         modified: 1
     - boneName: Sophia:RightToeBase
@@ -404,8 +372,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .0589646064, y: 0, z: .0294823032}
-        preQ: {x: .707106769, y: -0, z: .707106769, w: 0}
-        postQ: {x: .707106769, y: -0, z: .707106769, w: 0}
         length: .0737057775
         modified: 1
     - boneName: Sophia:LeftHandThumb1
@@ -414,8 +380,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0365091749, y: 0, z: .0182545874}
-        preQ: {x: .247536018, y: .619099438, z: .583508372, w: -.463637412}
-        postQ: {x: .166912794, y: .618995965, z: .692367077, w: -.331076801}
         length: .0456364863
         modified: 1
     - boneName: Sophia:LeftHandThumb2
@@ -424,8 +388,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0266610496, y: 0, z: .0133305248}
-        preQ: {x: .0295827761, y: .65848279, z: .735761523, w: -.155499637}
-        postQ: {x: .147347286, y: .650636137, z: .707775831, w: -.23241055}
         length: .0333263204
         modified: 1
     - boneName: Sophia:LeftHandThumb3
@@ -434,8 +396,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0199957844, y: 0, z: .00999789219}
-        preQ: {x: .0146485092, y: .674217165, z: .732781351, w: -.0908183381}
-        postQ: {x: .164310917, y: .644289017, z: .700737059, w: -.258575231}
         length: .0249947403
         modified: 1
     - boneName: Sophia:LeftHandIndex1
@@ -444,8 +404,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0298756119, y: 0, z: .0149378059}
-        preQ: {x: .0829600692, y: .00196792162, z: .954479277, w: -.286501229}
-        postQ: {x: .00686864415, y: -0, z: .999976337, w: 0}
         length: .0373445228
         modified: 1
     - boneName: Sophia:LeftHandIndex2
@@ -454,8 +412,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0230154824, y: 0, z: .0115077412}
-        preQ: {x: -0, y: -0, z: .941930711, w: -.335807204}
-        postQ: {x: -0, y: -0, z: .999718785, w: -.0237123165}
         length: .0287693609
         modified: 1
     - boneName: Sophia:LeftHandIndex3
@@ -464,8 +420,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0172616094, y: 0, z: .00863080472}
-        preQ: {x: -0, y: -0, z: .941930652, w: -.335807204}
-        postQ: {x: .00105426554, y: 2.50062258e-05, z: .99960649, w: .0280297846}
         length: .0215770211
         modified: 1
     - boneName: Sophia:LeftHandMiddle1
@@ -474,8 +428,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0316872112, y: 0, z: .0158436056}
-        preQ: {x: .0460260324, y: .00214552903, z: .955057979, w: -.292815834}
-        postQ: {x: .00810433086, y: 4.81928328e-05, z: .999949455, w: -.0059462525}
         length: .0396090299
         modified: 1
     - boneName: Sophia:LeftHandMiddle2
@@ -484,8 +436,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0229514074, y: 0, z: .0114757037}
-        preQ: {x: .000897712423, y: .000336052064, z: .936530948, w: -.350583494}
-        postQ: {x: .000957804616, y: 3.78018376e-05, z: .999221623, w: -.0394364484}
         length: .0286892671
         modified: 1
     - boneName: Sophia:LeftHandMiddle3
@@ -494,8 +444,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0172135532, y: 0, z: .0086067766}
-        preQ: {x: .00089771254, y: .000336052093, z: .936531007, w: -.350583494}
-        postQ: {x: -.000284652488, y: 2.93150115e-05, z: .999995887, w: .00283583486}
         length: .0215169508
         modified: 1
     - boneName: Sophia:LeftHandRing1
@@ -504,8 +452,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0309571996, y: 0, z: .0154785998}
-        preQ: {x: -.0400755554, y: .000392761896, z: .949347436, w: -.31166178}
-        postQ: {x: -.00189877034, y: -4.88546248e-05, z: .999667287, w: -.0257210527}
         length: .0386965089
         modified: 1
     - boneName: Sophia:LeftHandRing2
@@ -514,8 +460,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0233220588, y: 0, z: .0116610294}
-        preQ: {x: -.00458904542, y: -.00163309707, z: .94211024, w: -.335267425}
-        postQ: {x: -.00486966502, y: -.000112732319, z: .999720156, w: -.0231434312}
         length: .0291525815
         modified: 1
     - boneName: Sophia:LeftHandRing3
@@ -524,8 +468,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0174915418, y: 0, z: .0087457709}
-        preQ: {x: -.00458904635, y: -.00163309742, z: .94211036, w: -.335267454}
-        postQ: {x: -.00486966642, y: -.000112732341, z: .999720275, w: -.0231434349}
         length: .0218644366
         modified: 1
     - boneName: Sophia:LeftHandPinky1
@@ -534,8 +476,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0247582868, y: 0, z: .0123791434}
-        preQ: {x: -.073813647, y: .00175016024, z: .951630592, w: -.298240811}
-        postQ: {x: .00271403627, y: 3.34175056e-05, z: .999920487, w: -.0123118637}
         length: .0309478678
         modified: 1
     - boneName: Sophia:LeftHandPinky2
@@ -544,8 +484,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0217868332, y: 0, z: .0108934166}
-        preQ: {x: .00402894197, y: .00138234254, z: .945865989, w: -.324529588}
-        postQ: {x: .00425919285, y: 5.01324794e-05, z: .99992162, w: -.0117694922}
         length: .0272335503
         modified: 1
     - boneName: Sophia:LeftHandPinky3
@@ -554,8 +492,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0163401235, y: 0, z: .00817006174}
-        preQ: {x: .00402894197, y: .00138234254, z: .945865929, w: -.324529558}
-        postQ: {x: .00148653425, y: .000118995049, z: .999926209, w: .0120581323}
         length: .0204251632
         modified: 1
     - boneName: Sophia:RightHandThumb1
@@ -564,8 +500,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0365091749, y: 0, z: .0182545874}
-        preQ: {x: .619099498, y: .247536004, z: .463637471, w: -.583508372}
-        postQ: {x: -.618995965, y: -.166912779, z: -.331076801, w: .692367077}
         length: .0456364863
         modified: 1
     - boneName: Sophia:RightHandThumb2
@@ -574,8 +508,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0266610496, y: 0, z: .0133305248}
-        preQ: {x: .65848279, y: .0295827799, z: .155499622, w: -.735761523}
-        postQ: {x: -.650636137, y: -.147347301, z: -.23241055, w: .707775831}
         length: .0333263204
         modified: 1
     - boneName: Sophia:RightHandThumb3
@@ -584,8 +516,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0199957844, y: 0, z: .00999789219}
-        preQ: {x: .674217165, y: .0146485092, z: .0908183455, w: -.732781351}
-        postQ: {x: -.641809046, y: -.168366194, z: -.267639965, w: .698643565}
         length: .0249947403
         modified: 1
     - boneName: Sophia:RightHandIndex1
@@ -594,8 +524,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0298756119, y: 0, z: .0149378059}
-        preQ: {x: .00196792162, y: .0829600692, z: .286501229, w: -.954479277}
-        postQ: {x: 0, y: -.00686864415, z: -0, w: .999976337}
         length: .0373445228
         modified: 1
     - boneName: Sophia:RightHandIndex2
@@ -604,8 +532,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0230154824, y: 0, z: .0115077412}
-        preQ: {x: -0, y: -0, z: .335807204, w: -.941930711}
-        postQ: {x: -0, y: -0, z: -.0237123165, w: .999718785}
         length: .0287693609
         modified: 1
     - boneName: Sophia:RightHandIndex3
@@ -614,8 +540,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0172616094, y: 0, z: .00863080472}
-        preQ: {x: -0, y: -0, z: .335807204, w: -.941930652}
-        postQ: {x: -8.2591243e-05, y: -.00348205818, z: -.00423240522, w: .99998492}
         length: .0215770211
         modified: 1
     - boneName: Sophia:RightHandMiddle1
@@ -624,8 +548,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0316872112, y: 0, z: .0158436056}
-        preQ: {x: .00214552926, y: .0460260324, z: .292815834, w: -.955057979}
-        postQ: {x: -4.81928328e-05, y: -.00810433086, z: -.0059462525, w: .999949455}
         length: .0396090299
         modified: 1
     - boneName: Sophia:RightHandMiddle2
@@ -634,8 +556,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0229514074, y: 0, z: .0114757037}
-        preQ: {x: .000336052064, y: .000897712423, z: .350583494, w: -.936530948}
-        postQ: {x: -3.78018376e-05, y: -.000957804616, z: -.0394364484, w: .999221623}
         length: .0286892671
         modified: 1
     - boneName: Sophia:RightHandMiddle3
@@ -644,8 +564,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0172135532, y: 0, z: .0086067766}
-        preQ: {x: .000336052093, y: .00089771254, z: .350583494, w: -.936531007}
-        postQ: {x: -3.91375906e-05, y: -.000773710024, z: -.0304754414, w: .999535143}
         length: .0215169508
         modified: 1
     - boneName: Sophia:RightHandRing1
@@ -654,8 +572,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0309571996, y: 0, z: .0154785998}
-        preQ: {x: .000392761867, y: -.0400755517, z: .31166178, w: -.949347436}
-        postQ: {x: 4.88546248e-05, y: .00189877034, z: -.0257210527, w: .999667287}
         length: .0386965089
         modified: 1
     - boneName: Sophia:RightHandRing2
@@ -664,8 +580,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0233220588, y: 0, z: .0116610294}
-        preQ: {x: -.00163309707, y: -.00458904542, z: .335267425, w: -.94211024}
-        postQ: {x: .000112732319, y: .00486966502, z: -.0231434312, w: .999720156}
         length: .0291525815
         modified: 1
     - boneName: Sophia:RightHandRing3
@@ -674,8 +588,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0174915418, y: 0, z: .0087457709}
-        preQ: {x: -.00163309742, y: -.00458904635, z: .335267454, w: -.94211036}
-        postQ: {x: 8.2614366e-05, y: .000610203831, z: -.00908881612, w: .999958456}
         length: .0218644366
         modified: 1
     - boneName: Sophia:RightHandPinky1
@@ -684,8 +596,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0247582868, y: 0, z: .0123791434}
-        preQ: {x: .00175016024, y: -.073813647, z: .298240811, w: -.951630592}
-        postQ: {x: -3.34175056e-05, y: -.00271403627, z: -.0123118637, w: .999920487}
         length: .0309478678
         modified: 1
     - boneName: Sophia:RightHandPinky2
@@ -694,8 +604,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0217868332, y: 0, z: .0108934166}
-        preQ: {x: .00138234254, y: .00402894197, z: .324529588, w: -.945865989}
-        postQ: {x: -5.01324794e-05, y: -.00425919285, z: -.0117694922, w: .99992162}
         length: .0272335503
         modified: 1
     - boneName: Sophia:RightHandPinky3
@@ -704,8 +612,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0163401235, y: 0, z: .00817006174}
-        preQ: {x: .00138234254, y: .00402894197, z: .324529558, w: -.945865929}
-        postQ: {x: -.000168607934, y: -.00929432642, z: .00213023531, w: .999954522}
         length: .0204251632
         modified: 1
     skeleton:
@@ -1044,7 +950,6 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: .99999994}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    handles: []
     armTwist: .5
     foreArmTwist: .5
     upperLegTwist: .5
@@ -1054,6 +959,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  additionalBone: 1
   animationType: 3
+  additionalBone: 1
   userData: 

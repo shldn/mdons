@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: cd31da237026c5b46b47205e5e845804
 ModelImporter:
-  serializedVersion: 15
+  serializedVersion: 16
   fileIDToRecycleName:
     100000: Justin:Head
     100002: Justin:HeadTop_End
@@ -194,13 +194,17 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
+    extraExposedTransformPaths: []
     clipAnimations:
-    - name: walk_fast
+    - serializedVersion: 16
+      name: walk_fast
       takeName: mixamo.com
       firstFrame: 0
       lastFrame: 18
@@ -209,6 +213,7 @@ ModelImporter:
       level: 0
       cycleOffset: 0
       loop: 0
+      loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 1
@@ -220,7 +225,10 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
+      events: []
       transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -252,8 +260,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0748809725, y: 0, z: .0374404863}
-        preQ: {x: -.455935538, y: -.540483892, z: .455935478, w: .540483892}
-        postQ: {x: -.455935538, y: -.540483892, z: .455935478, w: .540483892}
         length: .0936012492
         modified: 1
     - boneName: Justin:LeftUpLeg
@@ -262,8 +268,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .334126532, y: 0, z: .167063266}
-        preQ: {x: -.604934454, y: .366134167, z: -.604934454, w: .366134226}
-        postQ: {x: -.489535093, y: .510250151, z: -.489535093, w: .510250211}
         length: .417658299
         modified: 1
     - boneName: Justin:RightUpLeg
@@ -272,8 +276,6 @@ ModelImporter:
         min: {x: -60.0000038, y: -60.0000038, z: -90}
         max: {x: 60.0000038, y: 60.0000038, z: 50}
         value: {x: .334126532, y: 0, z: .167063266}
-        preQ: {x: -.604934454, y: .366134167, z: -.604934454, w: .366134226}
-        postQ: {x: -.489535093, y: .510250151, z: -.489535093, w: .510250211}
         length: .417658299
         modified: 1
     - boneName: Justin:LeftLeg
@@ -282,8 +284,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .313593209, y: 0, z: .156796604}
-        preQ: {x: -.0540402532, y: .705151379, z: -.0540576279, w: .704924762}
-        postQ: {x: -.494484633, y: .505458653, z: -.494643599, w: .50529623}
         length: .391991645
         modified: 1
     - boneName: Justin:RightLeg
@@ -292,8 +292,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .313593209, y: 0, z: .156796604}
-        preQ: {x: -.0540402532, y: .705151379, z: -.0540576279, w: .704924762}
-        postQ: {x: -.494484633, y: .505458653, z: -.494643599, w: .50529623}
         length: .391991645
         modified: 1
     - boneName: Justin:LeftFoot
@@ -302,8 +300,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .119891785, y: 0, z: .0599458925}
-        preQ: {x: -.49999997, y: .49999997, z: -.5, w: .5}
-        postQ: {x: -.49999997, y: .49999997, z: -.49999997, w: .49999997}
         length: .149864763
         modified: 1
     - boneName: Justin:RightFoot
@@ -312,8 +308,6 @@ ModelImporter:
         min: {x: 0, y: -30.0000019, z: -50}
         max: {x: 0, y: 30.0000019, z: 50}
         value: {x: .119891785, y: 0, z: .0599458925}
-        preQ: {x: -.49999997, y: .49999997, z: -.5, w: .5}
-        postQ: {x: -.49999997, y: .49999997, z: -.49999997, w: .49999997}
         length: .149864763
         modified: 1
     - boneName: Justin:Spine
@@ -322,8 +316,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .130038664, y: 0, z: .0650193319}
-        preQ: {x: .502540469, y: .497446567, z: -.50254041, w: -.497446477}
-        postQ: {x: .502540469, y: .497446567, z: -.50254041, w: -.497446477}
         length: .162548393
         modified: 1
     - boneName: Justin:Spine1
@@ -332,8 +324,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .224722713, y: 0, z: .112361357}
-        preQ: {x: .547953486, y: .446930617, z: -.547953367, w: -.446930617}
-        postQ: {x: .547953546, y: .446930647, z: -.547953427, w: -.446930647}
         length: .280903459
         modified: 1
     - boneName: Justin:Neck
@@ -342,8 +332,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0684398636, y: 0, z: .0342199318}
-        preQ: {x: -.444776028, y: -.549703717, z: .444776058, w: .549703717}
-        postQ: {x: -.444776028, y: -.549703777, z: .444776058, w: .549703777}
         length: .0855498612
         modified: 1
     - boneName: Justin:Head
@@ -352,8 +340,6 @@ ModelImporter:
         min: {x: -40, y: -40, z: -40}
         max: {x: 40, y: 40, z: 40}
         value: {x: .0684398636, y: 0, z: .0342199318}
-        preQ: {x: -.49999997, y: -.49999997, z: .49999997, w: .49999997}
-        postQ: {x: -.49999997, y: -.49999997, z: .5, w: .5}
         length: .0855498612
         modified: 1
     - boneName: Justin:LeftShoulder
@@ -362,8 +348,6 @@ ModelImporter:
         min: {x: 0, y: -15.000001, z: -15.000001}
         max: {x: 0, y: 15.000001, z: 30.0000019}
         value: {x: .0999889672, y: 0, z: .0499944836}
-        preQ: {x: -.0718612298, y: -.00323963724, z: .996397316, w: -.0449194275}
-        postQ: {x: -.0718612298, y: -.00323963724, z: .996397316, w: -.0449194275}
         length: .124986246
         modified: 1
     - boneName: Justin:RightShoulder
@@ -372,8 +356,6 @@ ModelImporter:
         min: {x: 0, y: -15.000001, z: -15.000001}
         max: {x: 0, y: 15.000001, z: 30.0000019}
         value: {x: .100020513, y: 0, z: .0500102565}
-        preQ: {x: .00323756528, y: .0718384981, z: -.0449050032, w: .996399522}
-        postQ: {x: .00323756551, y: .071838513, z: -.0449050106, w: .996399641}
         length: .125025675
         modified: 1
     - boneName: Justin:LeftArm
@@ -382,8 +364,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .221495837, y: 0, z: .110747918}
-        preQ: {x: .244210228, y: -0, z: .911232233, w: -.331688493}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .276869863
         modified: 1
     - boneName: Justin:RightArm
@@ -392,8 +372,6 @@ ModelImporter:
         min: {x: -90, y: -100, z: -60.0000038}
         max: {x: 90, y: 100, z: 100}
         value: {x: .221495837, y: 0, z: .110747918}
-        preQ: {x: -0, y: -.244210228, z: -.331688493, w: .911232233}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .276869863
         modified: 1
     - boneName: Justin:LeftForeArm
@@ -402,8 +380,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .222990319, y: 0, z: .11149516}
-        preQ: {x: .454487741, y: .541701794, z: .541701734, w: -.454487801}
-        postQ: {x: -0, y: .707106769, z: .707106709, w: 0}
         length: .278737962
         modified: 1
     - boneName: Justin:RightForeArm
@@ -412,8 +388,6 @@ ModelImporter:
         min: {x: -90, y: 0, z: -80}
         max: {x: 90, y: 0, z: 80}
         value: {x: .222990319, y: 0, z: .11149516}
-        preQ: {x: -.541701734, y: -.454487801, z: -.454487741, w: .541701794}
-        postQ: {x: -.707106709, y: -0, z: -0, w: .707106769}
         length: .278737962
         modified: 1
     - boneName: Justin:LeftHand
@@ -422,8 +396,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .11149516, y: 0, z: .0557475798}
-        preQ: {x: -0, y: -0, z: .99999994, w: 0}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .139368981
         modified: 1
     - boneName: Justin:RightHand
@@ -432,8 +404,6 @@ ModelImporter:
         min: {x: 0, y: -40, z: -80}
         max: {x: 0, y: 40, z: 80}
         value: {x: .11149516, y: 0, z: .0557475798}
-        preQ: {x: -0, y: -0, z: -0, w: .99999994}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .139368981
         modified: 1
     - boneName: Justin:LeftToeBase
@@ -442,8 +412,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .0589646064, y: 0, z: .0294823032}
-        preQ: {x: .707106769, y: -0, z: .707106769, w: 0}
-        postQ: {x: .707106769, y: -0, z: .707106769, w: 0}
         length: .0737057775
         modified: 1
     - boneName: Justin:RightToeBase
@@ -452,8 +420,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -50}
         max: {x: 0, y: 0, z: 50}
         value: {x: .0589646064, y: 0, z: .0294823032}
-        preQ: {x: .707106769, y: -0, z: .707106769, w: 0}
-        postQ: {x: .707106769, y: -0, z: .707106769, w: 0}
         length: .0737057775
         modified: 1
     - boneName: Justin:LeftEye
@@ -462,8 +428,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -10}
         max: {x: 0, y: 20, z: 15.000001}
         value: {x: .0799999759, y: 0, z: .0399999879}
-        preQ: {x: .707106769, y: -0, z: .707106769, w: 0}
-        postQ: {x: .707106769, y: -0, z: .707106769, w: 0}
         length: .100000001
         modified: 1
     - boneName: Justin:RightEye
@@ -472,8 +436,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -10}
         max: {x: 0, y: 20, z: 15.000001}
         value: {x: .0799999759, y: 0, z: .0399999879}
-        preQ: {x: .707106769, y: -0, z: .707106769, w: 0}
-        postQ: {x: .707106769, y: -0, z: .707106769, w: 0}
         length: .100000001
         modified: 1
     - boneName: Justin:Jaw
@@ -482,8 +444,6 @@ ModelImporter:
         min: {x: 0, y: -10, z: -10}
         max: {x: 0, y: 10, z: 10}
         value: {x: .0799999759, y: 0, z: .0399999879}
-        preQ: {x: .70426023, y: -.0633834228, z: .70426023, w: -.0633834228}
-        postQ: {x: .707092047, y: -.00455700839, z: .707092047, w: -.00455700839}
         length: .100000001
         modified: 1
     - boneName: Justin:LeftHandThumb1
@@ -492,8 +452,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0361118279, y: 0, z: .018055914}
-        preQ: {x: .227372542, y: .624002397, z: .594870269, w: -.452826679}
-        postQ: {x: .168644696, y: .629492283, z: .690059662, w: -.314826846}
         length: .0451398045
         modified: 1
     - boneName: Justin:LeftHandThumb2
@@ -502,8 +460,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0414295308, y: 0, z: .0207147654}
-        preQ: {x: .00581045449, y: .666804552, z: .728768587, w: -.1556734}
-        postQ: {x: .073998116, y: .64048332, z: .724173546, w: -.244699836}
         length: .0517869294
         modified: 1
     - boneName: Justin:LeftHandThumb3
@@ -512,8 +468,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0310721509, y: 0, z: .0155360755}
-        preQ: {x: -.0578404963, y: .659245849, z: .74291414, w: -.100637369}
-        postQ: {x: .0581553578, y: .638101041, z: .727578878, w: -.245099887}
         length: .038840197
         modified: 1
     - boneName: Justin:LeftHandIndex1
@@ -522,8 +476,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0443943851, y: 0, z: .0221971925}
-        preQ: {x: .0764021128, y: -0, z: .955026507, w: -.286507934}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0554929972
         modified: 1
     - boneName: Justin:LeftHandIndex2
@@ -532,8 +484,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .027128784, y: 0, z: .013564392}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337744}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0339109898
         modified: 1
     - boneName: Justin:LeftHandIndex3
@@ -542,8 +492,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0203465875, y: 0, z: .0101732938}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337741}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0254332423
         modified: 1
     - boneName: Justin:LeftHandMiddle1
@@ -552,8 +500,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0463367812, y: 0, z: .0231683906}
-        preQ: {x: .0382849574, y: -0, z: .957124054, w: -.28713721}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0579209924
         modified: 1
     - boneName: Justin:LeftHandMiddle2
@@ -562,8 +508,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0297055654, y: 0, z: .0148527827}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337744}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0371319652
         modified: 1
     - boneName: Justin:LeftHandMiddle3
@@ -572,8 +516,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0222791713, y: 0, z: .0111395856}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337741}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0278489739
         modified: 1
     - boneName: Justin:LeftHandRing1
@@ -582,8 +524,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .043561589, y: 0, z: .0217807945}
-        preQ: {x: -.0382849574, y: -0, z: .957124054, w: -.28713721}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .054452002
         modified: 1
     - boneName: Justin:LeftHandRing2
@@ -592,8 +532,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0297055654, y: 0, z: .0148527827}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337744}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0371319652
         modified: 1
     - boneName: Justin:LeftHandRing3
@@ -602,8 +540,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0222791713, y: 0, z: .0111395856}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337741}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0278489739
         modified: 1
     - boneName: Justin:LeftHandPinky1
@@ -612,8 +548,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0294104032, y: 0, z: .0147052016}
-        preQ: {x: -.0764021128, y: -0, z: .955026507, w: -.286507934}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0367630124
         modified: 1
     - boneName: Justin:LeftHandPinky2
@@ -622,8 +556,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .022490399, y: 0, z: .0112451995}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337744}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0281130075
         modified: 1
     - boneName: Justin:LeftHandPinky3
@@ -632,8 +564,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0168677978, y: 0, z: .00843389891}
-        preQ: {x: -0, y: -0, z: .949628592, w: -.31337741}
-        postQ: {x: -0, y: -0, z: .99999994, w: 0}
         length: .0210847557
         modified: 1
     - boneName: Justin:RightHandThumb1
@@ -642,8 +572,6 @@ ModelImporter:
         min: {x: 0, y: -25, z: -20}
         max: {x: 0, y: 25, z: 20}
         value: {x: .0363418646, y: 0, z: .0181709323}
-        preQ: {x: .617460012, y: .228285134, z: .463193148, w: -.593364179}
-        postQ: {x: -.621555448, y: -.1748074, z: -.33197853, w: .687678218}
         length: .0454273485
         modified: 1
     - boneName: Justin:RightHandThumb2
@@ -652,8 +580,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .0407461338, y: 0, z: .0203730669}
-        preQ: {x: .663199186, y: .0137999803, z: .173237771, w: -.727986991}
-        postQ: {x: -.635861278, y: -.0717024729, z: -.247581556, w: .727490544}
         length: .0509326868
         modified: 1
     - boneName: Justin:RightHandThumb3
@@ -662,8 +588,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -40}
         max: {x: 0, y: 0, z: 35}
         value: {x: .030559605, y: 0, z: .0152798025}
-        preQ: {x: .656248629, y: -.0597023778, z: .103197105, w: -.745066166}
-        postQ: {x: -.634132206, y: -.0594938099, z: -.247205228, w: .730223417}
         length: .0381995142
         modified: 1
     - boneName: Justin:RightHandIndex1
@@ -672,8 +596,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .0430143699, y: 0, z: .021507185}
-        preQ: {x: -0, y: .0764021128, z: .286507934, w: -.955026507}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0537679791
         modified: 1
     - boneName: Justin:RightHandIndex2
@@ -682,8 +604,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0270839613, y: 0, z: .0135419806}
-        preQ: {x: -0, y: -0, z: .31337744, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0338549614
         modified: 1
     - boneName: Justin:RightHandIndex3
@@ -692,8 +612,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0203129705, y: 0, z: .0101564853}
-        preQ: {x: -0, y: -0, z: .31337741, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .025391221
         modified: 1
     - boneName: Justin:RightHandMiddle1
@@ -702,8 +620,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0449344032, y: 0, z: .0224672016}
-        preQ: {x: -0, y: .0382849574, z: .28713721, w: -.957124054}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0561680198
         modified: 1
     - boneName: Justin:RightHandMiddle2
@@ -712,8 +628,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0298911985, y: 0, z: .0149455993}
-        preQ: {x: -0, y: -0, z: .31337744, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .037364006
         modified: 1
     - boneName: Justin:RightHandMiddle3
@@ -722,8 +636,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0224183965, y: 0, z: .0112091983}
-        preQ: {x: -0, y: -0, z: .31337741, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0280230045
         modified: 1
     - boneName: Justin:RightHandRing1
@@ -732,8 +644,6 @@ ModelImporter:
         min: {x: 0, y: -7.50000048, z: -50}
         max: {x: 0, y: 7.50000048, z: 50}
         value: {x: .0432103984, y: 0, z: .0216051992}
-        preQ: {x: -0, y: -.0382849574, z: .28713721, w: -.957124054}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0540130138
         modified: 1
     - boneName: Justin:RightHandRing2
@@ -742,8 +652,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0271327905, y: 0, z: .0135663953}
-        preQ: {x: -0, y: -0, z: .31337744, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0339159966
         modified: 1
     - boneName: Justin:RightHandRing3
@@ -752,8 +660,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0203495901, y: 0, z: .0101747951}
-        preQ: {x: -0, y: -0, z: .31337741, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0254369974
         modified: 1
     - boneName: Justin:RightHandPinky1
@@ -762,8 +668,6 @@ ModelImporter:
         min: {x: 0, y: -20, z: -50}
         max: {x: 0, y: 20, z: 50}
         value: {x: .029222386, y: 0, z: .014611193}
-        preQ: {x: -0, y: -.0764021128, z: .286507934, w: -.955026507}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0365279913
         modified: 1
     - boneName: Justin:RightHandPinky2
@@ -772,8 +676,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0222559851, y: 0, z: .0111279925}
-        preQ: {x: -0, y: -0, z: .31337744, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0278199911
         modified: 1
     - boneName: Justin:RightHandPinky3
@@ -782,8 +684,6 @@ ModelImporter:
         min: {x: 0, y: 0, z: -45}
         max: {x: 0, y: 0, z: 45}
         value: {x: .0166919883, y: 0, z: .00834599417}
-        preQ: {x: -0, y: -0, z: .31337741, w: -.949628592}
-        postQ: {x: -0, y: -0, z: -0, w: .99999994}
         length: .0208649933
         modified: 1
     skeleton:
@@ -1242,7 +1142,6 @@ ModelImporter:
       rotation: {x: 0, y: -0, z: -0, w: .99999994}
       scale: {x: 1, y: 1, z: 1}
       transformModified: 1
-    handles: []
     armTwist: .5
     foreArmTwist: .5
     upperLegTwist: .5
@@ -1252,6 +1151,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  additionalBone: 1
   animationType: 3
+  additionalBone: 1
   userData: 
