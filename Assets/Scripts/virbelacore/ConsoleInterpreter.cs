@@ -1487,14 +1487,21 @@ public class ConsoleInterpreter : MonoBehaviour {
             {
                 c.Eval = delegate(string[] args)
                 {
-                    bool male = true;
+                    int modelIdx = 0;
                     string name = "";
                     int posIdx = Array.IndexOf(args, "pos");
                     int rotIdx = Array.IndexOf(args, "rot");
                     int listIdx = Array.IndexOf(args, "list");
 
                     if (args.Length > 1)
-                        male = !(args[1].ToLower().StartsWith("f") || args[1].ToLower().StartsWith("g") || args[1] == "1"); // female, girl
+                    {
+                        if (args[1].ToLower().StartsWith("f") || args[1].ToLower().StartsWith("g") || args[1] == "1")
+                            modelIdx = 1;
+                        else if (args[1].ToLower().StartsWith("2"))
+                            modelIdx = 2;
+                        else if (args[1].ToLower().StartsWith("3"))
+                            modelIdx = 3;
+                    }
 
                     if (args.Length > 2 && args[2].ToLower() != "random")
                         name = args[2];
@@ -1507,10 +1514,10 @@ public class ConsoleInterpreter : MonoBehaviour {
                     Quaternion rot = (rotIdx != -1) ? StringConvert.ToQuaternion(float.Parse(args[rotIdx + 1])) : t.rotation;
                     PlayerController.NavMode navMode = GameManager.Inst.LocalPlayer.playerController.navMode;
 
-                    Player p = LocalBotManager.Inst.Create(pos, rot, male, addToUserList, name);
+                    Player p = LocalBotManager.Inst.Create(pos, rot, modelIdx, addToUserList, name);
                     p.playerController.navMode = navMode;
 
-                    string botCmdStr = "/bot " + (male ? "m" : "f") + " " + p.Name + " pos " + StringConvert.ToString(pos) + " rot " + rot.eulerAngles.y;
+                    string botCmdStr = "/bot " + modelIdx + " " + p.Name + " pos " + StringConvert.ToString(pos) + " rot " + rot.eulerAngles.y;
 
                     // Allow customization controls
                     for (int j = 0; j < args.Length; ++j)

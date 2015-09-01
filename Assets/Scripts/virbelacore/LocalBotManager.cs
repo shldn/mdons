@@ -30,12 +30,10 @@ public class LocalBotManager {
     {
         localBots.Clear();
     }
-
-    public Player Create(Vector3 pos, Quaternion rot, bool male = true, bool addToUserList = false, string name = "")
+    public Player Create(Vector3 pos, Quaternion rot, int modelIdx, bool addToUserList = false, string name = "")
     {
-        int modelIdx = male ? 0 : 1;
         if (name == "")
-            name = RandomName(male);
+            name = RandomName(modelIdx != 1);
         ForceUniqueName(ref name);
 
         // create player
@@ -57,11 +55,17 @@ public class LocalBotManager {
         bot.gameObject.SetActive(true);
         bot.gameObject.GetComponent<SimpleRemoteInterpolation>().enabled = false;
 
-        if(addToUserList)
+        if (addToUserList)
             GameGUI.Inst.ExecuteJavascriptOnGui(bot.GetAddToGUIUserListJSCmd());
 
         localBots.Add(name, bot);
         return bot;
+    }
+
+    public Player Create(Vector3 pos, Quaternion rot, bool male = true, bool addToUserList = false, string name = "")
+    {
+        int modelIdx = male ? 0 : 1;
+        return Create(pos, rot, modelIdx, addToUserList, name);
     }
 
 
