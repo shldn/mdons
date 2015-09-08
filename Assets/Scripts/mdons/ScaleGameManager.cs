@@ -74,12 +74,12 @@ public class ScaleGameManager : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.P))
         {
-            GameManager.Inst.LoadLevel(GameManager.Level.AVATARSELECT);
-            //Vector3 targetScale = GameManager.Inst.LocalPlayer.Scale;
-            //GameGUI.Inst.customizeAvatarGui.ChangeCharacter((GameManager.Inst.LocalPlayer.ModelIdx + 1) % PlayerManager.PlayerModelNames.Length);
-            //GameManager.Inst.LocalPlayer.playerController.enabled = true;
-            //GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
-            //SetToTargetScale(targetScale);
+            //GameManager.Inst.LoadLevel(GameManager.Level.AVATARSELECT);
+            Vector3 targetScale = GameManager.Inst.LocalPlayer.Scale;
+            GameGUI.Inst.customizeAvatarGui.ChangeCharacter((GameManager.Inst.LocalPlayer.ModelIdx + 1) % PlayerManager.PlayerModelNames.Length);
+            GameManager.Inst.LocalPlayer.playerController.enabled = true;
+            GameManager.Inst.LocalPlayer.playerController.navMode = PlayerController.NavMode.physics;
+            SetToTargetScale(targetScale);
         }
 
         if( Input.GetKeyUp(KeyCode.O))
