@@ -329,6 +329,8 @@ public class AvatarOptionManager{
     public void CreateRandomAvatar(Player player, Dictionary<string, int> avatarOptions, bool saveState)
     {
         int characterIdx = player.ModelIdx;
+        if (!Options.ContainsKey(characterIdx))
+            return;
         foreach (KeyValuePair<string, ResourceOptionList> option in Options[characterIdx])
         {
             int newResourceIdx = GetRandomResourceIdx(characterIdx, option.Value.uniqueElementName);
