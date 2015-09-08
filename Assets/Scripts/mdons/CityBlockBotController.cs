@@ -57,11 +57,14 @@ public class CityBlockBotController : MonoBehaviour {
                 if (r == 1 || c == 1)
                     continue;
                 Vector3 pos = cityBlockGen.GetRoadIntersectionPosition(r, c);
-                Player p = LocalBotManager.Inst.Create(pos, Quaternion.identity, Random.Range(0, 2) > 0);
+                Player p = LocalBotManager.Inst.Create(pos, Quaternion.identity, Random.Range(0, PlayerManager.PlayerModelNames.Length));
                 p.playerController.navMode = PlayerController.NavMode.physics;
                 p.gameObject.transform.parent = cityBlockGen.meshContainer;
-                p.Scale = 200f * Vector3.one;
+                p.Scale = 350f * Vector3.one;
                 BotMover bMover = p.gameObject.AddComponent<BotMover>();
+
+                // randomize movement speed
+                p.playerController.speedScaleFactor = Random.RandomRange(0.3f, 0.7f);
 
                 List<Vector3> destinationPts = GetWalkPath(r, c);
                 bMover.DestinationSet = destinationPts;

@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour {
     bool useNavMesh { get { return (navMode == NavMode.navmesh); } }
     bool usePhysics { get { return (navMode == NavMode.physics) || (navMode == NavMode.physicsSticky); } }
 
+    public float speedScaleFactor = 1f;
     public float turnSpeed = 90f;
     public float acceleration = 20f;
 
@@ -330,7 +331,7 @@ public class PlayerController : MonoBehaviour {
                 targetSpeed = sprintSpeed;
                 break;
         }
-        moveSpeed = Mathf.MoveTowards(moveSpeed, targetSpeed * forwardThrottle, acceleration * Time.deltaTime);
+        moveSpeed = Mathf.MoveTowards(moveSpeed, speedScaleFactor * targetSpeed * forwardThrottle, acceleration * Time.deltaTime);
 
 
         // Propel the character.
@@ -344,7 +345,7 @@ public class PlayerController : MonoBehaviour {
             navAgent.Move(moveVector * Time.deltaTime);
         }
         else if(usePhysics){
-            rigidbody.useGravity = !playerScript.isBot;
+            rigidbody.useGravity = true;// !playerScript.isBot;
             rigidbody.isKinematic = false;
             navAgent.enabled = false;
 
