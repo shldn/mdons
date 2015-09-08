@@ -6,7 +6,6 @@ using UnityEngine;
 // Injects user input to the attached 'PlayerController' script for driving around
 //   the local player.
 //
-// Not sure what the 'keycodemap' nonsense is...
 // ---------------------------------------------------------------------------------- //
 
 public class PlayerInputManager : MonoBehaviour {
@@ -15,7 +14,6 @@ public class PlayerInputManager : MonoBehaviour {
     PlayerController playerController;
     int consecutiveInputCount = 0;
     public bool disableKeyPressMovement = false;
-    //KeyCodeMap keyMapState;
 
     CustomKey upKey = new CustomKey(new KeyCode[]{KeyCode.UpArrow, KeyCode.W});
     CustomKey downKey = new CustomKey(new KeyCode[]{KeyCode.DownArrow, KeyCode.S});
@@ -31,7 +29,6 @@ public class PlayerInputManager : MonoBehaviour {
     // Use this for initialization
 	void Start(){
         playerController = gameObject.GetComponent<PlayerController>();
-        //keyMapState = KeyCodeMap.none;
 	} // End of Start().
 
 
@@ -74,27 +71,6 @@ public class PlayerInputManager : MonoBehaviour {
             jump = false;
         }
 
-        /*
-        if ((v != 0 || h != 0) && disableKeyPressMovement)
-        {
-            if (++consecutiveInputCount == 2)
-                InfoMessageManager.Display("Hit Esc or click off the panel to move with key presses");
-            return;
-        }
-        consecutiveInputCount = 0;
-        if (v != 0)
-            InjectForwardMovement(v < 0, run);
-        if (h != 0)
-            InjectTurnMovement(h < 0, run);
-        if (Input.GetButtonDown("Jump"))
-            InjectJump();
-        if (playerController != null)
-        {
-            //playerController.SetKeyMapState(keyMapState);
-            //keyMapState = KeyCodeMap.none;
-        }
-        */
-
         // Overhaul
         if (MainCameraController.Inst.cameraType != CameraType.FIRSTPERSON){
             playerController.forwardThrottle = v;
@@ -107,13 +83,6 @@ public class PlayerInputManager : MonoBehaviour {
             playerController.StopFollowingPlayer();
         }
 
-        // bug fix for players stuck rotating
-        upKey.UpdateCheck();
-        downKey.UpdateCheck();
-        leftKey.UpdateCheck();
-        rightKey.UpdateCheck();
-        jumpKey.UpdateCheck();
-
     } // End of Update().
 
 }
@@ -123,7 +92,6 @@ public class CustomKey {
 
     KeyCode[] keyCodes;
     public bool down = false;
-    int upCount = 0;
 
     public CustomKey(KeyCode _keyCode){
         keyCodes = new KeyCode[]{_keyCode};
@@ -138,29 +106,10 @@ public class CustomKey {
         for(int i = 0; i < keyCodes.Length; i++){
             KeyCode keyCode = keyCodes[i];
             if((e.type == EventType.keyDown) && (Event.current.keyCode == keyCode))
-            {
                 down = true;
-                upCount = 0;
-            }
             else if((e.type == EventType.keyUp) && (Event.current.keyCode == keyCode))
                 down = false;
         }
     } // End of Check().
-
-    // some up events weren't getting called in OnGUI, leaving keys in the down state
-    public void UpdateCheck()
-    {
-        if( down )
-        {
-            for(int i = 0; i < keyCodes.Length; i++){
-                if (Input.GetKey(keyCodes[i]))
-                    return;
-            }
-
-            // none of the keys are still down - give a 3 frame buffer, then consider the key up
-            if (++upCount > 2)
-                down = false;
-        }
-    } // End of UpdateCheck().
 
 } // End of CustomKey.
