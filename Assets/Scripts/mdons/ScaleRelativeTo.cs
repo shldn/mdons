@@ -27,11 +27,15 @@ public class ScaleRelativeTo : MonoBehaviour {
                 newPos.y = transform.position.y;
             transform.position = newPos;
 
+            MainCameraController.Inst.updateMethod = UpdateMethod.UPDATE;
 			if(ShepardEngine.Inst)
 				ShepardEngine.Inst.SetVelocity(-dir);
         }
         if (Input.GetKeyUp(KeyCode.Period) || Input.GetKeyUp(KeyCode.Comma) || constantScaling)
+        {
             ScaleGameManager.Inst.PhysicsAdjustment();
+            MainCameraController.Inst.updateMethod = UpdateMethod.FIXED_UPDATE;
+        }
 
         if (Input.GetKeyUp(KeyCode.Alpha0))
         {
