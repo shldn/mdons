@@ -15,7 +15,11 @@ public class PlayerManager : MonoBehaviour {
 
     public static PlayerController playerController = null;
     public List<GameObject> playerModels = new List<GameObject>();
+#if UNITY_WEBPLAYER
+    private static string[] playerModelNames = { "Avatars/male", "Avatars/female" }; //, "Avatars/sketchy_guy" };
+#else
     private static string[] playerModelNames = { "Avatars/box_man", "Avatars/ribbon_man", "Avatars/chain_man", "Avatars/facet_man" }; //, "Avatars/sketchy_guy" };
+#endif
     private static string[] playerMedModelNames = { "Avatars/male_med", "Avatars/female_med" };
     public static string[] playerModelDisplayNames = { "Male", "Female" };
     public static string[] PlayerModelNames { get { return (GameManager.Inst.ServerConfig == "Medical" ? playerMedModelNames : playerModelNames); } }

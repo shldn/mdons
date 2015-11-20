@@ -60,7 +60,7 @@ public class TunnelGameManager : MonoBehaviour {
     bool instructionScreenEventSent = false;
     bool allowUserControls = true;
     bool chooseArrow = true;
-    bool useMouseButtonsToChoose = true;
+    bool useMouseButtonsToChoose = false;
     bool showAbstractPlayer = false;
 
     // bools for event codes
@@ -109,6 +109,7 @@ public class TunnelGameManager : MonoBehaviour {
 
         // Read Config file if it exists
         experiments = TunnelConfigReader.Read("config.txt");
+
         if (experiments.Count == 0 && ErrorMessage == "")
             ErrorMessage = "Sorry, No experiments configured";
 
@@ -216,11 +217,12 @@ public class TunnelGameManager : MonoBehaviour {
 
         if( errMsg != "" )
         {
+#if !UNITY_WEBPLAYER
             GUI.skin.label.alignment = TextAnchor.LowerCenter;
             GUI.color = Color.red;
             GUI.Label(new Rect(0, 0, Screen.width, Screen.height), errMsg);
             GUI.color = Color.white;
-
+#endif
         }
 
         if( skipCount > 0 )
@@ -320,10 +322,10 @@ public class TunnelGameManager : MonoBehaviour {
         }
         else
         {
-#if DEMO_MODE
+#if DEMO_MODE || UNITY_WEBPLAYER
             bool[] playerVis = { true, false, false, true };
             float[] tunnelAngle = { -45f, 30f, -15f, 45f, -30f, 15f };
-            UserControl[] userControl = { UserControl.NONE, UserControl.PARTIAL, UserControl.NONE, UserControl.PARTIAL };
+            UserControl[] userControl = { UserControl.NONE, UserControl.NONE, UserControl.NONE, UserControl.NONE };
             StartExperiment(tunnelAngle[idx % tunnelAngle.Length], playerVis[idx % playerVis.Length], userControl[idx % userControl.Length]);
 #endif
         }
