@@ -228,7 +228,7 @@ public class AvatarOptionManager{
                 if (subMeshTransform != null)
                     subMeshTransform.gameObject.SetActive(subMeshTransform.name == modelNameWeWant);
                 else
-                    if( meshOptList.GetResourceName(i) != "" )
+                    if( GameManager.Inst.ServerConfig != "MDONS" && meshOptList.GetResourceName(i) != "" )
                         Debug.LogError("Did not find model: " + meshOptList.GetResourceName(i));
             }
         }

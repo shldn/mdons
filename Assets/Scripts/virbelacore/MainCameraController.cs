@@ -232,12 +232,7 @@ public class MainCameraController : MonoBehaviour {
                     cameraTargetPos = followPlayerRay.origin + followPlayerRay.direction.normalized * (followPlayerHit.distance - 1f);
             }
 
-            
-            
-            if(gazeTiltEnabled && !gazePanLock && appFocused)
-                cameraTargetEulers = new Vector3(tilt - camAngleAdjust - (gazePanTiltNormalized.x * maxGazeTilt), playerController.forwardAngle + (gazePanTiltNormalized.y * maxGazePan) + orbitOffsetAngle, 0f);
-            else
-                cameraTargetEulers = new Vector3(tilt - camAngleAdjust, playerController.forwardAngle + orbitOffsetAngle, 0f);
+            cameraTargetEulers = GetFollowCamTargetEulers(camAngleAdjust);
         }
 
         // First-person mouse-controlled camera.
@@ -324,6 +319,14 @@ public class MainCameraController : MonoBehaviour {
 
     } // End of UpdateImpl().
 
+    Vector3 GetFollowCamTargetEulers(float camAngleAdjust)
+    {
+        if(gazeTiltEnabled && !gazePanLock && appFocused)
+            return new Vector3(tilt - camAngleAdjust - (gazePanTiltNormalized.x * maxGazeTilt), playerController.forwardAngle + (gazePanTiltNormalized.y * maxGazePan) + orbitOffsetAngle, 0f);
+        else
+            return new Vector3(tilt - camAngleAdjust, playerController.forwardAngle + orbitOffsetAngle, 0f);
+    }
+
     void CameraSettings(float _fieldOfView, float _followPlayerHeight, float _followPlayerDist, float _rightOffset, float _tilt, float _maxGazePan, float _maxGazeTilt){
         mainCamera.fieldOfView = _fieldOfView;
         followPlayerHeight = _followPlayerHeight;
@@ -349,8 +352,10 @@ public class MainCameraController : MonoBehaviour {
         mainCamera.transform.position = cameraTargetPos;
         cameraPosVel = Vector3.zero;
 
-        mainCamera.transform.rotation = playerTransform.rotation;
-        cameraTargetEulers = playerTransform.eulerAngles;
+        float camAngleAdjust = Vector3.Angle(playerController.groundNormal, playerTransform.forward) - 90f;
+        camAngleAdjust *= 0.5f;
+        mainCamera.transform.eulerAngles = GetFollowCamTargetEulers(camAngleAdjust);
+        cameraTargetEulers = mainCamera.transform.eulerAngles;
         cameraRotVel = Vector3.zero;
     }
 

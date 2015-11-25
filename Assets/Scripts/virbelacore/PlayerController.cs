@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 // ---------------------------------------------------------------------------------- //
 // PlayerController.cs
@@ -105,6 +106,9 @@ public class PlayerController : MonoBehaviour {
     public float strafeSpeed = 0f;
     Vector3 moveVector = Vector3.zero;
 
+    // Moving info
+    private DateTime idleStartTime = DateTime.Now;
+    public float SecondsIdle { get { return (playerState != CharacterState.Idle) ? 0f : (float)(DateTime.Now - idleStartTime).TotalSeconds; } }
     public bool isMoving = false;
     [HideInInspector] public bool positionDirty = false;
     [HideInInspector] public bool animationDirty = false;
@@ -373,7 +377,11 @@ public class PlayerController : MonoBehaviour {
 
         // Update state based on movement speed.
         if (Mathf.Abs(moveSpeed) <= 0.1f)
+        {
+            if(playerState != CharacterState.Idle)
+                idleStartTime = DateTime.Now;
             playerState = CharacterState.Idle;
+        }
         else if (Mathf.Abs(moveSpeed) <= walkSpeed)
             playerState = CharacterState.Walking;
         else if (Mathf.Abs(moveSpeed) <= runSpeed)

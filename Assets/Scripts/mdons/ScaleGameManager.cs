@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class ScaleGameManager : MonoBehaviour
 {
@@ -19,13 +20,18 @@ public class ScaleGameManager : MonoBehaviour
     public bool sendLSLData = true;
 
     // Options
-    public float scaleSpeed = 0.01f;
+    public float scaleSpeed = 0.02f;
     public float startScale = 100.0f;
+
+    // Track last scale
+    DateTime lastScaleTime = DateTime.Now;
+    float SecondsSinceLastScale { get { return (float)(DateTime.Now - lastScaleTime).TotalSeconds; } }
 
     // Helpers
     float origNearClip = 1.0f;
     float origFarClip = 15000.0f;
     bool adjustmentToggle = false;
+
 
     public void Touch() { }
 
@@ -106,6 +112,9 @@ public class ScaleGameManager : MonoBehaviour
         if (Time.timeSinceLevelLoad < 1f)
             UpdateFocalLength();
 
+        // Normalize player if scaled up/down too much
+        if (GameManager.Inst.LocalPlayer.gameObject.transform.position.y < 0.3f && GameManager.Inst.LocalPlayer.Scale.y != 100f && GameManager.Inst.playerManager.NumPlayers == 1 && PlayerController.Local.SecondsIdle > 0.5f && SecondsSinceLastScale > 0.5f)
+            ScaleRelativeTo.Inst.NormalizeLocalPlayerToWorld();
     }
 
     public void ScaleUp()
@@ -119,6 +128,7 @@ public class ScaleGameManager : MonoBehaviour
             scaleFactor = 1.0f;
 
         GameManager.Inst.LocalPlayer.Scale *= scaleFactor;
+        lastScaleTime = DateTime.Now;
 
         if (ShepardEngine.Inst)
             ShepardEngine.Inst.SetVelocity(1f);
@@ -127,6 +137,7 @@ public class ScaleGameManager : MonoBehaviour
     public void ScaleDown()
     {
         GameManager.Inst.LocalPlayer.Scale *= (1.0f - scaleSpeed);
+        lastScaleTime = DateTime.Now;
 
         if (ShepardEngine.Inst)
             ShepardEngine.Inst.SetVelocity(-1f);

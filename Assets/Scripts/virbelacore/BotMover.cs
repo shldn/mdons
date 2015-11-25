@@ -47,13 +47,18 @@ public class BotMover : MonoBehaviour {
         switch(stage)
         {
             case MoverStage.TURN:
-                float deltaAngle = Mathf.DeltaAngle(playerController.forwardAngle, Quaternion.LookRotation(localDestination - transform.localPosition).eulerAngles.y);
-                playerController.turnThrottle = Mathf.Clamp(deltaAngle * 0.05f, -1f, 1f);
-                if (Mathf.Abs(deltaAngle) <= 0.2f)
+                if (localDestination == transform.localPosition)
+                    stage = MoverStage.END;
+                else
                 {
-                    sqDistToTravel = SqrMagnitude2D(transform.localPosition - localDestination);
-                    lastSqDist = SqrMagnitude2D(transform.localPosition - localDestination) + transform.parent.lossyScale.x * 100f;
-                    stage = MoverStage.WALK;
+                    float deltaAngle = Mathf.DeltaAngle(playerController.forwardAngle, Quaternion.LookRotation(localDestination - transform.localPosition).eulerAngles.y);
+                    playerController.turnThrottle = Mathf.Clamp(deltaAngle * 0.05f, -1f, 1f);
+                    if (Mathf.Abs(deltaAngle) <= 0.2f)
+                    {
+                        sqDistToTravel = SqrMagnitude2D(transform.localPosition - localDestination);
+                        lastSqDist = SqrMagnitude2D(transform.localPosition - localDestination) + transform.parent.lossyScale.x * 100f;
+                        stage = MoverStage.WALK;
+                    }
                 }
                 break;
             case MoverStage.WALK:

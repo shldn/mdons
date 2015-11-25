@@ -50,7 +50,7 @@ public class LevelInfo
                 new LevelInfo(GameManager.Level.BOARDROOM_SM, "boardrmsm", "BoardRmS", true),
                 new LevelInfo(GameManager.Level.OPENCAMPUS, "opencampus", "OCampus", false),
                 new LevelInfo(GameManager.Level.MOTION_TEST, "mdons_motion", "", true),
-                new LevelInfo(GameManager.Level.SCALE_GAME, "mdons_scale", "ScaleRm", true),
+                new LevelInfo(GameManager.Level.SCALE_GAME, "mdons_scale", "SclRm", true),
                 new LevelInfo(GameManager.Level.MDONS_TEST, "mdons_playground", "PlayRm", true),
                 new LevelInfo(GameManager.Level.OFFICE, "office", "Office", true)
             };
@@ -75,7 +75,7 @@ public class LevelInfo
                 new LevelInfo(GameManager.Level.BOARDROOM_SM, "boardrmsm", "BoardRmS", true),
                 new LevelInfo(GameManager.Level.OPENCAMPUS, "opencampus", "OCampus", false),
                 new LevelInfo(GameManager.Level.MOTION_TEST, "mdons_motion", "", true),
-                new LevelInfo(GameManager.Level.SCALE_GAME, "mdons_scale", "ScaleRm", true),
+                new LevelInfo(GameManager.Level.SCALE_GAME, "mdons_scale", "SclRm", true),
                 new LevelInfo(GameManager.Level.MDONS_TEST, "mdons_playground", "PlayRm", true),
                 new LevelInfo(GameManager.Level.OFFICE, "office", "Office", true)
             };
