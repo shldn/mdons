@@ -33,7 +33,7 @@ public class CommunicationManager : MonoBehaviour {
     public static string zone = "BizSimDemo";
     public static string username = "Guest";
 
-    public static string defaultLevel = "TeamRoom";
+    public static string defaultLevel = "motion";
     public static string bizsimType = "multiplayer";
     public static string buildType = "demo";
     public static string patchFileUrl = "http://virbela.com/img/test.zip";
@@ -153,7 +153,7 @@ public class CommunicationManager : MonoBehaviour {
 
 		smartFox = new SmartFox(DEBUG_SERVER);
 
-		CommunicationManager.CurrentUserProfile.CheckLogin();
+		//CommunicationManager.CurrentUserProfile.CheckLogin(); // parse.com went down.
         HandleCommandLineArgs();
 	}
 
@@ -512,7 +512,8 @@ public class CommunicationManager : MonoBehaviour {
                 levelToLoad = GameManager.Level.MINICAMPUS;
                 Debug.LogError("Detected trying to load campus for UCI, loading minicampus");
             }
-            StartCoroutine(LoadLevelAync(LevelInfo.GetInfo(levelToLoad).sceneName));
+            Application.LoadLevel(LevelInfo.GetInfo(levelToLoad).sceneName);
+            //StartCoroutine(LoadLevelAync(LevelInfo.GetInfo(levelToLoad).sceneName)); // Only supported in Unity Pro
         }
         else
             HideUser(); // users were still displaying in the scenes for other clients, so hide them.

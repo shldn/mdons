@@ -5,7 +5,7 @@ public class LoginRedirect : MonoBehaviour {
 
 #if !UNITY_WEBPLAYER
     void Awake() {
-        if (!CommunicationManager.IsUserAuthenticated && !Application.isWebPlayer)
+        if (!CommunicationManager.IsConnected && !Application.isWebPlayer)
             Application.LoadLevel("Connection");
     }
 #endif

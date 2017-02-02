@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour {
 #if (UNITY_STANDALONE && SKIP_SEVERCONFIG) || UNITY_WEBPLAYER
         ParseObject serverconfig = null;
 #else
-        ParseObject serverconfig = ParseObjectFactory.FindByParseObjectByColumnValue("ServerConfig", "name", serverConfigName);
+        ParseObject serverconfig = null; // ParseObjectFactory.FindByParseObjectByColumnValue("ServerConfig", "name", serverConfigName); // parse.com went down.
 #endif
 
         CommunicationManager.Instance.InitializeSmartFoxServer(serverconfig);
