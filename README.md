@@ -1,2 +1,2 @@
 # mdons
-MDONS, Massively Distributed Online Neuroscience
+MDONS, Multiuser Distributed Online Neuroscience
